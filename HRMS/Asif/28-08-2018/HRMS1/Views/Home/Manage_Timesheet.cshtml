@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "Manage_Timesheet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/sidebar-dropdown.css" rel="stylesheet" />
+<body style="background-color:#e9e8e8;">
+    <div class="container">
+
+        <div class="sidenav">
+            <div style="margin-left:10px">
+                <ul style="list-style-type:none; color:white;">
+                    <li>
+                        <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " />
+                    </li>
+                    <br />
+                    <li style="margin-left:-15px">Employee name</li>
+                </ul>
+                <hr />
+
+            </div>
+            <hr />
+            <a href="#">Overview</a>
+            <a href="#">Add Clock-time</a>
+            <a href="#">Upload Timesheet </a>
+            <a href="#">Manage Timesheet </a>
+            <a href="#">Clocked-in list </a>
+            <a href="#">Auto Approval </a>
+        </div>
+
+        @************heading row(full)****************@
+        <div class="row">
+            <div class="col-sm-9" id="Attendance-heading">
+                <p class="title">Attendance<p>
+            </div>
+        </div>
+        @*********************************** manage  time sheet********************************@
+        <div class="row">
+
+            <div class="col-sm-9" id="manage-timesheet">
+                <p class="heading1">Time sheet</p>
+
+                <form>
+                    <div class="form-group" >
+                        @*<div id="timesheet-block-head">*@
+                        <input type="date" name="from" id="datepicker1">
+                        <input type="date" name="to" id="datepicker2">
+                        <select id="select6">
+                            <option>Approve</option>
+                            <option>Unapprove</option>
+                            <option>Delete</option>
+
+                        </select>
+                        <select id="select7">
+                            <option value="">Today</option>
+                            <option value="">Yesterday</option>
+                            <option value="">This Week</option>
+                            <option value="">Last Week</option>
+                            <option value="">This Month</option>
+                            <option value="">Last Month</option>
+                            <option value="">All Time</option>
+
+                        </select>
+                        <select id="select3">
+                            <option value="">All Employee</option>
+                            <option value="">Prajakta mande</option>
+                            <option value="">emp2</option>
+                            <option value="">emp3</option>
+                            <option value="">emp4</option>
+
+                        </select>
+                        <select id="select4">
+                            <option value="">All Schedule</option>
+                            <option value="">" "</option>
+                            <option value="">" "</option>
+                            <option value="">" "</option>
+                           
+
+                        </select>
+
+                        @*</div>*@
+                        <hr style="border:2px solid #e9e8e8;" />
+                        <style>
+                            #timesheet-table {
+                                width: 100%;
+                                font-size: 16px;
+                                color: black;
+                                // border:1px solid black;
+                            }
+
+                                #timesheet-table tr:hover {
+                                    background-color: #f2f1f1;
+                                }
+
+                            #checkbox1 {
+                                zoom: 1.3;
+                            }
+                        </style>
+                        <table class="table table-bordered" id="timesheet-table">
+                            <thead style="background-color:#d5d5d5">
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" name="vehicle1" value="Bike" id="checkbox1">Employee
+                                    </th>
+                                    <th>Clock in</th>
+                                    <th>Clock out</th>
+                                    <th>Hours</th>
+                                    <th>Break</th>
+                                    <th>
+                                        <select id="select5">
+                                            <option>Approve</option>
+                                            <option>Unapprove</option>
+                                            <option>Delete</option>
+
+                                        </select>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="vehicle1" value="Bike">Prajakta
+                                    </td>
+                                    <td>9:30</td>
+                                    <td>6:30</td>
+                                    <td>9Hr</td>
+                                    <td>lunch</td>
+                                    <td>
+                                        <input type="checkbox" name="vehicle1" value="Bike">
+                                        Approve
+                                        <input type="checkbox" name="vehicle1" value="Bike" style="margin-left:15px">
+                                        Unapprove
+                                        <input type="button" name="submit" value="submit" style="margin-left:5px;">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="vehicle1" value="Bike">Ilyas
+                                    </td>
+                                    <td>9:30</td>
+                                    <td>6:30</td>
+                                    <td>9Hr</td>
+                                    <td>lunch</td>
+                                    <td>
+                                        <input type="checkbox" name="Approve" value="approve    ">
+                                        Approve
+                                        <input type="checkbox" name="Unapprove" value="unapprove" style="margin-left:15px">
+                                        Unapprove
+                                        <input type="button" name="submit" value="submit" style="margin-left:5px;">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="vehicle1" value="Bike">Asif
+                                    </td>
+                                    <td>9:30</td>
+                                    <td>6:30</td>
+                                    <td>9Hr</td>
+                                    <td>lunch</td>
+                                    <td>
+                                        <input type="checkbox" name="vehicle1" value="Bike">
+                                        Approve
+                                        <input type="checkbox" name="vehicle1" value="Bike" style="margin-left:15px">
+                                        Unapprove
+                                        <input type="button" name="submit" value="submit" style="margin-left:5px;">
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr style="border:2px solid #e9e8e8;" />
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> @*/container*@
+
+        
+

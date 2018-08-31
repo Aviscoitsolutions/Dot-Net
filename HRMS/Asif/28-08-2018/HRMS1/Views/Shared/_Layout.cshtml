@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<link href="~/css/style.css" rel="stylesheet" />
+<head>
+    <meta charset="utf-8" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top navcss">*@
+        <div class=" navbar-fixed-top navcss">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                    <img src="~/images/AVISCO-511.png" height=70px width=100px  class="navimg "/>
+                </div>
+
+                @*<div class="navbar-collapse collapse ">*@
+                <div class="navcss navbar-collapse collapse ">
+
+                    <ul class="nav navbar-nav navcss" style="margin-left:10px;">
+                        <li>@Html.ActionLink("Dash Board", "DashBoard", "Home")</li>
+                        <li>@Html.ActionLink("Shift Planning", "ShiftPlanning", "Home")</li>
+                        <li>@Html.ActionLink("Attendance", "Attendance", "Home")</li>
+                        <li id="l1">@Html.ActionLink("Leaves", "leaves", "Home")</li>
+                        <li>@Html.ActionLink("Pay Roll", "PayRoll", "Home")</li>
+                        <li>@Html.ActionLink("Employee", "Employee", "Home")</li>
+                        <li id="report">@Html.ActionLink("Reports", "Reports", "Home")</li>
+                        <li>@Html.ActionLink("Subscription", "Subscription", "Home")</li>
+
+
+                        <li style="padding:15px">
+
+                            <img src="~/images/setting.png" onclick="@("window.location.href='"+@Url.Action("Setting","Home")+"'")" width="30px" height="30px" style="margin-left:10px; margin-top:0px" />
+
+                        </li>
+                        <li>
+                            <img src="~/images/Logout-512.png" width="30px" height="30px" style="margin-left:10px ;margin-top:15px" id="logout" />
+                        </li>
+</div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            @*<footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>*@
+            
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+     
+        if ($("#usertype").text() == "Employee") {
+            $("#report").hide();
+        }
+    });
+
+        $("#logout").click(function () {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                //data: "{product:" + JSON.stringify(product) + "}",
+                url: "/Home/expire",
+                success: function (data) {
+                    window.location.reload();
+                }
+            })
+    });
+
+</script>
