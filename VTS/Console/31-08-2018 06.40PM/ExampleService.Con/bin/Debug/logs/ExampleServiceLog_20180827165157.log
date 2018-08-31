@@ -1,0 +1,14 @@
+27-08-2018 16:51:57 UDP: Started listening at port 8414
+27-08-2018 16:51:57 TCP: Started listening at port 10025
+27-08-2018 16:51:57 TCP Output Control: Started listening at port 668
+27-08-2018 16:51:58 TCP Output Control: Error in confirmation checker.
+27-08-2018 16:51:58 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+27-08-2018 16:52:08 TCP: Got new connection: 42.106.27.200:38519
+27-08-2018 16:52:09 TCP: Recieved 18 bytes from socket.
+27-08-2018 16:52:09 TCP: Checking for keyword validity.

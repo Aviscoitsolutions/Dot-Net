@@ -1,0 +1,3136 @@
+29-06-2018 17:55:55 UDP: Started listening at port 8414
+29-06-2018 17:55:55 TCP: Started listening at port 10025
+29-06-2018 17:55:56 TCP Output Control: Started listening at port 668
+29-06-2018 17:56:01 TCP Output Control: Error in confirmation checker.
+29-06-2018 17:56:01 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\inetpub\wwwroot\example\source\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\inetpub\wwwroot\example\source\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\inetpub\wwwroot\example\source\ExampleService\TCPOutputControl.cs:line 312
+29-06-2018 17:56:27 TCP: Got new connection: 106.78.160.133:28763
+29-06-2018 17:56:27 TCP: Recieved 7 bytes from socket.
+29-06-2018 17:56:28 TCP: Checking for keyword validity.
+29-06-2018 17:56:28 TCP: Keyword valid. Waiting for data.
+29-06-2018 17:56:28 TCP: Recieved 605 bytes from socket.
+29-06-2018 17:56:29 TCP: Parsing recieved data.
+29-06-2018 17:56:29 TCP: ---- Parser log start ----
+29-06-2018 17:56:29 Helper: IMEI: 866710039995144
+29-06-2018 17:56:30 Packet parser: 1: Packet type: 7. 29-06-2018 12:14:40 PM
+29-06-2018 17:56:31 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:32 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:33 Packet parser: 8701E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:56:33 Packet parser: 38: Packet type: 7. 29-06-2018 12:14:50 PM
+29-06-2018 17:56:34 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:35 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:35 Packet parser: D701E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:56:37 Packet parser: 75: Packet type: 7. 29-06-2018 12:15:00 PM
+29-06-2018 17:56:37 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:38 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:39 Packet parser: 2702E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:56:39 Packet parser: 112: Packet type: 7. 29-06-2018 12:15:10 PM
+29-06-2018 17:56:40 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:40 Packet parser: 7DT0: Spd=0,Sat=11,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:40 Packet parser: 7702E59D0B406ABC93429F1B9441001B48200200000000A880772F94011654277401002C
+29-06-2018 17:56:41 Packet parser: 149: Packet type: 7. 29-06-2018 12:15:20 PM
+29-06-2018 17:56:41 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:42 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:42 Packet parser: C702E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:56:43 Packet parser: 186: Packet type: 7. 29-06-2018 12:15:30 PM
+29-06-2018 17:56:43 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:44 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:44 Packet parser: 1703E59D0B406ABC93429F1B9441001C48200200000000A880652F94011654277401002C
+29-06-2018 17:56:44 Packet parser: 223: Packet type: 7. 29-06-2018 12:15:40 PM
+29-06-2018 17:56:45 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:46 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:46 Packet parser: 6703E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:56:47 Packet parser: 260: Packet type: 7. 29-06-2018 12:15:50 PM
+29-06-2018 17:56:48 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:50 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:50 Packet parser: B703E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:56:50 Packet parser: 297: Packet type: 7. 29-06-2018 12:16:00 PM
+29-06-2018 17:56:51 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:51 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:51 Packet parser: 0704E59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002C
+29-06-2018 17:56:51 Packet parser: 334: Packet type: 7. 29-06-2018 12:16:10 PM
+29-06-2018 17:56:52 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:52 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:52 Packet parser: 5704E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:56:53 Packet parser: 371: Packet type: 7. 29-06-2018 12:16:20 PM
+29-06-2018 17:56:54 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:55 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:55 Packet parser: A704E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:56:56 Packet parser: 408: Packet type: 7. 29-06-2018 12:16:30 PM
+29-06-2018 17:56:56 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:57 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:57 Packet parser: F704E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:56:58 Packet parser: 445: Packet type: 7. 29-06-2018 12:16:40 PM
+29-06-2018 17:56:58 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:56:59 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:56:59 Packet parser: 4705E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:56:59 Packet parser: 482: Packet type: 7. 29-06-2018 12:16:50 PM
+29-06-2018 17:57:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:57:00 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:57:01 Packet parser: 9705E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:57:01 Packet parser: 519: Packet type: 7. 29-06-2018 12:17:00 PM
+29-06-2018 17:57:02 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:57:03 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:57:03 Packet parser: E705E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:57:04 Packet parser: 556: Packet type: 7. 29-06-2018 12:17:10 PM
+29-06-2018 17:57:05 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:57:05 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:57:06 Packet parser: 3706E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 17:57:06 TCP: ---- Parser log end ----
+29-06-2018 17:57:18 TCP: Parse results:
+Parsed items from packet: 16
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:14:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:14:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 11,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:10"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:20"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12133,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:30"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:10"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:20"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:30"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:17:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:17:10"
+}
+
+29-06-2018 17:57:20 TCP: ---- Saving to database ----
+29-06-2018 17:57:40 TCP: ---- Successfully saved to database ----
+29-06-2018 17:57:48 TCP: Got new connection: 106.77.34.22:60385
+29-06-2018 17:57:48 TCP: Recieved 7 bytes from socket.
+29-06-2018 17:57:48 TCP: Checking for keyword validity.
+29-06-2018 17:57:49 TCP: Keyword valid. Waiting for data.
+29-06-2018 17:57:50 TCP: Recieved 605 bytes from socket.
+29-06-2018 17:57:50 TCP: Parsing recieved data.
+29-06-2018 17:57:51 TCP: ---- Parser log start ----
+29-06-2018 17:57:51 Helper: IMEI: 866710039995144
+29-06-2018 17:57:52 Packet parser: 1: Packet type: 7. 29-06-2018 12:14:40 PM
+29-06-2018 17:57:53 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:57:53 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:57:54 Packet parser: 8701E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:57:54 Packet parser: 38: Packet type: 7. 29-06-2018 12:14:50 PM
+29-06-2018 17:57:55 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:57:57 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:57:58 Packet parser: D701E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:58:00 TCP: Connection broke
+29-06-2018 17:58:00 Packet parser: 75: Packet type: 7. 29-06-2018 12:15:00 PM
+29-06-2018 17:58:02 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:03 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:04 Packet parser: 2702E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:58:04 Packet parser: 112: Packet type: 7. 29-06-2018 12:15:10 PM
+29-06-2018 17:58:05 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:06 Packet parser: 7DT0: Spd=0,Sat=11,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:08 Packet parser: 7702E59D0B406ABC93429F1B9441001B48200200000000A880772F94011654277401002C
+29-06-2018 17:58:08 Packet parser: 149: Packet type: 7. 29-06-2018 12:15:20 PM
+29-06-2018 17:58:10 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:11 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:12 Packet parser: C702E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:58:13 Packet parser: 186: Packet type: 7. 29-06-2018 12:15:30 PM
+29-06-2018 17:58:14 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:15 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:17 Packet parser: 1703E59D0B406ABC93429F1B9441001C48200200000000A880652F94011654277401002C
+29-06-2018 17:58:18 Packet parser: 223: Packet type: 7. 29-06-2018 12:15:40 PM
+29-06-2018 17:58:19 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:21 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:22 Packet parser: 6703E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:58:23 Packet parser: 260: Packet type: 7. 29-06-2018 12:15:50 PM
+29-06-2018 17:58:25 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:27 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:29 Packet parser: B703E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:58:30 Packet parser: 297: Packet type: 7. 29-06-2018 12:16:00 PM
+29-06-2018 17:58:31 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:32 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:34 Packet parser: 0704E59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002C
+29-06-2018 17:58:35 Packet parser: 334: Packet type: 7. 29-06-2018 12:16:10 PM
+29-06-2018 17:58:36 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:38 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:40 Packet parser: 5704E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:58:41 Packet parser: 371: Packet type: 7. 29-06-2018 12:16:20 PM
+29-06-2018 17:58:44 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:45 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:46 Packet parser: A704E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:58:47 Packet parser: 408: Packet type: 7. 29-06-2018 12:16:30 PM
+29-06-2018 17:58:49 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:51 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:53 Packet parser: F704E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:58:55 Packet parser: 445: Packet type: 7. 29-06-2018 12:16:40 PM
+29-06-2018 17:58:56 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:58:58 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:58:59 Packet parser: 4705E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:58:59 Packet parser: 482: Packet type: 7. 29-06-2018 12:16:50 PM
+29-06-2018 17:59:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:00 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:00 Packet parser: 9705E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:59:00 Packet parser: 519: Packet type: 7. 29-06-2018 12:17:00 PM
+29-06-2018 17:59:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:00 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:00 Packet parser: E705E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:59:00 Packet parser: 556: Packet type: 7. 29-06-2018 12:17:10 PM
+29-06-2018 17:59:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:00 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:00 Packet parser: 3706E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 17:59:00 TCP: ---- Parser log end ----
+29-06-2018 17:59:01 TCP: Parse results:
+Parsed items from packet: 16
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:14:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:14:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 11,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:10"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:20"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12133,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:30"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:10"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:20"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:30"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:17:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:17:10"
+}
+
+29-06-2018 17:59:31 TCP: ---- Saving to database ----
+29-06-2018 17:59:36 TCP: ---- Successfully saved to database ----
+29-06-2018 17:59:36 TCP: Recieved 605 bytes from socket.
+29-06-2018 17:59:36 TCP: Parsing recieved data.
+29-06-2018 17:59:36 TCP: ---- Parser log start ----
+29-06-2018 17:59:36 Helper: IMEI: 866710039995144
+29-06-2018 17:59:36 Packet parser: 1: Packet type: 7. 29-06-2018 12:14:40 PM
+29-06-2018 17:59:36 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:36 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:36 Packet parser: 8701E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:59:37 Packet parser: 38: Packet type: 7. 29-06-2018 12:14:50 PM
+29-06-2018 17:59:37 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:37 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:37 Packet parser: D701E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:59:39 Packet parser: 75: Packet type: 7. 29-06-2018 12:15:00 PM
+29-06-2018 17:59:39 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:39 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:39 Packet parser: 2702E59D0B406ABC93429F1B9441001C48200200000000A881772F94011654277401002C
+29-06-2018 17:59:39 Packet parser: 112: Packet type: 7. 29-06-2018 12:15:10 PM
+29-06-2018 17:59:39 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:39 Packet parser: 7DT0: Spd=0,Sat=11,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:39 Packet parser: 7702E59D0B406ABC93429F1B9441001B48200200000000A880772F94011654277401002C
+29-06-2018 17:59:39 Packet parser: 149: Packet type: 7. 29-06-2018 12:15:20 PM
+29-06-2018 17:59:39 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:39 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:39 Packet parser: C702E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:59:39 Packet parser: 186: Packet type: 7. 29-06-2018 12:15:30 PM
+29-06-2018 17:59:39 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:39 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:39 Packet parser: 1703E59D0B406ABC93429F1B9441001C48200200000000A880652F94011654277401002C
+29-06-2018 17:59:39 Packet parser: 223: Packet type: 7. 29-06-2018 12:15:40 PM
+29-06-2018 17:59:40 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:40 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:40 Packet parser: 6703E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:59:40 Packet parser: 260: Packet type: 7. 29-06-2018 12:15:50 PM
+29-06-2018 17:59:40 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:40 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:40 Packet parser: B703E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:59:40 Packet parser: 297: Packet type: 7. 29-06-2018 12:16:00 PM
+29-06-2018 17:59:40 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:40 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:40 Packet parser: 0704E59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002C
+29-06-2018 17:59:40 Packet parser: 334: Packet type: 7. 29-06-2018 12:16:10 PM
+29-06-2018 17:59:40 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:40 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:40 Packet parser: 5704E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:59:40 Packet parser: 371: Packet type: 7. 29-06-2018 12:16:20 PM
+29-06-2018 17:59:41 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:41 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:41 Packet parser: A704E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:59:41 Packet parser: 408: Packet type: 7. 29-06-2018 12:16:30 PM
+29-06-2018 17:59:41 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:41 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:41 Packet parser: F704E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:59:41 Packet parser: 445: Packet type: 7. 29-06-2018 12:16:40 PM
+29-06-2018 17:59:41 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:41 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:41 Packet parser: 4705E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:59:41 Packet parser: 482: Packet type: 7. 29-06-2018 12:16:50 PM
+29-06-2018 17:59:41 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:41 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:42 Packet parser: 9705E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 17:59:46 Packet parser: 519: Packet type: 7. 29-06-2018 12:17:00 PM
+29-06-2018 17:59:47 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:48 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:49 Packet parser: E705E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 17:59:49 Packet parser: 556: Packet type: 7. 29-06-2018 12:17:10 PM
+29-06-2018 17:59:50 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 17:59:51 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 17:59:51 Packet parser: 3706E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 17:59:51 TCP: ---- Parser log end ----
+29-06-2018 17:59:51 TCP: Parse results:
+Parsed items from packet: 16
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:14:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:14:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 33192,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 11,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:10"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:20"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12133,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:30"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:15:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:10"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:20"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:30"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:16:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:17:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:17:10"
+}
+
+29-06-2018 18:00:04 TCP: ---- Saving to database ----
+29-06-2018 18:00:08 TCP: ---- Successfully saved to database ----
+29-06-2018 18:00:08 TCP: Recieved 1024 bytes from socket.
+29-06-2018 18:00:08 TCP: Parsing recieved data.
+29-06-2018 18:00:08 TCP: ---- Parser log start ----
+29-06-2018 18:00:08 Helper: IMEI: 866710039995144
+29-06-2018 18:00:08 Helper: Checksum does not match.
+29-06-2018 18:00:08 TCP: ---- Parser log end ----
+29-06-2018 18:00:08 TCP: Parse results:
+Parsed items from packet: 0
+
+29-06-2018 18:00:08 TCP: Recieved 186 bytes from socket.
+29-06-2018 18:00:08 TCP: Unknown service id = 66 , closing connection.
+29-06-2018 18:00:09 TCP: Connection closed.
+29-06-2018 18:00:50 TCP: Got new connection: 106.77.34.22:45805
+29-06-2018 18:00:50 TCP: Recieved 7 bytes from socket.
+29-06-2018 18:00:50 TCP: Checking for keyword validity.
+29-06-2018 18:00:51 TCP: Keyword valid. Waiting for data.
+29-06-2018 18:00:51 TCP: Recieved 605 bytes from socket.
+29-06-2018 18:00:51 TCP: Parsing recieved data.
+29-06-2018 18:00:52 TCP: ---- Parser log start ----
+29-06-2018 18:00:53 Helper: IMEI: 866710039995144
+29-06-2018 18:00:53 Packet parser: 1: Packet type: 7. 29-06-2018 12:17:20 PM
+29-06-2018 18:00:53 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:54 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:57 Packet parser: 8706E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 18:00:57 Packet parser: 38: Packet type: 7. 29-06-2018 12:17:30 PM
+29-06-2018 18:00:57 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:57 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:57 Packet parser: D706E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 18:00:57 Packet parser: 75: Packet type: 7. 29-06-2018 12:17:40 PM
+29-06-2018 18:00:58 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:58 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:58 Packet parser: 2707E59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002D
+29-06-2018 18:00:58 Packet parser: 112: Packet type: 7. 29-06-2018 12:17:50 PM
+29-06-2018 18:00:58 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:58 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:58 Packet parser: 7707E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 18:00:58 Packet parser: 149: Packet type: 7. 29-06-2018 12:18:00 PM
+29-06-2018 18:00:58 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:58 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:59 Packet parser: C707E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 18:00:59 Packet parser: 186: Packet type: 7. 29-06-2018 12:18:10 PM
+29-06-2018 18:00:59 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:59 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:59 Packet parser: 1708E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 18:00:59 Packet parser: 223: Packet type: 7. 29-06-2018 12:18:18 PM
+29-06-2018 18:00:59 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:59 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:59 Packet parser: 5708E59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002C
+29-06-2018 18:00:59 Packet parser: 260: Packet type: 7. 29-06-2018 12:18:28 PM
+29-06-2018 18:00:59 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:59 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:59 Packet parser: A708E59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002C
+29-06-2018 18:00:59 Packet parser: 297: Packet type: 7. 29-06-2018 12:18:38 PM
+29-06-2018 18:00:59 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:00:59 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:00:59 Packet parser: F708E59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002C
+29-06-2018 18:00:59 Packet parser: 334: Packet type: 7. 29-06-2018 12:18:48 PM
+29-06-2018 18:01:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:00 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:00 Packet parser: 4709E59D0B406ABC93429F1B9441001C48200200000000A8806E2F940116542774010030
+29-06-2018 18:01:00 Packet parser: 371: Packet type: 7. 29-06-2018 12:18:58 PM
+29-06-2018 18:01:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:00 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:00 Packet parser: 9709E59D0B406ABC93429F1B9441001C48200200000000A8806E2F940116542774010030
+29-06-2018 18:01:00 Packet parser: 408: Packet type: 7. 29-06-2018 12:19:08 PM
+29-06-2018 18:01:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:00 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:00 Packet parser: E709E59D0B406ABC93429F1B9441001C48200200000000A880772F940116542774010030
+29-06-2018 18:01:00 Packet parser: 445: Packet type: 7. 29-06-2018 12:19:18 PM
+29-06-2018 18:01:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:00 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:00 Packet parser: 370AE59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002E
+29-06-2018 18:01:00 Packet parser: 482: Packet type: 7. 29-06-2018 12:19:28 PM
+29-06-2018 18:01:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:01 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:01 Packet parser: 870AE59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002E
+29-06-2018 18:01:01 Packet parser: 519: Packet type: 7. 29-06-2018 12:19:38 PM
+29-06-2018 18:01:01 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:02 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:02 Packet parser: D70AE59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002E
+29-06-2018 18:01:04 Packet parser: 556: Packet type: 7. 29-06-2018 12:19:48 PM
+29-06-2018 18:01:04 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:05 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:05 Packet parser: 270BE59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002E
+29-06-2018 18:01:06 TCP: ---- Parser log end ----
+29-06-2018 18:01:06 TCP: Parse results:
+Parsed items from packet: 16
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:17:20"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:17:30"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:17:40"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:17:50"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:18:00"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:18:10"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:18:18"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:18:28"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 44
+  },
+  "Time": "2018-06-29T12:18:38"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 48
+  },
+  "Time": "2018-06-29T12:18:48"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 48
+  },
+  "Time": "2018-06-29T12:18:58"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 48
+  },
+  "Time": "2018-06-29T12:19:08"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 46
+  },
+  "Time": "2018-06-29T12:19:18"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 46
+  },
+  "Time": "2018-06-29T12:19:28"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 46
+  },
+  "Time": "2018-06-29T12:19:38"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 46
+  },
+  "Time": "2018-06-29T12:19:48"
+}
+
+29-06-2018 18:01:08 TCP: ---- Saving to database ----
+29-06-2018 18:01:20 TCP: ---- Successfully saved to database ----
+29-06-2018 18:01:25 TCP: Recieved 605 bytes from socket.
+29-06-2018 18:01:26 TCP: Parsing recieved data.
+29-06-2018 18:01:26 TCP: ---- Parser log start ----
+29-06-2018 18:01:26 Helper: IMEI: 866710039995144
+29-06-2018 18:01:28 Packet parser: 1: Packet type: 7. 29-06-2018 12:19:58 PM
+29-06-2018 18:01:28 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:29 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:29 Packet parser: 770BE59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002D
+29-06-2018 18:01:30 Packet parser: 38: Packet type: 7. 29-06-2018 12:20:08 PM
+29-06-2018 18:01:31 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:31 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:31 Packet parser: C70BE59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 18:01:32 Packet parser: 75: Packet type: 7. 29-06-2018 12:20:18 PM
+29-06-2018 18:01:32 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:32 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:32 Packet parser: 170CE59D0B406ABC93429F1B9441001C48200200000000A880652F94011654277401002D
+29-06-2018 18:01:33 Packet parser: 112: Packet type: 7. 29-06-2018 12:20:28 PM
+29-06-2018 18:01:33 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:34 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:34 Packet parser: 670CE59D0B406ABC93429F1B9441001C48200200000000A880532F94011654277401002D
+29-06-2018 18:01:35 Packet parser: 149: Packet type: 7. 29-06-2018 12:20:38 PM
+29-06-2018 18:01:36 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:36 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:37 Packet parser: B70CE59D0B406ABC93429F1B9441001C48200200000000A880422F94011654277401002D
+29-06-2018 18:01:37 Packet parser: 186: Packet type: 7. 29-06-2018 12:20:48 PM
+29-06-2018 18:01:37 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:40 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:41 Packet parser: 070DE59D0B406ABC93429F1B9441001C48200200000000A8805C2F94011654277401002F
+29-06-2018 18:01:41 Packet parser: 223: Packet type: 7. 29-06-2018 12:20:58 PM
+29-06-2018 18:01:41 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:42 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:42 Packet parser: 570DE59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002F
+29-06-2018 18:01:42 Packet parser: 260: Packet type: 7. 29-06-2018 12:21:08 PM
+29-06-2018 18:01:42 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:42 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:43 Packet parser: A70DE59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002D
+29-06-2018 18:01:43 Packet parser: 297: Packet type: 7. 29-06-2018 12:21:18 PM
+29-06-2018 18:01:43 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:43 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:44 Packet parser: F70DE59D0B406ABC93429F1B9441001C48200200000000A880422F94011654277401002D
+29-06-2018 18:01:44 Packet parser: 334: Packet type: 7. 29-06-2018 12:21:28 PM
+29-06-2018 18:01:44 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:45 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:45 Packet parser: 470EE59D0B406ABC93429F1B9441001C48200200000000A880652F94011654277401002D
+29-06-2018 18:01:45 Packet parser: 371: Packet type: 7. 29-06-2018 12:21:38 PM
+29-06-2018 18:01:45 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:46 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:46 Packet parser: 970EE59D0B406ABC93429F1B9441001C48200200000000A880392F94011654277401002D
+29-06-2018 18:01:47 Packet parser: 408: Packet type: 7. 29-06-2018 12:21:48 PM
+29-06-2018 18:01:49 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:50 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:50 Packet parser: E70EE59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002D
+29-06-2018 18:01:51 Packet parser: 445: Packet type: 7. 29-06-2018 12:21:58 PM
+29-06-2018 18:01:51 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:52 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:53 Packet parser: 370FE59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002D
+29-06-2018 18:01:53 Packet parser: 482: Packet type: 7. 29-06-2018 12:22:08 PM
+29-06-2018 18:01:55 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:55 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:56 Packet parser: 870FE59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002D
+29-06-2018 18:01:57 Packet parser: 519: Packet type: 7. 29-06-2018 12:22:20 PM
+29-06-2018 18:01:57 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:58 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:01:58 Packet parser: E70FE59D0B406ABC93429F1B9441001C48200200000000A880772F94011654277401002D
+29-06-2018 18:01:59 Packet parser: 556: Packet type: 7. 29-06-2018 12:22:30 PM
+29-06-2018 18:01:59 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:01:59 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:02:00 Packet parser: 3710E59D0B406ABC93429F1B9441001C48200200000000A880392F94011654277401002D
+29-06-2018 18:02:01 TCP: ---- Parser log end ----
+29-06-2018 18:02:01 TCP: Parse results:
+Parsed items from packet: 16
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:19:58"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:20:08"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12133,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:20:18"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12115,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:20:28"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12098,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:20:38"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12124,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 47
+  },
+  "Time": "2018-06-29T12:20:48"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 47
+  },
+  "Time": "2018-06-29T12:20:58"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:21:08"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12098,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:21:18"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12133,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:21:28"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12089,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:21:38"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:21:48"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:21:58"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12142,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:22:08"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12151,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:22:20"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12089,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.868,
+    "Latitude": 18.5134869,
+    "Speed": 0,
+    "Satellites": 12,
+    "Hdop": 1,
+    "Direction": 144,
+    "Altitude": 544,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 45
+  },
+  "Time": "2018-06-29T12:22:30"
+}
+
+29-06-2018 18:02:13 TCP: ---- Saving to database ----
+29-06-2018 18:02:28 TCP: ---- Successfully saved to database ----
+29-06-2018 18:02:28 TCP: Recieved 605 bytes from socket.
+29-06-2018 18:02:28 TCP: Parsing recieved data.
+29-06-2018 18:02:29 TCP: ---- Parser log start ----
+29-06-2018 18:02:30 Helper: IMEI: 866710039995144
+29-06-2018 18:02:34 Packet parser: 1: Packet type: 7. 29-06-2018 12:19:58 PM
+29-06-2018 18:02:36 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+29-06-2018 18:02:36 Packet parser: 7DT0: Spd=0,Sat=12,HDOP=1,Course=144,Altitude = 544,Odo=0
+29-06-2018 18:02:37 Packet parser: 770BE59D0B406ABC93429F1B9441001C48200200000000A8806E2F94011654277401002D
+29-06-2018 18:02:38 Packet parser: 38: Packet type: 7. 29-06-2018 12:20:08 PM
+29-06-2018 18:02:39 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000

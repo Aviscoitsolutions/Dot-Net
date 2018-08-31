@@ -1,0 +1,38 @@
+30-08-2018 16:46:27 UDP: Started listening at port 8414
+30-08-2018 16:46:27 TCP: Started listening at port 10025
+30-08-2018 16:46:28 TCP Output Control: Started listening at port 668
+30-08-2018 16:46:29 TCP Output Control: Error in confirmation checker.
+30-08-2018 16:46:29 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+30-08-2018 16:46:38 TCP: Got new connection: 42.106.22.37:34121
+30-08-2018 16:46:40 TCP: Recieved 18 bytes from socket.
+30-08-2018 16:46:40 TCP: Checking for keyword validity.
+30-08-2018 16:46:42 TCP: Keyword valid. Waiting for data.
+30-08-2018 16:46:43 TCP: Recieved 15 bytes from socket.
+30-08-2018 16:46:44 TCP: Packet too short.
+30-08-2018 16:46:50 TCP: Recieved 36 bytes from socket.
+30-08-2018 16:47:41 TCP: Longitude:.553.816576
+30-08-2018 16:47:56 TCP: Got new connection: 42.106.17.82:33260
+30-08-2018 16:49:02 TCP: Lattitude:.3784.331528
+30-08-2018 16:49:03 TCP: Recieved 465 bytes from socket.
+30-08-2018 16:49:03 TCP: Date;.System.Byte[]
+30-08-2018 16:49:03 TCP: Checking for keyword validity.
+30-08-2018 16:49:05 TCP: Keyword valid. Waiting for data.
+30-08-2018 16:49:05 TCP: Recieved 72 bytes from socket.
+30-08-2018 16:49:06 TCP: Checking for keyword validity.
+30-08-2018 16:49:07 TCP: Recieved 36 bytes from socket.
+30-08-2018 16:49:08 TCP: Keyword valid. Waiting for data.
+30-08-2018 16:49:14 TCP: Longitude:.553.808896
+30-08-2018 16:49:14 TCP: Lattitude:.3784.318728
+30-08-2018 16:49:14 TCP: Date;.System.Byte[]
+30-08-2018 16:49:15 TCP: Recieved 36 bytes from socket.
+30-08-2018 16:49:15 TCP: Checking for keyword validity.
+30-08-2018 16:49:16 TCP: Keyword valid. Waiting for data.
+30-08-2018 16:49:27 TCP: Recieved 36 bytes from socket.
+30-08-2018 16:50:01 TCP: Longitude:.553.815808
+30-08-2018 16:50:02 TCP: Lattitude:.3784.314888

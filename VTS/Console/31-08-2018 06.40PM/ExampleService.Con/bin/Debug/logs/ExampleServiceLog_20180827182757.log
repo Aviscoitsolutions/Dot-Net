@@ -1,0 +1,221 @@
+27-08-2018 18:27:57 UDP: Started listening at port 8414
+27-08-2018 18:27:57 TCP: Started listening at port 10025
+27-08-2018 18:27:58 TCP Output Control: Started listening at port 668
+27-08-2018 18:27:59 TCP Output Control: Error in confirmation checker.
+27-08-2018 18:27:59 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+27-08-2018 18:28:17 TCP: Got new connection: 42.106.30.125:58345
+27-08-2018 18:28:18 TCP: Recieved 18 bytes from socket.
+27-08-2018 18:28:18 TCP: Checking for keyword validity.
+27-08-2018 18:28:18 TCP: Keyword valid. Waiting for data.
+27-08-2018 18:28:21 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:28:26 TCP: Parsing recieved data.
+27-08-2018 18:28:29 TCP: ---- Parser log start ----
+27-08-2018 18:29:35 Helper: IMEI: 872299826532808824
+27-08-2018 18:29:53 Helper: Checksum does not match.
+27-08-2018 18:29:56 TCP: ---- Parser log end ----
+27-08-2018 18:30:21 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:30:58 TCP: Recieved 1024 bytes from socket.
+27-08-2018 18:31:03 TCP: Parsing recieved data.
+27-08-2018 18:31:06 TCP: ---- Parser log start ----
+27-08-2018 18:31:09 Helper: IMEI: 872299826532808824
+27-08-2018 18:31:10 Helper: Checksum does not match.
+27-08-2018 18:31:10 TCP: ---- Parser log end ----
+27-08-2018 18:31:10 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:31:10 TCP: Recieved 452 bytes from socket.
+27-08-2018 18:31:33 TCP: Parsing recieved data.
+27-08-2018 18:31:34 TCP: ---- Parser log start ----
+27-08-2018 18:32:24 Helper: IMEI: 1441424568786397583
+27-08-2018 18:32:24 Helper: Checksum does not match.
+27-08-2018 18:32:24 TCP: ---- Parser log end ----
+27-08-2018 18:32:24 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:32:24 TCP: Recieved 837 bytes from socket.
+27-08-2018 18:32:26 TCP: Parsing recieved data.
+27-08-2018 18:32:26 TCP: ---- Parser log start ----
+27-08-2018 18:32:26 Helper: IMEI: 872299826532808824
+27-08-2018 18:32:26 Helper: Checksum does not match.
+27-08-2018 18:32:26 TCP: ---- Parser log end ----
+27-08-2018 18:32:26 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:32:26 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:32:29 TCP: Parsing recieved data.
+27-08-2018 18:32:29 TCP: ---- Parser log start ----
+27-08-2018 18:32:29 Helper: IMEI: 944357420570736760
+27-08-2018 18:32:29 Helper: Checksum does not match.
+27-08-2018 18:32:29 TCP: ---- Parser log end ----
+27-08-2018 18:32:29 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:32:29 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:32:30 TCP: Parsing recieved data.
+27-08-2018 18:32:30 TCP: ---- Parser log start ----
+27-08-2018 18:32:30 Helper: IMEI: 944357420570736760
+27-08-2018 18:32:30 Helper: Checksum does not match.
+27-08-2018 18:32:30 TCP: ---- Parser log end ----
+27-08-2018 18:32:30 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:32:31 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:32:32 TCP: Parsing recieved data.
+27-08-2018 18:32:32 TCP: ---- Parser log start ----
+27-08-2018 18:32:32 Helper: IMEI: 944357420570736760
+27-08-2018 18:32:32 Helper: Checksum does not match.
+27-08-2018 18:32:32 TCP: ---- Parser log end ----
+27-08-2018 18:32:32 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:32:34 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:36:04 TCP: Parsing recieved data.
+27-08-2018 18:36:04 TCP: Got new connection: 42.106.30.125:35531
+27-08-2018 18:36:06 TCP: Recieved 1024 bytes from socket.
+27-08-2018 18:36:07 TCP: Checking for keyword validity.
+27-08-2018 18:36:07 TCP: ---- Parser log start ----
+27-08-2018 18:36:07 TCP: Keyword valid. Waiting for data.
+27-08-2018 18:36:12 TCP: Recieved 47 bytes from socket.
+27-08-2018 18:37:04 Helper: IMEI: 944357420570736760
+27-08-2018 18:37:04 Helper: Checksum does not match.
+27-08-2018 18:37:04 TCP: ---- Parser log end ----
+27-08-2018 18:37:06 TCP: Parsing recieved data.
+27-08-2018 18:37:06 TCP: ---- Parser log start ----
+27-08-2018 18:37:06 Helper: IMEI: 9785196280320948231
+27-08-2018 18:37:06 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:37:06 TCP: Recieved 123 bytes from socket.
+27-08-2018 18:37:08 TCP: Parsing recieved data.
+27-08-2018 18:37:08 TCP: ---- Parser log start ----
+27-08-2018 18:37:08 Helper: IMEI: 944357420570736760
+27-08-2018 18:37:08 Helper: Checksum does not match.
+27-08-2018 18:37:08 TCP: ---- Parser log end ----
+27-08-2018 18:37:08 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:37:08 Helper: Error parsing data.
+27-08-2018 18:37:08 TCP: ---- Parser log end ----
+27-08-2018 18:37:08 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:37:08 TCP: Recieved 216 bytes from socket.
+27-08-2018 18:37:13 TCP: Parsing recieved data.
+27-08-2018 18:37:13 TCP: ---- Parser log start ----
+27-08-2018 18:37:13 Helper: IMEI: 944357420570736760
+27-08-2018 18:37:13 Helper: Checksum does not match.
+27-08-2018 18:37:13 TCP: ---- Parser log end ----
+27-08-2018 18:37:13 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:37:13 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:37:16 TCP: Parsing recieved data.
+27-08-2018 18:37:16 TCP: ---- Parser log start ----
+27-08-2018 18:37:16 Helper: IMEI: 944357420570736760
+27-08-2018 18:37:16 Helper: Checksum does not match.
+27-08-2018 18:37:16 TCP: ---- Parser log end ----
+27-08-2018 18:37:16 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:37:19 TCP: Got new connection: 42.106.30.125:47980
+27-08-2018 18:37:20 TCP: Recieved 18 bytes from socket.
+27-08-2018 18:37:20 TCP: Checking for keyword validity.
+27-08-2018 18:37:20 TCP: Keyword valid. Waiting for data.
+27-08-2018 18:37:23 TCP: Recieved 15 bytes from socket.
+27-08-2018 18:37:25 TCP: Parsing recieved data.
+27-08-2018 18:37:25 TCP: ---- Parser log start ----
+27-08-2018 18:37:25 Helper: IMEI: 1130590330583160
+27-08-2018 18:37:25 Helper: Checksum does not match.
+27-08-2018 18:37:25 TCP: ---- Parser log end ----
+27-08-2018 18:37:25 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:37:26 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:39:04 TCP: Parsing recieved data.
+27-08-2018 18:39:04 TCP: ---- Parser log start ----
+27-08-2018 18:39:04 Helper: IMEI: 944357420570736760
+27-08-2018 18:39:04 Helper: Checksum does not match.
+27-08-2018 18:39:04 TCP: ---- Parser log end ----
+27-08-2018 18:39:04 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:39:04 TCP: Recieved 375 bytes from socket.
+27-08-2018 18:39:05 TCP: Parsing recieved data.
+27-08-2018 18:39:05 TCP: ---- Parser log start ----
+27-08-2018 18:39:05 Helper: IMEI: 944357420570736760
+27-08-2018 18:39:05 Helper: Checksum does not match.
+27-08-2018 18:39:05 TCP: ---- Parser log end ----
+27-08-2018 18:39:05 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:39:12 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:39:15 TCP: Parsing recieved data.
+27-08-2018 18:39:17 TCP: ---- Parser log start ----
+27-08-2018 18:39:41 Helper: IMEI: 944357420570736760
+27-08-2018 18:40:04 Helper: Checksum does not match.
+27-08-2018 18:40:59 TCP: ---- Parser log end ----
+27-08-2018 18:40:59 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:40:59 TCP: Recieved 375 bytes from socket.
+27-08-2018 18:41:01 TCP: Parsing recieved data.
+27-08-2018 18:41:01 TCP: ---- Parser log start ----
+27-08-2018 18:41:01 Helper: IMEI: 944357420570736760
+27-08-2018 18:41:01 Helper: Checksum does not match.
+27-08-2018 18:41:01 TCP: ---- Parser log end ----
+27-08-2018 18:41:01 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:41:02 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:41:03 TCP: Parsing recieved data.
+27-08-2018 18:41:03 TCP: ---- Parser log start ----
+27-08-2018 18:41:03 Helper: IMEI: 944357420570736760
+27-08-2018 18:41:03 Helper: Checksum does not match.
+27-08-2018 18:41:03 TCP: ---- Parser log end ----
+27-08-2018 18:41:03 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:41:12 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:41:14 TCP: Parsing recieved data.
+27-08-2018 18:41:14 TCP: ---- Parser log start ----
+27-08-2018 18:41:14 Helper: IMEI: 944357420570736760
+27-08-2018 18:41:14 Helper: Checksum does not match.
+27-08-2018 18:41:14 TCP: ---- Parser log end ----
+27-08-2018 18:41:14 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:41:22 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:41:25 TCP: Parsing recieved data.
+27-08-2018 18:41:25 TCP: ---- Parser log start ----
+27-08-2018 18:41:25 Helper: IMEI: 944357420570736760
+27-08-2018 18:41:25 Helper: Checksum does not match.
+27-08-2018 18:41:25 TCP: ---- Parser log end ----
+27-08-2018 18:41:25 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:41:32 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:41:38 TCP: Parsing recieved data.
+27-08-2018 18:41:38 TCP: ---- Parser log start ----
+27-08-2018 18:41:38 Helper: IMEI: 944357420570736760
+27-08-2018 18:41:38 Helper: Checksum does not match.
+27-08-2018 18:41:38 TCP: ---- Parser log end ----
+27-08-2018 18:41:38 TCP: Parse results:
+Parsed items from packet: 0
+
+27-08-2018 18:41:42 TCP: Recieved 36 bytes from socket.
+27-08-2018 18:41:43 TCP: Parsing recieved data.
+27-08-2018 18:41:43 TCP: ---- Parser log start ----
+27-08-2018 18:41:43 Helper: IMEI: 944357420570736760
+27-08-2018 18:41:43 Helper: Checksum does not match.
+27-08-2018 18:41:43 TCP: ---- Parser log end ----
+27-08-2018 18:41:43 TCP: Parse results:
+Parsed items from packet: 0
+

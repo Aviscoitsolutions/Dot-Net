@@ -1,0 +1,19 @@
+09-05-2018 12:06:01 UDP: Started listening at port 8888
+09-05-2018 12:06:02 TCP: Started listening at port 8414
+09-05-2018 12:06:02 TCP Output Control: System.Net.Sockets.SocketException (0x80004005): Only one usage of each socket address (protocol/network address/port) is normally permitted
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at ExampleService.TCPOutputControl.Start() in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\TCPOutputControl.cs:line 68
+09-05-2018 12:06:02 TCP Output Control: Error in confirmation checker.
+09-05-2018 12:06:02 TCP Output Control: System.ArgumentException: Keyword not supported: 'port'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString, SqlCredential credential)
+   at ExampleService.DataAccess.MSSqlDataAccess..ctor(Nullable`1 imei) in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\DataAccess\MSSqlDataAccess.cs:line 19
+   at ExampleService.Helper.GetDatabase(Nullable`1 imei) in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\Helper.cs:line 22
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\TCPOutputControl.cs:line 307
