@@ -1,0 +1,835 @@
+﻿body {
+
+}
+input {
+    color:#000 !important;
+}
+.inputtext{
+    border:1px solid #ccc;
+    border-radius:5px;
+    height:35px;
+    color:#000;}
+.border1{border:1px solid #ccc;border-radius:5px;}
+.mt3 {margin-top: 20px !important;}
+.mt70 {margin-top: 70px !important;}
+.mr5 {margin-left: 50px !important;}
+.pb5 {padding-bottom: 50px !important;}
+.pt5 {padding-bottom: 50px !important;}
+.pdg45{padding:45px;}
+.pdg15 {padding: 15px;}
+.lrnopdg{padding-left:0px !important;padding-right:0px!important;}
+.brdb{border:1px solid #000;}
+.brtn{border-top:none;}
+.brbn{border-bottom: none;}
+.brrn{border-top: none;}
+.brln{border-top: none;}
+ul{width:100% !important;}
+.width9{width:9%;}
+.width10{width:10%;}
+.width15 {width: 15%;}
+.width12 { width: 12%;}
+.navbar {
+    position: relative;
+    /*min-height: 50px;*/
+    min-height: 22px;
+    margin-bottom: 20px;
+    border-radius: 0px;
+    border: none;
+}
+.navbar-inverse .navbar-collapse {
+    border:none !important;
+}
+.nav > li > a {
+    /*padding: 10px 30px 10px 30px !important;*/
+    padding: 0px 0px 0px 0px !important;
+    border: 1px solid #000;
+}
+.navbar-inverse .navbar-nav > li > a:hover{text-decoration:none;}
+/*********************layout page*****************************/
+.top {
+    background-color: gray;
+    top: 0px !important;
+    margin-top: 0px !important;
+    max-height: 100px;
+    padding: 8px;
+}
+.menurl{
+    float:right;
+}
+.nav-img {
+    /*// background-color:white;*/
+}
+.nav-heading {
+    font-size: 35px;
+    /*margin-left: 100px;*/
+    color: #fff;
+    line-height: 70px;
+ 
+}
+.lineh72{line-height:72px;}
+.select-menu {
+    /*margin-left: 250px;*/
+    width:100%;
+    border:2px solid black;
+    padding:3px;
+    box-shadow: 0 0 9px black;
+    border-radius:8px;
+}
+
+.selector {
+    width: auto;
+    border: 2px solid black;
+    padding: 3px;
+    box-shadow: 0 0 9px black;
+    border-radius: 3px;
+}
+    .nav-language:hover {
+        background-color:#ededed;
+    }
+/*device*/
+
+.b2 {
+    border: 1px solid red
+}
+
+.b3 {
+    border: 1px solid green;
+}
+
+.device {
+    margin: 0 auto;
+}
+
+.device input[type="text"] {
+        width: 100% !important;
+        max-width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        height: 35px;
+}
+
+.device label {
+        width: 100%;
+        border-radius: 5px;
+        background: #565656;
+        margin-bottom: 10px;
+        color: #fff;
+}
+
+.container-fluid1 table {
+    width: 100% !important;
+}
+
+    .container-fluid1 table tr th {
+        padding: 5px;
+    }
+
+.nopm {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+
+.tabled table tr th {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.tabled table tr td {
+    border: 1px solid #ccc;
+}
+
+.deivecsv a {
+    text-decoration: none;
+}
+
+.btn {
+    border: 1px solid #000;
+    color: #000;
+}
+
+    .btn:hover {
+        border: 1px solid #000;
+        color: #000;
+        background: transparent !important;
+    }
+
+.user input[type="text"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.user label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.modal-body input[type="text"], input[type="password"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.modal-body select {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.modal-body label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+.boxtop{top:200px;}
+.deivecsv modal-body input[type="text"], input[type="password"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.deivecsv modal-body select {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.deivecsv modal-body label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.hardware input[type="text"], input[type="password"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.hardware label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+/*device*/
+/*tab*/
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: #000;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 20px;
+    width: 25%;
+}
+
+tablink:active {
+    background: #fff;
+    color: #000;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+tabcontent h3 {
+    color: #000 !important;
+}
+
+.tabcontent {
+    color: #000;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    background: #fff;
+}
+
+/*tab*/
+
+/*Firmware*/
+.firmware label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.firmware input[type="text"], input[type="password"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.firmware table tr th {
+    padding: 5px;
+}
+
+.firmware table tr td {
+    padding: 5px;
+}
+/*Firmware*/
+/*Gsm operator group*/
+.gsmgroup input[type="text"], input[type="password"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.gsmgroup label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.gsmgroup a {
+    text-decoration: none;
+}
+
+.gsmgroup table tr th {
+    padding: 5px;
+}
+
+.gsmgroup table tr td {
+    padding: 5px;
+}
+.oprety {
+    height: 35px;
+    width: 100%;
+    background: #ccc;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid #ccc
+}
+.oprtext {
+    border-radius: 0px !important;
+    /*border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;*/
+    border-top-left-radius:5px !important;
+    border-bottom-left-radius:5px !important;
+}
+.pdl0{padding-left:0px!important}
+.pdr0{padding-right:0px!important}
+
+
+
+
+
+/*gsm operator group*/
+/*Toggle css*/
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 0px;
+}
+/*Toggle css*/
+
+/*tab for XML Page*/
+/* Style tab links */
+.tablinkupdate {
+    background-color: #555;
+    color: #000;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 20px;
+    width: 25%;
+}
+
+tablinkupdate:active {
+    background: #fff;
+    color: #000;
+}
+
+.tablinkupdate:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+tabcontentupdate h3 {
+    color: #000 !important;
+}
+
+.tabcontentupdate {
+    color: #000;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    background: #fff;
+}
+/*tab for XML Page*/
+/*GEOZONE*/
+.geozone input[type="text"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.geozone label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.geo a {
+    text-decoration: none;
+}
+.geo imzone {
+    width: 19% !important;
+    float: left;
+}
+.geo deletezone {
+    width: 16% !important;
+    float: left;
+}
+.geo addzone {
+    width: 23% !important;
+    float: left;
+}
+.geo removezone {
+    width: 28% !important;
+    float: left;
+}
+
+.geozone table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+    .geozone table thead th {
+        padding: 5px;
+    }
+
+    .geozone table tbody tr td {
+        padding: 5px;
+    }
+
+/*GEOZONE*/
+/*Geo zone group   */
+.geogroup input[type="text"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.geogroup label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.geogroup a {
+    text-decoration: none;
+}
+
+.geogroup table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+    .geogroup table tr th {
+        padding: 5px;
+    }
+
+    .geogroup table tr td {
+        padding: 5px;
+    }
+/*Geo zone group*/
+/*LOGS*/
+.logs input[type="text"] {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 35px;
+}
+
+.logs label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.logs a {
+    text-decoration: none;
+}
+
+.logs table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+    .logs table tr th {
+        padding: 5px;
+    }
+
+    .logs table tr td {
+        padding: 5px;
+    }
+/*LOGS*/
+/*Real time view*/
+.rtview table {
+    border: 1px solid #ccc
+}
+
+    .rtview table tr td {
+        padding: 10px;
+    }
+
+.rtview label {
+    width: 100%;
+    border-radius: 5px;
+    background: #565656;
+    margin-bottom: 10px;
+    color: #fff;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.rtwtext {
+    border-radius: 5px;
+    color: #040404;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+}
+/*Real time view*/
+
+/*user*/
+
+.page-title {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.section {
+    border: 1px solid #ccc;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    /*//margin-left:-40px;*/
+    width: auto;
+    /*padding-left:15px;*/
+    /*padding-right: 20px;*/
+    border-radius: 5px;
+}
+.user table{width:100%;padding:5px;border:1px solid #ccc}
+    .user table thead th {
+        padding: 5px
+    }
+    .user table tr td {
+        padding: 5px;
+    }
+.textdco{text-decoration:none !important;}
+    /*user*/
+
+
+
+
+
+    /********************************************************Media 320 to 480*******************************************/
+    @media only screen and (min-width:320px) and (max-width:480px) {
+        .nav-heading {
+            /*// color: green;*/
+            font-size: 27px;
+            /*font-size: 20px;*/
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .menurl{
+            float: left;
+            width:100%;
+        }
+        select{
+            width: 100%;
+            max-width: 100% !important;
+        }
+        .nav > li {
+           /* border-bottom: 1px solid #000;*/
+        }
+
+        .nav-img {
+            margin-left: 0px !important;
+            width: 70px;
+            height: 60px;
+            padding: 5px;
+        }
+
+        .nav-language {
+            margin-left: 10px;
+            /*// margin-right:20px;*/
+            margin-bottom: 5px;
+        }
+        .boxtop {
+            top: 10px;
+        }
+
+        /*gsm operator*/
+        .oprety {
+            /* width: 100% !important; */
+            max-width: 100%; 
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            height: 35px;
+        }
+        .oprtext {
+            /* width: 100% !important; */
+            max-width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            height: 35px;
+        }
+        .pdl0 {
+            padding-left: 15px !important;
+        }
+
+        .pdr0 {
+            padding-right: 15px !important;
+        }
+        /*gsm operator*/
+        /*menu width*/
+        .width9 {
+            width: 100%;
+        }
+
+        .width10 {
+            width: 100%;
+        }
+
+        .width15 {
+            width: 100%;
+        }
+
+        .width12 {
+            width: 100%;
+        }
+        /*menu width*/
+
+
+
+    }
+/***********************************************MEDIA 481 to 767**********************************************************/
+    @media only screen and (min-width:481px) and (max-width:767px) {
+        .nav-heading {
+            /* color: green;*/
+            font-size: 27px;
+            margin-left: 0px;
+        }
+        select {
+            width: 100%;
+            max-width:100%!important;
+        }
+        .menurl {
+            float: left;
+        }
+        .boxtop {
+            top: 10px;
+        }
+        .nav-language {
+            margin-left: 10px;
+            /* margin-right:20px;*/
+            margin-top: 0px !important;
+            margin-bottom: 5px !important;
+        }
+
+        .top {
+            top: 0px !important;
+            margin-top: 0px !important;
+            max-height: 120px;
+            padding: 5px;
+        }
+        /*gsm operator*/
+        .oprety {
+            /* width: 100% !important; */
+            max-width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            height: 35px;
+        }
+
+        .oprtext {
+            /* width: 100% !important; */
+            max-width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            height: 35px;
+        }
+
+        .pdl0 {
+            padding-left: 15px !important;
+        }
+
+        .pdr0 {
+            padding-right: 15px !important;
+        }
+        /*gsm operator*/
+        /*menu width*/
+        .width9 {
+            width: 100%;
+        }
+
+        .width10 {
+            width: 100%;
+        }
+
+        .width15 {
+            width: 100%;
+        }
+
+        .width12 {
+            width: 100%;
+        }
+        /*menu width*/
+
+        
+    }
+
+    /***********************************************MEDIA 768 to 1024**********************************************************/
+
+@media only screen and (min-width:768px) and (max-width:1024px) {
+
+
+
+    
+    /*gsm operator*/
+    .oprety {
+        /* width: 100% !important; */
+        max-width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        height: 35px;
+    }
+
+    .oprtext {
+        /* width: 100% !important; */
+        max-width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        height: 35px;
+    }
+
+    .pdl0 {
+        padding-left: 15px !important;
+    }
+
+    .pdr0 {
+        padding-right: 15px !important;
+    }
+
+    /*gsm operator*/
+}
+
+@media screen and (min-width:1024px) {
+    .boxtop {
+        top: 100px;
+    }
+}
+
+    /*********************layout page legend*********************/
+    /***********************user page***********************/
+    /***********************user page end***********************/

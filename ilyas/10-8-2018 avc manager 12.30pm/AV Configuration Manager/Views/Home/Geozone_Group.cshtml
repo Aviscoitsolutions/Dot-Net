@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewBag.Title = "Geozone_Group";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid geogroup mt70">
+    <div class="border1" style="padding:15px">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <label>Name</label>
+                <input type="text" name="" id="" />
+            </div>
+            <div class="col-sm-3">
+                <label>Dealer</label>
+                <input type="text" name="" id="" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <input type="submit" name="search" value="Search" class="btn" />
+            </div>
+        </div>
+    </div>
+    <hr />
+    @* ADD dialog box Start *@
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog boxtop">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h6 class="modal-title text-center">Add Geozone Group</h6>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" id="name" name="" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label>Dealer</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" id="note" name="" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label style="">Notes</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" id="note" name="" />
+                            @*<select class="selector1" id="select-user" style="height:35px;">
+                                    <option>Dealer</option>
+                                    <option>SubDealer</option>
+                                </select>*@
+                        </div>
+                    </div>
+                </div> <!--content model-->
+                <div class="modal-footer" style="text-align:center">
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                    <button class="btn text-center" id="" name="">Create</button>
+                    <button class="btn text-center" data-dismiss="modal">Cancel</button>
+                </div>
+                <!--row end-->
+            </div>
+
+        </div>
+    </div>
+    @* ADD dialog box END *@
+    <div class="container-fluid22"><h4><a href="#" data-toggle="modal" data-target="#myModal">Add Geozone Group</a></h4></div>
+    <table style="width:100%;border:1px solid #ccc;padding:5px;" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Dealer</th>
+            <th>Notes</th>
+            <th>Total Count</th>
+            <th>Valid Geozone</th>
+            <th>Invalid Geozone</th>
+            <th>Size B</th>
+            <th>Status</th>
+        </tr>
+        <tr  data-toggle="modal" data-target="#myModalupdate">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr  data-toggle="modal" data-target="#myModalupdate">
+
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+</div>
+
+
+@* Update dialog box Start *@
+
+<!-- Modal -->
+<div class="modal fade" id="myModalupdate" role="dialog">
+    <div class="modal-dialog boxtop">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Update Geozone Group</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Name</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" id="name" name="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Dealer</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" id="note" name="" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label style="">Notes</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" id="note" name="" />
+                        @*<select class="selector1" id="select-user" style="height:35px;">
+                                <option>Dealer</option>
+                                <option>SubDealer</option>
+                            </select>*@
+                    </div>
+                </div>
+
+
+            </div> <!--content model-->
+            <div class="modal-footer" style="text-align:center">
+                @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                <button class="btn text-center" id="" name="">Update</button>
+                <button class="btn text-center" data-dismiss="modal">Cancel</button>
+            </div>
+
+
+
+
+            <!--row end-->
+        </div>
+
+    </div>
+</div>
+@* Update dialog box END *@
+

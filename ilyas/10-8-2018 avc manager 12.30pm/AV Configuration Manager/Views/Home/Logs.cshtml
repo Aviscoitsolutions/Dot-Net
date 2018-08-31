@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Logs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid logs mt70">
+    <div class="row border1 pdg15" id="user">
+        <div class="col-md-3">
+            <label class="w-100 text-center">IMEI</label>
+            <input type="text" name="imei" id="imei" value="" class="w-100 " />
+        </div>
+        <div class="col-md-3">
+            <label class="w-100 text-center">Dealer</label>
+            <input type="text" name="dealer" id="dealer" value="" class="w-100" />
+        </div>
+        <div class="col-md-3">
+            <label class="w-100 text-center">From</label>
+            <input type="text" name="from" id="from" value="" class="w-100" />
+        </div>
+        <div class="col-md-3">
+            <label class="w-100 text-center">To</label>
+            <input type="text" name="to" id="to" value="" class="w-100" />
+        </div>
+        <br /><br />
+        <center>
+            <input type="submit" value="Search" id="search-user" class="button btn mt3" />
+        </center>
+    </div>
+
+    <hr class="hr" />
+    <div class="container-fluid">      
+        <table class="mt3" border="1">
+            <thead>
+                    <th>IMEI</th>
+                    <th>Dealer</th>
+                    <th>Server Time Startup</th>
+                    <th>Device Time Startup</th>
+                    <th>Function Warning Message</th>            
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td>1</td>
+                    <td>Abuzar Ansari</td>
+                    <td>Abuzar.ansari@aviscoitsolutions</td>
+                    <td>9865321458</td>
+                    <td>Dealer</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>2</td>
+                    <td>Abuzar Ansari</td>
+                    <td>Abuzar.ansari@aviscoitsolutions</td>
+                    <td>9874561230</td>
+                    <td>Dealer</td>
+                    
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div><br />
+
+    
+</div>@*container*@

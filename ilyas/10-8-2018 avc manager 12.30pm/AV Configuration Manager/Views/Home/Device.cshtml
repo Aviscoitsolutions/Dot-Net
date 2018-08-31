@@ -1,0 +1,1531 @@
+﻿
+@{
+    ViewBag.Title = "Device";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<div class="container-fluid device nopm1 mt70 border1" style=" padding:15px !important;">
+    <div class="row mb-5">
+        <div class="col-md-12">            
+        </div>
+
+    </div>
+    <div class="row text-center mt3">
+        <div class="col-md-4">
+            <label class="w-100">IMEI</label>
+            <input type="text" name="imei" id="imei" value="" class="w-100 " />
+        </div>
+        <div class="col-md-4">
+            <label class="w-100">Device SMS No.</label>
+            <input type="text" name="smsno" id="smsno" value="" class="w-100" />
+        </div>
+        <div class="col-md-4">
+            <label class="w-100">APN Name</label>
+            <input type="text" name="apn" id="apn" value="" class="w-100" />
+        </div>
+    </div>
+    <div class="row text-center mt3">
+        <div class="col-md-4">
+            <label class="w-100">Dealer</label>
+            <input type="text" name="dealer" id="dealer" value="" class="w-100 " />
+        </div>
+        <div class="col-md-4">
+            <label class="w-100">Vehicle Modal</label>
+            <input type="text" name="vhmodel" id="vhmodel" value="" class="w-100" />
+        </div>
+        <div class="col-md-4">
+            <label class="w-100">IMSI</label>
+            <input type="text" name="imsi" id="imsi" value="" class="w-100" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center pt-5 mt3">
+            <input type="submit" name="Search" value="Search" id="search" class="btn" />
+        </div>
+    </div>
+
+</div>
+<hr class="" style="width:96%" />
+
+<div class="container-fluid deivecsv">
+    @* ADD dialog box Start *@
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog" style="width:100%">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">DEVICE</h3>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="text-center">Device Setting</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label> IMEI</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="imei" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Hardware Version</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="hdv" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Operator Group</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" id="cpassword" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label style="">Geozone Group</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="name" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label style="">XML Setting</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label style="">Dealer</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label> Note</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <textarea id="note" name="" style="width:100%;max-width:100%;border-radius:5px;border:1px solid #ccc"></textarea>
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label> Password</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" id="password" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!---Device Setting End-->
+                            <!---Firmware Start-->
+                            <h4 class="text-center">Firmware</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Preferred Firmware</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="imei" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Current Firmware</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="hdv" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Keep Current Firmware</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="checkbox" id="cpassword" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!---Firmware End-->
+                            <!--Sim CArd Start-->
+                            <h4 class="text-center">SIM Card</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>
+                                        Phone Number
+                                    </label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="imei" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>ICCID</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="hdv" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>IMSI</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="checkbox" id="cpassword" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+
+                            <!---sim card end-->
+                            <!--Warranty start-->
+                            <h4 class="text-center">Warranty</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Sent</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="checkbox" id="cpassword" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Date</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="hdv" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!--warranty end-->
+                            <!--Info start-->
+                            <h4 class="text-center">Info</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Version</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="checkbox" id="cpassword" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>GPS Firmware</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="hdv" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Modem Firmware</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="mdf" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Created in System</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="cis" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>First Activity</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="facvt" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!--Info end-->
+
+
+
+                        </div><!--col-md-6 1 -->
+                        <div class="col-md-6">
+                            <h4 class="text-center">Network</h4>
+                            <hr />
+                            <!--Network0 Start-->                            
+                            <script type="text/javascript">
+                                $(function () {
+                                    $("#sserver").click(function () {
+                                        //alert("*");
+                                        if (document.getElementById("sserver").checked) {
+                                            $("#shost").removeAttr('disabled');
+                                            $("#sport").removeAttr('disabled');
+                                            $("#sprotocol").removeAttr('disabled');
+                                        } else {
+                                            document.getElementById("shost").disabled = true;
+                                            document.getElementById("sprotocol").disabled = true;
+                                            document.getElementById("sport").disabled = true;
+                                        }
+                                    });
+                                });
+                            </script>
+
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Use Server Setting</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="checkbox" id="sserver" name="sserver" checked />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <h4 class="text-center">Server</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Host</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="shost" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Port</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="sport" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Main Protocol</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="sprotocol" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!---Network end-->
+                            <!--Direct Transfer Start-->
+                            <h4 class="text-center">Direct Transfer</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Host</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="dhost1123" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Port</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="dport" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Protocol</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="dprotocol11" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!---Direct Transfer End-->
+                            <!--Direct Transfer server2 Start-->
+                            <h4 class="text-center">Direct Transfer (Server2)</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Host</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="thost2" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Port</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="tport2" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Protocol</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="tprotocol2" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!---Direct Transfer Server2 End-->
+                            <!--APN Start-->
+                            <h4 class="text-center">APN</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="ahost2" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>User</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="aport22" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Password</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="apassword" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!---APN End-->
+                            <!--SMS Start-->
+                            <h4 class="text-center">SMS Number</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Service1</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="smsservice1" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>Service2</label>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" id="service2" name="" />
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <!---SMS End-->
+                        </div>
+                        <!--col-md-6 2 end2-->
+
+                    </div>
+                </div>
+                <div class="modal-footer text-center" style="text-align:center">
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                    <button class="btn text-center" id="" name="">Create.</button>
+                    <button class="btn text-center" data-dismiss="modal">Cancel</button>
+                </div>
+                <!--row end-->
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    @* ADD Device dialog box END *@
+    <h4><a href="#" data-toggle="modal" data-target="#myModal">Add Device</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#"> Download CSV</a></h4>
+</div>
+
+<div class="tabled">
+    <table border="1" style="margin-left:1% !important;">
+        <tr>
+            <th rowspan="2">-</th>
+            <th rowspan="2" class="text-center">Action</th>
+            <th rowspan="2" class="text-center1" style="border-right: none;">
+                @*<div class="float-left p-2">*@
+                IMEI
+            </th>
+            <th rowspan="2" style="border-left: none;">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a><a href="#"><i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Hardware Version</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Search Group</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th class="text-center" colspan="8">Firmware Version</th>
+
+            <th rowspan="2" class="text-center" style="border-right:none;">XML Setting</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Dealer</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">APN Name</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Server</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Device SMS Number</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th colspan="4" class="text-center"> Update State</th>
+            <th rowspan="2" class="text-center" style="border-right:none;">First Activity</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Last Activity</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Notes</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">IMSI</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">ICCID</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Geozone Group</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            @*<th rowspan="2" class="text-center" style="border-right:none;">Customer 1</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Customer 2</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>*@
+            <th rowspan="2" class="text-center" style="border-right:none;">Sending to Warranty Service Date</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th rowspan="2" class="text-center" style="border-right:none;">Created in System</th>
+            <th rowspan="2" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+        </tr>
+        <!--second---------------------------------------------------------------------------------------------------->
+        <tr>
+            <th style="border-right:none;">Preferred</th>
+            <th rowspan="" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th style="border-right:none;">Current</th>
+            <th rowspan="" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th style="border-right:none;">GIS</th>
+            <th rowspan="" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th style="border-right:none;">Modem</th>
+            <th rowspan="" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th style="border-right:none;">Settings</th>
+            <th rowspan="" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+            <th style="border-right:none;">Firmware</th>
+            <th rowspan="" style="border-left:none">
+                <div style="width:11px;float:right" class="b1">
+                    <a href="#"><i class="fas fa-caret-up" style="float:left"></i></a> <a href="#"> <i class="fas fa-caret-down" style="float:left;margin-top: 6px;margin-left: -9px;"></i></a>
+                </div>
+            </th>
+        </tr>
+        <!--header end-->
+        <!---td start--->
+        <tr>
+            <td colspan="" class="text-center"><input type="checkbox" name="alfred" id="alfred" value="" /></td>
+            <td colspan="" class="text-center">
+                <a href="#"><i class="fa fa-eye"></i></a><br />
+                <a href="#"><i class="fa fa-plus-square"></i></a><br />
+                <a href="#"><i class="fas fa-file-download"></i></a>
+            </td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">1</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">2</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">3</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">4</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">5</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">6</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">7</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">8</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">9</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">10</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">11</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">12</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">13</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">14</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">15</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">16</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">17</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">18</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">19</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">20</td>
+            @*<td colspan="2" data-toggle="modal" data-target="#myModal1">21</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">22</td>*@
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">23</td>
+            <td colspan="2" data-toggle="modal" data-target="#myModal1">24</td>
+        </tr>
+
+    </table>
+</div>
+
+
+
+
+
+
+@* Edit dialog box Start *@
+<!-- Modal -->
+
+    <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog" style="width:100%">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">DEVICE</h3>
+                </div>
+
+
+
+                <button class="tablink" onclick="openPage('Home', this, 'white')" id="defaultOpen" style="width: 50%;">Device</button>
+                <button class="tablink" onclick="openPage('News', this, 'white')" style="width: 50%;">Hardware Info</button>
+                @*<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+        <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>*@
+
+                <div id="Home" class="tabcontent">
+                    <!----------------------------Tab------------------------------------->
+                    @*<div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">DEVICE</h4>
+            </div>*@
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="text-center">Device Setting</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label> IMEI</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="imei" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Hardware Version</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="hdv" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Operator Group</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" id="cpassword" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label style="">Geozone Group</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="name" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label style="">XML Setting</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label style="">Dealer</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label> Note</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <textarea id="note" name="" style="width:100%;max-width:100%;border-radius:5px;border:1px solid #ccc"></textarea>
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label> Password</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" id="password" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!---Device Setting End-->
+                                <!---Firmware Start-->
+                                <h4 class="text-center">Firmware</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Preferred Firmware</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="imei" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Current Firmware</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="hdv" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Keep Current Firmware</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="checkbox" id="cpassword" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!---Firmware End-->
+                                <!--Sim CArd Start-->
+                                <h4 class="text-center">SIM Card</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>
+                                            Phone Number
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="imei" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>ICCID</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="hdv" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>IMSI</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="checkbox" id="cpassword" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+
+                                <!---sim card end-->
+                                <!--Warranty start-->
+                                <h4 class="text-center">Warranty</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Sent</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="checkbox" id="cpassword" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Date</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="hdv" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!--warranty end-->
+                                <!--Info start-->
+                                <h4 class="text-center">Info</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Version</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="checkbox" id="cpassword" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>GPS Firmware</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="hdv" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Modem Firmware</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="mdf" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Created in System</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="cis" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>First Activity</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="facvt" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!--Info end-->
+
+
+
+                            </div><!--col-md-6 1 -->
+                            <div class="col-md-6">
+                                <h4 class="text-center">Network</h4>
+                                <hr />
+                                <!--Network0 Start-->
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $("#sserver2").click(function () {
+                                            //alert("*");
+                                            if (document.getElementById("sserver2").checked) {
+                                                $("#shost2").removeAttr('disabled');
+                                                $("#sport2").removeAttr('disabled');
+                                                $("#sprotocol2").removeAttr('disabled');
+                                            } else {
+                                                document.getElementById("shost2").disabled = true;
+                                                document.getElementById("sprotocol2").disabled = true;
+                                                document.getElementById("sport2").disabled = true;
+                                            }
+                                        });
+                                    });
+                                </script>
+
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Use Server Setting</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="checkbox" id="sserver2" name="sserver2" checked />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <h4 class="text-center">Server</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Host</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="shost2" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Port</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="sport2" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Main Protocol</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="sprotocol2" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!---Network end-->
+                                <!--Direct Transfer Start-->
+                                <h4 class="text-center">Direct Transfer</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Host</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="hostt2" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Port</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="portt2" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Protocol</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="protocoll2" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!---Direct Transfer End-->
+                                <!--Direct Transfer server2 Start-->
+                                <h4 class="text-center">Direct Transfer (Server2)</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Host</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="host122" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Port</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="port122" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Protocol</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="protocol122" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!---Direct Transfer Server2 End-->
+                                <!--APN Start-->
+                                <h4 class="text-center">APN</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="host222" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>User</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="port222" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Password</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="password2" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!---APN End-->
+                                <!--SMS Start-->
+                                <h4 class="text-center">SMS Number</h4>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Service1</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="service12" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>Service2</label>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <input type="text" id="service22" name="" />
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                                <!---SMS End-->
+                            </div>
+                            <!--col-md-6 2 end2-->
+
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center" style="text-align:center">
+                        @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                        <button class="btn text-center" id="" name="">Update</button>
+                        <button class="btn text-center" data-dismiss="modal">Cancel</button>
+                    </div>
+                    <!--row end-->
+                </div>
+
+
+                <div id="News" class="tabcontent hardware">
+                    
+                    <h4 class="text-center pb5">Hardware Info</h4>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Hardware Version</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" id="host222" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Pin Out</label>
+                        </div>
+                        <div class="col-sm-1"><input type="text" id="pin1" name="pin1" /></div>
+                        <div class="col-sm-1"><input type="text" id="pin2" name="pin2" /></div>
+                        <div class="col-sm-1"><input type="text" id="pin3" name="pin3" /></div>
+                        <div class="col-sm-1"><input type="text" id="pin4" name="pin4" /></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+
+                        </div>
+                        <div class="col-sm-1 text-center"><input type="text" id="pin5" name="pin5" /></div>
+                        <div class="col-sm-1"><input type="text" id="pin6" name="pin6" /></div>
+                        <div class="col-sm-1"><input type="text" id="pin7" name="pin7" /></div>
+                        <div class="col-sm-1"><input type="text" id="pin8" name="pin8" /></div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>GPS Power Supply on/off  register</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="gpsreg" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>ADC Power Supply Multiplier (ADC 2)</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="adc2" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>ADC 3 Multiplier (ADC 3)</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="adc3" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>ADC 4 Multiplier (ADC 4)</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="adc4" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>ADC 5 Multiplier (ADC 5)</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="adc5" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Out 1 (MINUS)</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="out1" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Out 2 (MINUS)</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="out2" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Out 3 (MINUS)</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="out3" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>CAN Bus</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="checkbox" id="bus" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>1-Wire</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="checkbox" id="wire" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>RS-232</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="checkbox" id="rs232" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>EIA485</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="checkbox" id="eia485" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Accelorometer</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="acce" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Flash IC</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="flach" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Power supply min startup voltage</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="voltage" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Power supply min working voltage after startup</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="voltage" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Power supply stage 1</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="stage" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Clamping voltage clamping type</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="clamp" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>IN2,IN3,IN4,IN5,Max measuring frequency accuracy</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="accura" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>IN2,IN3,IN4,IN5 voltage threshold</label>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <input type="text" id="thres" name="" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div><!--Hardware End-->
+            </div>
+    </div>
+    @* Edit Device dialog box END *@
+
+
+</div><!---------------------------------------------tab---------------------------------------------------->
+
+
+
+
+<script>
+    function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>

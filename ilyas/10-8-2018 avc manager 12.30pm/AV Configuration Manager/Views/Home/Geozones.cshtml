@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Geozones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container-fluid geozone mt70">
+    <div class="border1">
+        <div class="row  pdg15" id="user">
+            <div class="col-md-3">
+                <label class="w-100 text-center">Name</label>
+                <input type="text" name="userid" id="userid" value="" class="w-100 " />
+            </div>
+            <div class="col-md-3">
+                <label class="w-100 text-center">Description</label>
+                <input type="text" name="username" id="username" value="" class="w-100" />
+            </div>
+            <div class="col-md-3">
+                <label class="w-100 text-center">Dealer</label>
+                <input type="text" name="surname" id="surname" value="" class="w-100" />
+            </div>
+            <div class="col-md-3">
+                <label class="w-100 text-center">Group</label>
+                <select class="selector1 border1" id="dealer" style="height:35px;width:100%">
+                    <option>Select Group</option>
+                    <option>Group1</option>
+                    <option>Group2</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="text-center pb5">            
+                <input type="submit" value="Search" id="search-user" class="button btn mt3" />           
+        </div>
+    </div>
+
+    <hr class="hr" />
+    <div class="container-fluid">
+        <div >
+            <div class="row geo" style1="margin-left:15px">
+                <div class="" ><h5><a href="#">Import Geozone from KML</a></h5></div>
+                <div class=""><h5><a href="#">Delete Selected Zone</a></h5></div>
+                <div class=""><h5><a href="#">Add Selected geozone to group</a></h5></div>
+                <div class=""><h5><a href="#">Remove Selected geozone from group</a></h5></div>
+                <h4 class="" style="background:#ddd" data-toggle="modal" data-target="#myModal"></h4>
+            </div>
+        </div>
+    </div>
+        <table class="geozone-table mt3" border="1">
+            <thead>
+            <th></th>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Dealer Name</th>
+            <th>Description</th>
+            <th>Number of Period</th>
+            <th>Status</th>
+            <th>Size B</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" style="margin-right:10px; " /></td>
+                    <td>1</td>
+                    <td>Abuzar Ansari</td>
+                    <td>Abuzar.ansari@aviscoitsolutions</td>
+                    <td>9865321458</td>
+                    <td>Dealer</td>
+                    <td>Avisco IT Solutions</td>
+                    <td>Dealer</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" style="margin-right:10px;" /></td>
+                    <td>2</td>
+                    <td>Abuzar Ansari</td>
+                    <td>Abuzar.ansari@aviscoitsolutions</td>
+                    <td>9874561230</td>
+                    <td>Dealer</td>
+                    <td>Avisco IT Solutions</td>
+                    <td>Dealer</td>
+                </tr>
+            </tbody>
+
+        </table>
+</div>

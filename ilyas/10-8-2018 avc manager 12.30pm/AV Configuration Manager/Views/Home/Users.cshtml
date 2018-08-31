@@ -1,0 +1,297 @@
+﻿
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/style.css" rel="stylesheet" />
+
+<style>
+    
+    
+</style>
+<body>
+    
+    <div class="container-fluid user mt70">
+        <div class="row section" id="user">
+            <div class="col-md-3">
+                <label class="w-100 text-center">User ID</label>
+                <input type="text" name="userid" id="userid" value="" class="w-100 " />
+            </div>
+            <div class="col-md-3">
+                <label class="w-100 text-center">Name</label>
+                <input type="text" name="username" id="username" value="" class="w-100" />
+            </div>
+            <div class="col-md-3">
+                <label class="w-100 text-center">Surname</label>
+                <input type="text" name="surname" id="surname" value="" class="w-100" />
+            </div>
+            <div class="col-md-3">
+                <label class="w-100 text-center">Dealer</label>
+                <input type="text" name="dealer" id="dealer" value="" class="w-100" />
+            </div>
+
+            <br /><br />
+            <center>
+                <input type="submit" value="Search" id="search-user" class="button btn mt3" />
+            </center>
+        </div>
+
+        @* ADD dialog box Start *@
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog" >
+
+                <!-- Modal content-->
+                <div class="modal-content boxtop">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center">Add User</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label> User ID:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Password:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="password" id="" name=""/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Confirm Password:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="password" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label style="">Name:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label style="">Email:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label style="">Contact No:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label> Role:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <select class="selector1" id="select-user" style="height:35px;">
+                                    <option>Dealer</option>
+                                    <option>SubDealer</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="text-align:center">
+                        @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                        <button class="btn text-center" id="" name="">Create</button>
+                        <button class="btn text-center" data-dismiss="modal">Cancel</button>
+                    </div>
+
+
+
+
+                    <!--row end-->
+                </div>
+
+            </div>
+        </div>
+        @* ADD dialog box END *@
+
+
+        <hr class="hr" />
+        <div class="container-fluid">
+            <h4 data-toggle="modal" data-target="#myModal"><a href="#" class="textdco">Add User</a></h4>
+            <table class="user-table" border="1">
+                <thead>
+                        <th></th>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact No</th>
+                        <th>Role</th>
+                        <th>Dealer</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" style="margin-right:10px; " /></td>
+                        <td data-toggle="modal" data-target="#myModal1">1</td>
+                        <td data-toggle="modal" data-target="#myModal1">Abuzar Ansari</td>
+                        <td data-toggle="modal" data-target="#myModal1">Abuzar.ansari@aviscoitsolutions</td>
+                        <td data-toggle="modal" data-target="#myModal1">9865321458</td>
+                        <td data-toggle="modal" data-target="#myModal1">Dealer</td>
+                        <td data-toggle="modal" data-target="#myModal1">Avisco IT SOLutions</td>
+                    </tr>
+                    <tr>
+                        <td ><input type="checkbox" style="margin-right:10px;" /></td>
+                        <td data-toggle="modal" data-target="#myModal1">2</td>
+                        <td data-toggle="modal" data-target="#myModal1">Abuzar Ansari</td>
+                        <td data-toggle="modal" data-target="#myModal1">Abuzar.ansari@aviscoitsolutions</td>
+                        <td data-toggle="modal" data-target="#myModal1">9874561230</td>
+                        <td data-toggle="modal" data-target="#myModal1">Dealer</td>
+                        <td data-toggle="modal" data-target="#myModal1">Avisco IT SOLutions</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div><br />
+
+        @* EDIT dialog box Start *@
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal1" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content boxtop">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center">Update User</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label> User ID:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Password:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="password" id="" name=""/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Confirm Password:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="password" id="" name=""/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label style="">Name:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label style="">Email:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label style="">Contact No:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label> Role:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <select class="selector1" id="select-user" style="height:35px;">
+                                    <option>Dealer</option>
+                                    <option>SubDealer</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="text-align:center;">
+                        @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                        <button class="btn" id="" name="">Update</button>
+                        <button class="btn" data-dismiss="modal">Cancel</button>
+                    </div>
+
+
+
+
+                    <!--row end-->
+                </div>
+
+            </div>
+        </div>
+        @* EDIT dialog box END*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @*<div class="row section" id="add-user">
+            <form>
+                <label style="margin-right:58px"> User ID:</label>
+                <input type="text" /><br />
+                <label style="margin-right:50px">Password:</label>
+                <input type="password" /><br />
+                <label>Repeat Password:</label>
+                <input type="password" /><br />
+                <label style="margin-right:68px">Name:</label>
+                <input type="text" /><br />
+                <label style="margin-right:68px">Email:</label>
+                <input type="text" /><br />
+                <label style="margin-right:30px">Contact No:</label>
+                <input type="text" /><br />
+                <label> Role:</label>
+                <select class="selector" id="select-user">
+                    <option>Dealer</option>
+                    <option>SubDealer</option>
+                </select><br />
+                <button>Create</button>
+                <button>Cancel</button>
+            </form>
+        </div>*@
+
+    </div>@*container*@
+
+</body>
