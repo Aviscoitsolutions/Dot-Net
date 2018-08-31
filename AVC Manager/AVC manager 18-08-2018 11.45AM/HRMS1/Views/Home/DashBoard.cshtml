@@ -1,0 +1,390 @@
+﻿
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/style.css" rel="stylesheet" />
+<link href="~/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<script src="~/bootstrap/bootstrap.min.js"></script>
+<script src="~/bootstrap/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+    $("#salary").hide();
+    //$("#clockin").click(function () {
+      
+    //    $("#clockin").prop('disabled', true);
+    //    var t = new Date();
+    //    $("#lblclockin").text(t.toLocaleTimeString());
+    //    var employee = { EmpId: $("#empid").text(), button: "clockin" }
+
+    //    $.ajax({
+    //        type: "POST",
+    //        data: "{employee:" + JSON.stringify(employee) + "}",
+    //        contentType: "application/json",
+    //        url: "/Home/submitattendance",
+    //        success: function (data) {
+    //            bindtable();
+
+    //        }
+
+    //    })
+
+    //});
+    $(document).ready(function () {
+
+       
+
+
+        $("#clockin").prop('disabled', false);
+        $("#clockout11").prop('disabled', false);
+
+        $.ajax({
+            type: "POST",
+          //  data: "{employee:" + JSON.stringify(employee) + "}",
+            contentType: "application/json",
+            url: "/Home/getbday",
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var prev = $("#bdayname").text();
+                    if (prev == "") {
+                        $("#bdayname").text(prev + ' ' + data[i].name);
+                    }
+                    else {
+                        $("#bdayname").text(prev + '  ,' + ' ' + data[i].name);
+                    }
+                }
+
+                $.ajax({
+                    type: "POST",
+                    //  data: "{employee:" + JSON.stringify(employee) + "}",
+                    contentType: "application/json",
+                    url: "/Home/getwannvisary",
+                    success: function (data) {
+                        if (data != null) {
+                            for (var i = 0; i < data.length; i++) {
+                                var prev = $("#aname").text();
+                                if (prev == "") {
+                                    $("#aname").text(prev + ' ' + data[i].name);
+                                }
+                                else {
+                                    $("#aname").text(prev + '  ,' + ' ' + data[i].name);
+                                }
+                            }
+                        }
+
+
+                    }
+                })
+            }
+
+        })
+
+        $("#edit").click(function () {
+           
+          if ($("#usertype").text().trim() == "Employee")
+        {
+            window.open("/Home/Employee");
+        }
+        else
+        {
+            window.open("/Home/EditEmployee");
+        }
+        });
+        $("#clockin").click(function () {
+            $("#time_sheet").show();
+            $("#clockin").prop('disabled', true);
+            var t = new Date();
+            $("#lblclockin").text(t.toLocaleTimeString());
+            var employee = { EmpId: $("#empid").text(), button: "clockin" }
+
+            $.ajax({
+                type: "POST",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                contentType: "application/json",
+                url: "/Home/submitattendance",
+                success: function (data) {
+                    bindtable();
+
+                }
+
+            })
+
+        });
+        $("#clockout11").click(function () {
+            var r = confirm("Do You Really Want To Checkout and leave this site");
+
+            if (r == true) {
+                var employee = { EmpId: $("#empid").text(), button: "clockout" }
+
+                $.ajax({
+                    type: "POST",
+                    data: "{employee:" + JSON.stringify(employee) + "}",
+                    contentType: "application/json",
+                    url: "/Home/submitattendance",
+                    success: function (data) {
+
+                        bindtable();
+                        window.location.reload();
+                    }
+
+                })
+            }
+
+        });
+
+        if ($("#usertype").text() == "Employee") {
+            var employee = { EmpId: $('#empid').text() }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                url: "/Home/profile",
+                success: function (data) {
+
+                    $('#sideprofile').attr('src', data[0].profilepath.trim());
+
+
+                }
+            })
+        }
+        $("#salary").hide();
+        if ($("#usertype").text() == "Employee") {
+            var employee = { EmpId: $("#empid").text(), }
+            $.ajax({
+                type: "POST",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                contentType: "application/json",
+                url: "/Home/getsalarydone",
+                success: function (data) {
+                    if (data == "Done") {
+                        $("#salary").show();
+                    }
+                    else {
+                        $("#salary").hide();
+                    }
+                }
+            })
+        }
+    });
+</script>
+<body>
+    <div class="container" style="margin-left:100px;margin-top:30px">
+        <div class="sidenav payroll-sidenav">
+            <div style="margin-left:10px">
+                <ul style="list-style-type:none; color:white;">
+                    <li>
+                        <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " class="emp-img" id="sideprofile" />
+                    </li>
+                </ul>
+            </div>
+            <br />
+            @*<ul style="list-style-type:none; color:white;">*@
+            <div style="color:white;">
+                <center>
+                    <label style="margin-left:0px;">
+                        Name:<label id="user">@ViewBag.username</label><br />
+                        <label style="margin-left:0px;">
+                            Type:<label id="usertype">@ViewBag.usertype</label><br />
+                            <label style="margin-left:0px;">ID:<label id="empid">@ViewBag.empid</label>
+
+                </center>
+            </div>
+
+            <hr />
+
+
+
+
+            <hr />
+            <a href="#">Profile</a>
+            <a href="#" id="edit">Edit</a>
+            <a href="@Url.Action("ChangePassword","Home")">Change Password </a>
+
+        </div>
+
+
+        @*<div class="container">
+
+            <div class="row">
+                <div class="col-lg-4" style="background-color:yellow">box1</div>
+                <div class="col-lg-6" style="background-color:green">box2</div>
+
+
+            </div>
+        </div>*@
+
+        @***************************** form grid**********************************@
+        @*<div class="container" style="margin-left:100px;margin-top:30px">*@
+        @*<div class="dashboard-container">
+        <div class="row">
+            <div class="col-lg-12" id="btn-row">
+                @*<button class="button">dashboard</button>
+
+                <button class="button">inbox</button>*@
+
+        <br /><br />
+        @*<a href="#" class="push_button red">Push the button</a>  <a href="#" class="push_button blue">Push the button</a>
+            </div>
+        </div>*@
+        @*********************************************************************@
+        <div class="row">
+            <div class="col-sm-6" id="time_clock">
+                @*//block 1-time clock*@
+                <form>
+                    <div class="form-group">
+                        <p class="heading1">Time clock</p>
+                        <button class="button" disabled="disabled" id="clockin" style="background-color:green;box-shadow: 0 3px #999!important;">clock in</button> <button class="button" id="clockout11"  disabled="disabled" style="background-color:green;box-shadow: 0 3px #999!important;">clock out</button><br />
+                        <label>Clocked in:</label> <label  id="lblclockin" style="padding:10px"></label> <label>Clocked Out:</label> <label  id="lblclockout"></label><br />
+                        @*<label> Break:</label>
+                        <label style="padding:10px" id="time"> break time</label>
+                        <lable id="time2">(12:33pm to 12:40pm)</lable>*@
+                        @*<input type="text" placeholder="click to add note" id="note" />
+
+                        <img src="~/images/coffee.png" width="30px" height="30px" />*@
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="col-sm-6" id="shift1">
+                @*block-2 shift*@
+                <form>
+                    <div class="form-group">
+                        <p class="heading1">Upcomming Shift</p>
+                        <button class="button-shift" style="background-color:green;box-shadow: 0 3px #999!important;">Shifts</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @****************************************************************@
+
+        @*second row*@
+
+
+        @******************* 3rd r0w **************************@
+        <div class="row">
+            @*<div class="col-sm-6" id="late">
+                <p class="heading1">Late For Work</p>
+
+            </div>*@
+
+
+            <div class="col-sm-6" id="birthday" style="margin-left: 23%;">
+                <p></p>
+                <div class="tab1">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen3">Birthday</button>
+                        <button class="tablinks" onclick="openCity(event, 'Paris')"> Anniversary</button>
+
+                    </div>
+
+                    <div id="London" class="tabcontent">
+                        <h3>Todays Birthday</h3>
+                        <p>Emp_Name:&nbsp;<label id="bdayname"></label></p>
+                    </div>
+
+                    <div id="Paris" class="tabcontent">
+                        <h3>Todays Anniversary</h3>
+                        Emp_Name <p id="aname"></p>
+                    </div>
+
+                    <script>
+                        function openCity(evt, cityName) {
+                            var i, tabcontent, tablinks;
+                            tabcontent = document.getElementsByClassName("tabcontent");
+                            for (i = 0; i < tabcontent.length; i++) {
+                                tabcontent[i].style.display = "none";
+                            }
+                            tablinks = document.getElementsByClassName("tablinks");
+                            for (i = 0; i < tablinks.length; i++) {
+                                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                            }
+                            document.getElementById(cityName).style.display = "block";
+                            evt.currentTarget.className += " active";
+                        }
+                        document.getElementById("defaultOpen3").click();
+                    </script>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        @****************************4th row*************************@
+
+        <div class="row">
+            <div class="col-sm-9" id="msg">
+                <p class="heading1">Message</p>
+                <a href="@Url.Action("mailbox1","Home")">
+                    <button class="msg_btn">New Message</button>
+                </a>
+
+                <div class="container1">
+
+                    <a id="salary" style="color:red;">Your salary has been done click here to download Salary Slip</a>
+                </div>
+                <style>
+                </style>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+</body>
+<script>
+                        $("#salary").click(function () {
+                            var id = $("#empid").text()
+                    var url='@Html.Raw(Url.Action("salaryslip", "Home", new {id = "__orderId__",}))';
+                              
+                    var params = url.replace('__orderId__', id);
+
+                    window.location.href = params;
+                });
+                        var employee = { EmpId: $("#empid").text() }
+                        $.ajax({
+                            type: "POST",
+                            data: "{employee:" + JSON.stringify(employee) + "}",
+                            contentType: "application/json",
+                            url: "/Home/getattendance",
+                            success: function (data) {
+
+                                if (data != null) {
+                                    if (data.ClockIn != null) {
+                                        var milisegundos = parseInt(data.ClockIn.replace("/Date(", "").replace(")/", ""));
+                                        var clockin = new Date(milisegundos).toLocaleTimeString("en-UE");
+                                    }
+                                    if (data.ClockOut != null) {
+                                        var milisegundos1 = parseInt(data.ClockOut.replace("/Date(", "").replace(")/", ""));
+                                        var clockout = new Date(milisegundos1).toLocaleTimeString("en-UE");
+                                    }
+                                    if (clockin!= null) {
+
+                                        $("#lblclockin").text(clockin);
+                                        $("#clockin").prop('disabled', true);
+
+                                    }
+                                   if(clockout != null)
+                                    {
+                                       $("#lblclockout").text(clockout);
+                                       $("#clockout11").prop('disabled', true);
+
+                                    }
+                                    else {
+
+
+
+                                    }
+
+
+
+
+
+                                }
+
+
+                            }
+
+                        })
+</script>
+
+

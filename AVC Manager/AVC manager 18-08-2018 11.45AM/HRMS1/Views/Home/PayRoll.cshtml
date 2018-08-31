@@ -1,0 +1,573 @@
+﻿
+@{
+    ViewBag.Title = "PayRoll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/style.css" rel="stylesheet" />
+
+<style>
+    .fieldset {
+        color: black;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+</style>
+<body style="background-color:#e9e8e8;">
+    <div class="container">
+
+        <div class="sidenav payroll-sidenav">
+            <div style="margin-left:10px">
+                <ul style="list-style-type:none; color:white;">
+                    <li>
+                        <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " class="emp-img" id="sideprofile" />
+                    </li>
+                </ul>
+            </div>
+            <br />
+            @*<ul style="list-style-type:none; color:white;">*@
+            <div style="color:white;">
+                <center>
+                    <label style="margin-left:0px;">
+                        Name:<label id="user">@ViewBag.username</label><br />
+                        <label style="margin-left:0px;">
+                            Type:<label id="usertype">@ViewBag.usertype</label><br />
+                            <label style="margin-left:0px;">ID:<label id="empid">@ViewBag.empid</label>
+
+                </center>
+            </div>
+
+            <hr />
+
+
+
+            @*<a href="#">Profile</a>*@
+            @*<a href="#">Edit</a>*@
+            @*<a href="#">Change Password </a>*@
+            @*<a href="#">Overview</a>
+        <a href="#">Edit Details</a>
+        <a href="#">Availability</a>
+        <a href="#">Leave</a>
+        <a href="#">Password</a>
+        <a href="#">Notifications</a>
+        <a href="#">Payroll</a>*@
+            </
+            @*<div class="sidenav employee-sidenav">
+        <div style="margin-left:10px">
+            <ul style="list-style-type:none; color:white;">
+                <li>
+                    <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " id="sideprofile" />
+                </li>
+                <br />
+                <li style="margin-left:-15px" id="user">@ViewBag.username</li>
+
+                <li style="margin-left:-15px" visibility="false" id="usertype">@ViewBag.usertype</li>
+                <li style="margin-left:-15px" visibility="false" id="empid">@ViewBag.empid</li>
+
+            </ul>
+            <hr />
+
+        </div>*@
+            <hr />
+            <a href="#">Profile</a>
+            <a href="#" id="edit">Edit</a>
+            <a href="@Url.Action("ChangePassword","Home")">Change Password </a>
+            <a href="#" id="salaryslips">Salary Slips</a>
+            <a><input type="text" id="salaryid" style="width: 37%;" onkeypress="javascript:return isNumber(event)" placeholder="Emp_ID" /> <input type="button" value="Print" style="color:black;" id="printslips" /></a>
+
+        </div>
+        <div id="payroll-container">
+            @************heading row(full)****************@
+
+            <div class="row">
+                <div class="col-sm-9" id="payroll-heading">
+                    <p class="title">Pay Roll<p>
+                </div>
+            </div>
+            @***************salary *****************@
+            <div class="row">
+                <div class="col-sm-9" id="Schedule-hours">
+
+                    <p class="heading1">Pay Roll</p>
+                    <hr class="hr" />
+                    <form stle="border:1px solid black;">
+                        <fieldset>
+                            <legend class="fieldset">Salary</legend>
+
+                            <label class="lable-font">From:</label>
+                            <input type="date" id="payroll-datepicker1" />
+                            <label class="lable-font" style="margin-left:30px;">To:</label>
+                            <input type="date" id="payroll-datepicker2" />
+                            <hr class="hr" />
+                            <label class="lable-font">Employee Id:</label>
+                            <input type="text" id="enterid" onkeypress="javascript:return isNumber(event)" style="margin-left:62px" />
+                            <input type="button" value="view" id="view" class="view-button" disabled="disabled" /><br />
+                            <label class="lable-font">Employee Name:</label>
+                            <label class="lable-font" id="payroll-emp" style="margin-left:31px"></label><br />
+                            <label class="lable-font">Designation:</label>
+                            <label class="lable-font" id="payroll-designation" style="margin-left:62px"></label><br />
+                            <label class="lable-font">Department:</label>
+                            <label class="lable-font" id="payroll-department" style="margin-left:64px"></label><br />
+                            <label class="lable-font">Total Days:</label>
+                            <label class="lable-font" id="payroll-days"
+                                   style="margin-left:73px"></label><br />
+                            <label class="lable-font">Total Present:</label>
+                            <label class="lable-font" id="paroll-present" style="margin-left:52px"></label><br />
+                            <label class="lable-font">Leave:</label>
+                            <label class="lable-font" id="payroll-leave" style="margin-left:108px"></label>
+                            <br />
+                            <hr class="hr" />
+                            <label class="lable-font">Basic Salary:</label>
+                            <label class="lable-font" id="salary1" style="margin-left:20px;"></label>
+                            <label class="lable-font" style="margin-left:50px;">Salary Per Day:</label>
+                            <label class="lable-font" id="salary2" style="margin-left:20px;"></label>
+                            <br />
+                            <label class="lable-font">Other Pay:</label>
+                            <input type="text" id="pay1" style="margin-left:40px;width:100px" onkeypress="javascript:return isNumber(event)" />
+                            <label class="lable-font" style="margin-left:50px">Total Pay:</label>
+                            <input type="text"  id="pay2" style="margin-left:63px;width:100px" />
+                            <br />
+                        </fieldset>
+                        <hr class="hr" />
+                        <fieldset>
+                            <legend class="fieldset">Deduction</legend>
+                            <label class="lable-font" >Leave:</label>
+                            <label class="lable-font" id="leaveamount" style="margin-left:98px;"></label><br />
+                            <label class="lable-font">TDS:</label>
+                            <input type="text" id="tds" style="width:100px;margin-left:110px" onkeypress="javascript:return isNumber(event)" /><br />
+                            <label class="lable-font">Profession tax:</label>
+                            <input type="text" id="tax" style="width:100px;margin-left:32px" onkeypress="javascript:return isNumber(event)" /><br />
+                            <label class="lable-font">Other Deductions:</label>
+                            <input type="text" id="dedctn" style="width:100px;margin-left:8px" onkeypress="javascript:return isNumber(event)" /><br />
+                            <label class="lable-font">Total Earning:</label>
+                            <label class="lable-font" id="earning" style="margin-left:39px;"></label><br />
+                        </fieldset>
+                        <hr class="hr" />
+                        <center>
+                            <input type="button" value="Submit" id="payrollprint" class="view-button" disabled="disabled" />
+                            <input type="reset" value="Cancel" id="payrollcancle" class="view-button" disabled="disabled" />
+                            <input type="button" value="Save&Print" id="saveprint" class="view-button"/>
+
+                            <br /><br />
+                        </center>
+                    </form>
+
+                </div>
+
+            </div>
+            @***************salary ends *****************@
+        </div>@*//payroll-container*@
+    </div>@*//container*@
+
+
+</body>
+<script>
+    function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }
+    if ($("#usertype").text() == "Employee") {
+        var employee = { EmpId: $('#empid').text() }
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            url: "/Home/Getleavedata",
+            success: function (data) {
+
+                $('#sideprofile').attr('src', data[0].profilepath.trim());
+
+
+            }
+        })
+    }
+    $("#salaryslips").click(function () {
+        $("#salaryid").show();
+        $("#printslips").show();
+    });
+    $(document).ready(function () {
+        $("#salaryid").hide();
+        $("#printslips").hide();
+        if ($("#usertype").text() == "Employee") {
+
+            $("#payroll-emp").attr("readonly", "true");
+            $("#payroll-department").attr("readonly", "true");
+            $("#payroll-designation").attr("readonly", "true");
+            $("#salary1").attr("readonly", "true");
+            $("#salary2").attr("readonly", "true");
+            $("#payroll-days").attr("readonly", "true");
+            $("#payroll-leave").attr("readonly", "true");
+            $("#paroll-present").attr("readonly", "true");
+            $("#leaveamount").attr("readonly", "true");
+            $("#payroll-datepicker1").attr("readonly", "true");
+            $("#payroll-datepicker2").attr("readonly", "true");
+            $("#enterid").attr("readonly", "true");
+            $("#payroll-emp").attr("readonly", "true");
+            $("#pay1").attr("readonly", "true");
+            $("#tds").attr("readonly", "true");
+            $("#tax").attr("readonly", "true");
+            $("#dedctn").attr("readonly", "true");
+            $("#pay2").attr("readonly", "true");
+            $("#view").hide();
+            $("#payrollprint").val("Print");
+            $("#payrollcancle").hide();
+            $("#saveprint").hide();
+            $("#salaryslips").hide();
+
+            $("#payrollprint").prop('disabled', false);
+            var employee = { EmpId: $("#empid").text(), }
+            $.ajax({
+
+                type: "POST",
+                contentType: "application/json",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                url: "/Home/getlastsalary",
+                success: function (data) {
+                    if (data != null) {
+
+
+                        var milisegundos = parseInt(data.DateTo.replace("/Date(", "").replace(")/", ""));
+                        var dateto = (new Date(milisegundos)).toISOString().split("T")[0];
+                        var milisegundos1 = parseInt(data.DateFrom.replace("/Date(", "").replace(")/", ""));
+                        var datefrom = (new Date(milisegundos1)).toISOString().split("T")[0];
+
+                        $("#enterid").val(data.EmpId);
+                        $("#payroll-emp").text(data.empname);
+                        $("#payroll-department").text(data.department);
+                        $("#payroll-designation").text(data.Designation);
+                        $("#salary1").text(data.basicsalary);
+                        $("#salary2").text(data.salaryperday);
+                        $("#payroll-days").text(data.totaldays);
+                        $("#payroll-leave").text(data.leavedays);
+                        $("#paroll-present").text(data.presentdays);
+                        $("#leaveamount").text(data.leavededuct);
+                        $("#earning").text(data.totalearning);
+                        $("#pay1").val(data.otherpay);
+                        $("#tds").val(data.TDS);
+                        $("#tax").val(data.profTax);
+                        $("#dedctn").val(data.otherdeduction);
+                        $("#pay2").val(data.totalpay);
+                        document.getElementById("payroll-datepicker1").value = datefrom.toString();
+                        document.getElementById("payroll-datepicker2").value = dateto.toString();
+
+                    }
+
+
+
+                }
+            })
+        }
+        else {
+            $("#view").prop('disabled', false);
+            $("#payrollprint").prop('disabled', false);
+            $("#payrollcancle").prop('disabled', false);
+
+        }
+        $("#pay2").attr('readonly', 'true');
+        $("#view").click(function () {
+            if ($("#payroll-datepicker1").val() == "") {
+                alert("Please Select Date From");
+                $("#payroll-datepicker1").focus();
+            }
+            else if ($("#payroll-datepicker2").val() == "") {
+                alert("Please Select Date To");
+                $("#payroll-datepicker2").focus();
+            }
+            else if ($("#enterid").val() == "") {
+                alert("Please Enter Employee ID");
+                $("#enterid").focus();
+            }
+            else {
+
+                var employee = { EmpId: $("#enterid").val(), datefrom: $("#payroll-datepicker1").val(), todate: $("#payroll-datepicker2").val(), }
+                $.ajax({
+
+                    type: "POST",
+                    contentType: "application/json",
+                    data: "{employee:" + JSON.stringify(employee) + "}",
+                    url: "/Home/lastsalary",
+                    success: function (data) {
+
+                        if (data != "null") {
+
+                            var milisegundos = parseInt(data.Dateto.replace("/Date(", "").replace(")/", ""));
+                            var lastsalary = (new Date(milisegundos)).toISOString().split("T")[0];
+
+                            document.getElementById("payroll-datepicker1").value = lastsalary.toString();
+
+                            getinfo();
+                        }
+                        else {
+
+                            getinfo();
+                        }
+
+                    }
+
+                })
+
+            }
+        });
+
+        $("#printslips").click(function () {
+
+            var id = $("#salaryid").val()
+            if (id == "") {
+                alert("Please Enter Employee ID");
+                $("#salaryid").focus();
+            }
+            else {
+                var url = '@Html.Raw(Url.Action("salaryslip", "Home", new {id = "__orderId__",}))';
+
+                var params = url.replace('__orderId__', id);
+
+                window.open(params);
+                $("#salaryid").val('');
+            }
+        });
+
+        function getinfo() {
+            var employee = { EmpId: $("#enterid").val(), datefrom: $("#payroll-datepicker1").val(), todate: $("#payroll-datepicker2").val(), }
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                url: "/Home/payrolldata",
+                success: function (data) {
+                    if (data == 0) {
+
+                        alert("Records Not Found!!");
+                        //$("#payroll-datepicker1").val('');
+                        //$("#payroll-datepicker2").val('');
+                        clear();
+                    }
+                    else {
+
+
+
+                        $("#payroll-emp").text(data[0].empname);
+
+                        $("#payroll-department").text(data[0].dep);
+                        $("#payroll-designation").text(data[0].designation);
+                        $("#salary1").text(data[0].salary);
+                        var perday = data[0].salary / 30;
+                        $("#salary2").text(perday.toFixed(2));
+                        var date1 = new Date($("#payroll-datepicker1").val());
+                        var date2 = new Date($("#payroll-datepicker2").val());
+                        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                        $("#payroll-days").text(diffDays + 1);
+                        $("#paroll-present").text(data[0].totaldays)
+                        $("#payroll-leave").text($("#payroll-days").text() - $("#paroll-present").text());
+                        var leave = (perday * parseFloat($("#payroll-leave").text())).toFixed(2);
+                        $("#leaveamount").text(leave);
+
+                    }
+
+                }
+            })
+        }
+
+        $("#pay1").keyup(function () {
+
+            calculate();
+
+        });
+        function calculate() {
+            if ($("#pay1").val() == "") {
+                $("#pay1").val(0);
+            }
+
+            var perday = parseFloat($("#salary2").text());
+            var totaldays = parseFloat($("#payroll-days").text());
+            var total = (perday * totaldays + parseFloat($("#pay1").val()));
+
+
+            $("#pay2").val(total.toFixed(2));
+        }
+        $("#dedctn").keyup(function () {
+            if ($("#dedctn").val() == "") {
+                $("#dedctn").val(0);
+            }
+            calculatetotal();
+        });
+        $("#tds").keyup(function () {
+            if ($("#tds").val() == "") {
+                $("#tds").val(0);
+            }
+            calculatetotal();
+        });
+        $("#tax").keyup(function () {
+            if ($("#tax").val() == "") {
+                $("#tax").val(0);
+            }
+            calculatetotal();
+        });
+
+        $("#payrollcancle").click(function () {
+            clear();
+
+        });
+        function calculatetotal() {
+            var payamount = parseFloat($("#pay2").val());
+            if ($("#tax").val() == "") {
+                $("#tax").val(0);
+            }
+            else if ($("#tds").val() == "") {
+                $("#tds").val(0)
+            }
+            else if ($("#dedctn").val() == "") {
+                $$("#dedctn").val(0)
+            }
+            else {
+                var otherdeduct = parseFloat($("#leaveamount").text()) + parseFloat($("#tax").val()) + parseFloat($("#tds").val()) + parseFloat($("#dedctn").val());
+                var finalpay = payamount - otherdeduct;
+                $("#earning").text(finalpay.toFixed(2));
+            }
+        }
+
+        function clear() {
+
+            $("#payroll-emp").text("");
+            $("#payroll-department").text("");
+            $("#payroll-designation").text("");
+            $("#salary1").text("");
+            $("#salary2").text("");
+            $("#payroll-days").text("");
+            $("#payroll-leave").text("");
+            $("#paroll-present").text("");
+            $("#leaveamount").text("");
+            $("#earning").text("");
+            $("#enterid").val("");
+            $("#payroll-emp").text("");
+            $("#pay1").val("");
+            $("#tds").val("");
+            $("#tax").val("");
+            $("#dedctn").val("");
+            $("#pay2").val("");
+
+        }
+
+        $("#payrollprint").click(function () {
+            if ($("#payrollprint").val() != "Print") {
+                if ($("#payroll-datepicker1").val() == "") {
+                    alert("Please Select Date From");
+                    $("#payroll-datepicker1").focus();
+                }
+                else if ($("#payroll-datepicker2").val() == "") {
+                    alert("Please Select Date To");
+                    $("#payroll-datepicker2").focus();
+                }
+                else if ($("#enterid").val() == "") {
+                    alert("Please Enter Employee ID");
+                    $("#enterid").focus();
+                }
+                else if ($("#payroll-emp").text() == "") {
+                    alert("Please Click View Button");
+                    $("#payroll-emp").focus();
+                }
+                else if ($("#pay1").val() == "") {
+                    alert("Please Enter Other Pay Amount");
+                    $("#pay1").focus();
+                }
+
+                else if ($("#tds").val() == "") {
+                    alert("Please Enter TDS Amount");
+                    $("#tds").focus();
+                }
+                else if ($("#tax").val() == "") {
+                    alert("Please Enter Profession Tax Amount");
+                    $("#tax").focus();
+                }
+                else if ($("#dedctn").val() == "") {
+                    alert("Please Enter Other Deduction Amount");
+                    $("#dedctn").focus();
+                }
+                else {
+                    var salary = {
+                        EmpId: $("#enterid").val(), DateTo: $("#payroll-datepicker2").val(), DateFrom: $("#payroll-datepicker1").val(), basicsalary: $("#salary1").text(), totaldays: $("#payroll-days").text(), presentdays: $("#paroll-present").text(), leavedays: $("#payroll-leave").text(), salaryperday: $("#salary2").text(), otherpay: $("#pay1").val(), totalpay: $("#pay2").val(), leavededuct: $("#leaveamount").text(), TDS: $("#tds").val(), profTax: $("#tax").val(), otherdeduction: $("#dedctn").val(), totalearning: $("#earning").text(),
+                    }
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json",
+                        data: "{salary:" + JSON.stringify(salary) + "}",
+                        url: "/Home/salary",
+                        success: function (data) {
+                            alert(data);
+                            clear();
+                        }
+                    })
+
+                }
+            }
+            else {
+                var id = $("#enterid").val()
+            var url = '@Html.Raw(Url.Action("salaryslip", "Home", new {id = "__orderId__",}))';
+            var params = url.replace('__orderId__', id);
+            window.open(params);
+            }
+        });
+        $("#saveprint").click(function () {
+
+            if ($("#payroll-datepicker1").val() == "") {
+                alert("Please Select Date From");
+                $("#payroll-datepicker1").focus();
+            }
+            else if ($("#payroll-datepicker2").val() == "") {
+                alert("Please Select Date To");
+                $("#payroll-datepicker2").focus();
+            }
+            else if ($("#enterid").val() == "") {
+                alert("Please Enter Employee ID");
+                $("#enterid").focus();
+            }
+            else if ($("#payroll-emp").text() == "") {
+                alert("Please Click View Button");
+                $("#payroll-emp").focus();
+            }
+            else if ($("#pay1").val() == "") {
+                alert("Please Enter Other Pay Amount");
+                $("#pay1").focus();
+            }
+
+            else if ($("#tds").val() == "") {
+                alert("Please Enter TDS Amount");
+                $("#tds").focus();
+            }
+            else if ($("#tax").val() == "") {
+                alert("Please Enter Profession Tax Amount");
+                $("#tax").focus();
+            }
+            else if ($("#dedctn").val() == "") {
+                alert("Please Enter Other Deduction Amount");
+                $("#dedctn").focus();
+            }
+            else {
+                var salary = {
+                    EmpId: $("#enterid").val(), DateTo: $("#payroll-datepicker2").val(), DateFrom: $("#payroll-datepicker1").val(), basicsalary: $("#salary1").text(), totaldays: $("#payroll-days").text(), presentdays: $("#paroll-present").text(), leavedays: $("#payroll-leave").text(), salaryperday: $("#salary2").text(), otherpay: $("#pay1").val(), totalpay: $("#pay2").val(), leavededuct: $("#leaveamount").text(), TDS: $("#tds").val(), profTax: $("#tax").val(), otherdeduction: $("#dedctn").val(), totalearning: $("#earning").text(),
+                }
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    data: "{salary:" + JSON.stringify(salary) + "}",
+                    url: "/Home/salary",
+                    success: function (data) {
+                        alert(data);
+                        var id = $("#enterid").val()
+            var url = '@Html.Raw(Url.Action("salaryslip", "Home", new {id = "__orderId__",}))';
+            var params = url.replace('__orderId__', id);
+            window.location.href=params;
+                        clear();
+
+                    }
+                })
+            }
+            });
+
+    });
+
+</script>

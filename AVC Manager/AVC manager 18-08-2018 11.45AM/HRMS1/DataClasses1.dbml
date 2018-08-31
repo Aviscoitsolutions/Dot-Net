@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HRM" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-B7EU4F2\SQLEXPRESS;Initial Catalog=HRM;User ID=Admin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HRMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tbl_Attendance" Member="Tbl_Attendances">
+    <Type Name="Tbl_Attendance">
+      <Column Name="DetailId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Emp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClockIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClockOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="breakstart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="breakend" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="totalbreak" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="btnstart" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="btnend" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Tbl_EmployeeRegistration_Tbl_Attendance" Member="Tbl_EmployeeRegistration" ThisKey="Emp_ID" OtherKey="Emp_id" Type="Tbl_EmployeeRegistration" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_UserRegistartion" Member="Tbl_UserRegistartions">
+    <Type Name="Tbl_UserRegistartion">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EmpEduDetails" Member="Tbl_EmpEduDetails">
+    <Type Name="Tbl_EmpEduDetail">
+      <Column Name="Detail_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PG_Colgname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PG_Universityname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PG_State" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="PG_City" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="PG_yearofPassing" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="PGMarks" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="G_colgname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="G_University" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="G_State" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="G_City" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="G_yearOfPassing" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="G_marks" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[12_ColgName]" Member="_12_ColgName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[12_Board]" Member="_12_Board" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="[12_State]" Member="_12_State" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="[12_City]" Member="_12_City" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="[12_yearofpassing]" Member="_12_yearofpassing" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="[12_marks]" Member="_12_marks" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="school_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Board_name" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="S_state" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="S_City" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="S_yaerofpassing" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="S_Marks" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Association Name="Tbl_EmployeeRegistration_Tbl_EmpEduDetail" Member="Tbl_EmployeeRegistration" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_EmployeeRegistration" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EmpLeaves" Member="Tbl_EmpLeaves">
+    <Type Name="Tbl_EmpLeave">
+      <Column Name="LeaveDetailId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Emp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LeaveType" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="From_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ToDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stetus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Tbl_EmployeeRegistration_Tbl_EmpLeave" Member="Tbl_EmployeeRegistration" ThisKey="Emp_Id" OtherKey="Emp_id" Type="Tbl_EmployeeRegistration" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EmployeeRegistration" Member="Tbl_EmployeeRegistrations">
+    <Type Name="Tbl_EmployeeRegistration">
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Emp_Name" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Emp_FatherName" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Emp_DOJ" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Emp_Passport_No" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="Emp_Mobile" Type="System.String" DbType="NChar(15)" CanBeNull="true" />
+      <Column Name="Emp_Homeno" Type="System.String" DbType="NChar(15)" CanBeNull="true" />
+      <Column Name="PanNo" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Emp_DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MeritialStetus" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="BasicSalary" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="BankAccountName" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="BranchName" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="IFSCcode" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="profilepath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Resume" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OfferLetter" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="JoiningLetter" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PanCard" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AadharCard" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressProof" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="passport" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="resumetype" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="offerLext" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="joiningext" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Tbl_EmployeeRegistration_Tbl_Attendance" Member="Tbl_Attendances" ThisKey="Emp_id" OtherKey="Emp_ID" Type="Tbl_Attendance" />
+      <Association Name="Tbl_EmployeeRegistration_Tbl_EmpEduDetail" Member="Tbl_EmpEduDetails" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_EmpEduDetail" />
+      <Association Name="Tbl_EmployeeRegistration_Tbl_EmpLeave" Member="Tbl_EmpLeaves" ThisKey="Emp_id" OtherKey="Emp_Id" Type="Tbl_EmpLeave" />
+      <Association Name="Tbl_EmployeeRegistration_Tbl_Payroll" Member="Tbl_Payrolls" ThisKey="Emp_id" OtherKey="EmpID" Type="Tbl_Payroll" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Payroll" Member="Tbl_Payrolls">
+    <Type Name="Tbl_Payroll">
+      <Column Name="PayrollID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Datefrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Dateto" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BasicSalary" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PresentDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="leavdays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="salaryperday" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="otherpay" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalPay" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LeaveDeduction" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProfTax" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OtherDeduction" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalEarning" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TDS" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalEarninginword" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Tbl_EmployeeRegistration_Tbl_Payroll" Member="Tbl_EmployeeRegistration" ThisKey="EmpID" OtherKey="Emp_id" Type="Tbl_EmployeeRegistration" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

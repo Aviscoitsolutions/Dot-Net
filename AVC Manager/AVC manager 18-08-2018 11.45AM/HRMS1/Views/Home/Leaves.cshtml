@@ -1,0 +1,248 @@
+﻿
+@{
+    ViewBag.Title = "Leaves";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/style.css" rel="stylesheet" />
+<script src="~/Scripts/modernizr-2.8.3.js"></script>
+<head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+
+
+        function myFunction1() {
+
+            document.getElementById("leave").style.display = "block";
+
+            document.getElementById("request").style.display = "none";
+        }
+
+        function myFunction2() {
+
+            document.getElementById("leave").style.display = "none";
+
+            document.getElementById("request").style.display = "block";
+
+        }
+
+    </script>
+</head>
+<body style="background-color:#e9e8e8;">
+    <div class="container">
+
+        <diiv class="sidenav leave-sidenav">
+            <div style="margin-left:20px">
+                <ul style="list-style-type:none; color:white;">
+                    <li>
+                        <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " class="emp-img" id="sideprofile" />
+                    </li>
+                </ul>
+                <br />
+                <div style="color:white;">
+                    <center>
+
+
+
+                        <label style="margin-left:0px;">
+                            Name:<label id="user">@ViewBag.username</label><br />
+                            <label style="margin-left:0px;">
+                                Type:<label id="usertype">@ViewBag.username</label><br />
+                                <label style="margin-left:0px;">ID:<label id="empid">@ViewBag.empid</label><br />
+                    </center>
+                </div>
+
+
+
+            </div>
+            <hr />
+            <a href="#" onclick="myFunction1()">Leave</a>
+            <a href="#" onclick="myFunction2()">leave request</a>
+            <a href="@Url.Action("ChangePassword","Home")">Change Password </a>
+</div>
+       
+        <div id="leave-container">
+            @************heading row(full)****************@
+            <div class="row">
+                <div class="col-sm-9" id="leaves-heading">
+                    <p class="title">Leave<p>
+                </div>
+            </div>
+            @******************** 2nd row**********************@
+            <div class="row">
+                <div class="col-sm-9" id="leave">
+                    <p class="heading1">leave management</p>
+                    <style>
+                        .lable-font {
+                            font-size: 18px;
+                            color: black;
+                            margin: 5px;
+                        }
+
+                        .hr {
+                            border: 1px solid black;
+                        }
+
+                        #leaves-heading {
+                            background-color: white;
+                            opacity: 0.7;
+                            margin-top: 30px;
+                            margin-left: 115px;
+                            width: 93%;
+                            border-radius: 5px;
+                            box-shadow: 0 3px #e1dddd
+                        }
+                    </style>
+                    <form>
+                        @*<label class="lable-font"><b>Position:</b></label>
+                        <select id="position">
+                            <option> Admin</option>
+                            <option> HR</option>
+                            <option>.net Developer</option>
+                            <option>PHP Developer</option>
+                        </select>
+                        <label class="lable-font"><b>Shift:</b></label>
+                        <select id="shift-select">
+                            <option>General Shift</option>
+                            <option>Morning Shift</option>
+                            <option>Night Shift</option>
+                        </select>
+                        <label class="lable-font"><b>Sort by</b></label>
+                        <select id="sortby">
+                            <option>sort by </option>
+                        </select>
+                        <hr />
+                        <label>No of staff that can be booked at a time</label><br />
+                        <label>There are no vacation request waiting approval</label>*@
+                        <hr class="hr" />
+                        <ul style="list-style-type:none">
+                            @*<li><a href="@Url.Action("ShiftPlanning","Home")">Click here to view/manage-leave schedule page</a></li>*@
+                            <hr style="border:1px solid #f6f6f6" />
+                            <li> Awating Approval:<label style="margin-left:400px;color:green" id="stetus"></label></li>
+                            <hr />
+                            <li>Total Approvals<span class="badge" style="margin-left:419px;background-color:green" id="totalApporve">0</span></li>
+                            <hr />
+                            @*<li>Upcomming time 0/1</li>
+                            <hr />*@
+                            <li>You have not requested any time <span class="badge" style="margin-left:300px;background-color:#008dd2" id="totalrequest">0</span></li>
+
+                        </ul>
+                    </form>
+                </div>
+            </div>
+
+            @*<div class="row">*@
+            <div class="col-sm-9" id="request">
+                <form>
+                    <div class="form-group">
+                        <p class="heading1">Request a Leave</p>
+                        <br />
+
+                        <label class="lable-font" style=""><b>Leave type:</b></label>
+                        <select id="leave-type" tabindex="2">
+                            <option>Sick leave</option>
+                            <option>Half-day</option>
+                            <option>Medical leave</option>
+                            <option>Maternity leave</option>
+                            <option>Other</option>
+                        </select>
+                        <br />
+                        <br />
+                        <hr class="hr" style="margin-top:0px;" />
+                        <label class="lable-font">From:</label>
+                        <input type="date" id="FromDate" tabindex="3" />
+                        <label class="lable-font">To:</label>
+                        <input type="date" id="ToDate" tabindex="4" /><br />
+                        <hr style="border:0.3px solid black" />
+                        <label class="lable-font"><b>Comment:</b></label>
+                        <br />
+                        <br />
+                        <textarea class="textarea" placeholder=" your comments......" rows="8" cols="8" style="width:100%;height:50%" id="comment" tabindex="5"></textarea>
+
+                    </div>
+                    <button class="button" id="Request">Request</button><br /><br />
+                </form>
+            </div>
+        </div>
+
+
+    </div>@*//container*@
+
+
+</body>
+<script>
+    $('#leave-type').focus();
+   
+        var employee = { EmpId: $('#empid').text() }
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            url: "/Home/Getleavedata",
+            success: function (data) {
+
+                $('#sideprofile').attr('src', data[0].profilepath.trim());
+                $('#totalrequest').text(data.length);
+                $('#totalApporve').text(data[0].totalapprove);
+                if (data[0].lastleavestetus == "0") {
+                    $('#stetus').text('Pending');
+                    document.getElementById("stetus").style.color = "red";
+                }
+                else if (data[0].lastleavestetus == "2") {
+                    $('#stetus').text('Rejected');
+                    document.getElementById("stetus").style.color = "red";
+                }
+
+                else {
+                    $('#stetus').text('Approved');
+                    document.getElementById("stetus").style.color = "green";
+                }
+            }
+        })
+    
+
+    $("#Request").click(function () {
+       
+        var type = $('#leave-type option:selected').val();
+      if ($('#FromDate').val() == "") {
+            alert("Please Select From Date");
+            $('#FromDate').focus();
+        }
+      else if ($('#ToDate').val() == "") {
+          alert("Please Select To Date");
+            $('#ToDate').focus();
+        }
+       
+          else if ($('#comment').val() == "") {
+            alert("Please Enter Comment");
+            $('#comment').focus();
+        }
+       
+        else {
+            var employee = { EmpId: $('#empid').text(), leavetype: type, comment: $('#comment').val(), DateFrom: $('#FromDate').val(), DateTo: $('#ToDate').val() }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                url: "/Home/RequestLeave",
+                success: function (data) {
+
+                    alert(data);
+                    clear();
+                }
+            })
+        }
+    });
+
+    function clear() {
+        $('#leave-type').focus();
+        $('#comment').val('');
+     
+        $('#ToDate').val('');
+        $('#FromDate').val('');
+        window.location.reload();
+
+    }
+    myFunction1();
+</script>
