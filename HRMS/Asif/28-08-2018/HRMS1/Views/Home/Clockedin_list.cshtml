@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Clockedin_list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+link href="~/css/sidebar-dropdown.css" rel="stylesheet" />
+<body style="background-color:#e9e8e8;">
+    <div class="container">
+
+        <div class="sidenav">
+            <div style="margin-left:10px">
+                <ul style="list-style-type:none; color:white;">
+                    <li>
+                        <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " />
+                    </li>
+                    <br />
+                    <li style="margin-left:-15px">Employee name</li>
+                </ul>
+                <hr />
+
+            </div>
+            <hr />
+            <a href="#">Overview</a>
+            <a href="#">Add Clock-time</a>
+            <a href="#">Upload Timesheet </a>
+            <a href="#">Manage Timesheet </a>
+            <a href="#">Clocked-in list </a>
+            <a href="#">Auto Approval </a>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-9" id="clockinlist-heading">
+                <p class="title">Attendance<p>
+            </div>
+        </div>
+
+        @************heading row(full)****************@
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9" id="time_sheet">
+                    <form>
+                        <div class="form-group">
+                            <br />
+                            <table class="table table-bordered text-center" id="timesheet-table">
+                                <thead style="background-color:#d5d5d5;">
+                                    <tr>
+                                        <th class="text-center">
+                                            Employee
+                                        </th>
+                                        <th class="text-center">Date</th>
+                                        <th class="text-center">Time</th>
+                                        <th class="text-center">Clocked in</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Prajakta</td>
+                                        <td>2-jul-18</td>
+                                        <td>9:30AM</td>
+                                        <td> <button>clocked in</button></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Ilyas
+                                        </td>
+                                        <td>2-jul-18</td>
+                                        <td>9:30AM</td>
+                                        <td> <button>clocked in</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Asif
+                                        </td>
+                                        <td>2-jul-18</td>
+                                        <td>9:30AM</td>
+                                        <td> <button>clocked in</button></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+

@@ -1,0 +1,1117 @@
+﻿
+@{
+    ViewBag.Title = "EditEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <script>
+        $(document).ready(function () {
+
+
+            $('#datepicker').datepicker({
+                uiLibrary: 'bootstrap'
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <script src="https://cdn.rawgit.com/atatanasov/gijgo/master/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.rawgit.com/atatanasov/gijgo/master/dist/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .emp-heading {
+            background-color: white !important;
+            opacity: 0.7;
+            margin-top: 25px;
+            margin-left: 200px;
+            width: 90%;
+            border-radius: 5px;
+            box-shadow: 0 3px #e1dddd
+        }
+    </style>
+
+    <style>
+        .btn-file {
+            position: relative;
+            overflow: hidden;
+        }
+
+            .btn-file input[type = file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity = 0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
+
+        #img-upload {
+            width: 100%;
+        }
+    </style>
+</head>
+<link href="~/css/style.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<body style="background-color:#e9e8e8;">
+    <div class="container">
+        <div class="sidenav employee-sidenav">
+            <div style="margin-left:20px">
+                <ul style="list-style-type:none; color:white;">
+                    <li>
+                        <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " class="emp-img" id="sideprofile" />
+                    </li>
+                </ul>
+            </div>
+            <br />
+            @*<ul style="list-style-type:none; color:white;">*@
+            <div style="color:white;">
+                <center>
+                    <label style="margin-left:0px;">
+                        Name:<label id="user">@ViewBag.username</label><br />
+                        <label style="margin-left:0px;">
+                            Type:<label id="usertype">@ViewBag.usertype</label><br />
+                            <label style="margin-left:0px;">ID:<label id="empid">@ViewBag.empid</label>
+
+                </center>
+            </div>
+
+            <hr />
+
+
+
+            @*<a href="#">Profile</a>*@
+            @*<a href="#">Edit</a>*@
+            @*<a href="#">Change Password </a>*@
+            @*<a href="#">Overview</a>
+        <a href="#">Edit Details</a>
+        <a href="#">Availability</a>
+        <a href="#">Leave</a>
+        <a href="#">Password</a>
+        <a href="#">Notifications</a>
+        <a href="#">Payroll</a>*@
+            </
+            @*<div class="sidenav employee-sidenav">
+        <div style="margin-left:10px">
+            <ul style="list-style-type:none; color:white;">
+                <li>
+                    <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " id="sideprofile" />
+                </li>
+                <br />
+                <li style="margin-left:-15px" id="user">@ViewBag.username</li>
+
+                <li style="margin-left:-15px" visibility="false" id="usertype">@ViewBag.usertype</li>
+                <li style="margin-left:-15px" visibility="false" id="empid">@ViewBag.empid</li>
+
+            </ul>
+            <hr />
+
+        </div>*@
+            <hr />
+            <a href="#">Profile</a>
+            <a href="#" id="edit" style="">Edit</a>
+            <a href="@Url.Action("ChangePassword","Home")">Change Password </a>
+            @*<a href="#">Overview</a>
+        <a href="#">Edit Details</a>
+        <a href="#">Availability</a>
+        <a href="#">Leave</a>
+        <a href="#">Password</a>
+        <a href="#">Notifications</a>
+        <a href="#">Payroll</a>*@
+        </div>
+        <div id="emp-container">
+            @************heading row(full)****************@
+            <div class="row">
+                <div class="col-sm-9 emp-heading" id="leave-heading1">
+                    <p class="title">Employee<p>
+                </div>
+            </div>
+            @*********************** second row emp-profile*****************@
+            <div class="row">
+                <div class="col-sm-9" id="emp-profile">
+                    <br />
+                    <p class="heading1">Edit Employee profile</p>
+                    <label style="display:none; float:right" id="symbol">@ViewBag.symbol</label>
+                    <hr class="hr" />
+                    <form action="">
+                        <div class="form-group">
+                            <style>
+
+                                input, select, textarea {
+                                }
+
+                                input, button, select, textarea {
+                                    font-family: inherit;
+                                    font-size: inherit;
+                                    line-height: inherit;
+                                }
+
+                                input {
+                                    line-height: normal;
+                                }
+
+                                input, optgroup, select, textarea {
+                                    margin: 0;
+                                    font: inherit;
+                                    width: 150px;
+                                    color: inherit;
+                                }
+
+                                button {
+                                    width: 110px;
+                                }
+                            </style>
+                            <div class="col-sm-3">
+                                <table>
+                                    <table id="emp-info"></table>
+                                    @*<ul>
+            <li>Prajakta Mande</li>
+                 <li> Software Engineer</li>
+                   </ul>*@
+                                </table>
+                                <label class="lable-font" style=; margin-top:0px">ID:  <input type="text" id="txtempid" onkeypress="javascript:return isNumber(event)" /> <input type="button" id="showrecord" value="Show"/></label>
+                              
+                                <label style="margin-left:0px;">
+
+                                    <img src="~/images/download2.jpg" class="emp-img" id="img-upload" style="max-width:120px; max-height:150px" />
+                                    <br /><br />
+
+                                    <br /><br />
+                            </div>
+                            <div class="col-sm-6 emp-info">
+
+                            </div>
+                        </div>
+                    </form>
+                    <br />
+                    <br />
+
+                    @*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+                        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
+                    <!------ Include the above in your HEAD tag ---------->
+                    <div class="container">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Upload Image</label>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <span class="btn btn-default btn-file" style="background-color:gray;">
+                                            Browse… <input type="file" accept="image/png, image/jpeg, image/gif" id="imgInp" tabindex="-2">
+                                        </span>
+                                    </span>
+                                    <input id='urlname' type="text" class="form-control" readonly>
+                                </div>
+                                <button id="clear" class="button" tabindex="-2">Clear</button>
+                                <img id='img-upload' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+            <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+            <script>
+
+                $(document).ready(function () {
+
+                    var file2 = "";
+                    function readURL(input) {
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+
+                            reader.onload = function (e) {
+                                $('#img-upload').attr('src', e.target.result);
+                                file2 = e.target.result;
+                            }
+
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    }
+
+                    var resume = "";
+                    var resumetype = "";
+                    function readURL1(input) {
+                        if (input.files && input.files[0]) {
+                            var reader1 = new FileReader();
+
+                            reader1.onload = function (e) {
+
+
+                                resumetype = input.value.split('.')[1];
+                                if (resumetype == "pdf" || resume == "doc") {
+                                    resume = e.target.result;
+                                }
+                                else {
+                                    $("#resume").val('');
+                                    alert("Please select pdf or doc file");
+                                }
+
+                            }
+
+                            reader1.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    var aadhar = "";
+                    var aadharext = "";
+                    function readURL2(input) {
+                        if (input.files && input.files[0]) {
+                            var reader2 = new FileReader();
+
+                            reader2.onload = function (e) {
+                                aadharext = input.value.split('.')[1];
+                                if (aadharext == "jpg" || aadharext == "png" || aadharext == "pdf") {
+                                    aadhar = e.target.result;
+                                }
+                                else {
+
+                                    $("#joiningLetter").val('');
+                                    alert("Please select pdf or doc file");
+                                }
+
+
+                            }
+
+                            reader2.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    var pan = "";
+                    var panext = "";
+                    function readURL3(input) {
+                        if (input.files && input.files[0]) {
+                            var reader3 = new FileReader();
+
+                            reader3.onload = function (e) {
+                                panext = input.value.split('.')[1];
+                                if (panext == "jpg" || joiningletter == "png" || panext == "pdf") {
+                                    pan = e.target.result;
+                                }
+                                else {
+
+                                    $("#pancard").val('');
+                                    alert("Please select pdf or doc file");
+                                }
+
+
+                            }
+
+                            reader3.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    var joining = "";
+                    var joiningletter = "";
+                    function readURL4(input) {
+                        if (input.files && input.files[0]) {
+                            var reader4 = new FileReader();
+
+                            reader4.onload = function (e) {
+
+
+                                joiningletter = input.value.split('.')[1];
+                                if (joiningletter == "pdf" || joiningletter == "doc") {
+                                    joining = e.target.result;
+                                }
+                                else {
+
+                                    $("#joiningLetter").val('');
+                                    alert("Please select pdf or doc file");
+                                }
+
+                            }
+
+                            reader4.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    var address = "";
+                    var addressext = "";
+                    function readURL5(input) {
+                        if (input.files && input.files[0]) {
+                            var reader5 = new FileReader();
+
+                            reader5.onload = function (e) {
+                                addressext = input.value.split('.')[1];
+
+                                if (addressext.trim() == "png" || addressext == "jpg" || addressext.trim() == "pdf") {
+                                    address = e.target.result;
+                                }
+                                else {
+
+                                    $("#addressproof").val('');
+                                    alert("Please select JPG or PNG file");
+                                }
+
+
+
+
+
+                            }
+
+                            reader5.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    var offer = "";
+                    var offerext = "";
+                    function readURL6(input) {
+                        if (input.files && input.files[0]) {
+                            var reader6 = new FileReader();
+
+                            reader6.onload = function (e) {
+
+
+                                offerext = input.value.split('.')[1];
+
+                                if (offerext == "pdf" || offerext == "doc") {
+                                    offer = e.target.result;
+                                }
+                                else {
+
+                                    $("#offerLetter").val('');
+                                    alert("Please select pdf or doc file");
+                                }
+
+                            }
+
+                            reader6.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    var passport = "";
+                    var passext = "";
+                    function readURL8(input) {
+                        if (input.files && input.files[0]) {
+                            var reader8 = new FileReader();
+
+                            reader8.onload = function (e) {
+                                passext = input.value.split('.')[1];
+                                if (passext == "jpg" || passext == "png" || passext == "pdf") {
+                                    passport = e.target.result;
+                                }
+                                else {
+                                    asif
+                                    $("#passport11").val('');
+                                    alert("Please select pdf or doc file");
+                                }
+
+
+                            }
+
+                            reader8.readAsDataURL(input.files[0]);
+                        }
+                    }
+
+                    $("#imgInp").change(function () {
+                        readURL(this);
+
+                        $('#urlname').val($('#imgInp').val());
+                    });
+                    $("#resume").change(function () {
+                        readURL1(this);
+
+                    });
+                    $("#aadharcard").change(function () {
+                        readURL2(this);
+
+
+                    });
+                    $("#pancard").change(function () {
+                        readURL3(this);
+
+
+                    });
+                    $("#joiningLetter").change(function () {
+                        readURL4(this);
+
+
+                    });
+                    $("#addressproof").change(function () {
+                        readURL5(this);
+
+
+                    });
+                    $("#offerLetter").change(function () {
+                        readURL6(this);
+
+
+                    });
+                    $("#passport11").change(function () {
+                        readURL8(this);
+
+
+                    });
+
+                    $("#clear").click(function () {
+                        $('#img-upload').attr('src', '/images/download2.jpg');
+                        $('#urlname').val('');
+
+                    });
+
+                     function updatedocument() {
+                        var formData = new FormData();
+                        var file = file2;
+                        var id = $('#txtempid').val();
+                        formData.append("profile", file);
+                        formData.append("id", id);
+                        formData.append("resume", resume);
+                        formData.append("resext", resumetype);
+                        formData.append("aadhar", aadhar);
+                        formData.append("pancard", pan);
+                        formData.append("joining", joining);
+                        formData.append("joiningext", joiningletter);
+                        formData.append("offer", offer);
+                        formData.append("offerext", offerext);
+                        formData.append("address", address);
+                        formData.append("passport", passport);
+                        $.ajax({
+                            type: "POST",
+                            url: '@Url.Action("Document", "Home")',
+                            data: formData,
+                            dataType: 'json',
+                            contentType: false,
+                            processData: false,
+                            success: function (response) {
+
+                                window.location.reload();
+
+                            },
+                            error: function (error) {
+
+                            }
+                        });
+                    }
+
+                    $("#emp-save").click(function () {
+                        var x = $('#email').val();
+                        var s = $('#symbol').text();
+                        var action = $('#emp-save').text();
+                        var atpos = x.indexOf(s);
+                        var dotpos = x.lastIndexOf(".");
+                        var employee = { EmpId: $('#txtempid').val(), Empname: $('#emp-name').val(), Fname: $('#father-name').val(), DOJ: $('#joining-date').val(), passportno: $('#passport').val(), mobile: $('#mobile-no').val(), homeno: $('#home-contact').val(), panno: $('#pan-no').val(), emailid: $('#email').val(), DOB: $('#DOB').val(), Designation: $('#designation').val(), gender: $("select#gender option:selected").text(), meritialstetus: $("select#maritial option:selected").text(), Department: $('#department').val(), basicsalary: $('#basic-salary').val(), username: $('#username').val(), password: $('#password').val(), acountno: $('#account-number').val(), bankname: $('#Bank').val(), brancename: $('#Branch-name').val(), ifsc: $('#ifsc').val(), nameinbank: $('#account-name').val(), PG_Colgname: $('#PGclg-name').val(), PG_Universityname: $('#PGuniversity').val(), PG_State: $('#PGstate').val(), PG_City: $('#pgcity').val(), PG_yearofPassing: $('#pgyear').val(), PGMarks: $('#pgmarks').val(), G_colgname: $('#Gcolg').val(), G_University: $('#Guniversity').val(), G_State: $('#Gstate').val(), G_City: $('#Gcity').val(), G_yearOfPassing: $('#Gyear').val(), G_marks: $('#Gmarks').val(), _12_ColgName: $('#UGclg-name').val(), _12_Board: $('#UGboard').val(), _12_State: $('#UGstate').val(), _12_City: $('#UGcity').val(), _12_yearofpassing: $('#UGyear').val(), _12_marks: $('#UGmarks').val(), school_name: $('#10schl-name').val(), Board_name: $('#10board').val(), S_state: $('#10state').val(), S_City: $('#10city').val(), S_yaerofpassing: $('#10year').val(), S_Marks: $('#10marks').val(), }
+
+                            $.ajax({
+                                type: "POST",
+                                contentType: "application/json",
+                                data: "{employee:" + JSON.stringify(employee) + "}",
+                                url: "/Home/updateemploeedetails",
+                                success: function (message) {
+
+                                    alert(message);
+                                    updatedocument();
+
+                                }
+                            })
+
+                            });
+
+                    $("#showrecord").click(function () {
+                        if ($('#txtempid').val() == "") {
+                            alert("Please Enter Employee ID");
+                            $('#txtempid').focus();
+
+                        }
+                        else {
+                            document.getElementById('imgInp').focus();
+
+                            var employee = { EmpId: $('#txtempid').val() }
+                            $.ajax({
+                                type: "POST",
+                                contentType: "application/json",
+                                data: "{employee:" + JSON.stringify(employee) + "}",
+                                url: "/Home/Getemployeedata",
+                                success: function (data) {
+                                    if (data.length != 0) {
+                                        $('#img-upload').attr('src', data[0].profilepath.trim());
+                                        $('#emp-name').val(data[0].Emp_Name.trim());
+                                        $('#father-name').val(data[0].Emp_FatherName.trim());
+                                     
+                                    
+                                      
+                                        var milisegundos1 = parseInt(data[0].Emp_DOB.replace("/Date(", "").replace(")/", ""));
+                                        var dob = (new Date(milisegundos1)).toISOString().split("T")[0];
+                                        var milisegundos2 = parseInt(data[0].Emp_DOJ.replace("/Date(", "").replace(")/", ""));
+                                        var doj = (new Date(milisegundos2)).toISOString().split("T")[0];
+                                        //$('#joining-date').val(data[0].Emp_DOJ);
+
+                                      
+                                        //$('#DOB').attr('type', 'text');
+                                        //$('#DOB').val(dob);
+                                        document.getElementById("DOB").value = dob.toString();
+                                        document.getElementById("joining-date").value = doj.toString();
+                                      
+                                        $('#passport').val(data[0].Emp_Passport_No.trim());
+                                        $('#mobile-no').val(data[0].Emp_Mobile.trim());
+                                        $('#home-contact').val(data[0].Emp_Homeno.trim());
+                                        $('#pan-no').val(data[0].PanNo.trim())
+                                        $('#email').val(data[0].EmailId);
+                                        $('#designation').val(data[0].Designation.trim());
+                                        $("select#gender option:selected").text(data[0].Gender); $("select#maritial option:selected").text(data[0].MeritialStetus);
+                                        $('#department').val(data[0].Department.trim());
+                                        $('#basic-salary').val(data[0].BasicSalary); $('#username').val(data[0].UserName.trim());
+                                        $('#password').val(data[0].Password.trim());
+                                        $('#account-number').val(data[0].AccountNo.trim())
+                                        $('#Bank').val(data[0].BankName.trim())
+                                        $('#Branch-name').val(data[0].BranchName.trim());
+                                        $('#ifsc').val(data[0].IFSCcode.trim())
+                                        $('#account-name').val(data[0].BankAccountName.trim());
+                                        PG_Colgname: $('#PGclg-name').val(data[0].PG_Colgname.trim());
+                                        $('#PGuniversity').val(data[0].PG_Universityname.trim());
+                                        $('#PGstate').val(data[0].PG_State.trim());
+                                        $('#pgcity').val(data[0].PG_City.trim());
+                                        $('#pgyear').val(data[0].PG_yearofPassing.trim());
+                                        $('#pgmarks').val(data[0].PGMarks.trim());
+                                        $('#Gcolg').val(data[0].G_colgname.trim());
+                                        $('#Guniversity').val(data[0].G_University.trim());
+                                        $('#Gstate').val(data[0].G_State.trim());
+                                        $('#Gcity').val(data[0].G_City.trim());
+                                        $('#Gyear').val(data[0].G_yearOfPassing.trim());
+                                        $('#Gmarks').val(data[0].G_marks.trim());
+                                        $('#UGclg-name').val(data[0]._12_ColgName.trim());
+                                        $('#UGboard').val(data[0]._12_Board.trim());
+                                        $('#UGstate').val(data[0]._12_State.trim());
+                                        $('#UGcity').val(data[0]._12_City.trim());
+                                        $('#UGyear').val(data[0]._12_yearofpassing.trim());
+                                        $('#UGmarks').val(data[0]._12_marks.trim());
+                                        $('#10schl-name').val(data[0].school_name.trim());
+                                        $('#10board').val(data[0].Board_name.trim());
+                                        $('#10state').val(data[0].S_state.trim());
+                                        $('#10city').val(data[0].S_City.trim());
+                                        $('#10year').val(data[0].S_yaerofpassing.trim());
+                                        $('#10marks').val(data[0].S_Marks.trim());
+                                        document.getElementById('emp-name').focus();
+                                        document.getElementById('emp-profile').focus();
+                                        console.clear();
+                                    }
+                                    else {
+                                        alert("No Records Found!!!");
+                                        clear();
+                                        $('#txtempid').focus();
+                                    }
+                                }
+
+                            })
+
+                        }
+                    });
+
+
+                    $("#emp-clear").click(function () {
+                        clear();
+                        window.location.reload();
+                        document.getElementById('emp-name').focus();
+
+                    });
+
+
+
+                    $("#offerLetter-download").click(function () {
+                        var a = "offer";
+                        var id = $('#txtempid').val();
+                        var emp = $('#emp-name').val();
+                        if (id != "" && emp!="") {
+
+                            var url = '@Html.Raw(Url.Action("DownloadFile", "Home", new { button = "__orderId__" , id ="__Id__"}))';
+                            var params = url.replace('__orderId__', a).replace('__Id__', id);
+                            window.location.href = params;
+                        }
+                        else {
+                            alert("Please Enter Employee ID");
+                            $('#txtempid').focus();
+                        }
+                        //window.open("/Home/DownloadFile");
+                });
+                    $("#res-download").click(function () {
+                        var a = "Resume";
+                         var id = $('#txtempid').val();
+                        var emp = $('#emp-name').val();
+                        if (id != "" && emp!="") {
+
+                            var url = '@Html.Raw(Url.Action("DownloadFile", "Home", new { button = "__orderId__" , id ="__Id__"}))';
+                            var params = url.replace('__orderId__', a).replace('__Id__', id);
+                            window.location.href = params;
+                        }
+                        else {
+                            alert("Please Enter Employee ID");
+                            $('#txtempid').focus();
+                        }
+                        //window.open("/Home/DownloadFile");
+                    });
+                    $("#joiningLetter-download").click(function () {
+                        var a = "joining";
+                         var id = $('#txtempid').val();
+                        var emp = $('#emp-name').val();
+                        if (id != "" && emp!="") {
+
+                            var url = '@Html.Raw(Url.Action("DownloadFile", "Home", new { button = "__orderId__" , id ="__Id__"}))';
+                            var params = url.replace('__orderId__', a).replace('__Id__', id);
+                            window.location.href = params;
+                        }
+                        else {
+                            alert("Please Enter Employee ID");
+                            $('#txtempid').focus();
+                        }
+                        //window.open("/Home/DownloadFile");
+                    });
+                    $("#pancard-download").click(function () {
+                        var a = "pan";
+                        var id = $('#txtempid').val();
+                        var emp = $('#emp-name').val();
+                        if (id != "" && emp!="") {
+
+                            var url = '@Html.Raw(Url.Action("DownloadFile", "Home", new { button = "__orderId__" , id ="__Id__"}))';
+                            var params = url.replace('__orderId__', a).replace('__Id__', id);
+                            window.location.href = params;
+                        }
+                        else {
+                            alert("Please Enter Employee ID");
+                            $('#txtempid').focus();
+                        }
+                        //window.open("/Home/DownloadFile");
+                    });
+                    $("#passport-download").click(function () {
+                        var a = "passport";
+                        var id = $('#txtempid').val();
+                        var emp = $('#emp-name').val();
+                        if (id != "" && emp!="") {
+
+                            var url = '@Html.Raw(Url.Action("DownloadFile", "Home", new { button = "__orderId__" , id ="__Id__"}))';
+                            var params = url.replace('__orderId__', a).replace('__Id__', id);
+                            window.location.href = params;
+                        }
+                        else {
+                            alert("Please Enter Employee ID");
+                            $('#txtempid').focus();
+                        }
+                        //window.open("/Home/DownloadFile");
+                    });
+
+                    $("#aadharcard-download").click(function () {
+                        var a = "aadhar";
+                         var id = $('#txtempid').val();
+                        var emp = $('#emp-name').val();
+                        if (id != "" && emp!="") {
+
+                            var url = '@Html.Raw(Url.Action("DownloadFile", "Home", new { button = "__orderId__" , id ="__Id__"}))';
+                            var params = url.replace('__orderId__', a).replace('__Id__', id);
+                            window.location.href = params;
+                        }
+                        else {
+                            alert("Please Enter Employee ID");
+                            $('#txtempid').focus();
+                        }
+                        //window.open("/Home/DownloadFile");
+                    });
+                    $("#address-download").click(function () {
+                        var a = "address";
+                        var id = $('#txtempid').val();
+                        var emp = $('#emp-name').val();
+                        if (id != "" && emp!="") {
+
+                            var url = '@Html.Raw(Url.Action("DownloadFile", "Home", new { button = "__orderId__" , id ="__Id__"}))';
+                            var params = url.replace('__orderId__', a).replace('__Id__', id);
+                            window.location.href = params;
+                        }
+                        else {
+                            alert("Please Enter Employee ID");
+                            $('#txtempid').focus();
+                        }
+                        //window.open("/Home/DownloadFile");
+                    });
+
+                    function clear() {
+                        $('#img-upload').attr('src', '/images/download2.jpg');
+                        document.getElementById('emp-name').focus();
+                        document.getElementById('emp-name').value = "";
+                        document.getElementById('father-name').value = "";
+                        document.getElementById('passport').value = "";
+                        document.getElementById('mobile-no').value = "";
+                        document.getElementById('home-contact').value = "";
+                        document.getElementById('email').value = "";
+                        document.getElementById('pan-no').value = "";
+                        document.getElementById('DOB').value = "";
+                        document.getElementById('joining-date').value = "";
+
+                        document.getElementById('designation').value = "";
+                        document.getElementById('department').value = "";
+                        document.getElementById('basic-salary').value = "";
+                        document.getElementById('username').value = "";
+                        document.getElementById('password').value = "";
+                        document.getElementById('account-name').value = "";
+                        document.getElementById('account-number').value = "";
+                        document.getElementById('Bank').value = "";
+                        document.getElementById('ifsc').value = "";
+                        document.getElementById('Branch-name').value = "";
+                        document.getElementById('PGclg-name').value = "";
+                        document.getElementById('PGstate').value = "";
+                        document.getElementById('PGuniversity').value = "";
+                        document.getElementById('pgyear').value = "";
+                        document.getElementById('pgcity').value = "";
+                        document.getElementById('pgmarks').value = "";
+                        document.getElementById('Gcolg').value = "";
+                        document.getElementById('Gstate').value = "";
+                        document.getElementById('Guniversity').value = "";
+                        document.getElementById('Gyear').value = "";
+                        document.getElementById('Gcity').value = "";
+                        document.getElementById('Gmarks').value = "";
+                        document.getElementById('UGclg-name').value = "";
+                        document.getElementById('UGstate').value = "";
+                        document.getElementById('UGboard').value = "";
+                        document.getElementById('UGyear').value = "";
+                        document.getElementById('UGcity').value = "";
+                        document.getElementById('UGmarks').value = "";
+                        document.getElementById('10schl-name').value = "";
+                        document.getElementById('10state').value = "";
+                        document.getElementById('10board').value = "";
+                        document.getElementById('10city').value = "";
+                        document.getElementById('10marks').value = "";
+                        document.getElementById('10year').value = "";
+                        document.getElementById('emp-name').focus();
+
+                    }
+
+
+                });
+                function isNumber(evt) {
+                    var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+                    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+                        return false;
+
+                    return true;
+                }
+                function ValidateAlpha(evt) {
+                    var keyCode = (evt.which) ? evt.which : evt.keyCode
+                    if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32)
+
+                        return false;
+                    return true;
+                }
+            </script>
+
+            @************************* 3rd row- Emp details*****************@
+            <div class="row">
+                <div class="col-sm-9" id="emp-details">
+                    <br />
+                    <p class="heading1">Employee Details</p>
+                    <hr class="hr" />
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label> Employee Name:</label>
+                                    <input type="text" tabindex="1" name="First Name" value="" style="margin-left:50px;" id="emp-name" onKeyPress="return ValidateAlpha(event);" />
+                                    <label style="margin-left:60px;">Joining Date:</label>
+                                    <input type="date" tabindex="3" name="" style="margin-left:22px;" id="joining-date" />
+                                </td>
+                                <br />
+
+                                <td>
+                                    <label> Father/Husband Name:</label>
+                                    <input type="text" tabindex="2" name="name2" value="" style="margin-left:10px;" id="father-name" onKeyPress="return ValidateAlpha(event);" />
+                                    <label style="margin-left:60px;">Passport:</label>
+                                    <input type="text" name="" tabindex="4" style="margin-left:46px;" id="passport" />
+                                </td>
+                            </tr>
+
+                            <br />
+                            <tr>
+                                <td>
+                                    <label> Mobile No:</label>
+                                    <input type="text" tabindex="5" style="margin-left:92px;" id="mobile-no" onkeypress="javascript:return isNumber(event)" />
+                                    <label style="margin-left:60px;">Pan No:</label>
+                                    <input type="text" tabindex="7" style="margin-left:57px;" id="pan-no" />
+                                </td>
+                                <br />
+                                <td>
+                                    <label> Home Contact:</label>
+                                    <input type="text" tabindex="6" style="margin-left:64px;" id="home-contact" onkeypress="javascript:return isNumber(event)" />
+                                    <label style="margin-left:60px;">Email:</label>
+                                    <input type="text" tabindex="8" name="" value="" style="margin-left:68px;" id="email" />
+                                </td>
+                            </tr>
+                            <br />
+                            <td>
+                                <label>Date of Birth:</label>
+                                <input type="date" tabindex="9" style="margin-left:75px;" width="150px;" id="DOB" />
+
+                                <label style="margin-left:60px;height:0px">Gender:</label>
+                                <br />
+                                <select style="margin-left:56px; padding:4px" id="gender" tabindex="11">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </td>
+                            <br />
+                            <td>
+                                <label> Designation:</label>
+                                <input type="text" tabindex="10" style="margin-left:79px;" id="designation" onKeyPress="return ValidateAlpha(event);" /><br />
+                                <label style="margin-left:60px;">Marital Status:</label>
+                                <select style="margin-left:10px;padding:4px" id="maritial" tabindex="12">
+                                    <option>Married</option>
+                                    <option>Unmarried</option>
+
+                                </select>
+
+                            </td>
+
+                            <br />
+                            <tr>
+                                <td>
+
+                                    <label style="margin-left:0px;">Department:</label>
+                                    <input type="text" tabindex="13" value="" style="margin-left:80px;" id="department" required onKeyPress="return ValidateAlpha(event);" />
+
+                                </td>
+                                <td>
+                                    <label style="margin-left:60px;">Basic salary:</label>
+                                    <input type="text" tabindex="14" id="basic-salary" onkeypress="javascript:return isNumber(event)" />
+                                </td>
+
+                            </tr>
+                            <br />
+                            <tr >
+                                <td>
+
+                                    <label style="margin-left:0px;">Username:</label>
+                                    <input type="text" tabindex="15" style="margin-left:80px;" id="username" />
+
+                                </td>
+                                <td>
+                                    <label style="margin-left:60px;">Password:</label>
+                                    <input type="text" id="password" tabindex="16" />
+                                </td>
+
+                            </tr>
+                            <br />
+                            <br />
+
+                        </table>
+                        <br /><br />
+                    </div>
+                </div>
+            </div>
+
+            @******************************** 4rth row Bank details****************************@
+            <div class="row">
+                <div class="col-sm-9" id="bank-details">
+                    <br />
+                    <p class="heading1">Bank Details</p>
+                    <hr class="hr" />
+
+                    <form>
+                        <table>
+                            <label>Account Name:</label>
+                            <input type="text" tabindex="17" style="margin-left:42px" id="account-name" onKeyPress="return ValidateAlpha(event);" />
+                            <label style="margin-left:70px;">Account Number:</label>
+                            <input type="text" tabindex="18" style="margin-left:27px" id="account-number" onkeypress="javascript:return isNumber(event)" />
+
+                            <br />
+                            <label>Bank:</label>
+                            <input type="text" tabindex="19" style="margin-left:105px" id="Bank" onKeyPress="return ValidateAlpha(event);" />
+                            <label style="margin-left:70px;">IFSC Code:</label>
+                            <input type="text" tabindex="20" style="margin-left:69px" id="ifsc" />
+                            <br />
+                            <label>Branch Name:</label>
+                            <input type="text" tabindex="21" style="margin-left:50px" id="Branch-name" onKeyPress="return ValidateAlpha(event);" />
+                            <br />
+                            <br />
+
+
+                        </table>
+                    </form>
+
+                </div>
+
+            </div>
+            @**************************** 5th row -emp-documents*******************@
+            <div class="row">
+                <div class="col-sm-9" id="doc-details">
+                    <p></p>
+                    <p class="heading1"> Document Details</p>
+                    <hr class="hr" />
+
+                    <p></p>
+                    <div class="tab1">
+                        <div class="tab">
+                            <button class="tablinks" onclick="docDetails(event, 'general')" id="defaultOpen3" style="width:200px" tabindex="22">General Details</button>
+                            <button class="tablinks" onclick="docDetails(event, 'educational')" style="width:200px;" tabindex="31">Educational detail </button>
+
+                        </div>
+
+                        <div id="general" class="tabcontent">
+                            <style>
+                                .upload-doc {
+                                    display: inline !important;
+                                    border: 1px solid black;
+                                    padding: 5px;
+                                    width: auto;
+                                    border-radius: 3px;
+                                }
+                            </style>
+
+                            <div>
+                                <label class="lable-font"> Resume:</label><input type="file" class="upload-doc" id="resume" style="margin-left:49px">
+                                <a><button style="margin-left:20px;" id="res-download">Download file</button></a>
+                            </div><br>
+                            <div>
+                                <label class="lable-font"> Offer Letter:</label><input type="file" class="upload-doc" id="offerLetter" style="margin-left:24px">
+                                <a><button style="margin-left:20px;" id="offerLetter-download">Download file</button></a>
+                            </div><br>
+                            <div>
+                                <label class="lable-font"> Joining Letter:</label><input type="file" class="upload-doc" id="joiningLetter" style="margin-left:5px">
+                                <a><button style="margin-left:20px;" id="joiningLetter-download">Download file</button></a>
+                            </div><br>
+                            <div>
+                                <label class="lable-font"> Pancard:</label><input type="file" class="upload-doc" id="pancard" style="margin-left:48px">
+                                <a><button style="margin-left:20px;" id="pancard-download">Download file</button></a>
+                            </div><br>
+
+                            <div>
+                                <label class="lable-font"> Passport:</label><input type="file" class="upload-doc" id="passport11" style="margin-left:43px">
+                                <a><button style="margin-left:20px;" id="passport-download">Download file</button></a>
+                            </div><br>
+
+                            <div>
+                                <label class="lable-font">Aadhar card:</label><input type="file" class="upload-doc" id="aadharcard" style="margin-left:18px">
+                                <a><button style="margin-left:20px;" id="aadharcard-download">Download file</button></a>
+                            </div><br>
+
+                            <div>
+                                <label class="lable-font"> Address Proof:</label><input type="file" class="upload-doc" id="addressproof" style="margin-left:1px">
+                                <a><button style="margin-left:20px;" id="address-download">Download file</button></a>
+                            </div><br>
+                        </div>
+
+                        <div id="educational" class="tabcontent">
+                            <form>
+                                <fieldset>
+                                    <legend>Post Graduation</legend>
+                                    <label>
+                                        College Name:<input type="text" style="margin-left:42px" tabindex="32" id="PGclg-name" onKeyPress="return ValidateAlpha(event);" />
+                                    </label>
+                                    <label style="margin-left:88px">State:<input type="text" style="margin-left:77px" tabindex="33" id="PGstate" onKeyPress="return ValidateAlpha(event);" /></label>
+                                    <br />
+                                    <label>University Name:<input type="text" style="margin-left:24px" tabindex="34" id="PGuniversity" onKeyPress="return ValidateAlpha(event);" /></label>
+                                    <label style="margin-left:90px">Year of Passing:<input type="text" tabindex="35" style="margin-left:6px" id="pgyear" /></label>
+                                    <br />
+                                    <label>City:<input type="text" tabindex="36" style="margin-left:106px" id="pgcity" onKeyPress="return ValidateAlpha(event);" /></label>
+                                    <label style="margin-left:95px">Marks(%):<input type="text" tabindex="37" style="margin-left:43px" id="pgmarks" onkeypress="javascript:return isNumber(event)" /></label>
+                                    <br />
+                                    <br />
+
+                                </fieldset>
+                            </form>
+                            <br />
+                            <form>
+                                <fieldset>
+                                    <legend>Graduation</legend>
+                                    <label>
+                                        College Name:<input type="text" style="margin-left:42px;" tabindex="38" id="Gcolg" onKeyPress="return ValidateAlpha(event);" />
+                                    </label>
+                                    <label style="margin-left:88px">State:<input type="text" style="margin-left:77px;" id="Gstate" onKeyPress="return ValidateAlpha(event);" tabindex="39" /></label>
+                                    <br />
+                                    <label>University Name:<input type="text" style="margin-left:24px" id="Guniversity" onKeyPress="return ValidateAlpha(event);" tabindex="40" /></label>
+                                    <label style="margin-left:90px">Year of Passing:<input type="text" style="margin-left:6px;" id="Gyear" tabindex="41" /></label>
+                                    <br />
+                                    <label>City:<input type="text" style="margin-left:106px" id="Gcity" onKeyPress="return ValidateAlpha(event);" tabindex="42" /></label>
+                                    <label style="margin-left:95px">Marks(%):<input type="text" style="margin-left:43px;" id="Gmarks" onkeypress="javascript:return isNumber(event)" tabindex="43" /></label>
+                                    <br />
+                                    <br />
+
+                                </fieldset>
+                            </form>
+                            <br />
+                            <form>
+                                <fieldset>
+                                    <legend>12th/Diploma</legend>
+                                    <label>
+                                        College Name:<input type="text" style="margin-left:42px;" id="UGclg-name" onKeyPress="return ValidateAlpha(event);" tabindex="44" />
+                                    </label>
+                                    <label style="margin-left:88px">State:<input type="text" style="margin-left:77px;" id="UGstate" onKeyPress="return ValidateAlpha(event);" tabindex="45" /></label>
+                                    <br />
+                                    <label>Board Name:<input type="text" style="margin-left:52px;" id="UGboard" onKeyPress="return ValidateAlpha(event);" tabindex="46" /></label>
+                                    <label style="margin-left:90px">Year of Passing:<input type="text" style="margin-left:6px;" id="UGyear" tabindex="47" /></label>
+                                    <br />
+                                    <label>City:<input type="text" style="margin-left:107px;" id="UGcity" onKeyPress="return ValidateAlpha(event);" tabindex="48" /></label>
+                                    <label style="margin-left:95px">Marks(%):<input type="text" style="margin-left:43px;" id="UGmarks" onkeypress="javascript:return isNumber(event)" tabindex="49" /></label>
+                                    <br />
+                                    <br />
+
+                                </fieldset>
+                            </form>
+                            <br />
+                            <form>
+                                <fieldset>
+                                    <legend>10th</legend>
+                                    <label>
+                                        School Name:<input type="text" style="margin-left:44px" id="10schl-name" onKeyPress="return ValidateAlpha(event);" tabindex="50" />
+                                    </label>
+                                    <label style="margin-left:88px">State:<input type="text" style="margin-left:77px;" id="10state" onKeyPress="return ValidateAlpha(event);" tabindex="51" /></label>
+                                    <br />
+                                    <label>Board Name:<input type="text" style="margin-left:50px;" id="10board" onKeyPress="return ValidateAlpha(event);" tabindex="52" /></label>
+                                    <label style="margin-left:90px">Year of Passing:<input type="text" style="margin-left:6px;" id="10year" tabindex="53" /></label>
+                                    <br />
+                                    <label>City:<input type="text" style="margin-left:106px;" id="10city" onKeyPress="return ValidateAlpha(event);" tabindex="54" /></label>
+                                    <label style="margin-left:95px">Marks(%):<input type="text" style="margin-left:43px;" id="10marks" onkeypress="javascript:return isNumber(event)" tabindex="55" /></label>
+                                    <br />
+                                    <br />
+
+                                </fieldset>
+                            </form>
+                            <br />
+                        </div>
+
+                        <script>
+                                    function docDetails(evt, Name) {
+                                        var i, tabcontent, tablinks;
+                                        tabcontent = document.getElementsByClassName("tabcontent");
+                                        for (i = 0; i < tabcontent.length; i++) {
+                                            tabcontent[i].style.display = "none";
+                                        }
+                                        tablinks = document.getElementsByClassName("tablinks");
+                                        for (i = 0; i < tablinks.length; i++) {
+                                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                        }
+                                        document.getElementById(Name).style.display = "block";
+                                        evt.currentTarget.className += " active";
+                                    }
+                                    document.getElementById("defaultOpen3").click();
+                        </script>
+                        <p></p>
+                    </div>
+                    @*//  </div>*@
+                </div>
+            </div>
+
+
+            @********************************button block*********************@
+            <div class="row">
+                <div class="col-sm-9" id="emp-salary">
+
+                    <p></p>
+                    <button id="emp-save" tabindex="56">Update</button>
+                    <button id="emp-clear" tabindex="57">Clear</button>
+                    @*<input type="button"  value="Save" name="Save" id="emp-save" />
+                        <input type="button"  value="Clear"name="Clear" id="emp-clear" />*@
+                    <hr class="hr" />
+
+
+                </div>
+
+            </div>
+            @********************************* emp profile new code***************@
+            @********************************* emp profile new code ends***************@
+        </div>
+    </div> @*container*@
+
+
+</body>
+

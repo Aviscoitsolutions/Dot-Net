@@ -1,0 +1,460 @@
+﻿<link href="~/css/style.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Attendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/sidebar-dropdown.css" rel="stylesheet" />
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<body style="background-color:#e9e8e8;">
+
+
+
+    <div class="sidenav attendance-sidenav">
+        <div style="margin-left:10px">
+            <ul style="list-style-type:none; color:white;">
+                <li>
+                    <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150" class="emp-img" id="sideprofile" />
+                </li>
+                <br />
+                <div style="color:white;">
+                    <center>
+                        <label style="margin-left:0px;">
+                            Name:<label id="user">@ViewBag.username</label><br />
+                            <label style="margin-left:0px;">
+                                Type:<label id="usertype">@ViewBag.usertype</label><br />
+                                <label style="margin-left:0px;">ID:<label id="empid">@ViewBag.empid</label>
+
+                    </center>
+                </div>
+            </ul>
+            <hr />
+
+        </div>
+        <hr />
+        <a href="#">Profile</a>
+        <a href="@Url.Action("Employee","Home")">Edit</a>
+        <a href="@Url.Action("ChangePassword","Home")">Change Password </a>
+
+        @*<a href="#">Overview</a>
+        <a href="#">Add Clock-time</a>
+        <a href="#">Upload Timesheet </a>
+        @*<a href="@Url.Action("Manage_Timesheet","Home")">Manage Timesheet </a>
+        <a href="@Url.Action("Clockedin_list","Home")">Clocked-in list </a>*@
+        @*<a href="#">Auto Approval </a>*@
+
+
+    </div>
+    <div class="container" id="container3">
+        @************heading row(full)****************@
+        <div class="row">
+            <div class="col-sm-9" id="Attendance-heading">
+                <p class="title">Attendance<p>
+            </div>
+        </div>
+
+        @***************************second row**************************@
+        <div class="row">
+            <div class="col-sm-6" id="clock">
+
+                <form>
+                    <div class="form-group">
+                        <p class="heading1">Time clock</p>
+                        <input type="button" value="clocked in" class="button" id="clockin" disabled="disabled" style="background-color:green;box-shadow: 0 3px #999!important;margin-top:-8px;margin-left:10px;margin-bottom:10px; " />
+
+                        <input type="button" disabled="disabled" value="clocked out" class="button" id="clockout11" style="background-color:#ff2859;box-shadow: 0 3px #999!important;margin-top:-8px;margin-left:30px;margin-bottom:10px; " /><br />
+                        <p class="heading1">Break clock</p>
+
+                        <input type="button" disabled="disabled"  value="Break Start" class="button" id="breakstart11" style="background-color:green;box-shadow: 0 3px #999!important;margin-top:-8px;margin-left:10px;margin-bottom:10px; " />
+
+                        <input type="button"  disabled="disabled"  value="Break End" class="button" id="breakend1" style="background-color:#ff2859;box-shadow: 0 3px #999!important;margin-top:-8px;margin-left:30px;margin-bottom:10px; " /><br />
+
+                        <label id="lblbreakstart" style="float:left"></label>
+                        <label id="lbltotal" style="margin-left: 75px;"></label>
+                        <label id="lblbreakend" style="float:right"></label>
+                        @*<label>Clocked in:</label> <input /><br />*@
+                        @*<label> Break:</label>
+        <label style="padding:10px" id="time"> break time</label>
+        <lable id="time2">(12:33pm to 12:40pm)</lable>*@
+                        @*<label>Add Note:</label>
+        <span style="margin-left:9px;padding:0px;">
+            <input type="text" placeholder="click to add note" id="note" />
+        </span>
+        <img src="~/images/coffee.png" width="30px" ; height="30px" /><br />*@
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-sm-6" id="crnt_date">
+                <p></p>
+                <p class="heading1">Current date and time</p>
+
+
+                <form>
+                    <div class="form-group">
+                        <label>Clock In:</label>
+                        &nbsp;
+                        <label id="lblclockin" style="color:#008dd2"></label>
+                        &nbsp;
+                        &nbsp;
+                        <label>Total Break:</label>
+                        &nbsp;
+                        <label id="totalbreak" style="color:red"></label>
+                        @*<input type="text" />*@<br />
+                        <br />
+                        <label id="clokout">Clock Out:</label>
+                        &nbsp;
+                        &nbsp;
+                        <label id="lblclockout" style="margin-left: -17px;color:green"></label>
+                        @*<span style="margin-left:13px;">
+            <input type="text" />
+        </span>*@<br /><h1></h1>
+                    </div>
+                </form>
+
+            </div>
+
+
+        </div>
+        @*********************************** 3rd row time sheet********************************@
+        <div class="row">
+
+            <div class="col-sm-9" id="time_sheet">
+                <p class="heading1">Time sheet</p>
+                <form>
+                    <div class="form-group">
+                        @*<label class="lable-font">Status:</label>
+                        
+                        <select id="select1">
+                            <option>All</option>
+                            <option>Approve</option>
+                            <option>Unapprove</option>
+
+                        </select>*@
+                        <br />
+                        <label class="lable-font">Schedule:</label>
+                        <select id="select2">
+                            <option value="Today">Today</option>
+                            <option value="Yesterday">Yesterday</option>
+                            <option value="ThisWeek">This Week</option>
+                            <option value="LastWeek">Last Week</option>
+                            <option value=" ThisMonth">This Month</option>
+                            <option value=" LastMonth">Last Month</option>
+                            <option value="AllTime">All Time</option>
+
+                        </select>
+                        @*</div>*@
+                        <hr style="border:2px solid #e9e8e8;" />
+                        <style>
+                        </style>
+                        <table class="table table-bordered" id="timesheet-table">
+                            <thead style="background-color:#d5d5d5">
+                                <tr>
+                                    <th>Hours</th>
+                                    <th>Date</th>
+                                    <th>Clock in</th>
+                                    <th>Total Break</th>
+                                  
+                                    <th>Clock out</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody id="t1">
+                               
+                            </tbody>
+                        </table>
+                        <hr style="border:2px solid #e9e8e8;" />
+                        @*<label>Total Hours:</label><br />
+                        <label>Without Break:</label></br>
+                        <label>Break:</label>*@
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+<script>
+    $(document).ready(function () {
+
+        $("#clockin").prop('disabled', false);
+        $("#breakstart11").prop('disabled', false);
+        $("#breakend1").prop('disabled', false);
+        $("#clockout11").prop('disabled', false);
+        
+        bindtable();
+        var employee = { EmpId: $('#empid').text() }
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            url: "/Home/checkattendance",
+            success: function (data) {
+
+                if (data == "yes") {
+                    $("#clockin").prop('disabled', true); $("#time_sheet").show();
+
+                }
+                else {
+                    $("#clockin").prop('disabled', false);
+                }
+            }
+        })
+       
+        $("#time_sheet").hide();
+        var type = $('#usertype').text();
+        if (type.trim() == "Employee") {
+
+            var employee = { EmpId: $('#empid').text() }
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                url: "/Home/Getemployeedata",
+                success: function (data) {
+
+                    $('#sideprofile').attr('src', data[0].profilepath.trim());
+                }
+            })
+        }
+    });
+    $("#clockin").click(function () {
+        $("#time_sheet").show();
+        $("#clockin").prop('disabled', true);
+        var t = new Date();
+        $("#lblclockin").text(t.toLocaleTimeString());
+        var employee = { EmpId: $("#empid").text(), button:"clockin" }
+        
+        $.ajax({
+            type: "POST",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            contentType: "application/json",
+            url: "/Home/submitattendance",
+            success: function (data) {
+                bindtable();
+                
+            }
+
+        })
+     
+    });
+    $("#clockout11").click(function () {
+        var r = confirm("Do You Really Want To Checkout and leave this site");
+       
+        if (r == true) {
+            var employee = { EmpId: $("#empid").text(), button: "clockout" }
+
+            $.ajax({
+                type: "POST",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                contentType: "application/json",
+                url: "/Home/submitattendance",
+                success: function (data) {
+
+                    bindtable();
+                    window.location.reload();
+                }
+
+            })
+        } 
+
+    });
+
+    $("#breakstart11").click(function () {
+        var b = "breakstart";
+        var employee = { EmpId: $("#empid").text(), button: b}
+
+        $.ajax({
+            type: "POST",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            contentType: "application/json",
+            url: "/Home/submitattendance",
+            success: function (data) {
+                var t = new Date();
+                $("#lblbreakstart").text(t.toLocaleTimeString());
+                $("#lbltotal").hide();
+                $("#lblbreakend").hide();
+                //$("#clockin").prop('disabled', true);
+                getdata();
+                bindtable();
+            }
+
+        })
+    });
+
+    $("#breakend1").click(function () {
+
+        var t = new Date();
+        $("#lblbreakend").text(t.toLocaleTimeString());
+        var employee = { EmpId: $("#empid").text(), button: "breakend" }
+
+        $.ajax({
+            type: "POST",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            contentType: "application/json",
+            url: "/Home/submitattendance",
+            success: function (data) {
+                $("#lbltotal").show();
+              
+                $("#lblbreakend").show();
+                if (data == null) {
+                    data = 0;
+                }
+                $("#totalbreak").text(data +":Min");
+             
+                getdata();
+                bindtable();
+            }
+
+        })
+
+    });
+
+   
+
+    function getdata() {
+        $.ajax({
+            type: "POST",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            contentType: "application/json",
+            url: "/Home/getattendance",
+            success: function (data) {
+               
+                if (data.btnstart.trim() == "0") {
+                    $("#breakstart11").prop('disabled', true);
+
+                }
+                else if (data.btnstart.trim() == "1") {
+                    $("#breakstart11").prop('disabled', false);
+
+                }
+               if (data.btnend.trim() == "0") {
+                   
+                    $("#breakend1").prop('disabled', true);
+                }
+                else if(data.btnend.trim() == "1") {
+                    $("#breakend1").prop('disabled', false);
+                }
+
+              
+                
+             
+               bindtable();
+              
+
+               
+
+            }
+
+        })
+    }
+
+    function bindtable() {
+        $.ajax({
+            type: "POST",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            contentType: "application/json",
+            url: "/Home/getattendance",
+            success: function (data) {
+                $("#t1").empty();
+                var setdata = $("#t1");
+                var date = new Date();
+                var totalbreak;
+                var milisegundos = parseInt(data.ClockIn.replace("/Date(", "").replace(")/", ""));
+                var clockin = new Date(milisegundos).toLocaleTimeString("en-UE");
+                
+                var clockout = "";
+                if (data.ClockOut == null || data.ClockOut == "") {
+                    clockout = "";
+                  
+                }
+                else {
+                    $("#breakstart11").prop('disabled', true);
+                    $("#clockout11").prop('disabled', true);
+                    $("#breakend1").prop('disabled', true);
+                    var milisegundos1 = parseInt(data.ClockOut.replace("/Date(", "").replace(")/", ""));
+                    clockout = new Date(milisegundos1).toLocaleTimeString("en-UE");
+                     
+                }
+              
+                if (data.totalbreak == null) {
+                    totalbreak = "0";
+                }
+                else {
+                    totalbreak = data.totalbreak;
+                }
+                $("#lblclockout").text(clockout.toString());
+                var data2 = "<tr onclick='getVal(this)' class='row_'>" +
+                    "<td>" + "9:HR" + "</td>" +
+                    "<td>" + date.toLocaleDateString() + "</td>" +
+                    "<td>" + clockin + "</td>" +
+                    "<td>" + totalbreak + ":Min" + "</td>" +
+                    "<td>" + clockout + "</td>" +
+                    "</tr>";
+                setdata.append(data2);
+             
+            }
+        })
+    }
+    $("#select2").change(function () {
+
+        alert(this.value);
+    })
+</script>
+<script>
+    var employee = { EmpId: $("#empid").text() }
+    $.ajax({
+        type: "POST",
+        data: "{employee:" + JSON.stringify(employee) + "}",
+        contentType: "application/json",
+        url: "/Home/getattendance",
+        success: function (data) {
+          
+            if (data != null)
+            {
+               
+                var milisegundos = parseInt(data.ClockIn.replace("/Date(", "").replace(")/", ""));
+                var clockin = new Date(milisegundos).toLocaleTimeString("en-UE");
+                if (data.breakstart != null) {
+                    var milisegundos1 = parseInt(data.breakstart.replace("/Date(", "").replace(")/", ""));
+                    var start = new Date(milisegundos1).toLocaleTimeString("en-UE");
+                }
+
+              
+                $("#lblclockin").text(clockin);
+                if (data.totalbreak != null) {
+                    $("#totalbreak").text(data.totalbreak + ":Min");
+                }
+                if (data.btnstart.trim() == "0") {
+                    $("#breakstart11").prop('disabled', true);
+                    $("#lblbreakstart").text(start);
+
+
+                }
+                else if (data.btnstart.trim() == "1") {
+                    $("#breakstart11").prop('disabled', false);
+
+                }
+                if (data.btnend.trim() == "0") {
+                    $("#breakend1").prop('disabled', true);
+                }
+                else if (data.btnend.trim() == "1") {
+                    $("#breakend1").prop('disabled', false);
+                }
+                bindtable();
+            }
+
+
+        }
+
+    })
+</script>

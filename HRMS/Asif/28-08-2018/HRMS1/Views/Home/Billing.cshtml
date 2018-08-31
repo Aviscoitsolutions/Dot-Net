@@ -1,0 +1,502 @@
+﻿
+@{
+    ViewBag.Title = "Billing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script src="~/bootstrap/jquery.min.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body style="background-color:#e9e8e8;">
+    <div class="container">
+
+        <div class="sidenav bill-sidenav">
+            <div style="margin-left:10px">
+                <ul style="list-style-type:none; color:white;">
+                    <li>
+                        <img src="~/images/download2.jpg" width="70px" height="70px" style="border-radius:50%; border:solid 3px #DEB150 " class="emp-img" id="sideprofile" />
+                    </li>
+                    <br />
+                    <div style="color:white;">
+                        <center>
+                            <label style="margin-left:0px;">
+                                Name:<label id="user">@ViewBag.username</label><br />
+                                <label style="margin-left:0px;">
+                                    Type:<label id="usertype">@ViewBag.usertype</label><br />
+                                    <label style="margin-left:0px;">ID:<label id="empid1">@ViewBag.empid</label>
+
+                        </center>
+                    </div>
+
+                </ul>
+                <hr />
+
+            </div>
+            <hr />
+            <a href="#">Bill Pay</a>
+            @*<a href="#">Upadate Billing</a>*@
+            <a id="billinghistoryslide">Billing History</a>
+            @*<a href="#">Cancle Subscription</a>*@
+
+
+        </div>
+        <div id="bill-container"></div>
+        @************heading row(full)****************@
+        <div class="row">
+            <div class="col-sm-9" id="bill-heading">
+                <p class="title">Billing<p>
+            </div>
+        </div>
+        @************************* 2nd row Bill Pay*****************@
+        <div class="row">
+            <div class="col-sm-9 local-setting" id="bill-pay">
+                <form>
+                    <p></p>
+                    <h1 id="amount">@ViewBag.amount</h1>
+                    <p class="heading1"> Bill Pay</p>
+                    <hr class="hr" />
+                    <label class="lable-font ">Full Name:</label>
+                    <input type="text" id="fullname" onKeyPress="return ValidateAlpha(event);" style=" width:500px; margin-left:60px;" required/><br /><p></p>
+                    <label class="lable-font">Address:</label>
+                    <input type="text" id="address" style=" width:500px; margin-left:72px;" required/><br />
+                    <label style="margin-left:150px;">Street Address</label><br />
+                    <input type="text" id="city" onKeyPress="return ValidateAlpha(event);" style="margin-left:150px;" required/>
+                    <input type="text" id="state" onKeyPress="return ValidateAlpha(event);" style="margin-left:20px" required/><br />
+                    <label style="margin-left:150px">City</label>
+                    <label style="margin-left:158px;">State</label><br />
+                    <input type="text" id="pin-cone" onKeyPress="return isNumber(event);" style="margin-left:150px" required/><br />
+                    <label style="margin-left:150px">Postal code</label>
+                    <br />
+                    <label class="lable-font">Email:</label>
+                    <input type="email" id="email" style="margin-left:90px; width:500px;" required/>
+                    <br />
+                    <br /> @*<div id="paypal-button1" style="width:30%;padding: 10px;margin-left: 30%;" onclick="show()">
+
+
+
+                    </div>
+
+                    <script src="https://www.paypalobjects.com/api/checkout.js" id="paypal-button1">
+
+                    </script>
+                    <script>
+
+                        var amount = $("#amount").text().replace("Rs.", "");
+                        $("#amount1").val(amount);
+                        paypal.Button.render({
+                            env: 'sandbox',
+
+                            client: {
+                                sandbox: 'AR1nMutE7cxQo8pogQITV_7VilBXxQ1fN8EKrb9zruZZHuClJuX1bVznNVPUcnh8I5sA2CE07hAoGUgf'
+                            },
+                            payment: function (data, actions) {
+                                return actions.payment.create({
+                                    transactions: [{
+                                        amount: {
+                                            total: amount,
+                                            currency: 'USD',
+
+                                        }
+                                    }]
+                                });
+                            },
+                            onAuthorize: function (data, actions) {
+                                return actions.payment.execute()
+                                    .then(function () {
+                                        window.alert('Thank you for your purchase!');
+                                    });
+                            }
+                        }, '#paypal-button1');
+
+                    </script>*@
+
+                </form>
+                <form id="form" action="https://www.sandbox.paypal.com/checkoutnow?locale.x=en_US&fundingSource=paypal&sessionID=ada0fa80e4_gezdumbyhi2ta&buttonSessionID=5dd4fe57c7_gezdumjshi2tc&env=sandbox&logLevel=warn&uid=f5f2b552ab&version=4&token=PAY-03D0371464318784CLN5LARQ&xcomponent=1" method="post">
+
+                    <!-- Identify your business so that you can collect the payments. -->
+                    <input type="hidden" name="business" value="Avisco123-facilitator@gmail.com">
+
+                    <!-- Specify a Buy Now button. -->
+                    <input type="hidden" name="cmd" value="_xclick">
+
+                    <!-- Specify details about the item that buyers will purchase. -->
+                    <input type="hidden" name="item_name" value="Subscription">
+                    <input type="hidden" name="amount" id="amount1 " value=@ViewBag.amount>
+                    <input type="hidden" name="currency_code" value="USD">
+
+                    <!-- Prompt buyers to enter the quantities they want. -->
+                    <input type="hidden" name="undefined_quantity" value="1">
+                    <input type="hidden" name="return" value="http://localhost:61194/Home/success">
+                    <input type="hidden" name="cancel_return" value="http://localhost:61194/Home/Subscription">
+                    <!-- Display the payment button. -->
+                    <input style="margin-left: 35%;" type="image" name="submit" border="0"
+                           src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+                           alt="Buy Now" onclick="show()" id="i">
+                    <img alt="" border="0" width="1" height="1"
+                         src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+
+
+
+                </form>
+                <script>
+                    $("#i").click(function (e){
+                        if ($("#fullname").val() == "") {
+                            e.preventDefault();
+                            alert("Please Enter Full Name");
+                            $("#fullname").focus();
+                               
+                           
+                        }
+                        else if ($("#address").val() == "")
+                        {
+                            e.preventDefault();
+                            alert("Please Enter Address");
+                            $("#address").focus();
+                        }
+                        else if ($("#city").val() == "") {
+                            e.preventDefault();
+                            alert("Please Enter City");
+                            $("#city").focus();
+                        }
+                        else if ($("#state").val() == "") {
+                            e.preventDefault();
+                            alert("Please Enter State");
+                            $("#state").focus();
+                        }
+                        else if ($("#email").val() == "") {
+                            e.preventDefault();
+                            alert("Please Enter E-Mail");
+                            $("#email").focus();
+                        }
+                        else {
+                            var billingssession = {
+                                amount: $("#amount").text(), name: $("#fullname").val(), address: $("#address").val(), city: $("#city").val(), state: $("#state").val(), email: $("#email").val(),
+                            }
+                            $.ajax({
+                                type: "POST",
+                                data: "{billingssession:" + JSON.stringify(billingssession) + "}",
+                                contentType: "application/json",
+                                url: "/Home/createsessions",
+                                success: function (data) {
+
+
+
+
+                                }
+                            })
+                        }
+                    });
+                </script>
+
+                <br /><br />
+                <form id="carddetails">
+                    <fieldset>
+                        <legend>Card Details:</legend>
+                    </fieldset>
+                    <label style="margin-left:145px;">First Name</label>
+                    <label style="margin-left:117px;">Last Name</label><br />
+                    <input type="text" id="firstname" style="margin-left:145px;" />
+                    <input type="text" id="lastname" style="margin-left:20px;" />
+                    <br /><p></p>
+                    <label style="margin-left:145px;">Creadit card number</label>
+                    <label style="margin-left:50px;">Security Code</label><br />
+                    <input type="text" id="card-no" style="margin-left:145px;" />
+                    <input type="text" id="card-code" style="margin-left:20px; width:100px;" /><br /><p></p>
+                    <label style="margin-left:145px;">Expiration Month</label>
+                    <label style="margin-left:75px;">Expiration Year</label><br />
+                    <select id='exp-month' class="select" onchange="show_month()" style="margin-left:146px; width:170px;">
+                        <option value=''>--Select Month--</option>
+                        <option selected value='1'>Janaury</option>
+                        <option value='2'>February</option>
+                        <option value='3'>March</option>
+                        <option value='4'>April</option>
+                        <option value='5'>May</option>
+                        <option value='6'>June</option>
+                        <option value='7'>July</option>
+                        <option value='8'>August</option>
+                        <option value='9'>September</option>
+                        <option value='10'>October</option>
+                        <option value='11'>November</option>
+                        <option value='12'>December</option>
+                    </select>
+                    @*<input type="text" id="exp-year" style="margin-left:20px;"/>*@
+                    <select id="exp-year" class="select" style="margin-left:20px; width:150px;">
+                        <option>--SELECT YEAR--</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                        <option selected>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                        <option>2027</option>
+                        <option>2028</option>
+                        <option>2030</option>
+                        <option>2031</option>
+                        <option>2032</option>
+                        <option>2033</option>
+                        <option>2035</option>
+                        <option>2036</option>
+                        <option>2037</option>
+                        <option>2038</option>
+                        <option>2039</option>
+                        <option>2040</option>
+                        <option>2041</option>
+                        <option>2042</option>
+                        <option>2043</option>
+                        <option>2044</option>
+                        <option>2045</option>
+                        <option>2046</option>
+                        <option>2047</option>
+                        <option>2048</option>
+                        <option>2049</option>
+                        <option>2050</option>
+                    </select>
+                    <p></p>
+                    <input type="checkbox" class="checkbox-inline" style="zoom:1.6;margin-bottom:3px" />
+                    <label class="lable-font">I agree to terms & conditions</label><br /><br />
+                    <label> captcha</label><br />
+                    <input type="submit" value="Submit" class="button" style="margin-left:170px; padding:5px" />
+                    <input type="submit" value="Clear Form" class="button" style="padding:5px;" /><br /><br />
+
+                </form>
+            </div>
+        </div>
+        @************************* 3rd row upgrade*****************@
+        @*<div class="row">
+                <div class="col-sm-9 local-setting" id="upgrade-bill">
+                    <form>
+                        <p></p>
+                        <p class="heading1">Upgrade</p>
+                        <hr class="hr" />
+
+                    </form>
+                </div>
+            </div>*@
+        @************************* 4th row Update Billing*****************@
+        <div class="row" id="updatedetails">
+            <div class="col-sm-9 local-setting" id="update-bill">
+                <form>
+                    <p></p>
+                    <p class="heading1"> Update Billing</p>
+                    <hr class="hr" />
+
+                    <label style="font-size:20px;font-weight:bold">Update Billing Details</label><br />
+                    <label>You can update your card  information by clicking the button below.</label><br /><p></p>
+                    <input type="submit" value="Update Billing Details" class="button" style="width:300px; margin-left:200px;padding:5px;" id="update-billing" /><br /><br />
+
+                </form>
+            </div>
+        </div>
+        @************************* 5th row billing history*****************@
+        <div class="row">
+            <div class="col-sm-9 local-setting" id="bill-history">
+                <form id="billinghistory">
+                    <p></p>
+                    <p class="heading1"> Billing History</p>
+                    <hr class="hr" /><br />
+                    <label style="font-size:20px;font-weight:bold">Payment History:</label><br />
+                    @* <label class="lable-font" style="margin-left:50px;">Date</label>
+        <label class="lable-font" style="margin-left:93px;">Amount</label><br />
+        <input type="text" style="margin-left:217px;width:100px;" id="date1" />
+        <input type="text" style="margin-left:30px;width:100px" id="amount" /><br /><p></p>
+
+        <label style="font-size:20px;font-weight:bold">Update Invoice Information:</label><br />
+        <label>You can update your business information to be displayed on your invoices using the field below.</label><br /><p></p>
+        <label class="lable-font" style="margin-left:0px;">Company Name</label><br />
+        <input type="text" style="margin-left:0px;width:700px;" id="company-name" /><hr style="margin-bottom:0px;" />
+        <label class="lable-font" style="margin-left:0px;">Address</label><br style="margin-bottom:1px;" />
+        <input type="text" style="margin-left:0px;width:700px" id="history-address" /><hr style="margin-bottom:0px;" />
+        <label class="lable-font" style="margin-left:0px;">Tax Identifier</label><br />
+        <input type="text" style="margin-left:0px;width:700px" id="tax" /><br /><hr style="margin-bottom:0px;" />
+
+        <input type="submit" value="Update Account" class="button" style="width:300px; margin-left:200px; padding:5px" id="update-account" /><br /><br />*@
+                    <table id="billinghs" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center">Bill_ID</th>
+                                <th style="text-align:center">Date</th>
+                                <th style="text-align:center">Bill Name</th>
+                                <th style="text-align:center">Amount</th>
+                                <th style="text-align:center">Address</th>
+                                <th style="text-align:center">City</th>
+                                <th style="text-align:center">State</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historybody" style="text-align:center"></tbody>
+
+                    </table>
+                </form>
+            </div>
+        </div>
+        @************************* 6th row Cancle subscription*****************@
+        @*<div class="row">
+            <div class="col-sm-9 local-setting" id="cancle-subscription">
+                <form id="cancelsubscription">
+                    <p></p>
+                    <p class="heading1">Cancle Subscription</p>
+                    <hr class="hr" />
+
+                    <label style="font-size:20px;font-weight:bold">Cancel Your Subscription</label><br />
+                    <label>If you would like to cancle your subscription,simply click the  button below.</label><br /><p></p>
+                    <input type="submit" value="Cancel Subscription" class="button" style="width:300px; margin-left:200px; padding:5px" id="cancel" /><br /><br />
+
+
+                </form>
+            </div>
+        </div>*@
+    </div>  @*// bill container*@
+    </div> @*//container*@
+
+    <input type="hidden" runat="server" id="key" name="key" value="gtKFFx" />
+    <input type="hidden" runat="server" id="salt" name="salt" value="eCwWELxi" />
+    <input type="hidden" runat="server" id="hash" name="hash" value="" />
+    <input type="hidden" runat="server" id="txnid" name="txnid" value="" />
+    <div id="paypal-button"></div>
+    <script src="https://www.paypalobjects.com/api/checkout.js" id="pay"></script>
+</body>
+</html>
+<script>
+    function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }
+    function ValidateAlpha(evt) {
+        var keyCode = (evt.which) ? evt.which : evt.keyCode
+        if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32)
+
+            return false;
+        return true;
+    }
+    $(document).ready(function () {
+        $("#billinghistoryslide").click(function () {
+            $("#billinghistory").toggle();
+        });
+        if ($("#usertype").text() == "Employee") {
+            var employee = { EmpId: $('#empid1').text() }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                url: "/Home/profile",
+                success: function (data) {
+
+                    $('#sideprofile').attr('src', data[0].profilepath.trim());
+
+
+                }
+            })
+        }
+        $("#carddetails").hide();
+        $("#billinghistory").hide();
+        $("#cancelsubscription").hide();
+        $("#updatedetails").hide();
+        var employee = { EmpId: $('#empid1').text() }
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            data: "{employee:" + JSON.stringify(employee) + "}",
+            url: "/Home/Getbillingdata",
+            success: function (data) {
+                if (data.length == 0) {
+                    alert("No Records Found!!");
+                }
+                else {
+                    var setdata = $("#historybody");
+                    $("#historybody").empty();
+
+                    for (var i = 0; i < data.length; i++) {
+                        var milisegundos = parseInt(data[i].date.replace("/Date(", "").replace(")/", ""));
+                        var date = new Date(milisegundos).toLocaleDateString("en-UE");
+                        var data1 = "<tr>" +
+                            "<td>" + data[i].Bill_ID + "</td>" +
+                            "<td>" + date + "</td>" +
+                            "<td>" + data[i].BillName + "</td>" +
+                            "<td>" + data[i].Amount + "</td>" +
+                            "<td>" + data[i].address + "</td>" +
+                            "<td>" + data[i].city + "</td>" +
+                            "<td>" + data[i].state + "</td>" +
+                            "</tr>";
+                        setdata.append(data1);
+
+                    }
+                }
+
+            }
+        })
+        
+      
+
+        $("#proceed").click(function () {
+            //var amount = $("#amount").text().replace("Rs.", "");
+
+
+
+
+        @*if ($("#fullname").val() == "") {
+            alert("Please Enter Name");
+            $("#fullname").focus();
+        }
+        else if ($("#address").val() == "") {
+            alert("Please Enter Address");
+            $("#address").focus();
+        }
+        else if ($("#city").val() == "") {
+            alert("Please Enter City");
+            $("#city").focus();
+        }
+        else if ($("#state").val() == "") {
+            alert("Please Enter State");
+            $("#state").focus();
+        }
+        else if ($("#pin-cone").val() == "") {
+            alert("Please Enter Pin-Code");
+            $("#pin-cone").focus();
+        }
+        else if ($("#email").val() == "") {
+            alert("Please Enter Email");
+            $("#email").focus();
+        }
+        else {
+
+            var amount = $("#amount").text().replace("Rs.", "");
+
+            var s = 1;
+            var billing = { amount: amount, key: $("#key").val(), salt: $("#salt").val(), hash: $("#hash").val(), txnid:s,}
+         
+                $.ajax({
+                    url: '/Home/payform?amount=' + billing, //Demo method in Home Controller is for payumoney payment gateway.
+                    type: "POST",
+                    data: billing,
+                    async: false,
+                    success: function (data) {
+                        window.open("https://sandboxsecure.payu.in/_payment", billing);
+                    if (data > 0) {
+               //after successful payment, it will call this function to save data in database.
+                window.location.href = '@Url.Action("Dashboard", "Home")';
+            }
+            
+        
+       
+                }
+            })
+        }*@
+
+
+        });
+    });
+
+</script>

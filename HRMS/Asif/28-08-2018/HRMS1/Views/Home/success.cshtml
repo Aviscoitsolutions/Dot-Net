@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   
+        <link href="~/css/style.css" rel="stylesheet" />
+        <script src="~/bootstrap/jquery.min.js"></script>
+        <script src="~/Scripts/modernizr-2.8.3.js"></script>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+   
+    <meta name="viewport" content="width=device-width" />
+    <title>success</title>
+</head>
+<body>
+    <div> 
+        <h1>Payment Success</h1>
+    </div>
+</body>
+</html>
+<script>
+    //$(document).ready(function () {
+     
+        var id1 = "";
+        var url = '@Html.Raw(Url.Action("subscriptionrecipt", "Home", new { id = "__orderId__"}))';
+
+        var params = url.replace('__orderId__', id1);
+        window.open(params);
+    //});
+</script>
+
