@@ -1,0 +1,18 @@
+09-05-2018 06:37:26 UDP: Started listening at port 667
+09-05-2018 06:37:38 TCP: System.Net.Sockets.SocketException (0x80004005): An address incompatible with the requested protocol was used
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at ExampleService.TCPServer.Start() in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\TCPServer.cs:line 61
+09-05-2018 06:37:38 TCP Output Control: Started listening at port 668
+09-05-2018 06:37:38 TCP Output Control: Error in confirmation checker.
+09-05-2018 06:37:38 TCP Output Control: System.ArgumentException: key=value argument incorrect in ConnectionString
+Parameter name: initial catalog
+   at Npgsql.NpgsqlConnectionStringBuilder.GetKey(String key)
+   at Npgsql.NpgsqlConnectionStringBuilder.set_Item(String keyword, Object value)
+   at System.Data.Common.DbConnectionStringBuilder.set_ConnectionString(String value)
+   at Npgsql.NpgsqlConnectionStringBuilder..ctor(String connectionString)
+   at Npgsql.NpgsqlConnection.LoadConnectionStringBuilder(String connectionString)
+   at Npgsql.NpgsqlConnection..ctor(String ConnectionString)
+   at ExampleService.DataAccess.PostgreSqlDataAccess..ctor(Nullable`1 imei) in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\DataAccess\PostgreSqlDataAccess.cs:line 20
+   at ExampleService.Helper.GetDatabase(Nullable`1 imei) in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\Helper.cs:line 24
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\TCPOutputControl.cs:line 307

@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="aviscotrackerdb" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=aviscodb.database.windows.net;Initial Catalog=aviscotrackerdb;User ID=Avisco;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" SettingsObjectName="ExampleService.Properties.Settings" SettingsPropertyName="aviscotrackerdbConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.device_errors" Member="device_errors">
+    <Type Name="device_error">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="imei" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="server_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[function]" Member="function" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="function_warning" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.google_map" Member="google_maps">
+    <Type Name="google_map">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Long" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="stetus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="speed" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Tbl_User_google_map" Member="Tbl_User" ThisKey="UserId" OtherKey="UserID" Type="Tbl_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.outputs" Member="outputs">
+    <Type Name="output">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="output_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="output_data" Type="System.Data.Linq.Binary" DbType="VarBinary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="expiration_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_DeviceRegistration" Member="Tbl_DeviceRegistrations">
+    <Type Name="Tbl_DeviceRegistration">
+      <Column Name="DeviceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeviceIMEI" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Vehicle_Type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SimNo" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="APN" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="DeviceModel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="stetus" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Tbl_DeviceRegistration_telemetry" Member="telemetries" ThisKey="DeviceIMEI" OtherKey="imei" Type="telemetry" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Log" Member="Tbl_Logs">
+    <Type Name="Tbl_Log">
+      <Column Name="Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Long" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fuel" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_User" Member="Tbl_Users">
+    <Type Name="Tbl_User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Companyname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactNo" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Tbl_User_google_map" Member="google_maps" ThisKey="UserID" OtherKey="UserId" Type="google_map" />
+      <Association Name="Tbl_User_Tbl_User" Member="Tbl_User2" ThisKey="UserID" OtherKey="UserID" Type="Tbl_User" Cardinality="One" />
+      <Association Name="Tbl_User_Tbl_User" Member="Tbl_User1" ThisKey="UserID" OtherKey="UserID" Type="Tbl_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.telemetry" Member="telemetries">
+    <Type Name="telemetry">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="imei" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="acceleration_pedal_position" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="fuel_level" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="wheel_speed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="engine_speed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_engine_hours" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="total_vehicle_distance" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="analog_inputs0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="analog_inputs1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="analog_inputs2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="analog_inputs3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="analog_inputs4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="analog_inputs5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="analog_inputs6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="analog_inputs7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="counters0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="counters1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="counters2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="counters3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="digital_inputs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fuel_levels0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fuel_levels1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="speed" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="satellites" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="hdop" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="direction" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="altitude" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="odometer" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="mobile_country_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mobile_network_code" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="local_area_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cell_identifier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="timing_advance" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="recieved_signal_strength" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="engine_coolant_temperature" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_air_temperature" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1939_driver_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="j1939_fuel_rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1939_fuel_fms_economy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1939_fuel_consumption" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="j1939_axle_number" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_tire_number" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_axle_weight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1939_mil_status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_driver1_work" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_driver2_work" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_motion" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_driver1_time" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_driver1_crd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_overspeed" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_driver2_time" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_driver2_crd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_tcoevent" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_handl" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_perf" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_dir" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1939_speed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtc9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="car_in_phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dallas_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dallas_temperature" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dallas_humidity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lls_lvl_add0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lls_lvl_add1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lls_lvl_add2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lls_lvl_add3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lls_temp_add0" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lls_temp_add1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lls_temp_add2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lls_temp_add3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_mil_status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_engine_load" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_engine_temperature" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_short_fuel_trim1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_long_fuel_trim1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_short_fuel_trim2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_long_fuel_trim2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_fuel_pressure" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_map" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_rpm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_speed" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_air_temp" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_maf" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_tps" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_fuel_level" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_rail_pressure" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_hybrid_battery_life" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="j1979_fuel_rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1979_dtc9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1708_engine_hours" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="j1708_fuel_used" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="j1708_fuel_level" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality0" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality4" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality5" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality6" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality7" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality8" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality9" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality10" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality11" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality12" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality13" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality14" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality15" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality16" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality17" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality18" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality19" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="driving_quality20" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="wiegand26_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="fuel_con_ins" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="axle_group0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="axle_group1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="axle_group2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="axle_group3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="axle_group4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="j1939_adblue" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="prev_digital_inputs" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="wln_accel_max" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="wln_brk_max" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="wln_crn_max" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="can_message_0700" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="can_message_0760" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="one_wire_temp1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="one_wire_temp1_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="one_wire_temp2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="one_wire_temp2_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="one_wire_temp3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="one_wire_temp3_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="one_wire_temp4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="one_wire_temp4_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="total_fuel_used" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Tbl_DeviceRegistration_telemetry" Member="Tbl_DeviceRegistration" ThisKey="imei" OtherKey="DeviceIMEI" Type="Tbl_DeviceRegistration" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
