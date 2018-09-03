@@ -1,0 +1,7 @@
+04-05-2018 07:32:52 UDP: Started listening at port 667
+04-05-2018 07:32:52 TCP: Started listening at port 8414
+04-05-2018 07:32:52 TCP Output Control: Started listening at port 668
+04-05-2018 07:32:52 TCP Output Control: Got new connection: 192.168.0.100:53363
+04-05-2018 07:32:52 TCP Output Control: Recieved 101 bytes from socket.
+04-05-2018 07:32:52 TCP Output Control: 00-00-00-65-00-03-00-00-64-61-74-61-62-61-73-65-00-65-78-61-6D-70-6C-65-64-61-74-61-62-61-73-65-00-75-73-65-72-00-41-64-6D-69-6E-00-44-61-74-65-53-74-79-6C-65-00-49-53-4F-00-63-6C-69-65-6E-74-5F-65-6E-63-6F-64-69-6E-67-00-55-54-46-38-00-65-78-74-72-61-5F-66-6C-6F-61-74-5F-64-69-67-69-74-73-00-32-00-00
+04-05-2018 07:32:52 TCP Output Control: Checksum does not match.

@@ -1,0 +1,5 @@
+08-05-2018 12:35:53 UDP: Started listening at port 667
+08-05-2018 12:35:53 TCP: Started listening at port 8414
+08-05-2018 12:35:53 TCP Output Control: Started listening at port 668
+08-05-2018 12:35:56 TCP: Got new connection: 192.168.0.100:53452
+08-05-2018 12:35:56 TCP: Connection broke

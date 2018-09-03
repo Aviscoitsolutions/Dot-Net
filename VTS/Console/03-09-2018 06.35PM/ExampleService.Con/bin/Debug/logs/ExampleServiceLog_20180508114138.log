@@ -1,0 +1,14 @@
+08-05-2018 11:41:38 UDP: Started listening at port 667
+08-05-2018 11:41:44 TCP: Started listening at port 3702
+08-05-2018 11:41:44 TCP Output Control: Started listening at port 668
+08-05-2018 11:41:45 TCP Output Control: Error in confirmation checker.
+08-05-2018 11:41:45 TCP Output Control: Npgsql.NpgsqlException:
+Failed to establish a connection to '192.168.0.100'.
+   at Npgsql.NpgsqlClosedState.Open(NpgsqlConnector context, Int32 timeout)
+   at Npgsql.NpgsqlConnector.Open()
+   at Npgsql.NpgsqlConnectorPool.GetPooledConnector(NpgsqlConnection Connection)
+   at Npgsql.NpgsqlConnectorPool.RequestPooledConnectorInternal(NpgsqlConnection Connection)
+   at Npgsql.NpgsqlConnectorPool.RequestConnector(NpgsqlConnection Connection)
+   at Npgsql.NpgsqlConnection.Open()
+   at ExampleService.DataAccess.PostgreSqlDataAccess.Open() in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\DataAccess\PostgreSqlDataAccess.cs:line 26
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\TCPOutputControl.cs:line 309

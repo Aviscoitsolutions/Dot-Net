@@ -1,0 +1,1074 @@
+29-08-2018 13:09:16 UDP: Started listening at port 8414
+29-08-2018 13:09:16 TCP: Started listening at port 10025
+29-08-2018 13:09:16 TCP Output Control: Started listening at port 668
+29-08-2018 13:09:17 TCP Output Control: Error in confirmation checker.
+29-08-2018 13:09:17 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+29-08-2018 13:09:23 TCP: Got new connection: 42.106.23.25:47324
+29-08-2018 13:09:25 TCP: Recieved 18 bytes from socket.
+29-08-2018 13:09:25 TCP: Checking for keyword validity.
+29-08-2018 13:09:25 TCP: Keyword valid. Waiting for data.
+29-08-2018 13:09:27 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:09:27 TCP: Parsing recieved data.
+29-08-2018 13:09:27 TCP: ---- Parser log start ----
+29-08-2018 13:09:27 Helper: IMEI: 1130590330583160
+29-08-2018 13:09:27 Helper: Checksum does not match.
+29-08-2018 13:09:27 TCP: ---- Saving to database ----
+29-08-2018 13:09:27 TCP: ---- Successfully saved to database ----
+29-08-2018 13:09:30 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:09:30 TCP: Parsing recieved data.
+29-08-2018 13:09:30 TCP: ---- Parser log start ----
+29-08-2018 13:09:30 Helper: IMEI: 1130590330583160
+29-08-2018 13:09:30 Helper: Checksum does not match.
+29-08-2018 13:09:30 TCP: ---- Saving to database ----
+29-08-2018 13:09:30 TCP: ---- Successfully saved to database ----
+29-08-2018 13:09:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:09:33 TCP: Parsing recieved data.
+29-08-2018 13:09:33 TCP: ---- Parser log start ----
+29-08-2018 13:09:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:09:33 Helper: Error parsing data.
+29-08-2018 13:09:33 TCP: ---- Saving to database ----
+29-08-2018 13:09:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:09:37 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:09:59 TCP: Parsing recieved data.
+29-08-2018 13:09:59 TCP: ---- Parser log start ----
+29-08-2018 13:09:59 Helper: IMEI: 512574806296590456
+29-08-2018 13:09:59 Helper: Checksum does not match.
+29-08-2018 13:09:59 TCP: ---- Saving to database ----
+29-08-2018 13:09:59 TCP: ---- Successfully saved to database ----
+29-08-2018 13:09:59 TCP: Recieved 231 bytes from socket.
+29-08-2018 13:09:59 TCP: Parsing recieved data.
+29-08-2018 13:09:59 TCP: ---- Parser log start ----
+29-08-2018 13:09:59 Helper: IMEI: 512574806296590456
+29-08-2018 13:09:59 Helper: Checksum does not match.
+29-08-2018 13:09:59 TCP: ---- Saving to database ----
+29-08-2018 13:09:59 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:00 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:00 TCP: Parsing recieved data.
+29-08-2018 13:10:00 TCP: ---- Parser log start ----
+29-08-2018 13:10:00 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:00 Helper: Checksum does not match.
+29-08-2018 13:10:00 TCP: ---- Saving to database ----
+29-08-2018 13:10:00 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:03 TCP: Parsing recieved data.
+29-08-2018 13:10:03 TCP: ---- Parser log start ----
+29-08-2018 13:10:03 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:03 Helper: Checksum does not match.
+29-08-2018 13:10:03 TCP: ---- Saving to database ----
+29-08-2018 13:10:03 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:06 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:06 TCP: Parsing recieved data.
+29-08-2018 13:10:06 TCP: ---- Parser log start ----
+29-08-2018 13:10:06 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:06 Helper: Checksum does not match.
+29-08-2018 13:10:06 TCP: ---- Saving to database ----
+29-08-2018 13:10:06 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:09 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:09 TCP: Parsing recieved data.
+29-08-2018 13:10:09 TCP: ---- Parser log start ----
+29-08-2018 13:10:09 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:09 Helper: Checksum does not match.
+29-08-2018 13:10:09 TCP: ---- Saving to database ----
+29-08-2018 13:10:09 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:12 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:12 TCP: Parsing recieved data.
+29-08-2018 13:10:12 TCP: ---- Parser log start ----
+29-08-2018 13:10:12 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:12 Helper: Error parsing data.
+29-08-2018 13:10:12 TCP: ---- Saving to database ----
+29-08-2018 13:10:12 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:15 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:15 TCP: Parsing recieved data.
+29-08-2018 13:10:15 TCP: ---- Parser log start ----
+29-08-2018 13:10:15 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:15 Helper: Checksum does not match.
+29-08-2018 13:10:15 TCP: ---- Saving to database ----
+29-08-2018 13:10:15 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:18 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:18 TCP: Parsing recieved data.
+29-08-2018 13:10:18 TCP: ---- Parser log start ----
+29-08-2018 13:10:18 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:18 Helper: Checksum does not match.
+29-08-2018 13:10:18 TCP: ---- Saving to database ----
+29-08-2018 13:10:18 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:24 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:24 TCP: Parsing recieved data.
+29-08-2018 13:10:24 TCP: ---- Parser log start ----
+29-08-2018 13:10:24 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:24 Helper: Checksum does not match.
+29-08-2018 13:10:24 TCP: ---- Saving to database ----
+29-08-2018 13:10:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:34 TCP: Parsing recieved data.
+29-08-2018 13:10:34 TCP: ---- Parser log start ----
+29-08-2018 13:10:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:34 Helper: Checksum does not match.
+29-08-2018 13:10:34 TCP: ---- Saving to database ----
+29-08-2018 13:10:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:44 TCP: Parsing recieved data.
+29-08-2018 13:10:44 TCP: ---- Parser log start ----
+29-08-2018 13:10:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:44 Helper: Checksum does not match.
+29-08-2018 13:10:44 TCP: ---- Saving to database ----
+29-08-2018 13:10:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:54 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:10:54 TCP: Parsing recieved data.
+29-08-2018 13:10:54 TCP: ---- Parser log start ----
+29-08-2018 13:10:54 Helper: IMEI: 1130590330583160
+29-08-2018 13:10:54 Helper: Checksum does not match.
+29-08-2018 13:10:54 TCP: ---- Saving to database ----
+29-08-2018 13:10:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:10:57 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:10:57 TCP: Parsing recieved data.
+29-08-2018 13:10:57 TCP: ---- Parser log start ----
+29-08-2018 13:10:57 Helper: IMEI: 512574806296590456
+29-08-2018 13:10:57 Helper: Checksum does not match.
+29-08-2018 13:10:57 TCP: ---- Saving to database ----
+29-08-2018 13:10:57 TCP: ---- Successfully saved to database ----
+29-08-2018 13:11:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:11:04 TCP: Parsing recieved data.
+29-08-2018 13:11:04 TCP: ---- Parser log start ----
+29-08-2018 13:11:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:11:04 Helper: Checksum does not match.
+29-08-2018 13:11:04 TCP: ---- Saving to database ----
+29-08-2018 13:11:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:11:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:11:14 TCP: Parsing recieved data.
+29-08-2018 13:11:14 TCP: ---- Parser log start ----
+29-08-2018 13:11:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:11:14 Helper: Checksum does not match.
+29-08-2018 13:11:14 TCP: ---- Saving to database ----
+29-08-2018 13:11:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:11:24 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:11:24 TCP: Parsing recieved data.
+29-08-2018 13:11:24 TCP: ---- Parser log start ----
+29-08-2018 13:11:24 Helper: IMEI: 512574806296590456
+29-08-2018 13:11:24 Helper: Checksum does not match.
+29-08-2018 13:11:24 TCP: ---- Saving to database ----
+29-08-2018 13:11:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:11:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:11:34 TCP: Parsing recieved data.
+29-08-2018 13:11:34 TCP: ---- Parser log start ----
+29-08-2018 13:11:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:11:34 Helper: Checksum does not match.
+29-08-2018 13:11:34 TCP: ---- Saving to database ----
+29-08-2018 13:11:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:11:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:11:44 TCP: Parsing recieved data.
+29-08-2018 13:11:44 TCP: ---- Parser log start ----
+29-08-2018 13:11:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:11:44 Helper: Checksum does not match.
+29-08-2018 13:11:44 TCP: ---- Saving to database ----
+29-08-2018 13:11:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:11:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:11:54 TCP: Parsing recieved data.
+29-08-2018 13:11:54 TCP: ---- Parser log start ----
+29-08-2018 13:11:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:11:54 Helper: Checksum does not match.
+29-08-2018 13:11:54 TCP: ---- Saving to database ----
+29-08-2018 13:11:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:12:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:12:04 TCP: Parsing recieved data.
+29-08-2018 13:12:04 TCP: ---- Parser log start ----
+29-08-2018 13:12:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:12:04 Helper: Checksum does not match.
+29-08-2018 13:12:04 TCP: ---- Saving to database ----
+29-08-2018 13:12:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:12:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:12:14 TCP: Parsing recieved data.
+29-08-2018 13:12:14 TCP: ---- Parser log start ----
+29-08-2018 13:12:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:12:14 Helper: Checksum does not match.
+29-08-2018 13:12:14 TCP: ---- Saving to database ----
+29-08-2018 13:12:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:12:24 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:12:24 TCP: Parsing recieved data.
+29-08-2018 13:12:24 TCP: ---- Parser log start ----
+29-08-2018 13:12:24 Helper: IMEI: 1130590330583160
+29-08-2018 13:12:24 Helper: Checksum does not match.
+29-08-2018 13:12:24 TCP: ---- Saving to database ----
+29-08-2018 13:12:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:12:26 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:12:26 TCP: Parsing recieved data.
+29-08-2018 13:12:26 TCP: ---- Parser log start ----
+29-08-2018 13:12:26 Helper: IMEI: 512574806296590456
+29-08-2018 13:12:26 Helper: Checksum does not match.
+29-08-2018 13:12:26 TCP: ---- Saving to database ----
+29-08-2018 13:12:26 TCP: ---- Successfully saved to database ----
+29-08-2018 13:12:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:12:34 TCP: Parsing recieved data.
+29-08-2018 13:12:34 TCP: ---- Parser log start ----
+29-08-2018 13:12:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:12:34 Helper: Checksum does not match.
+29-08-2018 13:12:34 TCP: ---- Saving to database ----
+29-08-2018 13:12:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:12:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:12:44 TCP: Parsing recieved data.
+29-08-2018 13:12:44 TCP: ---- Parser log start ----
+29-08-2018 13:12:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:12:44 Helper: Checksum does not match.
+29-08-2018 13:12:44 TCP: ---- Saving to database ----
+29-08-2018 13:12:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:12:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:12:54 TCP: Parsing recieved data.
+29-08-2018 13:12:54 TCP: ---- Parser log start ----
+29-08-2018 13:12:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:12:54 Helper: Checksum does not match.
+29-08-2018 13:12:54 TCP: ---- Saving to database ----
+29-08-2018 13:12:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:13:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:13:04 TCP: Parsing recieved data.
+29-08-2018 13:13:04 TCP: ---- Parser log start ----
+29-08-2018 13:13:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:13:04 Helper: Checksum does not match.
+29-08-2018 13:13:04 TCP: ---- Saving to database ----
+29-08-2018 13:13:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:13:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:13:14 TCP: Parsing recieved data.
+29-08-2018 13:13:14 TCP: ---- Parser log start ----
+29-08-2018 13:13:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:13:14 Helper: Checksum does not match.
+29-08-2018 13:13:14 TCP: ---- Saving to database ----
+29-08-2018 13:13:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:13:24 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:13:24 TCP: Parsing recieved data.
+29-08-2018 13:13:24 TCP: ---- Parser log start ----
+29-08-2018 13:13:24 Helper: IMEI: 512574806296590456
+29-08-2018 13:13:24 Helper: Checksum does not match.
+29-08-2018 13:13:24 TCP: ---- Saving to database ----
+29-08-2018 13:13:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:13:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:13:33 TCP: Parsing recieved data.
+29-08-2018 13:13:33 TCP: ---- Parser log start ----
+29-08-2018 13:13:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:13:33 Helper: Checksum does not match.
+29-08-2018 13:13:33 TCP: ---- Saving to database ----
+29-08-2018 13:13:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:13:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:13:43 TCP: Parsing recieved data.
+29-08-2018 13:13:43 TCP: ---- Parser log start ----
+29-08-2018 13:13:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:13:43 Helper: Checksum does not match.
+29-08-2018 13:13:43 TCP: ---- Saving to database ----
+29-08-2018 13:13:43 TCP: ---- Successfully saved to database ----
+29-08-2018 13:13:53 TCP: Got new connection: 42.106.23.25:38489
+29-08-2018 13:13:54 TCP: Recieved 18 bytes from socket.
+29-08-2018 13:13:54 TCP: Checking for keyword validity.
+29-08-2018 13:13:54 TCP: Keyword valid. Waiting for data.
+29-08-2018 13:13:58 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:13:58 TCP: Parsing recieved data.
+29-08-2018 13:13:58 TCP: ---- Parser log start ----
+29-08-2018 13:13:58 Helper: IMEI: 1130590330583160
+29-08-2018 13:13:58 Helper: Checksum does not match.
+29-08-2018 13:13:58 TCP: ---- Saving to database ----
+29-08-2018 13:13:58 TCP: ---- Successfully saved to database ----
+29-08-2018 13:14:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:14:04 TCP: Parsing recieved data.
+29-08-2018 13:14:04 TCP: ---- Parser log start ----
+29-08-2018 13:14:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:14:04 Helper: Checksum does not match.
+29-08-2018 13:14:04 TCP: ---- Saving to database ----
+29-08-2018 13:14:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:14:05 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:14:05 TCP: Parsing recieved data.
+29-08-2018 13:14:05 TCP: ---- Parser log start ----
+29-08-2018 13:14:05 Helper: IMEI: 512574806296590456
+29-08-2018 13:14:05 Helper: Checksum does not match.
+29-08-2018 13:14:05 TCP: ---- Saving to database ----
+29-08-2018 13:14:05 TCP: ---- Successfully saved to database ----
+29-08-2018 13:14:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:14:14 TCP: Parsing recieved data.
+29-08-2018 13:14:14 TCP: ---- Parser log start ----
+29-08-2018 13:14:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:14:14 Helper: Checksum does not match.
+29-08-2018 13:14:14 TCP: ---- Saving to database ----
+29-08-2018 13:14:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:14:24 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:14:24 TCP: Parsing recieved data.
+29-08-2018 13:14:24 TCP: ---- Parser log start ----
+29-08-2018 13:14:24 Helper: IMEI: 512574806296590456
+29-08-2018 13:14:24 Helper: Checksum does not match.
+29-08-2018 13:14:24 TCP: ---- Saving to database ----
+29-08-2018 13:14:25 TCP: ---- Successfully saved to database ----
+29-08-2018 13:14:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:14:34 TCP: Parsing recieved data.
+29-08-2018 13:14:34 TCP: ---- Parser log start ----
+29-08-2018 13:14:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:14:34 Helper: Checksum does not match.
+29-08-2018 13:14:34 TCP: ---- Saving to database ----
+29-08-2018 13:14:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:14:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:14:44 TCP: Parsing recieved data.
+29-08-2018 13:14:44 TCP: ---- Parser log start ----
+29-08-2018 13:14:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:14:44 Helper: Checksum does not match.
+29-08-2018 13:14:44 TCP: ---- Saving to database ----
+29-08-2018 13:14:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:14:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:14:54 TCP: Parsing recieved data.
+29-08-2018 13:14:54 TCP: ---- Parser log start ----
+29-08-2018 13:14:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:14:54 Helper: Checksum does not match.
+29-08-2018 13:14:54 TCP: ---- Saving to database ----
+29-08-2018 13:14:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:15:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:15:04 TCP: Parsing recieved data.
+29-08-2018 13:15:04 TCP: ---- Parser log start ----
+29-08-2018 13:15:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:15:04 Helper: Checksum does not match.
+29-08-2018 13:15:04 TCP: ---- Saving to database ----
+29-08-2018 13:15:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:15:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:15:14 TCP: Parsing recieved data.
+29-08-2018 13:15:14 TCP: ---- Parser log start ----
+29-08-2018 13:15:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:15:14 Helper: Checksum does not match.
+29-08-2018 13:15:14 TCP: ---- Saving to database ----
+29-08-2018 13:15:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:15:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:15:23 TCP: Parsing recieved data.
+29-08-2018 13:15:23 TCP: ---- Parser log start ----
+29-08-2018 13:15:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:15:23 Helper: Checksum does not match.
+29-08-2018 13:15:23 TCP: ---- Saving to database ----
+29-08-2018 13:15:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:15:24 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:15:24 TCP: Parsing recieved data.
+29-08-2018 13:15:24 TCP: ---- Parser log start ----
+29-08-2018 13:15:24 Helper: IMEI: 1130590330583160
+29-08-2018 13:15:24 Helper: Checksum does not match.
+29-08-2018 13:15:24 TCP: ---- Saving to database ----
+29-08-2018 13:15:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:15:35 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:15:35 TCP: Parsing recieved data.
+29-08-2018 13:15:35 TCP: ---- Parser log start ----
+29-08-2018 13:15:35 Helper: IMEI: 512574806296590456
+29-08-2018 13:15:35 Helper: Checksum does not match.
+29-08-2018 13:15:35 TCP: ---- Saving to database ----
+29-08-2018 13:15:35 TCP: ---- Successfully saved to database ----
+29-08-2018 13:15:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:15:43 TCP: Parsing recieved data.
+29-08-2018 13:15:43 TCP: ---- Parser log start ----
+29-08-2018 13:15:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:15:43 Helper: Checksum does not match.
+29-08-2018 13:15:43 TCP: ---- Saving to database ----
+29-08-2018 13:15:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:15:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:15:54 TCP: Parsing recieved data.
+29-08-2018 13:15:54 TCP: ---- Parser log start ----
+29-08-2018 13:15:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:15:54 Helper: Checksum does not match.
+29-08-2018 13:15:54 TCP: ---- Saving to database ----
+29-08-2018 13:15:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:16:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:16:04 TCP: Parsing recieved data.
+29-08-2018 13:16:04 TCP: ---- Parser log start ----
+29-08-2018 13:16:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:16:04 Helper: Checksum does not match.
+29-08-2018 13:16:04 TCP: ---- Saving to database ----
+29-08-2018 13:16:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:16:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:16:13 TCP: Parsing recieved data.
+29-08-2018 13:16:13 TCP: ---- Parser log start ----
+29-08-2018 13:16:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:16:13 Helper: Checksum does not match.
+29-08-2018 13:16:13 TCP: ---- Saving to database ----
+29-08-2018 13:16:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:16:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:16:23 TCP: Parsing recieved data.
+29-08-2018 13:16:23 TCP: ---- Parser log start ----
+29-08-2018 13:16:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:16:23 Helper: Checksum does not match.
+29-08-2018 13:16:23 TCP: ---- Saving to database ----
+29-08-2018 13:16:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:16:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:16:34 TCP: Parsing recieved data.
+29-08-2018 13:16:34 TCP: ---- Parser log start ----
+29-08-2018 13:16:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:16:34 Helper: Checksum does not match.
+29-08-2018 13:16:34 TCP: ---- Saving to database ----
+29-08-2018 13:16:35 TCP: ---- Successfully saved to database ----
+29-08-2018 13:16:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:16:43 TCP: Parsing recieved data.
+29-08-2018 13:16:43 TCP: ---- Parser log start ----
+29-08-2018 13:16:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:16:43 Helper: Checksum does not match.
+29-08-2018 13:16:43 TCP: ---- Saving to database ----
+29-08-2018 13:16:43 TCP: ---- Successfully saved to database ----
+29-08-2018 13:16:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:16:53 TCP: Parsing recieved data.
+29-08-2018 13:16:53 TCP: ---- Parser log start ----
+29-08-2018 13:16:53 Helper: IMEI: 512574806296590456
+29-08-2018 13:16:53 Helper: Checksum does not match.
+29-08-2018 13:16:53 TCP: ---- Saving to database ----
+29-08-2018 13:16:53 TCP: ---- Successfully saved to database ----
+29-08-2018 13:16:54 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:16:54 TCP: Parsing recieved data.
+29-08-2018 13:16:54 TCP: ---- Parser log start ----
+29-08-2018 13:16:54 Helper: IMEI: 1130590330583160
+29-08-2018 13:16:54 Helper: Checksum does not match.
+29-08-2018 13:16:54 TCP: ---- Saving to database ----
+29-08-2018 13:16:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:17:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:17:03 TCP: Parsing recieved data.
+29-08-2018 13:17:03 TCP: ---- Parser log start ----
+29-08-2018 13:17:03 Helper: IMEI: 512574806296590456
+29-08-2018 13:17:03 Helper: Checksum does not match.
+29-08-2018 13:17:03 TCP: ---- Saving to database ----
+29-08-2018 13:17:03 TCP: ---- Successfully saved to database ----
+29-08-2018 13:17:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:17:13 TCP: Parsing recieved data.
+29-08-2018 13:17:13 TCP: ---- Parser log start ----
+29-08-2018 13:17:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:17:13 Helper: Checksum does not match.
+29-08-2018 13:17:13 TCP: ---- Saving to database ----
+29-08-2018 13:17:13 TCP: ---- Successfully saved to database ----
+29-08-2018 13:17:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:17:23 TCP: Parsing recieved data.
+29-08-2018 13:17:23 TCP: ---- Parser log start ----
+29-08-2018 13:17:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:17:23 Helper: Checksum does not match.
+29-08-2018 13:17:23 TCP: ---- Saving to database ----
+29-08-2018 13:17:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:17:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:17:33 TCP: Parsing recieved data.
+29-08-2018 13:17:33 TCP: ---- Parser log start ----
+29-08-2018 13:17:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:17:33 Helper: Checksum does not match.
+29-08-2018 13:17:33 TCP: ---- Saving to database ----
+29-08-2018 13:17:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:17:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:17:44 TCP: Parsing recieved data.
+29-08-2018 13:17:44 TCP: ---- Parser log start ----
+29-08-2018 13:17:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:17:44 Helper: Checksum does not match.
+29-08-2018 13:17:44 TCP: ---- Saving to database ----
+29-08-2018 13:17:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:17:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:17:54 TCP: Parsing recieved data.
+29-08-2018 13:17:54 TCP: ---- Parser log start ----
+29-08-2018 13:17:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:17:54 Helper: Checksum does not match.
+29-08-2018 13:17:54 TCP: ---- Saving to database ----
+29-08-2018 13:17:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:18:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:18:04 TCP: Parsing recieved data.
+29-08-2018 13:18:04 TCP: ---- Parser log start ----
+29-08-2018 13:18:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:18:04 Helper: Checksum does not match.
+29-08-2018 13:18:04 TCP: ---- Saving to database ----
+29-08-2018 13:18:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:18:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:18:14 TCP: Parsing recieved data.
+29-08-2018 13:18:14 TCP: ---- Parser log start ----
+29-08-2018 13:18:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:18:14 Helper: Checksum does not match.
+29-08-2018 13:18:14 TCP: ---- Saving to database ----
+29-08-2018 13:18:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:18:25 TCP: Got new connection: 42.106.23.25:50173
+29-08-2018 13:18:25 TCP: Recieved 18 bytes from socket.
+29-08-2018 13:18:25 TCP: Checking for keyword validity.
+29-08-2018 13:18:25 TCP: Keyword valid. Waiting for data.
+29-08-2018 13:18:29 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:18:29 TCP: Parsing recieved data.
+29-08-2018 13:18:29 TCP: ---- Parser log start ----
+29-08-2018 13:18:29 Helper: IMEI: 512574806296590456
+29-08-2018 13:18:29 Helper: Checksum does not match.
+29-08-2018 13:18:29 TCP: ---- Saving to database ----
+29-08-2018 13:18:29 TCP: ---- Successfully saved to database ----
+29-08-2018 13:18:32 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:18:32 TCP: Parsing recieved data.
+29-08-2018 13:18:32 TCP: ---- Parser log start ----
+29-08-2018 13:18:32 Helper: IMEI: 1130590330583160
+29-08-2018 13:18:32 Helper: Checksum does not match.
+29-08-2018 13:18:32 TCP: ---- Saving to database ----
+29-08-2018 13:18:32 TCP: ---- Successfully saved to database ----
+29-08-2018 13:18:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:18:34 TCP: Parsing recieved data.
+29-08-2018 13:18:34 TCP: ---- Parser log start ----
+29-08-2018 13:18:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:18:34 Helper: Checksum does not match.
+29-08-2018 13:18:34 TCP: ---- Saving to database ----
+29-08-2018 13:18:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:18:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:18:44 TCP: Parsing recieved data.
+29-08-2018 13:18:44 TCP: ---- Parser log start ----
+29-08-2018 13:18:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:18:44 Helper: Checksum does not match.
+29-08-2018 13:18:44 TCP: ---- Saving to database ----
+29-08-2018 13:18:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:18:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:18:54 TCP: Parsing recieved data.
+29-08-2018 13:18:54 TCP: ---- Parser log start ----
+29-08-2018 13:18:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:18:54 Helper: Checksum does not match.
+29-08-2018 13:18:54 TCP: ---- Saving to database ----
+29-08-2018 13:18:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:19:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:19:04 TCP: Parsing recieved data.
+29-08-2018 13:19:04 TCP: ---- Parser log start ----
+29-08-2018 13:19:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:19:04 Helper: Checksum does not match.
+29-08-2018 13:19:04 TCP: ---- Saving to database ----
+29-08-2018 13:19:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:19:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:19:14 TCP: Parsing recieved data.
+29-08-2018 13:19:14 TCP: ---- Parser log start ----
+29-08-2018 13:19:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:19:14 Helper: Checksum does not match.
+29-08-2018 13:19:14 TCP: ---- Saving to database ----
+29-08-2018 13:19:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:19:24 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:19:24 TCP: Parsing recieved data.
+29-08-2018 13:19:24 TCP: ---- Parser log start ----
+29-08-2018 13:19:24 Helper: IMEI: 512574806296590456
+29-08-2018 13:19:24 Helper: Checksum does not match.
+29-08-2018 13:19:24 TCP: ---- Saving to database ----
+29-08-2018 13:19:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:19:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:19:34 TCP: Parsing recieved data.
+29-08-2018 13:19:34 TCP: ---- Parser log start ----
+29-08-2018 13:19:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:19:34 Helper: Checksum does not match.
+29-08-2018 13:19:34 TCP: ---- Saving to database ----
+29-08-2018 13:19:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:19:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:19:44 TCP: Parsing recieved data.
+29-08-2018 13:19:44 TCP: ---- Parser log start ----
+29-08-2018 13:19:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:19:44 Helper: Checksum does not match.
+29-08-2018 13:19:44 TCP: ---- Saving to database ----
+29-08-2018 13:19:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:19:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:19:54 TCP: Parsing recieved data.
+29-08-2018 13:19:54 TCP: ---- Parser log start ----
+29-08-2018 13:19:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:19:54 Helper: Checksum does not match.
+29-08-2018 13:19:54 TCP: ---- Saving to database ----
+29-08-2018 13:19:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:19:55 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:19:55 TCP: Parsing recieved data.
+29-08-2018 13:19:55 TCP: ---- Parser log start ----
+29-08-2018 13:19:55 Helper: IMEI: 1130590330583160
+29-08-2018 13:19:55 Helper: Checksum does not match.
+29-08-2018 13:19:55 TCP: ---- Saving to database ----
+29-08-2018 13:19:56 TCP: ---- Successfully saved to database ----
+29-08-2018 13:20:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:20:03 TCP: Parsing recieved data.
+29-08-2018 13:20:03 TCP: ---- Parser log start ----
+29-08-2018 13:20:03 Helper: IMEI: 512574806296590456
+29-08-2018 13:20:03 Helper: Checksum does not match.
+29-08-2018 13:20:03 TCP: ---- Saving to database ----
+29-08-2018 13:20:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:20:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:20:14 TCP: Parsing recieved data.
+29-08-2018 13:20:14 TCP: ---- Parser log start ----
+29-08-2018 13:20:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:20:14 Helper: Checksum does not match.
+29-08-2018 13:20:14 TCP: ---- Saving to database ----
+29-08-2018 13:20:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:20:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:20:23 TCP: Parsing recieved data.
+29-08-2018 13:20:23 TCP: ---- Parser log start ----
+29-08-2018 13:20:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:20:23 Helper: Checksum does not match.
+29-08-2018 13:20:23 TCP: ---- Saving to database ----
+29-08-2018 13:20:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:20:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:20:34 TCP: Parsing recieved data.
+29-08-2018 13:20:34 TCP: ---- Parser log start ----
+29-08-2018 13:20:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:20:34 Helper: Checksum does not match.
+29-08-2018 13:20:34 TCP: ---- Saving to database ----
+29-08-2018 13:20:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:20:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:20:43 TCP: Parsing recieved data.
+29-08-2018 13:20:43 TCP: ---- Parser log start ----
+29-08-2018 13:20:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:20:43 Helper: Checksum does not match.
+29-08-2018 13:20:43 TCP: ---- Saving to database ----
+29-08-2018 13:20:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:20:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:20:53 TCP: Parsing recieved data.
+29-08-2018 13:20:53 TCP: ---- Parser log start ----
+29-08-2018 13:20:53 Helper: IMEI: 512574806296590456
+29-08-2018 13:20:53 Helper: Checksum does not match.
+29-08-2018 13:20:53 TCP: ---- Saving to database ----
+29-08-2018 13:20:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:21:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:21:03 TCP: Parsing recieved data.
+29-08-2018 13:21:03 TCP: ---- Parser log start ----
+29-08-2018 13:21:03 Helper: IMEI: 512574806296590456
+29-08-2018 13:21:03 Helper: Checksum does not match.
+29-08-2018 13:21:03 TCP: ---- Saving to database ----
+29-08-2018 13:21:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:21:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:21:13 TCP: Parsing recieved data.
+29-08-2018 13:21:13 TCP: ---- Parser log start ----
+29-08-2018 13:21:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:21:13 Helper: Checksum does not match.
+29-08-2018 13:21:13 TCP: ---- Saving to database ----
+29-08-2018 13:21:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:21:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:21:23 TCP: Parsing recieved data.
+29-08-2018 13:21:23 TCP: ---- Parser log start ----
+29-08-2018 13:21:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:21:23 Helper: Checksum does not match.
+29-08-2018 13:21:23 TCP: ---- Saving to database ----
+29-08-2018 13:21:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:21:25 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:21:25 TCP: Parsing recieved data.
+29-08-2018 13:21:25 TCP: ---- Parser log start ----
+29-08-2018 13:21:25 Helper: IMEI: 1130590330583160
+29-08-2018 13:21:25 Helper: Checksum does not match.
+29-08-2018 13:21:25 TCP: ---- Saving to database ----
+29-08-2018 13:21:25 TCP: ---- Successfully saved to database ----
+29-08-2018 13:21:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:21:33 TCP: Parsing recieved data.
+29-08-2018 13:21:33 TCP: ---- Parser log start ----
+29-08-2018 13:21:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:21:33 Helper: Checksum does not match.
+29-08-2018 13:21:33 TCP: ---- Saving to database ----
+29-08-2018 13:21:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:21:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:21:43 TCP: Parsing recieved data.
+29-08-2018 13:21:43 TCP: ---- Parser log start ----
+29-08-2018 13:21:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:21:43 Helper: Checksum does not match.
+29-08-2018 13:21:43 TCP: ---- Saving to database ----
+29-08-2018 13:21:43 TCP: ---- Successfully saved to database ----
+29-08-2018 13:21:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:21:53 TCP: Parsing recieved data.
+29-08-2018 13:21:53 TCP: ---- Parser log start ----
+29-08-2018 13:21:53 Helper: IMEI: 512574806296590456
+29-08-2018 13:21:53 Helper: Checksum does not match.
+29-08-2018 13:21:53 TCP: ---- Saving to database ----
+29-08-2018 13:21:53 TCP: ---- Successfully saved to database ----
+29-08-2018 13:22:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:22:03 TCP: Parsing recieved data.
+29-08-2018 13:22:03 TCP: ---- Parser log start ----
+29-08-2018 13:22:03 Helper: IMEI: 512574806296590456
+29-08-2018 13:22:03 Helper: Checksum does not match.
+29-08-2018 13:22:03 TCP: ---- Saving to database ----
+29-08-2018 13:22:03 TCP: ---- Successfully saved to database ----
+29-08-2018 13:22:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:22:13 TCP: Parsing recieved data.
+29-08-2018 13:22:13 TCP: ---- Parser log start ----
+29-08-2018 13:22:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:22:13 Helper: Checksum does not match.
+29-08-2018 13:22:13 TCP: ---- Saving to database ----
+29-08-2018 13:22:13 TCP: ---- Successfully saved to database ----
+29-08-2018 13:22:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:22:23 TCP: Parsing recieved data.
+29-08-2018 13:22:23 TCP: ---- Parser log start ----
+29-08-2018 13:22:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:22:23 Helper: Checksum does not match.
+29-08-2018 13:22:23 TCP: ---- Saving to database ----
+29-08-2018 13:22:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:22:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:22:33 TCP: Parsing recieved data.
+29-08-2018 13:22:33 TCP: ---- Parser log start ----
+29-08-2018 13:22:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:22:33 Helper: Checksum does not match.
+29-08-2018 13:22:33 TCP: ---- Saving to database ----
+29-08-2018 13:22:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:22:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:22:43 TCP: Parsing recieved data.
+29-08-2018 13:22:43 TCP: ---- Parser log start ----
+29-08-2018 13:22:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:22:43 Helper: Checksum does not match.
+29-08-2018 13:22:43 TCP: ---- Saving to database ----
+29-08-2018 13:22:43 TCP: ---- Successfully saved to database ----
+29-08-2018 13:22:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:22:53 TCP: Parsing recieved data.
+29-08-2018 13:22:53 TCP: ---- Parser log start ----
+29-08-2018 13:22:53 Helper: IMEI: 512574806296590456
+29-08-2018 13:22:53 Helper: Checksum does not match.
+29-08-2018 13:22:53 TCP: ---- Saving to database ----
+29-08-2018 13:22:53 TCP: ---- Successfully saved to database ----
+29-08-2018 13:23:28 TCP: Got new connection: 42.106.26.188:32622
+29-08-2018 13:23:29 TCP: Recieved 18 bytes from socket.
+29-08-2018 13:23:29 TCP: Checking for keyword validity.
+29-08-2018 13:23:29 TCP: Keyword valid. Waiting for data.
+29-08-2018 13:23:32 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:23:32 TCP: Parsing recieved data.
+29-08-2018 13:23:32 TCP: ---- Parser log start ----
+29-08-2018 13:23:32 Helper: IMEI: 1130590330583160
+29-08-2018 13:23:32 Helper: Checksum does not match.
+29-08-2018 13:23:32 TCP: ---- Saving to database ----
+29-08-2018 13:23:32 TCP: ---- Successfully saved to database ----
+29-08-2018 13:23:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:23:33 TCP: Parsing recieved data.
+29-08-2018 13:23:33 TCP: ---- Parser log start ----
+29-08-2018 13:23:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:23:33 Helper: Checksum does not match.
+29-08-2018 13:23:33 TCP: ---- Saving to database ----
+29-08-2018 13:23:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:23:40 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:23:40 TCP: Parsing recieved data.
+29-08-2018 13:23:40 TCP: ---- Parser log start ----
+29-08-2018 13:23:40 Helper: IMEI: 512574806296590456
+29-08-2018 13:23:40 Helper: Checksum does not match.
+29-08-2018 13:23:40 TCP: ---- Saving to database ----
+29-08-2018 13:23:40 TCP: ---- Successfully saved to database ----
+29-08-2018 13:23:42 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:23:42 TCP: Parsing recieved data.
+29-08-2018 13:23:42 TCP: ---- Parser log start ----
+29-08-2018 13:23:42 Helper: IMEI: 512574806296590456
+29-08-2018 13:23:42 Helper: Checksum does not match.
+29-08-2018 13:23:42 TCP: ---- Saving to database ----
+29-08-2018 13:23:42 TCP: ---- Successfully saved to database ----
+29-08-2018 13:23:45 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:23:45 TCP: Parsing recieved data.
+29-08-2018 13:23:45 TCP: ---- Parser log start ----
+29-08-2018 13:23:45 Helper: IMEI: 512574806296590456
+29-08-2018 13:23:45 Helper: Checksum does not match.
+29-08-2018 13:23:45 TCP: ---- Saving to database ----
+29-08-2018 13:23:46 TCP: ---- Successfully saved to database ----
+29-08-2018 13:23:48 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:23:48 TCP: Parsing recieved data.
+29-08-2018 13:23:48 TCP: ---- Parser log start ----
+29-08-2018 13:23:48 Helper: IMEI: 512574806296590456
+29-08-2018 13:23:48 Helper: Checksum does not match.
+29-08-2018 13:23:48 TCP: ---- Saving to database ----
+29-08-2018 13:23:48 TCP: ---- Successfully saved to database ----
+29-08-2018 13:23:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:23:54 TCP: Parsing recieved data.
+29-08-2018 13:23:54 TCP: ---- Parser log start ----
+29-08-2018 13:23:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:23:54 Helper: Checksum does not match.
+29-08-2018 13:23:54 TCP: ---- Saving to database ----
+29-08-2018 13:23:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:24:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:24:03 TCP: Parsing recieved data.
+29-08-2018 13:24:03 TCP: ---- Parser log start ----
+29-08-2018 13:24:03 Helper: IMEI: 512574806296590456
+29-08-2018 13:24:03 Helper: Checksum does not match.
+29-08-2018 13:24:03 TCP: ---- Saving to database ----
+29-08-2018 13:24:03 TCP: ---- Successfully saved to database ----
+29-08-2018 13:24:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:24:13 TCP: Parsing recieved data.
+29-08-2018 13:24:13 TCP: ---- Parser log start ----
+29-08-2018 13:24:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:24:13 Helper: Checksum does not match.
+29-08-2018 13:24:13 TCP: ---- Saving to database ----
+29-08-2018 13:24:13 TCP: ---- Successfully saved to database ----
+29-08-2018 13:24:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:24:23 TCP: Parsing recieved data.
+29-08-2018 13:24:23 TCP: ---- Parser log start ----
+29-08-2018 13:24:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:24:23 Helper: Checksum does not match.
+29-08-2018 13:24:23 TCP: ---- Saving to database ----
+29-08-2018 13:24:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:24:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:24:34 TCP: Parsing recieved data.
+29-08-2018 13:24:34 TCP: ---- Parser log start ----
+29-08-2018 13:24:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:24:34 Helper: Checksum does not match.
+29-08-2018 13:24:34 TCP: ---- Saving to database ----
+29-08-2018 13:24:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:24:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:24:43 TCP: Parsing recieved data.
+29-08-2018 13:24:43 TCP: ---- Parser log start ----
+29-08-2018 13:24:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:24:43 Helper: Checksum does not match.
+29-08-2018 13:24:43 TCP: ---- Saving to database ----
+29-08-2018 13:24:43 TCP: ---- Successfully saved to database ----
+29-08-2018 13:24:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:24:53 TCP: Parsing recieved data.
+29-08-2018 13:24:53 TCP: ---- Parser log start ----
+29-08-2018 13:24:53 Helper: IMEI: 512574806296590456
+29-08-2018 13:24:53 Helper: Checksum does not match.
+29-08-2018 13:24:53 TCP: ---- Saving to database ----
+29-08-2018 13:24:53 TCP: ---- Successfully saved to database ----
+29-08-2018 13:25:00 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:25:00 TCP: Parsing recieved data.
+29-08-2018 13:25:00 TCP: ---- Parser log start ----
+29-08-2018 13:25:00 Helper: IMEI: 1130590330583160
+29-08-2018 13:25:00 Helper: Checksum does not match.
+29-08-2018 13:25:00 TCP: ---- Saving to database ----
+29-08-2018 13:25:00 TCP: ---- Successfully saved to database ----
+29-08-2018 13:25:05 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:25:05 TCP: Parsing recieved data.
+29-08-2018 13:25:05 TCP: ---- Parser log start ----
+29-08-2018 13:25:05 Helper: IMEI: 512574806296590456
+29-08-2018 13:25:05 Helper: Checksum does not match.
+29-08-2018 13:25:05 TCP: ---- Saving to database ----
+29-08-2018 13:25:05 TCP: ---- Successfully saved to database ----
+29-08-2018 13:25:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:25:13 TCP: Parsing recieved data.
+29-08-2018 13:25:13 TCP: ---- Parser log start ----
+29-08-2018 13:25:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:25:13 Helper: Checksum does not match.
+29-08-2018 13:25:13 TCP: ---- Saving to database ----
+29-08-2018 13:25:13 TCP: ---- Successfully saved to database ----
+29-08-2018 13:25:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:25:23 TCP: Parsing recieved data.
+29-08-2018 13:25:23 TCP: ---- Parser log start ----
+29-08-2018 13:25:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:25:23 Helper: Checksum does not match.
+29-08-2018 13:25:23 TCP: ---- Saving to database ----
+29-08-2018 13:25:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:25:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:25:33 TCP: Parsing recieved data.
+29-08-2018 13:25:33 TCP: ---- Parser log start ----
+29-08-2018 13:25:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:25:33 Helper: Checksum does not match.
+29-08-2018 13:25:33 TCP: ---- Saving to database ----
+29-08-2018 13:25:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:25:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:25:43 TCP: Parsing recieved data.
+29-08-2018 13:25:43 TCP: ---- Parser log start ----
+29-08-2018 13:25:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:25:43 Helper: Checksum does not match.
+29-08-2018 13:25:43 TCP: ---- Saving to database ----
+29-08-2018 13:25:43 TCP: ---- Successfully saved to database ----
+29-08-2018 13:25:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:25:53 TCP: Parsing recieved data.
+29-08-2018 13:25:53 TCP: ---- Parser log start ----
+29-08-2018 13:25:53 Helper: IMEI: 512574806296590456
+29-08-2018 13:25:53 Helper: Checksum does not match.
+29-08-2018 13:25:53 TCP: ---- Saving to database ----
+29-08-2018 13:25:53 TCP: ---- Successfully saved to database ----
+29-08-2018 13:26:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:26:03 TCP: Parsing recieved data.
+29-08-2018 13:26:03 TCP: ---- Parser log start ----
+29-08-2018 13:26:03 Helper: IMEI: 512574806296590456
+29-08-2018 13:26:03 Helper: Checksum does not match.
+29-08-2018 13:26:03 TCP: ---- Saving to database ----
+29-08-2018 13:26:03 TCP: ---- Successfully saved to database ----
+29-08-2018 13:26:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:26:13 TCP: Parsing recieved data.
+29-08-2018 13:26:13 TCP: ---- Parser log start ----
+29-08-2018 13:26:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:26:13 Helper: Checksum does not match.
+29-08-2018 13:26:13 TCP: ---- Saving to database ----
+29-08-2018 13:26:13 TCP: ---- Successfully saved to database ----
+29-08-2018 13:26:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:26:23 TCP: Parsing recieved data.
+29-08-2018 13:26:23 TCP: ---- Parser log start ----
+29-08-2018 13:26:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:26:23 Helper: Checksum does not match.
+29-08-2018 13:26:23 TCP: ---- Saving to database ----
+29-08-2018 13:26:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:26:29 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:26:29 TCP: Parsing recieved data.
+29-08-2018 13:26:29 TCP: ---- Parser log start ----
+29-08-2018 13:26:29 Helper: IMEI: 1130590330583160
+29-08-2018 13:26:29 Helper: Checksum does not match.
+29-08-2018 13:26:29 TCP: ---- Saving to database ----
+29-08-2018 13:26:30 TCP: ---- Successfully saved to database ----
+29-08-2018 13:26:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:26:33 TCP: Parsing recieved data.
+29-08-2018 13:26:33 TCP: ---- Parser log start ----
+29-08-2018 13:26:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:26:33 Helper: Checksum does not match.
+29-08-2018 13:26:33 TCP: ---- Saving to database ----
+29-08-2018 13:26:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:26:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:26:44 TCP: Parsing recieved data.
+29-08-2018 13:26:44 TCP: ---- Parser log start ----
+29-08-2018 13:26:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:26:44 Helper: Checksum does not match.
+29-08-2018 13:26:44 TCP: ---- Saving to database ----
+29-08-2018 13:26:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:26:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:26:54 TCP: Parsing recieved data.
+29-08-2018 13:26:54 TCP: ---- Parser log start ----
+29-08-2018 13:26:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:26:54 Helper: Checksum does not match.
+29-08-2018 13:26:54 TCP: ---- Saving to database ----
+29-08-2018 13:26:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:27:04 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:27:04 TCP: Parsing recieved data.
+29-08-2018 13:27:04 TCP: ---- Parser log start ----
+29-08-2018 13:27:04 Helper: IMEI: 512574806296590456
+29-08-2018 13:27:04 Helper: Checksum does not match.
+29-08-2018 13:27:04 TCP: ---- Saving to database ----
+29-08-2018 13:27:04 TCP: ---- Successfully saved to database ----
+29-08-2018 13:27:14 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:27:14 TCP: Parsing recieved data.
+29-08-2018 13:27:14 TCP: ---- Parser log start ----
+29-08-2018 13:27:14 Helper: IMEI: 512574806296590456
+29-08-2018 13:27:14 Helper: Checksum does not match.
+29-08-2018 13:27:14 TCP: ---- Saving to database ----
+29-08-2018 13:27:14 TCP: ---- Successfully saved to database ----
+29-08-2018 13:27:24 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:27:24 TCP: Parsing recieved data.
+29-08-2018 13:27:24 TCP: ---- Parser log start ----
+29-08-2018 13:27:24 Helper: IMEI: 512574806296590456
+29-08-2018 13:27:24 Helper: Checksum does not match.
+29-08-2018 13:27:24 TCP: ---- Saving to database ----
+29-08-2018 13:27:24 TCP: ---- Successfully saved to database ----
+29-08-2018 13:27:34 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:27:34 TCP: Parsing recieved data.
+29-08-2018 13:27:34 TCP: ---- Parser log start ----
+29-08-2018 13:27:34 Helper: IMEI: 512574806296590456
+29-08-2018 13:27:34 Helper: Checksum does not match.
+29-08-2018 13:27:34 TCP: ---- Saving to database ----
+29-08-2018 13:27:34 TCP: ---- Successfully saved to database ----
+29-08-2018 13:27:44 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:27:44 TCP: Parsing recieved data.
+29-08-2018 13:27:44 TCP: ---- Parser log start ----
+29-08-2018 13:27:44 Helper: IMEI: 512574806296590456
+29-08-2018 13:27:44 Helper: Checksum does not match.
+29-08-2018 13:27:44 TCP: ---- Saving to database ----
+29-08-2018 13:27:44 TCP: ---- Successfully saved to database ----
+29-08-2018 13:27:54 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:27:54 TCP: Parsing recieved data.
+29-08-2018 13:27:54 TCP: ---- Parser log start ----
+29-08-2018 13:27:54 Helper: IMEI: 512574806296590456
+29-08-2018 13:27:54 Helper: Checksum does not match.
+29-08-2018 13:27:54 TCP: ---- Saving to database ----
+29-08-2018 13:27:54 TCP: ---- Successfully saved to database ----
+29-08-2018 13:27:59 TCP: Got new connection: 42.106.26.188:10930
+29-08-2018 13:28:00 TCP: Recieved 18 bytes from socket.
+29-08-2018 13:28:00 TCP: Checking for keyword validity.
+29-08-2018 13:28:00 TCP: Keyword valid. Waiting for data.
+29-08-2018 13:28:03 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:28:03 TCP: Parsing recieved data.
+29-08-2018 13:28:03 TCP: ---- Parser log start ----
+29-08-2018 13:28:03 Helper: IMEI: 1130590330583160
+29-08-2018 13:28:03 Helper: Checksum does not match.
+29-08-2018 13:28:03 TCP: ---- Saving to database ----
+29-08-2018 13:28:03 TCP: ---- Successfully saved to database ----
+29-08-2018 13:28:08 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:28:08 TCP: Parsing recieved data.
+29-08-2018 13:28:08 TCP: ---- Parser log start ----
+29-08-2018 13:28:08 Helper: IMEI: 512574806296590456
+29-08-2018 13:28:08 Helper: Checksum does not match.
+29-08-2018 13:28:08 TCP: ---- Saving to database ----
+29-08-2018 13:28:08 TCP: ---- Successfully saved to database ----
+29-08-2018 13:28:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:28:13 TCP: Parsing recieved data.
+29-08-2018 13:28:13 TCP: ---- Parser log start ----
+29-08-2018 13:28:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:28:13 Helper: Checksum does not match.
+29-08-2018 13:28:13 TCP: ---- Saving to database ----
+29-08-2018 13:28:13 TCP: ---- Successfully saved to database ----
+29-08-2018 13:28:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:28:23 TCP: Parsing recieved data.
+29-08-2018 13:28:23 TCP: ---- Parser log start ----
+29-08-2018 13:28:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:28:23 Helper: Checksum does not match.
+29-08-2018 13:28:23 TCP: ---- Saving to database ----
+29-08-2018 13:28:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:28:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:28:33 TCP: Parsing recieved data.
+29-08-2018 13:28:33 TCP: ---- Parser log start ----
+29-08-2018 13:28:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:28:33 Helper: Checksum does not match.
+29-08-2018 13:28:33 TCP: ---- Saving to database ----
+29-08-2018 13:28:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:28:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:28:43 TCP: Parsing recieved data.
+29-08-2018 13:28:43 TCP: ---- Parser log start ----
+29-08-2018 13:28:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:28:43 Helper: Checksum does not match.
+29-08-2018 13:28:43 TCP: ---- Saving to database ----
+29-08-2018 13:28:43 TCP: ---- Successfully saved to database ----
+29-08-2018 13:28:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:28:53 TCP: Parsing recieved data.
+29-08-2018 13:28:53 TCP: ---- Parser log start ----
+29-08-2018 13:28:53 Helper: IMEI: 512574806296590456
+29-08-2018 13:28:53 Helper: Checksum does not match.
+29-08-2018 13:28:53 TCP: ---- Saving to database ----
+29-08-2018 13:28:53 TCP: ---- Successfully saved to database ----
+29-08-2018 13:29:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:29:03 TCP: Parsing recieved data.
+29-08-2018 13:29:03 TCP: ---- Parser log start ----
+29-08-2018 13:29:03 Helper: IMEI: 512574806296590456
+29-08-2018 13:29:03 Helper: Checksum does not match.
+29-08-2018 13:29:03 TCP: ---- Saving to database ----
+29-08-2018 13:29:03 TCP: ---- Successfully saved to database ----
+29-08-2018 13:29:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:29:13 TCP: Parsing recieved data.
+29-08-2018 13:29:13 TCP: ---- Parser log start ----
+29-08-2018 13:29:13 Helper: IMEI: 512574806296590456
+29-08-2018 13:29:13 Helper: Checksum does not match.
+29-08-2018 13:29:13 TCP: ---- Saving to database ----
+29-08-2018 13:29:13 TCP: ---- Successfully saved to database ----
+29-08-2018 13:29:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:29:23 TCP: Parsing recieved data.
+29-08-2018 13:29:23 TCP: ---- Parser log start ----
+29-08-2018 13:29:23 Helper: IMEI: 512574806296590456
+29-08-2018 13:29:23 Helper: Checksum does not match.
+29-08-2018 13:29:23 TCP: ---- Saving to database ----
+29-08-2018 13:29:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:29:30 TCP: Recieved 15 bytes from socket.
+29-08-2018 13:29:30 TCP: Parsing recieved data.
+29-08-2018 13:29:30 TCP: ---- Parser log start ----
+29-08-2018 13:29:30 Helper: IMEI: 1130590330583160
+29-08-2018 13:29:30 Helper: Checksum does not match.
+29-08-2018 13:29:30 TCP: ---- Saving to database ----
+29-08-2018 13:29:30 TCP: ---- Successfully saved to database ----
+29-08-2018 13:29:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:29:33 TCP: Parsing recieved data.
+29-08-2018 13:29:33 TCP: ---- Parser log start ----
+29-08-2018 13:29:33 Helper: IMEI: 512574806296590456
+29-08-2018 13:29:33 Helper: Checksum does not match.
+29-08-2018 13:29:33 TCP: ---- Saving to database ----
+29-08-2018 13:29:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:29:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:29:43 TCP: Parsing recieved data.
+29-08-2018 13:29:43 TCP: ---- Parser log start ----
+29-08-2018 13:29:43 Helper: IMEI: 512574806296590456
+29-08-2018 13:29:43 Helper: Checksum does not match.
+29-08-2018 13:29:43 TCP: ---- Saving to database ----
+29-08-2018 13:29:43 TCP: ---- Successfully saved to database ----
+29-08-2018 13:29:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:29:53 TCP: Parsing recieved data.
+29-08-2018 13:29:53 TCP: ---- Parser log start ----
+29-08-2018 13:29:53 Helper: IMEI: 512574806296590456
+29-08-2018 13:29:53 Helper: Checksum does not match.
+29-08-2018 13:29:53 TCP: ---- Saving to database ----
+29-08-2018 13:29:53 TCP: ---- Successfully saved to database ----
+29-08-2018 13:30:03 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:30:03 TCP: Parsing recieved data.
+29-08-2018 13:30:03 TCP: ---- Parser log start ----
+29-08-2018 13:30:03 Helper: IMEI: 584632400334518392
+29-08-2018 13:30:03 Helper: Checksum does not match.
+29-08-2018 13:30:03 TCP: ---- Saving to database ----
+29-08-2018 13:30:03 TCP: ---- Successfully saved to database ----
+29-08-2018 13:30:13 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:30:13 TCP: Parsing recieved data.
+29-08-2018 13:30:13 TCP: ---- Parser log start ----
+29-08-2018 13:30:13 Helper: IMEI: 584632400334518392
+29-08-2018 13:30:13 Helper: Checksum does not match.
+29-08-2018 13:30:13 TCP: ---- Saving to database ----
+29-08-2018 13:30:13 TCP: ---- Successfully saved to database ----
+29-08-2018 13:30:23 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:30:23 TCP: Parsing recieved data.
+29-08-2018 13:30:23 TCP: ---- Parser log start ----
+29-08-2018 13:30:23 Helper: IMEI: 584632400334518392
+29-08-2018 13:30:23 Helper: Checksum does not match.
+29-08-2018 13:30:23 TCP: ---- Saving to database ----
+29-08-2018 13:30:23 TCP: ---- Successfully saved to database ----
+29-08-2018 13:30:33 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:30:33 TCP: Parsing recieved data.
+29-08-2018 13:30:33 TCP: ---- Parser log start ----
+29-08-2018 13:30:33 Helper: IMEI: 584632400334518392
+29-08-2018 13:30:33 Helper: Checksum does not match.
+29-08-2018 13:30:33 TCP: ---- Saving to database ----
+29-08-2018 13:30:33 TCP: ---- Successfully saved to database ----
+29-08-2018 13:30:43 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:30:50 TCP: Parsing recieved data.
+29-08-2018 13:30:50 TCP: ---- Parser log start ----
+29-08-2018 13:30:50 Helper: IMEI: 584632400334518392
+29-08-2018 13:30:50 Helper: Checksum does not match.
+29-08-2018 13:30:50 TCP: ---- Saving to database ----
+29-08-2018 13:30:50 TCP: ---- Successfully saved to database ----
+29-08-2018 13:30:53 TCP: Recieved 36 bytes from socket.
+29-08-2018 13:30:53 TCP: Parsing recieved data.
+29-08-2018 13:30:53 TCP: ---- Parser log start ----
+29-08-2018 13:30:53 Helper: IMEI: 584632400334518392
+29-08-2018 13:30:53 Helper: Checksum does not match.
+29-08-2018 13:30:53 TCP: ---- Saving to database ----
+29-08-2018 13:30:53 TCP: ---- Successfully saved to database ----
