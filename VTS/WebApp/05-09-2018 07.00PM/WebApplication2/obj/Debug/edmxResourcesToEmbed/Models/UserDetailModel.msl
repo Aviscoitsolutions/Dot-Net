@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="aviscotrackerdbModelStoreContainer" CdmEntityContainer="aviscotrackerdbEntities1">
+    <EntitySetMapping Name="Tbl_DeviceRegistration">
+      <EntityTypeMapping TypeName="aviscotrackerdbModel.Tbl_DeviceRegistration">
+        <MappingFragment StoreEntitySet="Tbl_DeviceRegistration">
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="DeviceIMEI" ColumnName="DeviceIMEI" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
