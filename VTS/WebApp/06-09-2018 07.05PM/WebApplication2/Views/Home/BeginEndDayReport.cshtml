@@ -1,0 +1,336 @@
+﻿
+@{
+    ViewBag.Title = "BeginEndDayReport";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="~/MainPage/js/jquery-1.9.1.min.js"></script>
+    @*<script src="~/MainPage/js/easyResponsiveTabs.js"></script>*@
+    <script type="text/javascript" src="~/MainPage/js/jquery-2.1.4.min.js"></script>
+    <link href="~/MainPage/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="~/MainPage/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/MainPage/css/style.css" rel="stylesheet" />
+    <link href="~/MainPage/css/circle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/MainPage/css/font-awesome.min.css" />
+</head>
+<body>
+    <!--Header-->
+    <div class="header" style="padding:0em">
+        <div class="container-fluid">
+            <div class="address-info">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header navbar-left">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <nav class="cl-effect-13" id="cl-effect-13">
+                            <ul class="nav navbar-nav">
+                                @*<li class="active1">*@
+                                <li class="active1">
+                                    <a href="@Url.Action("MainPage", "Home")"><i class="fa fa-wifi" class="imgstyle" title="Live Tracking" id="signInButton"></i></a>
+                                    <span class="hedtxt">Live</span>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("DashBoard", "Home")" target="_blank">
+                                        <i class="fa fa-desktop" class="imgstyle" style="text-align:center;padding-left:5px;"></i>
+                                    </a><span class="hedtxt">Dashboard</span>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Log", "Home")" target="_blank">
+                                        <i class="fa fa-list-alt" class="imgstyle" style="margin-right:1px;"></i>
+                                    </a><span class="hedtxt">Logs</span>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("Reports", "Home")" target="_blank">
+                                        <i class="fa fa-chart-bar imgstyle" style="margin-right:1px;"></i>
+                                    </a><span class="hedtxt">Report</span>
+                                </li>
+
+
+                                <li>
+                                    <a href="@Url.Action("Visit", "Home")" target="_blank">
+                                        <i class="fa fa-map-marker" class="imgstyle" style="padding-left:5px;"></i>
+                                    </a><span class="hedtxt">Tracking</span>
+                                </li>
+
+                              
+
+                                <li>
+                                    <a href="@Url.Action("About", "Home")"><i class="fa fa-book" class="imgstyle" title="About"></i></a>
+                                    <span class="hedtxt">Manual</span>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-user" class="imgstyle" title="@Request.RequestContext.HttpContext.Session["username"]" id="fauser"></i></a>
+                                    <span class="hedtxt">User</span>
+                                </li>
+
+                                <li>
+                                    <a id="LogOut">
+                                        <i class="fa fa-sign-out" class="imgstyle" title="LogOut" id="LogOut"></i>
+                                    </a>
+                                    <span class="hedtxt">Logout</span>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+            </div>
+            </nav>
+        </div>
+
+    </div>
+    <!--Header-->
+    <div class="container-fluid">
+
+        <div class="col-md-12">
+            <h2 class="" style="margin-top:50px ;background:#888888;font-size:25px;margin-bottom:0px;">
+                Idel Time/Journey Report<span style="float:right">
+                    <a href="#" id="SPdf"><i class="fa fa-file-pdf-o" aria-hidden="true" id="SPdf" style="color:red;text-align:center;background-color:white"></i></a>
+                    <a href="#" id="SExcel"><i class="fa fa-file-excel-o" aria-hidden="true" id="SExcel" style="color:green;text-align:center;background-color:white"></i></a>
+                </span>
+            </h2>
+        </div>
+    </div>
+
+
+    <div class=" container-fluid" style="margin-top:0px">
+
+        <div class=" col-md-12">
+            <div class="logbox1">
+                <table class=" table1 table-striped1" style="overflow-y: auto;" border="1" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td colspan="12">
+                                Report Duration:<label id="todate"> @ViewBag.To</label>- <label id="fromdate">@ViewBag.From</label>
+                            </td>
+                        </tr>
+                    </thead>
+
+                    <thead>
+                        <tr>
+                            <td colspan="12">Asset Name:<label id="vehicle_no"> @ViewBag.Vehicle_No</label></td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <td style="padding: 4px!important;">Asset Group:</td>
+                            <td colspan="12"><label id="vehicle_type">@ViewBag.type</label></td>
+
+
+                        </tr>
+                    </thead>
+
+                    <thead>
+                        <tr class=" header" style="background:#888888;font-size:11px;">
+
+                            <th style=" color:black;background-color:transparent">Date</th>
+                            <th style=" color:black;background-color:transparent;float:right;">Begin Day</th>
+                            <th style=" color:black;background-color:transparent"></th>
+                            <th style=" color:black;background-color:transparent;float:right;">End Day</th>
+                            <th style=" color:black;background-color:transparent"></th>
+                            <th style=" color:black;background-color:transparent">Distance(kms)</th>
+                            <th style=" color:black;background-color:transparent">Speed(km/hr)</th>
+                            <th style=" color:black;background-color:transparent">Motion Hours(hrs)</th>
+                            <th style=" color:black;background-color:transparent">Stopped Hours(hrs)</th>
+                            <th style=" color:black;background-color:transparent">Idle Hours(hrs)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Log" style="height:20px"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footerspace"></div>
+    <div class="footer-w3layouts" style="z-index:1;position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: white;">
+        <div class="agile-copy1" style="border:1px solid #e4e2e2">
+            <div style="float:left;line-height: 30px;"> Copyright © 2018. All rights reserved | Design by <a href="http://www.aviscoitsolutions.com">AVISCO IT SOLUTIONS PRIVATE LIMITED.</a></div>
+            <div style="float:right" class="frfr">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" style="1color:#3b579d"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" style="1color:#00c1f7"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true" style="1color:#0076b4"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true" style="1color:#b12f21"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //Logout button click expire session
+        document.getElementById("LogOut").addEventListener("click", expire);
+        function expire() {
+           
+            $.ajax({
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                //data: "{product:" + JSON.stringify(product) + "}",
+                url: "/Home/expire",
+                success: function (data) {
+                }
+            });
+        }
+        //Bind table on page load
+        $(document).ready(function () {
+
+            var Dropdown1 = $("#vehicle_no").text();
+          
+            var product = { Dropdown: Dropdown1}
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{product:" + JSON.stringify(product) + "}",
+                url: "/Home/GetLog1",
+                success: function (data) {
+             
+                if (data.length == 0) {
+                    alert("No Records Found!!")
+
+                }
+                else {
+                    var add = "";
+                    var setdata = $("#Log");
+                    var lng;
+                    var lng;
+                    var latlng;
+                    var geocoder;
+                    for (var i = 0; i < data.length; i++) {
+                        var milisegundos = parseInt(data[i].Date.replace("/Date(", "").replace(")/", ""));
+                        var newDate = new Date(milisegundos).toLocaleDateString("en-UE");
+                        var Time = new Date(milisegundos).toLocaleTimeString("en-UE");
+                        //var milisegundos1 = parseInt(data[i].workingStartTime.replace("/Date(", "").replace(")/", ""));
+                        //var newDate1 = new Date(milisegundos1).toLocaleString();
+                        //var newDate2 = new Date(newDate1);
+                        //var n = newDate2.getHours();
+                        //debugger
+                        
+                        //alert(n);
+                        
+                        var data2 = "<tr  class='row_" + data[i].id + "'>" +
+                            "<td  style='color: black'>" + newDate + "</td>" +
+                            "<td onclick='StartLocshowmap(this)' style='color: blue;font-size: 10px;'>" + data[i].workingStartLat + "</td>" +
+                            "<td oonclick='StartLocshowmap(this)' style='color: blue;font-size: 10px;'>" + data[i].workingStartLong + "</td>" +
+                            "<td onclick='EndLocshowmap(this)' style='color: blue;font-size: 10px;'>" + data[i].workingEndLat + "</td>" +
+                            "<td onclick='EndLocshowmap(this)' style='color: blue;font-size: 10px;'>" + data[i].workingEndLong + "</td>" +
+                            "<td style='color: black'>" + (data[i].totoalDistance / 1000).toFixed(1) + "</td>" +
+                            "<td style='color: Red'>" + "Max:" + data[i].Maxspeed + '<br/>' + "Average:" + data[i].AvrageSpeed+"</td>" +
+                            "<td style='color: black'>" + (data[i].Motion / 3600).toFixed(1) + "</td>" +
+                            "<td style='color: black'>"  + (data[i].Stop / 3600).toFixed(1) + "</td>" +
+                            "<td style='color: black'>"  + (data[i].Idel / 3600).toFixed(1) + "</td>" +
+                            "</tr>";
+
+                        setdata.append(data2)
+
+
+                    }
+                }
+            }
+        })
+            });
+    </script>
+    <script type="text/javascript">
+
+        //execute when user click lat&long column of table and call show log location page
+             function StartLocshowmap(r) {
+        // $("#BindGrid").empty();
+        t = document.getElementById('Log').rows;
+        var al,al1;
+        debugger;
+        var celval = new Array()
+        var celval1 = new Array()
+        for (var i = 0; i < t.length; i++) {
+            for (var j = 0; j < t[i].cells.length; j++) {
+                //fetch lat&long column value
+                if (r == t[i].cells[1] || r == t[i].cells[2]) {
+                    celval[j] = t[i].cells[1].innerHTML;
+                    celval1[j] = t[i].cells[2].innerHTML;
+                    al = celval[j].toString();
+                    al1 = celval1[j].toString();
+                   
+                }
+            }
+
+        }
+
+        var lat = al;
+        var long = al1
+
+          var url = '@Html.Raw(Url.Action("ShowLogLocation", "Home", new { Lat = "__Lat1__", Long = "__Long1__" }))';
+                    @*var url = '@Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id= "__productId__", employeeId = "__employeeId__" })';*@
+          var params = url.replace('__Lat1__', al).replace('__Long1__', al1);
+                   @*// var newUrl = "@Url.Action("LogReport", "Home")?id,?reporttype=" + "AAA"+"AA";*@
+          window.location.href = params;
+
+        }
+           function EndLocshowmap(r) {
+        // $("#BindGrid").empty();
+        t = document.getElementById('Log').rows;
+        var al,al1;
+        debugger;
+        var celval = new Array()
+        var celval1 = new Array()
+        for (var i = 0; i < t.length; i++) {
+            for (var j = 0; j < t[i].cells.length; j++) {
+                if (r == t[i].cells[3] || r == t[i].cells[4]) {
+                    celval[j] = t[i].cells[3].innerHTML;
+                    celval1[j] = t[i].cells[4].innerHTML;
+                    al = celval[j].toString();
+                    al1 = celval1[j].toString();
+                    debugger;
+                }
+            }
+
+        }
+
+        var lat = al;
+        var long = al1
+
+          var url = '@Html.Raw(Url.Action("ShowLogLocation", "Home", new { Lat = "__Lat1__", Long = "__Long1__" }))';
+                  
+          var params = url.replace('__Lat1__', al).replace('__Long1__', al1);
+                  
+          window.location.href = params;
+
+    }
+        //pdf button click pass report to user
+            $(function () {
+
+                $("#SPdf").click(function () {
+                    var Vno = $("#vehicle_no").text()
+                    var url = '@Html.Raw(Url.Action("ReportBeginEndDayPDF", "Home", new {vno = "__orderId__" }))';
+                  
+                    var params = url.replace('__orderId__', Vno);
+                   
+                    window.location.href = params;
+                });
+           });
+
+        //excel  button click pass excel file to user
+                 $(function () {
+
+                     $("#SExcel").click(function () {
+
+                  
+                    var Vno = $("#vehicle_no").text()
+                    var url = '@Html.Raw(Url.Action("ReportBeginEndDayExcel", "Home", new {vno = "__orderId__"}))';
+                    var params = url.replace('__orderId__', Vno);
+                    window.location.href = params;
+                });
+            });
+    </script>
+</body>
+</html>
