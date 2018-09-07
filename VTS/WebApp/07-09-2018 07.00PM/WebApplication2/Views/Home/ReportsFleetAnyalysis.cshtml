@@ -1,0 +1,332 @@
+﻿
+@{
+    ViewBag.Title = "ReportsFleetAnyalysis";
+    Layout = null;
+}
+<head>
+    <title>FleetAnalysis Report</title>
+    <script src="~/MainPage/js/jquery-1.9.1.min.js"></script>
+    @*<script src="~/MainPage/js/easyResponsiveTabs.js"></script>*@
+    <script type="text/javascript" src="~/MainPage/js/jquery-2.1.4.min.js"></script>
+    <link href="~/MainPage/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="~/MainPage/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/MainPage/css/style.css" rel="stylesheet" />
+    <link href="~/MainPage/css/circle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/MainPage/css/font-awesome.min.css" />
+</head>
+<style>
+    table.scroll {
+        /* width: 100%; */ /* Optional */
+        /* border-collapse: collapse; */
+        border-spacing: 0;
+        border: 1px solid black;
+        height: 492px;
+    }
+
+        table.scroll tbody,
+        table.scroll thead {
+            display: block;
+        }
+
+           
+
+        table.scroll tbody {
+            /*height: 100px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+            /*height: 380px;*/
+        }
+
+         tbody {
+            border-top: 1px solid black;
+        }
+
+            table.scroll tbody td, thead th {
+                /* width: 20%; */ /* Optional */
+                /*border-right: 1px solid black;*/
+                /* white-space: nowrap; */
+            }
+
+                table.scroll tbody td:last-child, thead th:last-child {
+                    border-right: none;
+                }
+</style>
+<html>
+<body>
+    <!--Header-->
+    <div class="header" style="padding:0em">
+        <div class="container-fluid">
+            <div class="address-info">
+                <nav class="navbar navbar-default">
+
+                    <div class="navbar-header navbar-left">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a class="navbar-brand"><a href="@Url.Action("MainPage", "Home")"> <img src="~/Layout4/images/AVISCO10.png" style="height: 79px;width: 155px;margin-bottom: -11px;margin-top: -7px; float:left" title=""> </a></h1>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <nav class="cl-effect-13" id="cl-effect-13">
+                            <ul class="nav navbar-nav">
+                                <li class="active1">
+                                    <a href="@Url.Action("MainPage", "Home")"><i class="fa fa-wifi" class="imgstyle" title="Live Tracking" id="signInButton"></i></a>
+                                    <span class="hedtxt">Live</span>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("DashBoard", "Home")">
+                                        <i class="fa fa-desktop" class="imgstyle" style="text-align:center;padding-left:5px;"></i>
+                                    </a><span class="hedtxt">Dashboard</span>
+                                </li>
+                                <li id="load">
+                                    <a href="@Url.Action("Log", "Home")" target="_blank">
+                                        <i class="fa fa-list-alt" class="imgstyle" style=""></i>
+                                    </a><span class="hedtxt">Logs</span>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Reports", "Home")" target="_blank">
+                                        <i class="fa fa-chart-bar imgstyle1" style="margin-right:1px;"></i>
+                                    </a><span class="hedtxt">Report</span>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Visit", "Home")" target="_blank">
+                                        <i class="fa fa-map-marker" class="imgstyle" style="padding-left:5px;"></i>
+                                    </a><span class="hedtxt">Tracking</span>
+                                </li>
+
+
+                                <li>
+                                    <a><i class="fa fa-user" class="imgstyle" onclick="myFunction()" title="@Request.RequestContext.HttpContext.Session["username"]" id="fauser"></i></a>
+                                    <span class="hedtxt" style="margin-left: 6px;">User</span>
+                                    <div class="dropdown" style="width: 100%;
+    margin-left: -73px;">
+
+                                        <div id="myDropdown" class="dropdown-content" style="  width: 257%;
+    margin-left: -81px;
+    margin-top: 15px;
+    height: 114px;
+    border: 1px solid;
+    border-radius: 40px;
+    background: white;">
+                                            <a href="#">
+                                                <i class="fa fa-user" class="imgstyle" style="    font-size: 30px;
+    margin-right: 4px;"></i>
+                                            </a>
+                                            <span><label>@Request.RequestContext.HttpContext.Session["username"]</label></span>
+                                            <br />
+                                            <a href="@Url.Action("ChangePassword", "Home")" target="_blank">
+                                                <lable id="change">Change Password</lable>
+                                            </a><div style="margin-top: 0px;">
+                                                <a id="LogOut">
+                                                    <i class="fa fa-sign-out" class="imgstyle" title="LogOut" id="LogOut">Logout</i>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </li>
+                                <a style="visibility: hidden;" href="/Login.aspx" id="logout1">aa</a>
+
+                            </ul>
+                        </nav>
+                    </div>
+            </div>
+            </nav>
+        </div>
+    </div>
+    <!--Header-->
+    <div class="container-fluid">
+        <div class="col-md-12">
+
+            <h2 class="" style="margin-top:50px ;background:#888888;font-size:25px;margin-bottom:0px;">
+                Fleet Analysis Report<span style="float:right">
+                    <a href="#" id="SPdf"><i class="fa fa-file-pdf-o" aria-hidden="true" id="SPdf" style="color:red;text-align:center;background-color:white"></i></a>
+                    <a href="#" id="SExcel"><i class="fa fa-file-excel-o" aria-hidden="true" id="SExcel" style="color:green;text-align:center;background-color:white"></i></a>
+                </span>
+            </h2>
+        </div>
+    </div>
+
+    <div class=" container-fluid" style="margin-top:0px">
+
+        <div class=" col-md-12">
+            <div class="logbox1">
+                <table class=" table1 table-striped1" style="overflow-y: auto" ; cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td colspan="2">Asset Group:</td>
+                            <td colspan="2">@ViewBag.type </td>
+                            <td colspan="5">
+                                <input id="ToDate"
+                                       type="hidden" value=@ViewBag.To />
+                                <input id="FromDate"
+                                       type="hidden" value=@ViewBag.From />
+                                <input id="VehicleNo"
+                                       type="hidden" value=@ViewBag.Vehicle_No />
+                            </td>
+
+                        </tr>
+                    </thead>
+
+
+                    <tr>
+                        <td style="color: black;    background: #888888;">Sr.No</td>
+                        <td style="color: black;    background: #888888;">Work Start Time</td>
+                        <td style="color: black;    background: #888888;">Work End Time</td>
+                        <td style="color: black;    background: #888888;">Vehicle No</td>
+                        <td style="color: black;    background: #888888;">Total Woking hours(Motion+Idle hrs)</td>
+                        <td style="color: black;    background: #888888;">Total Distance Travelled(km.)</td>
+                        <td style="color: black;    background: #888888;">Engine Running Time</td>
+                        <td style="color: black;background: #888888;">Speed Violations</td>
+                        <td style="color: black;    background: #888888;">GPS Status</td>
+                    </tr>
+
+                    <tbody id="Log" style="border-top: 2px solid black;"></tbody>
+
+                </table>
+                <div class="container-fluid" style="text-align:center" id="L1">
+                    <img src="/MainPage/images/preloader.gif" style="height: 50px;margin-top: 10%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerspace"></div>
+    <div class="footer-w3layouts" style="   position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: white;">
+        <div class="agile-copy1" style="border:1px solid #e4e2e2">
+            <div style="float:left;line-height: 30px;"> Copyright © 2018. All rights reserved | Design by <a href="http://www.aviscoitsolutions.com">AVISCO IT SOLUTIONS PRIVATE LIMITED.</a></div>
+            <div style="float:right" class="frfr">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" style="1color:#3b579d"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" style="1color:#00c1f7"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true" style="1color:#0076b4"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true" style="1color:#b12f21"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //Show Progress Image
+        $("#L1").show();
+
+        //Pass Vehicle no and date and Get Data for Report On Load
+        $(document).ready(function () {
+
+         
+            var todate = $("#ToDate").val()
+            var fromdate = $("#FromDate").val()
+            var Dropdown = $("#VehicleNo").val()
+           
+            var product = { Dropdown: Dropdown, From: fromdate, To: todate }
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{product:" + JSON.stringify(product) + "}",
+                url: "/Home/FleetLog",
+                success: function (data) {
+
+
+                    if (data.length == 0) {
+                        alert("No Records Found!!")
+                        $("#L1").hide();
+                    }
+                    else {
+                        var add = "";
+                        var setdata = $("#Log");
+                        var lng;
+                        var lng;
+                        var latlng;
+                        var geocoder;
+                        for (var i = 0; i < data.length; i++) {
+                            var srno = 1;
+                            var thedate = parseInt(data[i].workingHrStart.replace("/Date(", "").replace(")/", ""));
+                            var workingHrStart = new Date(thedate).toLocaleString();
+                            var thedate1 = parseInt(data[i].workingHrEnd.replace("/Date(", "").replace(")/", ""));
+                            var workingHrEnd = new Date(thedate1).toLocaleString();
+
+                            var d = new Date(data[i].TotalWorkingHr);
+                            var TotalWorkingHr = d.toLocaleString();
+                            var km = (data[i].totoalDistance) / 1000;
+                            var enginerunning = new Date(data[i].EngineRunningTime);
+                            var hrs = enginerunning.toLocaleString();
+                            if (data[i].stetus != null) {
+                                stete = "Rporting";
+                            }
+                            else {
+                                stete = "Not_Rporting";
+                            }
+
+                            //Bind data to Table
+                            var data2 = "<tr onclick='showmap(this)'style='font-size:12px' class='row_" + data[i].id + "'>" +
+                                "<td style='color: black;width: 3%;'>" + srno + "</td>" +
+                                "<td style='color: black;width: 9%;'>" + workingHrStart + "</td>" +
+                                "<td style='color: black;width: 9%;'>" + workingHrEnd + "</td>" +
+                                "<td style='color: black;width: 1%;'>" + data[i].DeviceNo + "</td>" +
+                                "<td style='color: black;width: 23%;'>" + (data[i].TotalWorkingHr / 3600).toFixed(1) + "Hr" + "</td>" +
+                                "<td style='color: black;width: 19%;'>" + km.toFixed(1) + " " + "Km" + "</td>" +
+                                "<td style='color: black;width: 10%;'>" + (data[i].EngineRunningTime / 3600).toFixed(1) + "Hr" + "</td>" +
+                                "<td style='color: black; width: 6%;'>" + data[i].SpeedVoilation + "</td>" +
+                                "<td style='color: black;width: 10%;'>" + stete + "</td>" +
+                                "</tr>";
+
+                            setdata.append(data2)
+                            srno = srno + 1;
+                            $("#L1").hide();
+
+                        }
+                    }
+                }
+            })
+        });
+    </script>
+    <script>
+     $(function () {
+        //Pdf Button Click
+                $("#SPdf").click(function () {
+                    var todate = $("#ToDate").val()
+                    var fromdate = $("#FromDate").val()
+                    var Dropdown = $("#VehicleNo").val()
+
+                    var product = { Dropdown: Dropdown, From: fromdate, To: todate }
+                      var url = '@Html.Raw(Url.Action("RportFleetLogPDF", "Home", new {vno = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__" }))';
+                      var params = url.replace('__orderId__', Dropdown).replace('__employeeId__', fromdate).replace('__employeeId1__', todate);
+                    window.location.href = params;
+                });
+        });
+        //Excel Button Click
+                 $(function () {
+
+                     $("#SExcel").click(function () {
+
+                         var todate = $("#ToDate").val()
+                         var fromdate = $("#FromDate").val()
+                         var Dropdown = $("#VehicleNo").val()
+
+                    var url = '@Html.Raw(Url.Action("RportFleetLogExcel", "Home", new {vno = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__" }))';
+
+
+                      var params = url.replace('__orderId__', Dropdown).replace('__employeeId__', fromdate).replace('__employeeId1__', todate);
+
+                    window.location.href = params;
+
+
+                });
+            });
+    </script>
+
+
+</body>
+        </html>
