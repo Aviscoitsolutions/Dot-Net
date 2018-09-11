@@ -1,0 +1,123 @@
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe.config
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.pdb
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\ExampleService.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\Newtonsoft.Json.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\MySql.Data.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\Npgsql.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\Mono.Security.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\ExampleService.pdb
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\ExampleService.dll.config
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\Newtonsoft.Json.xml
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\Npgsql.xml
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\de\Npgsql.resources.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\es\Npgsql.resources.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\fi\Npgsql.resources.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\fr\Npgsql.resources.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\ja\Npgsql.resources.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\bin\Debug\zh-CN\Npgsql.resources.dll
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csprojResolveAssemblyReference.cache
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.Service.resources
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.GenerateResource.Cache
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.CoreCompileInputs.cache
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.exe
+E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.pdb
+F:\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe.config
+F:\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe
+F:\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.pdb
+F:\example\source\ExampleService.Srv\bin\Debug\ExampleService.dll
+F:\example\source\ExampleService.Srv\bin\Debug\Newtonsoft.Json.dll
+F:\example\source\ExampleService.Srv\bin\Debug\MySql.Data.dll
+F:\example\source\ExampleService.Srv\bin\Debug\Npgsql.dll
+F:\example\source\ExampleService.Srv\bin\Debug\Mono.Security.dll
+F:\example\source\ExampleService.Srv\bin\Debug\ExampleService.pdb
+F:\example\source\ExampleService.Srv\bin\Debug\ExampleService.dll.config
+F:\example\source\ExampleService.Srv\bin\Debug\Newtonsoft.Json.xml
+F:\example\source\ExampleService.Srv\bin\Debug\Npgsql.xml
+F:\example\source\ExampleService.Srv\bin\Debug\de\Npgsql.resources.dll
+F:\example\source\ExampleService.Srv\bin\Debug\es\Npgsql.resources.dll
+F:\example\source\ExampleService.Srv\bin\Debug\fi\Npgsql.resources.dll
+F:\example\source\ExampleService.Srv\bin\Debug\fr\Npgsql.resources.dll
+F:\example\source\ExampleService.Srv\bin\Debug\ja\Npgsql.resources.dll
+F:\example\source\ExampleService.Srv\bin\Debug\zh-CN\Npgsql.resources.dll
+F:\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csprojResolveAssemblyReference.cache
+F:\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.Service.resources
+F:\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.GenerateResource.Cache
+F:\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.CoreCompileInputs.cache
+F:\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.exe
+F:\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.pdb
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe.config
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\ExampleService.Srv.pdb
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\ExampleService.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\Newtonsoft.Json.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\MySql.Data.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\Npgsql.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\Mono.Security.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\ExampleService.pdb
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\ExampleService.dll.config
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\Newtonsoft.Json.xml
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\Npgsql.xml
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\de\Npgsql.resources.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\es\Npgsql.resources.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\fi\Npgsql.resources.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\fr\Npgsql.resources.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\ja\Npgsql.resources.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csprojAssemblyReference.cache
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.Service.resources
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.GenerateResource.cache
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.CopyComplete
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.exe
+C:\inetpub\wwwroot\example\source\ExampleService.Srv\obj\Debug\ExampleService.Srv.pdb
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe.config
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\ExampleService.Srv.pdb
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\ExampleService.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\MySql.Data.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\Npgsql.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\Mono.Security.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\ExampleService.pdb
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\ExampleService.dll.config
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\Npgsql.xml
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\de\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\es\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\obj\Debug\ExampleService.Srv.csprojAssemblyReference.cache
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\obj\Debug\ExampleService.Srv.Service.resources
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.GenerateResource.cache
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.CoreCompileInputs.cache
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.CopyComplete
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\obj\Debug\ExampleService.Srv.exe
+C:\Users\Abuzar\Desktop\27-08-2018\ExampleService.Srv\obj\Debug\ExampleService.Srv.pdb
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe.config
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\ExampleService.Srv.exe
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\ExampleService.Srv.pdb
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\MySql.Data.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\Npgsql.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\Mono.Security.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\Npgsql.xml
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\de\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\es\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\obj\Debug\ExampleService.Srv.csprojAssemblyReference.cache
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\obj\Debug\ExampleService.Srv.Service.resources
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.GenerateResource.cache
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.CoreCompileInputs.cache
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\obj\Debug\ExampleService.Srv.csproj.CopyComplete
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\obj\Debug\ExampleService.Srv.exe
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\obj\Debug\ExampleService.Srv.pdb
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\ExampleService.dll
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\ExampleService.pdb
+C:\Users\Abuzar\Desktop\2deviceconsole 11-09-2018\GPSIndia\ExampleService.Srv\bin\Debug\ExampleService.dll.config

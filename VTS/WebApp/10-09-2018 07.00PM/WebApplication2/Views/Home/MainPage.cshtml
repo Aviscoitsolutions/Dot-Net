@@ -1,0 +1,1402 @@
+﻿<!--
+author: W3layouts
+author URL:http://www.aviscoitsolutions.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+@*@model WebApplication2.Models.google_map*@
+
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Live Tracking</title>
+    <!-- for-mobile-apps -->
+    <meta name="p5r" content="width=device-width, initial-scale=1">
+    @*<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />*@
+    @*<meta name="keywords" content="Proprietorship Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+        Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />*@
+    @*<script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>*@
+    <!-- //for-mobile-apps -->
+    <link href="~/MainPage/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/MainPage/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- js -->
+    <script src="~/MainPage/js/jquery-1.9.1.min.js"></script>
+    @*<script src="~/MainPage/js/easyResponsiveTabs.js"></script>*@
+    <script src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="~/MainPage/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!--End-slider-script-->
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="~/MainPage/css/font-awesome.min.css" />
+    <!-- //font-awesome icons -->
+    <link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <script src="../Layout4/js/jquery-2.1.4.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://rawgit.com/RickStrahl/jquery-resizable/master/src/jquery-resizable.js'></script>
+
+    <script src="~/Scripts/index.js"></script>
+    <style>
+        table.scroll {
+            /* width: 100%; */ /* Optional */
+            /* border-collapse: collapse; */
+            border-spacing: 0;
+            border: 1px solid black;
+        }
+
+            table.scroll tbody,
+            table.scroll thead {
+                display: block;
+            }
+
+                table.scroll thead tr th {
+                    height: 30px;
+                    line-height: 30px;
+                    /* text-align: left; */
+                }
+
+            table.scroll tbody {
+                height: 100px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                height: 380px;
+            }
+
+            table.scroll tbody {
+                border-top: 1px solid black;
+            }
+
+                table.scroll tbody td, thead th {
+                    /* width: 20%; */ /* Optional */
+                    /*border-right: 1px solid black;*/
+                    /* white-space: nowrap; */
+                }
+
+                    table.scroll tbody td:last-child, thead th:last-child {
+                        border-right: none;
+                    }
+    </style>
+</head>
+<body>
+    <!-- Registration Model -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Device Registration</h2>
+            </div>
+            <div class="modal-body">
+                <label style="float:left">Vehicle_No</label>
+                <div class="name">
+                    <input id="DeviceName" class="input1" type="text" name="name" placeholder="Device-Name" required="" tabindex="1">
+                </div>
+                <b style="float:left;margin-right: 69px"> IMEI</b>
+                <div class="IMEItxt">
+                    <input id="IMEI" class="input1" type="text" name="name" placeholder="IMEI" required="" tabindex="1">
+                </div>
+
+                <b style="float:left"> Vehicle_Type</b>
+                <div class="IMEItxt1">
+                    <input id="Vehicle_Type" class="input1" style="float: left;margin-left: 16px;margin-top:2px" type="text" name="name" placeholder="Vehicle_Type" required="" tabindex="1">
+                </div>
+
+                &nbsp;
+                <input type="submit" class="btn1" onclick="SaveData()" value="Save" id="SaveData" />
+            </div>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- //Registration Model -->
+    <!--Model Show Location-->
+    <div id="ShowLocation1" class="modal radius">
+
+        <!-- Modal content -->
+        <div class="modal-content radius " style="width:30%">
+            <div class="modal-header radius">
+                <span class="close" id="close22">&times;</span>
+                <h4 class="text-center">Show Address</h4>
+            </div>
+            <div class="modal-body radius">
+                <label style="float:left">Lattitude</label>
+                <div class="name">
+                    <input id="Lattitude" class="input1 radius" type="text" name="name" placeholder="Lattitude" required="" tabindex="1">
+                </div>
+                <b style="float:left;margin-right: -9px">Longitude</b>
+                <div class="longtxt">
+
+                    <input id="Longitude" class="input1 radius" type="text" name="name" placeholder="Longitude" required="" tabindex="1">
+                </div>
+                &nbsp;
+                <input type="submit" class="btn1 radius" value="Show" id="Show" />
+            </div>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+    <!--//Model Show Location-->
+    <!--alert model-->
+    <div id="over" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" style=" float:right">
+            <div class="modal-header">
+                <span class="close" id="overcloase">&times;</span>
+                <h2>Over Speed</h2>
+            </div>
+            <div class="modal-body">
+                <p> </p>
+            </div>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+    <!--alert model-->
+    <!--Address Search Model-->
+    <div id="AddressShow" class="modal radius">
+        <!-- Modal content -->
+        <div class="modal-content radius " style="width:30%">
+            <div class="modal-header radius">
+                <span class="close" id="close2">&times;</span>
+                <h4 class="text-center">Show Location</h4>
+            </div>
+            <div class="modal-body radius">
+                <b style="float:left;">Address</b>
+                <div class="IMEItxt">
+                    <input id="Address1" class="input1 radius" type="text" name="name" placeholder="Address" required="" tabindex="1">
+                </div>
+                &nbsp;
+                <input type="submit" class="btn1 radius" value="Search" id="ShowAddress" />
+            </div>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+    <!--End Model-->
+    <!--Model Script-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            BindGrid();
+            getVal();
+        });
+        var $table = $('table.scroll'),
+            $bodyCells = $table.find('tbody tr:first').children(),
+            colWidth;
+
+        // Adjust the width of thead cells when window resizes
+        $(window).resize(function () {
+            // Get the tbody columns width array
+            colWidth = $bodyCells.map(function () {
+                return $(this).width();
+            }).get();
+
+            // Set the width of thead columns
+            $table.find('thead tr').children().each(function (i, v) {
+                $(v).width(colWidth[i]);
+            });
+        }).resize(); // Trigger resize handler
+
+        //Log out button click
+        $(function () {
+            $("#LogOut").click(function () {
+                document.getElementById("logout1").click();
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    //data: "{product:" + JSON.stringify(product) + "}",
+                    url: "/Home/expire",
+                    success: function (data) {
+                        if (data != null) {
+
+                        }
+                    }
+                });
+            });
+        });
+        $(function () {
+            //Show address model show button click
+            $("#ShowAddress").click(function () {
+
+                var Address = $("#Address1").val()
+                if (Address == "") {
+                    alert("Please Enter Address")
+                }
+                else {
+
+                    $("#AddressShow").css("visibility", "hidden");
+                    var geocoder = new google.maps.Geocoder();
+                    var con = "India";
+                    var city = Address;
+                    var com = city + "," + con;
+                    geocoder.geocode({ 'address': com }, function (results, status) {
+
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            var x = results[0].geometry.location.lat();
+                            var y = results[0].geometry.location.lng();
+                            var latlng = new google.maps.LatLng(x, y);
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(x, y),
+                                animation: google.maps.Animation.BOUNCE,
+                                map: map,
+                                title: com,
+                                icon: "../Layout4/images/mapmarker3.png"
+
+                            });
+                            var infowindow = new google.maps.InfoWindow({
+                                content: com
+                            });
+
+                            infowindow.open(map, marker);
+                            map.setZoom(15);
+                            map.panTo(marker.position);
+                            google.maps.event.addDomListener(window, 'load');
+                        } else {
+                            res.innerHTML = "Enter correct Details: " + status;
+                        }
+                    });
+                    document.getElementById('Address1').value = '';
+                }
+            });
+        });
+    </script>
+    <!--//Model Script-->
+    <script>
+
+            $(document).ready(function () {
+
+                /**/
+                var a = '@Request.RequestContext.HttpContext.Session["username"]';
+            /**/
+                $('#UserName').text(a);
+
+
+
+        });
+    </script>
+    <div class="header" style="padding:0em">
+        <div class="container-fluid">
+            <div class="address-info">
+                <nav class="navbar navbar-default">
+
+                    <div class="navbar-header navbar-left">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a class="navbar-brand"><a href="@Url.Action("MainPage", "Home")" target="_blank"> <img src="~/Layout4/images/AVISCO10.png" style="height: 79px;width: 155px;margin-bottom: -11px;margin-top: -7px; float:left" title=""> </a></h1>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <nav class="cl-effect-13" id="cl-effect-13">
+                            <ul class="nav navbar-nav">
+                                <li class="active1">
+                                    <a href="@Url.Action("MainPage", "Home")"><i class="fa fa-wifi" class="imgstyle" title="Live Tracking" id="signInButton"></i></a>
+                                    <span class="hedtxt">Live</span>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("DashBoard", "Home")" target="_blank">
+                                        <i class="fa fa-desktop" class="imgstyle" style="text-align:center;padding-left:5px;"></i>
+                                    </a><span class="hedtxt">Dashboard</span>
+                                </li>
+                                <li id="load">
+                                    <a href="@Url.Action("Log", "Home")" target="_blank">
+                                        <i class="fa fa-list-alt" class="imgstyle" style=""></i>
+                                    </a><span class="hedtxt">Logs</span>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Reports", "Home")" target="_blank">
+                                        <i class="fa fa-chart-bar imgstyle" style="margin-right:1px;"></i>
+                                    </a><span class="hedtxt">Report</span>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Visit", "Home")" target="_blank">
+                                        <i class="fa fa-map-marker" class="imgstyle" style="padding-left:5px;"></i>
+                                    </a><span class="hedtxt">Tracking</span>
+                                </li>
+
+                                <li>
+                                    <a><i class="fa fa-compass" id="ShowModel" title="Show Point"></i></a>
+                                    <span class="hedtxt">Location</span>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-search imgstyle1" id="AddressSearch" title="Address Search" style1="padding-right: 50px;"></i></a>
+                                    <span class="hedtxt">Address Search</span>
+                                </li>
+                                @*<li>
+                                        <a href="@Url.Action("About", "Home")"><i class="fa fa-book" class="imgstyle" title="About"></i></a>
+                                        <span class="hedtxt">Manual</span>
+                                    </li>*@
+                                <li>
+                                    <a><i class="fa fa-user" class="imgstyle" onclick="myFunction()" title="@Request.RequestContext.HttpContext.Session["username"]" id="fauser"></i></a>
+                                    <span class="hedtxt" style="margin-left: 6px;">User</span>
+                                    <div class="dropdown" style="width: 100%;
+    margin-left: -73px;">
+
+                                        <div id="myDropdown" class="dropdown-content" style="  width: 257%;
+    margin-left: -81px;
+    margin-top: 15px;
+    height: 114px;
+    border: 1px solid;
+    border-radius: 40px;
+    background: white;">
+                                            <a href="#">
+                                                <i class="fa fa-user" class="imgstyle" style="    font-size: 30px;
+    margin-right: 4px;"></i>
+                                            </a>
+                                            <span><label>@Request.RequestContext.HttpContext.Session["username"]</label></span>
+                                            <br />
+                                            <a href="@Url.Action("ChangePassword", "Home")" target="_blank">
+                                                <lable id="change">Change Password</lable>
+                                            </a><div style="margin-top: 0px;">
+                                                <a id="LogOut">
+                                                    <i class="fa fa-sign-out" class="imgstyle" title="LogOut" id="LogOut">Logout</i>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </li>
+                                <a style="visibility: hidden;" href="/Login.aspx" id="logout1">aa</a>
+
+                            </ul>
+                        </nav>
+                    </div>
+            </div>
+            </nav>
+        </div>
+    </div>
+    <script>
+
+    </script>
+    <style>
+        #content * {
+            max-width: 100%;
+        }
+
+        #map {
+            height: 90vh;
+            width: 100%;
+            margin-left: 0px;
+            float: left;
+            position: fixed;
+            content: max-width: 100%;
+        }
+        /*Split Screen*/
+        body {
+            height: 100%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            overflow: auto;
+        }
+    </style>
+
+    <!--pagecontainer -->
+    <div class="page-container">
+        <div class="panel-container" style="padding-left: 0;padding-right: 0;">
+            <!--left container-->
+            <div class="col-md-3 mainsplitter  panel-left" style=" /*border: 1px solid black;*/">
+                <div class="w3-bar w3-black">
+                    <div class="col-md-12 text-center tab" style="width:100% !important;background:#f7f7f7">
+                        <div class="tabbg1  col-md-4 fleft rlpdg"><button class="w3-bar-item1 w3-button1" style="" onclick="openBlock('Object')">Object</button></div>
+                        <div class="tabbg1 col-md-4 fleft rlpdg"><button class="w3-bar-item1 w3-button1" style="" onclick="openBlock('Event')">Event</button></div>
+                        <div class="tabbg1 col-md-4 fleft rlpdg"><button class="w3-bar-item1 w3-button1" style="" onclick="openBlock('History')">History</button></div>
+                    </div>
+                </div>
+
+                <div id="Object" class="w3-container1 city">
+                    <!--Search bar-->
+
+                    <div class="row nolr mb-4">
+
+                        <form name="form1" id="abcd" action="" class="mt-3">
+                            <div class="col-md-11 bnone" style="background:#fff;text-align:center;border:1px solid #00000030;margin-left:5px;">
+                                <i class="fa fa-search" style="color:#000;"></i>
+                                <input type="text" id="search" name="search" placeholder=" Search" class="" style="height:25px; border:none" />
+
+                            </div>
+
+                        </form>
+                    </div>
+                    <!--Search bar-->
+                    <table id="t1" width="100%" style="overflow-y: auto;" border="0" cellpadding="0" cellspacing="0">
+
+                        <thead>
+                            <tr class=" header1">
+                                <th style=" color:black;background:#f7f7f7;border-right:1px solid #e4e2e2;width:5%;">@*<i class="fa fa-eye"></i>*@</th>
+                                <th style=" color:black;text-align: center;background:#f7f7f7;border-right:1px solid #e4e2e2;font-weight:100">Object</th>
+                                <th style=" color:black; background:#f7f7f7;border-right: 1px solid #e4e2e2;"></th>
+                                <th style=" color:black; background:#f7f7f7;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="BindGrid" style="font-size: 11px;padding:1px !important; background:red"></tbody>
+                    </table>
+                  
+                        <img src="/MainPage/images/preloader.gif" style="margin-top:10%; height: 50px;margin-left: 37%;
+    float: left;" id="L2">
+                      
+                     
+
+                    </div>
+
+                    <div id="Event" class="w3-container1 city" style="display:none">
+                        <!--Search bar-->
+                        <div class="row nolr mb-5">
+
+                            <form name="form2" id="abcd" action="" class="mt-3">
+                                <div class="col-md-11 bnone" style="background:#fff;text-align:center;border:1px solid #00000030;margin-left:5px;">
+                                    <i class="fa fa-search" style="color:#000;"></i>
+                                    <input type="text" id="search" name="search" placeholder=" Search" class="" style="height:25px;border:none" />
+
+                                </div>
+
+                            </form>
+                        </div>
+                        <!--Search bar-->
+
+
+                        <table id="t2" width="100" style="overflow-y: auto">
+                            <thead>
+                                <tr background-color:"silver" class=" header">
+                                    <th style=" color:black;background:#f7f7f7;border-right:1px solid #e4e2e2;width:5%;" id="Time">Time</th>
+                                    <th style=" color:black;background:#f7f7f7;border-right:1px solid #e4e2e2;">Object</th>
+                                    <th style=" color:black;background:#f7f7f7">Speed</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bindevents" style="    font-size: 11px;">
+                                <tr id="LoadingEvents" style="color:red;text-align:center"></tr>
+                            </tbody>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div id="History" class="w3-container city pb-4 " style="display:none;padding-top:10px;font-size:11px;">
+                        <table style="color:#000;" width="100%">
+                            <tr>
+                                <td>Object</td>
+                                <td>
+                                    <select class="" id="oplog" name="" style="width:100%;border: none;height: 25px;">
+                                        <option value="All">All</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Filter</td>
+                                <td>
+                                    <select class="" id="filter" name="" style="width:100%;border: none;height: 25px;">
+                                        <option value="-1">Select</option>
+                                        <option value="1">Today</option>
+                                        <option value="2">Yesterday</option>
+                                        <option value="8">Last Week</option>
+                                        <option value="30">Last Month</option>
+                                        <option value="cc">Custom</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="timefrom">Time From</td>
+                                <td>
+                                    <input type="date" name="FromDate" id="From" min="2000-01-02" style="width:100%;border: none;height: 25px;">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="timeto">Time To</td>
+                                <td>
+                                    <input type="date" name="ToDate" id="To" min="2000-01-02" style="width:100%;border: none;height: 25px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button id="Show" class="" onclick="Show()">Show</button>
+
+
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+
+
+                        </table>
+
+                        <table id="logtable" class="scroll">
+
+                            <thead>
+                                <tr>
+
+                                    <th style=" color:black; background:#f7f7f7;padding-left: 29px;">Lattitude</th>
+                                    <th style=" color:black; background:#f7f7f7;padding-left: 21px;">Longitude</th>
+                                    <th style=" color:black; background:#f7f7f7;padding-left: 33px;text-align: center;">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="log" style="font-weight: bold;"></tbody>
+
+
+                        </table>
+                        <div class="container-fluid" style="text-align:center" id="L1">
+                            <img src="/MainPage/images/preloader.gif" style="height: 50px;height: 50px;margin-top: -228%;">
+                        </div>
+
+                        <script>
+                            $("#filter").change(function () {
+                                var filter = $("select#filter option:selected").val()
+                                if (filter == "cc") {
+                                    $("#To").show();
+                                    $("#From").show();
+                                    $("#filter").show();
+                                    $("#timefrom").text("Time From");
+                                    $("#timeto").text("Time To");
+
+                                }
+                                else if (filter == "1" || filter == "2" || filter == "8" || filter == "30") {
+                                    $("#To").hide();
+                                    $("#From").hide();
+
+                                    $("#timefrom").text("");
+                                    $("#timeto").text("");
+                                }
+                            });
+                            //Bind history block dropdown
+                            $(document).ready(function () {
+                                //$("#L1").hide();
+                                $.ajax({
+                                    url: "/Home/BindDorpDown1",
+                                    type: "Get",
+                                    success: function (data) {
+                                        $("#oplog option").remove();
+                                        var opt2 = new Option("All", "cc");
+                                        $('#oplog').append(opt2);
+
+                                        for (var i = 0; i < data.length; i++) {
+                                            var opt = new Option(data[i].DeviceName, data[i].DeviceIMEI);
+                                            $('#oplog').append(opt);
+
+
+                                        }
+
+
+                                    }
+
+                                });
+
+                                /**/
+                                $("#L1").hide();
+
+                            });
+                            //Bind log to history block table
+                            function Show() {
+                                $("#log").empty();
+                                //$("#L1").show();
+
+                                var filter = $("select#filter option:selected").val();
+                                var Dropdown = $("select#oplog option:selected").val();
+                                if (filter == "8" || filter == "30" || filter == "cc") {
+                                    //this block is execute if history block filter is custom,last week&month
+                                    my();
+                                    $("#L1").hide();
+                                }
+                                else if (filter != "-1" && filter != "cc") {
+                                    var Dropdown = $("select#oplog option:selected").val();
+                                    var product = { Dropdown: Dropdown, filter: filter }
+
+                                    $.ajax({
+                                        type: "POST",
+                                        contentType: "application/json;charset=utf-8",
+                                        data: "{product:" + JSON.stringify(product) + "}",
+                                        url: "/Home/GetLog",
+                                        success: function (data1) {
+
+                                            $("#L1").show();
+                                            if (data1.length == 0) {
+                                                alert("No Records Found!!");
+                                                $("#L1").hide();
+                                            }
+                                            else {
+
+
+                                                var setdata = $("#log");
+                                                for (var i = 0; i < data1.length; i++) {
+
+                                                    var milisegundos = parseInt(data1[i].Date.replace("/Date(", "").replace(")/", ""));
+                                                    var newDate = new Date(milisegundos).toLocaleDateString("en-UE");
+                                                    var Time = new Date(milisegundos).toLocaleTimeString("en-UE");
+
+                                                    var data2 = "<tr onclick='showmap(this)' class='row_" + data1[i].Id + "'>" +
+
+                                                        "<td style='color: blue !important'>" + data1[i].Lat + " " + "</td>" +
+                                                        "<td style='color: blue !important'>" + data1[i].Long + "</td>" +
+                                                        "<td style='color: black !important'>" + newDate + Time + "</td>" +
+
+
+                                                        "</tr>";
+
+                                                    setdata.append(data2);
+                                                    $("#L1").hide();
+                                                    i = i + 30;
+                                                }
+                                            }
+                                        }
+                                    })
+
+
+                                }
+                                else {
+
+                                    var todate = $("#From").val()
+
+                                    var fromdate = $("#To").val()
+
+                                    if (fromdate == "") {
+                                        alert("Please Selcet From Date");
+                                    }
+                                    else if (todate == "") {
+                                        alert("Please Selcet To Date");
+                                    }
+                                    else {
+
+                                        $("#L1").show();
+
+                                        var Dropdown = $("select#oplog option:selected").val()
+                                        var product = { Dropdown: Dropdown, From: fromdate, To: todate, filter: filter }
+                                        $.ajax({
+                                            type: "POST",
+                                            contentType: "application/json;charset=utf-8",
+                                            data: "{product:" + JSON.stringify(product) + "}",
+                                            url: "/Home/GetLog",
+                                            success: function (data1) {
+
+                                                if (data.length == 0) {
+
+                                                    alert("No Records Found!!");
+                                                    $("#L1").hide();
+                                                }
+                                                else {
+
+                                                    var setdata = $("#log");
+                                                    $("#log").empty();
+                                                    for (var i = 0; i < data1.length; i++) {
+                                                        var milisegundos = parseInt(data1[i].Date.replace("/Date(", "").replace(")/", ""));
+                                                        var newDate = new Date(milisegundos).toLocaleDateString("en-UE");
+                                                        var Time = new Date(milisegundos).toLocaleTimeString("en-UE");
+
+                                                        var data2 = "<tr onclick='showmap(this)' class='row_" + data[i].Id + "'>" +
+                                                            "<td style='color: blue !important'>" + data1[i].Lat + "</td>" +
+                                                            "<td style='color: blue !important'>" + data1[i].Long + "</td>" +
+                                                            "<td style='color: black'>" + newDate + Time + "</td>" +
+                                                            "</tr>";
+                                                        setdata.append(data2)
+
+                                                        //$("#LoadingStetus").html(" ");
+                                                        i = i + 30;
+                                                        $("#L1").hide();
+                                                    }
+                                                }
+                                            }
+                                        })
+                                    }
+                                }
+                            }
+                            /* When the user clicks on the button,
+                            toggle between hiding and showing the dropdown content */
+                            function myFunction() {
+                                document.getElementById("myDropdown").classList.toggle("show");
+                            }
+
+
+                            // Close the dropdown if the user clicks outside of it
+                            window.onclick = function (event) {
+                                if (!event.target.matches('.dropbtn')) {
+
+                                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                                    var i;
+                                    for (i = 0; i < dropdowns.length; i++) {
+                                        var openDropdown = dropdowns[i];
+                                        if (openDropdown.classList.contains('show')) {
+                                            openDropdown.classList.remove('show');
+                                        }
+                                    }
+                                }
+                            }
+                            function myFunction1() {
+                                document.getElementById("myDropdown1").classList.toggle("show");
+                            }
+
+                            // Close the dropdown if the user clicks outside of it
+                            window.onclick = function (event) {
+                                if (!event.target.matches('.dropbtn1')) {
+
+                                    var dropdowns = document.getElementsByClassName("dropdown-content1");
+                                    var i;
+                                    for (i = 0; i < dropdowns.length; i++) {
+                                        var openDropdown = dropdowns[i];
+                                        if (openDropdown.classList.contains('show')) {
+                                            openDropdown.classList.remove('show');
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+
+
+
+
+                    </div>
+                </div>
+            <!--left container-->
+
+            <script>
+                function openBlock(cityName) {
+                    var i;
+                    var x = document.getElementsByClassName("city");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                        }
+
+                //Show loaction on map if history block table lat&long column click
+                function showmap(r) {
+                    t = document.getElementById('log').rows;
+        var al,al1;
+
+        var celval = new Array()
+        var celval1 = new Array()
+        for (var i = 0; i < t.length; i++) {
+            for (var j = 0; j < t[i].cells.length; j++) {
+                if (r == t[i]) {
+                    celval[j] = t[i].cells[0].innerHTML;
+                    celval1[j] = t[i].cells[1].innerHTML;
+                    al = celval[j].toString();
+                    al1 = celval1[j].toString();
+                }
+            }
+
+        }
+
+        var lat = al;
+        var long = al1
+
+          var url = '@Html.Raw(Url.Action("ShowLogLocation", "Home", new { Lat = "__Lat1__", Long = "__Long1__" }))';
+          var params = url.replace('__Lat1__', al).replace('__Long1__', al1);
+          window.location.href = params;
+
+    }
+
+//Pass data to report page if history block filter is custom,lastmonth,last week
+    function my(){
+
+            var filter = $("select#filter option:selected").val()
+             if (filter != "-1") {
+                 var data = "PDF"
+                 var data2 = $("#From").val()
+                 var data1 = $("select#oplog option:selected").val().toString();
+                 var data3 = $("#To").val().toString();
+                 var filter1 = $("select#filter option:selected").val();
+                 var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                 var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                 window.open(params, '_blank');
+             }
+             else {
+                 var todate = $("#To").val()
+
+                 var fromdate = $("#from").val()
+
+                 if (fromdate == "") {
+                     alert("Please Selcet From Date");
+                 }
+                 else if (todate == "") {
+                     alert("Please Selcet To Date");
+                 }
+                 else {
+
+                      var data = "PDF"
+                 var data2 = $("#from").val()
+                 var data1 = $("select#op1 option:selected").val().toString();
+                 var data3 = $("#To").val().toString();
+                 var filter1 = $("select#op2 option:selected").val();
+                 var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                 var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                 window.open(params, '_blank');
+                 }
+             }
+
+
+            }
+            </script>
+            <!--Model Registration-->
+            <script>
+
+
+
+                //<!--Model ShowLocation-->
+
+
+                // Get the modal
+                var modal1 = document.getElementById('ShowLocation1');
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("ShowModel");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementById("close22");
+
+                // When the user clicks the button, open the modal
+                btn.onclick = function () {
+                    modal1.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal1.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal1) {
+                        modal1.style.display = "none";
+                    }
+                }
+            </script>
+            <!--Model Show Location-->
+            <!--Model Address Search-->
+
+            <script>
+                var modal1 = document.getElementById('ShowLocation1');
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("ShowModel");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementById("close22");
+
+                // When the user clicks the button, open the modal
+                btn.onclick = function () {
+                    modal1.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal1.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal1) {
+                        modal1.style.display = "none";
+                    }
+                }
+                // Get the modal
+                var modal2 = document.getElementById('AddressShow');
+
+                // Get the button that opens the modal
+
+                var btn = document.getElementById("AddressSearch");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementById("close2");
+
+                // When the user clicks the button, open the modal
+                btn.onclick = function () {
+                    modal2.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal2.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal2) {
+                        modal2.style.display = "none";
+                    }
+                }
+
+            </script>
+
+
+
+            <div class="splitter">
+
+            </div>
+            <!---right panel--->
+            <div class="col-md-9 panel-right mainsplitter" style="border:1px">
+                <div id="map"></div>
+            </div>
+            <!--right panel--->
+        </div>
+
+    </div>
+    <!--pagecontainer-->
+    @*<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>*@
+    <script src='https://rawgit.com/RickStrahl/jquery-resizable/master/src/jquery-resizable.js'></script>
+    <script src="~/Scripts/index.js"></script>
+    <script>
+        //Initialize map
+        var contentString = [];
+        var infowindow = [];
+        var marker = [];
+        var mapMarkersArray = [];
+        function initMap() {
+
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 19.751480, lng: 75.713888 },
+                zoom: 7,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: true,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                    position: google.maps.ControlPosition.TOP_
+
+                },
+
+
+                zoomControl: true,
+                zoomControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_CENTER
+                },
+                scaleControl: true,
+                streetViewControl: true,
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                },
+                fullscreenControl: true
+            });
+
+        }
+        $(window).load(function () {
+             setInterval(getVal, 20000);  // invoke load 20 second
+            getVal(); // load on initial page loaded
+            google.maps.event.trigger(map, "resize");
+            initMap();
+        });
+        //clear Object block table 
+        //$(function () {
+        //    ClearGrid();
+        //    setInterval(ClearGrid, 6000);  // invoke load 6 second
+        //    ClearGrid(); // load on initial page loaded
+        //});
+         //bind Object block table 
+      
+        $(function () {
+           
+           // BindGrid();
+           // $.xhrPool.abortAll();
+            setInterval(BindGrid, 3000);  // invoke load 6 second
+            BindGrid(); // load on initial page loaded
+        });
+
+        $(function () {
+
+            setInterval(getVal, 10000);  // invoke load 10 second
+            getVal(); // load on initial page loaded
+        });
+
+
+    </script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+
+    </script>
+    </div>
+    </div>
+    </div>
+    <!-- //banner -->
+    </div>
+    <div class="footerspace"></div>
+    <div id="particles-js"></div>
+    <div class="clearfix"></div>
+    <div class="footer-w3layouts" style="position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    z-index:1;">
+        <div class="agile-copy1" style="border:1px solid #e4e2e2">
+            <div style="float:left;line-height: 30px;"> Copyright © 2018. All rights reserved | Design by <a href="http://www.aviscoitsolutions.com">AVISCO IT SOLUTIONS PRIVATE LIMITED.</a></div>
+            <div style="float:right" class="frfr">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" style="1color:#3b579d"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" style="1color:#00c1f7"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true" style="1color:#0076b4"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true" style="1color:#b12f21"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function ClearGrid() {
+
+
+
+        }
+        //Bind Object Block Table
+        function BindGrid() {
+           // $.xhrPool.abortAll();
+            ClearGrid();
+            $.get("/Home/BindDorpDown", null, DataBind);
+           
+            function DataBind(data) {
+               
+                var setdata = $("#BindGrid");
+                var setevent = $("#bindevents");
+                $("#BindGrid").empty();
+                $("#bindevents").empty();
+                for (var i = 0; i < data.length; i++) {
+
+                    if (data[i].State > 33008) {
+
+                        var data1 = "<tr onclick='getVal(this)' class='row_" + data[i].Id + "'>" +
+                            "<td style='color: black;text-align:center;padding-left:2px;'>"  /*+'<input type="checkbox" name="abc" id=' + data[i].DeviceIMEI + ' />'*/ + "</td>" +
+                            "<td style='color: black;' title='" + data[i].DeviceIMEI + "' >" + '<img src="../Layout4/images/new_truck1.png" width="16" height="16"/>&nbsp; ' + " " + data[i].DeviceName + '<br/>' + data[i].currenttime + "</td>" +
+                            "<td style='color: black;text-align:center'>" + data[i].Speed1 + " " + "km/h" + " " + " " + '<img src="../MainPage/images/enginon.jpg"  width="16" height="16" title="Engine_On"/> ' + " " + '<img src="../MainPage/images/mwifi_td.png" width="20" height="16" title="Connection:YES,GPS:YES" />' + "</td>" +
+                            "<td onclick='passdataupdate(this)' style='color: black;text-align:center'>" + '<i  class="fa fa-trash-o" aria-hidden="true"style="font-size:16px;"></i>' + "</td>" +
+                            "</tr>";
+                        setdata.append(data1);
+                       
+
+                    }
+                    else if (data[i].State == null) {
+                        var count = "Invalid_Device";
+                        var data1 = "<tr onclick='getVal(this)' class='row_" + data[i].Id + "'>" +
+                            "<td style='color: black;text-align:center;padding-left:2px;'>" /*+ '<input type="checkbox" name="abc" id=' + data[i].DeviceIMEI + ' />' */ + "</td>" +
+                            "<td style='color: black;' title='" + data[i].DeviceIMEI + "' >" + '<img src="../Layout4/images/new_truck1.png" width="16" height="16"/>&nbsp; ' + " " + data[i].DeviceName + '<br/>' + "No Data" + "</td>" +
+                            "<td style='color: black;text-align:center'>" + "Invalid_Device" + "</td>" +
+                            "<td onclick='passdataupdate(this)' style='color: black;text-align:center'>" + '<i class="fa fa-trash-o" aria-hidden="true"style="font-size:16px;"></i>' + "</td>" +
+                            "</tr>";
+                        setdata.append(data1);
+                      
+                    }
+
+                    else {
+
+                        var count = "Engine_Off";
+
+                        var data1 = "<tr onclick='getVal(this)' class='row_" + data[i].Id + "'>" +
+                            "<td  style='color: black;text-align:center;padding-left:2px;'>" /*+ '<input type="checkbox" name="abc" id=' + data[i].DeviceIMEI + ' />' */ + "</td>" +
+                            "<td style='color: black;'  title='" + data[i].DeviceIMEI + "' >" + '<img src="../Layout4/images/new_truck1.png" width="16" height="16"/>&nbsp; ' + " " + data[i].DeviceName + '<br/>' + data[i].currenttime + "</td>" +
+                            "<td style='color: black;text-align:center;'>" + data[i].Speed1 + " " + "km/h" + " " + " " + '<img src="../MainPage/images/enginoff.png"  width="16" height="16" title="Engine_Off"/> ' + " " + '<img src="../MainPage/images/mwifi_td.png" width="20" height="16" title="Connection:YES,GPS:YES" />' + "</td>" +
+                            "<td onclick='passdataupdate(this)' style='color: black;text-align:center'>" + '<i class="fa fa-trash-o" aria-hidden="true"style="font-size:16px;"></i>' + "</td>" +
+                            "</tr>";
+                        setdata.append(data1);
+                      
+                    }
+                    if (data[i].Speed > 45) {
+                        var event = "<tr style='height:3px'class='row_" + 1 + "'>" +
+                            "<td style='color: black;background-color:'Silver'>" + data[i].time + "</td>" +
+                            "<td style='color: black;background-color:'Silver'>" + data[i].DeviceName + "</td>" +
+                            "<td style='color: red !important'>" + data[i].Speed + "</td>" +
+                            "</tr>";
+                        $('#t2 td').width(5);
+                        setevent.append(event)
+
+                    }
+                    var lineSymbol = {
+                        path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+                        strokeColor: 'red',
+                        strokeOpacity: 0.8,
+                    };
+
+                    $("#L2").hide();
+                }
+
+            }
+
+            $("#LoadingStetus").html(" ");
+        }
+
+
+
+        //Delete Device
+        function passdataupdate(r) {
+
+            t = document.getElementById('t1').rows;
+            var al;
+
+            var celval = new Array()
+            for (var i = 0; i < t.length; i++) {
+                for (var j = 0; j < t[i].cells.length; j++) {
+                    if (r == t[i].cells[j]) {
+
+                        celval[j] = t[i].cells[1];
+                        al = celval[j];
+
+
+                    }
+                }
+            }
+            var imei = $(al).attr('title');
+
+            var product = { IMEI: imei }
+
+
+            var txt;
+            var r = confirm("Do You Really Want To Delete This Device");
+            if (r == true) {
+
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    data: "{product:" + JSON.stringify(product) + "}",
+                    url: "/Home/enabledisebleDevice",
+                    success: function (data) {
+                        BindGrid();
+                        getVal();
+                    }
+                });
+                $.ajax({
+                    url: "/Home/BindDorpDown1",
+                    type: "Get",
+                    success: function (data) {
+                        $("#oplog option").remove();
+                        var opt2 = new Option("All", "cc");
+                        $('#oplog').append(opt2);
+
+                        for (var i = 0; i < data.length; i++) {
+                            var opt = new Option(data[i].DeviceName, data[i].DeviceIMEI);
+                            $('#oplog').append(opt);
+
+
+                        }
+
+
+                    }
+
+                });
+            }
+        }
+        //Bind Markers on map
+        function getVal(r) {
+          
+            // initMap();
+            //t = document.getElementById('t1').rows;
+            //var al;
+
+            //var celval = new Array()
+            //for (var i = 0; i < t.length; i++) {
+            //    for (var j = 0; j < t[i].cells.length; j++) {
+            //        if (r == t[i]) {
+            //            celval[j] = t[i].cells[1].innerHTML;
+            //            al = celval[j];
+
+            //        }
+            //    }
+            //}
+            //var product = { Dropdown: al }
+
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+               // data: "{product:" + JSON.stringify(product) + "}",
+                url: "/Home/GetAllLocation1",
+                success: function (data) {
+                    initMap();
+                    for (var i = 0; i < data.length; i++) {
+                        marker[i] = new google.maps.Marker({
+                            position: { lat: parseFloat(data[i].Lat), lng: parseFloat(data[i].Long) },
+                            map: map,
+                            icon: "../Layout4/images/new_truck1.png",
+                            gestureHandling: 'greedy'
+
+
+                        });
+
+                        if (data[i].State > 32950) {
+                            contentString[i] = '<div id="content">' +
+                                '<div id="siteNotice">' +
+                                '</div>' +
+                                '<h4 id="firstHeading" class="firstHeading">' + data[i].DeviceName + '</h1>' +
+                                '<div id="bodyContent">' + data[i].imei +
+                                '<p style="font-size:12px"><b>' + "Speed" + "_" + data[i].Speed +
+                                '_Km/h' + '<br/>' +
+                                '<p>' + "Current State:Engine On";
+                        }
+                        else if (data[i].Speed1 > 0) {
+                            contentString[i] = '<div id="content">' +
+                                '<div id="siteNotice">' +
+                                '</div>' +
+                                '<h4 id="firstHeading" class="firstHeading">' + data[i].DeviceName + '</h1>' +
+                                '<div id="bodyContent">' + data[i].imei +
+                                '<p style="font-size:12px"><b>' + "Speed" + "_" + data[i].Speed +
+                                '_Km/h' + '<br/>' +
+                                '<b>' + "Current State:Running";
+                        }
+                        else {
+
+                            contentString[i] = '<div id="content">' +
+                                '<div id="siteNotice">' +
+                                '</div>' +
+                                '<h4 id="firstHeading" class="firstHeading">' + data[i].DeviceName + '</h1>' +
+                                '<div id="bodyContent">' + data[i].imei +
+                                '<p style="font-size:12px"><b>' + "Speed" + "_" + data[i].Speed +
+                                '_Km/h' + '<br/>' +
+                                '<b>' + "Current State:Engine Off";
+                        }
+                        infowindow[i] = new google.maps.InfoWindow({
+                            content: contentString[i], maxWidth: 200, height: 50
+                        });
+                        var markervalue = marker[i];
+                        google.maps.event.addListener(marker[i], 'click', (function (markervalue, i) {
+                            return function () {
+                                infowindow[i].open(map, marker[i]);
+                                map.setZoom(20);
+                                map.panTo(marker[i].position);
+                            }
+                        })(marker[i], i));
+                        google.maps.event.addListener(marker[i], 'mouseover', (function (markervalue, i) {
+                            return function () {
+                                infowindow[i].open(map, marker[i]);
+
+                            }
+                        })(marker[i], i));
+
+                        google.maps.event.addListener(marker[i], 'mouseout', (function (markervalue, i) {
+                            return function () {
+                                infowindow[i].close();
+                            }
+                        })(marker[i], i));
+
+                    }
+                }
+
+            });
+
+        }
+
+    </script>
+
+
+    <!-- //footer -->
+    <script src="~/MainPage/js/responsiveslides.min.js"></script>
+    <!-- for bootstrap working -->
+    <script src="~/MainPage/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2'></script>
+
+    @*<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>*@
+
+    @*//<div id="map1" style="height: 440px; border: 1px solid #AAA;width:500%;"></div>*@
+    <!--Show Location-->
+    <script type="text/javascript">
+        //Show location from lat&long
+        $(function () {
+            $("#Show").click(function () {
+                var Lat = $("#Lattitude").val()
+                var Long = $("#Longitude").val()
+                if (Lat == "") {
+                    alert("Please Enter Lattitude")
+                }
+                else if (Long == "") {
+                    alert("Please Enter Longitude")
+                }
+                else {
+                    marker = [0];
+                    var iconname = "../Layout4/images/mapmarker3.png"
+                    marker = new google.maps.Marker({
+                        position: { lat: parseFloat(Lat), lng: parseFloat(Long) },
+                        animation: google.maps.Animation.BOUNCE,
+                        map: map,
+                        icon: iconname,
+                        gestureHandling: 'greedy',
+
+                    });
+                    map.setZoom(15);
+                    map.panTo(marker.position);
+                    var infowindow = new google.maps.InfoWindow({
+                        content: Lat + "/" + Long, maxWidth: 200
+                    });
+                    infowindow.open(map, marker);
+                    document.getElementById('Lattitude').value = '';
+                    document.getElementById('Longitude').value = '';
+                    document.getElementById('Address').setAttribute("style", "display:none");
+                }
+            });
+        });
+        //Device Registration
+        function SaveData() {
+            var DeviceName = $("#DeviceName").val()
+
+            var IMEI = $("#IMEI").val()
+            var Vehicle_Type = $("#Vehicle_Type").val()
+            if (DeviceName == "") {
+                alert("Please Enter Vehicle_No");
+
+            }
+            else if (IMEI == "") {
+
+                alert("Please Enter IMEI No");
+
+            }
+            else if (Vehicle_Type == "") {
+
+                alert("Please Enter Vehicle_Type");
+
+            }
+            else {
+
+                var product = { DeviceName: DeviceName, IMEI: IMEI, Vehicle_Type: Vehicle_Type }
+                $.ajax({
+
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    data: "{product:" + JSON.stringify(product) + "}",
+                    url: "/Home/DeviceRegistration",
+
+                    success: function (result) {
+
+                        if (result == "Device_Alreday_Registerd") {
+                            alert("Device Already Registerd");
+                        }
+                        else if (result == "Device_Name_Alreday_Exist") {
+                            alert("Device_Name_Alreday_Exist");
+                        }
+                        else {
+                            $("#myModal").css("visibility", "hidden");
+                        }
+                    }
+                });
+            }
+        }
+
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw6ylNYYy1CPEN_shphTXMhf-2yGCDXuI">
+    </script>
+
+</body>
+</html>

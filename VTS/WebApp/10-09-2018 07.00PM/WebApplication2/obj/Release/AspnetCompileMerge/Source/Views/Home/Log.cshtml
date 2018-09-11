@@ -1,0 +1,621 @@
+﻿
+@{
+    ViewBag.Title = "Log";
+    Layout = null;
+}
+
+<head>
+    <script src="~/MainPage/js/jquery-1.9.1.min.js"></script>
+    @*<script src="~/MainPage/js/easyResponsiveTabs.js"></script>*@
+    <script type="text/javascript" src="~/MainPage/js/jquery-2.1.4.min.js"></script>
+    <link href="~/MainPage/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="~/MainPage/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/MainPage/css/style.css" rel="stylesheet" />
+    <link href="~/MainPage/css/circle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/MainPage/css/font-awesome.min.css" />
+    @*<script src="~/Scripts/index.js"></script>*@
+</head>
+<style>
+    .table td, .table > tbody > td {
+        padding: 0px !important;
+    }
+
+    table.scroll {
+        /* width: 100%; */ /* Optional */
+        /* border-collapse: collapse; */
+        border-spacing: 0;
+        border: 1px solid black;
+    }
+
+
+        table.scroll thead {
+            /*display: block;*/
+        }
+
+        table.scroll tbody {
+            /*display: block;*/
+        }
+
+        table.scroll thead tr th {
+            height: 30px;
+            line-height: 30px;
+            /* text-align: left; */ .
+        }
+
+        table.scroll tbody {
+            height: 100px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 380px;
+        }
+
+        table.scroll tbody {
+            border-top: 1px solid black;
+        }
+
+            table.scroll tbody td, thead th {
+                /* width: 20%; */ /* Optional */
+                /*border-right: 1px solid black;*/
+                /* white-space: nowrap; */
+                padding: 0px 0px 0px 9px !important;
+            }
+
+                table.scroll tbody td:last-child, thead th:last-child {
+                    border-right: none;
+                }
+</style>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Home/BindDorpDown1",
+            type: "Get",
+            success: function (data) {
+                $("#op1 option").remove();
+                var opt2 = new Option("All", "cc");
+                $('#op1').append(opt2);
+                for (var i = 0; i < data.length; i++) {
+                    var opt = new Option(data[i].DeviceName, data[i].DeviceIMEI);
+                    $('#op1').append(opt);
+
+
+                }
+
+
+            }
+
+        });
+
+        /**/
+        $("#L1").show();
+    });
+</script>
+<!--Header-->
+<div class="header" style="padding:0em">
+    <div class="container-fluid">
+        <div class="address-info">
+            <nav class="navbar navbar-default">
+
+                <div class="navbar-header navbar-left">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1><a class="navbar-brand"><a href="@Url.Action("MainPage", "Home")"> <img src="~/Layout4/images/AVISCO10.png" style="height: 79px;width: 155px;margin-bottom: -11px;margin-top: -7px; float:left" title=""> </a></h1>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <nav class="cl-effect-13" id="cl-effect-13">
+                        <ul class="nav navbar-nav">
+                            <li class="active1">
+                                <a href="@Url.Action("MainPage", "Home")"><i class="fa fa-wifi" class="imgstyle" title="Live Tracking" id="signInButton"></i></a>
+                                <span class="hedtxt">Live</span>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("DashBoard", "Home")" target="_blank">
+                                    <i class="fa fa-desktop" class="imgstyle" style="text-align:center;padding-left:5px;"></i>
+                                </a><span class="hedtxt">Dashboard</span>
+                            </li>
+                            <li id="load">
+                                <a href="@Url.Action("Log", "Home")" target="_blank">
+                                    <i class="fa fa-list-alt" class="imgstyle" style=""></i>
+                                </a><span class="hedtxt">Logs</span>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Reports", "Home")" target="_blank">
+                                    <i class="fa fa-chart-bar imgstyle1" style="margin-right:1px;"></i>
+                                </a><span class="hedtxt">Report</span>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Visit", "Home")" target="_blank">
+                                    <i class="fa fa-map-marker" class="imgstyle" style="padding-left:5px;"></i>
+                                </a><span class="hedtxt">Tracking</span>
+                            </li>
+
+                           <li>
+                                <a><i class="fa fa-user" class="imgstyle" onclick="myFunction()" title="@Request.RequestContext.HttpContext.Session["username"]" id="fauser"></i></a>
+                                <span class="hedtxt" style="margin-left: 6px;">User</span>
+                                <div class="dropdown" style="width: 100%;
+    margin-left: -73px;">
+
+                                    <div id="myDropdown" class="dropdown-content" style="  width: 257%;
+    margin-left: -81px;
+    margin-top: 15px;
+    height: 114px;
+    border: 1px solid;
+    border-radius: 40px;
+    background: white;">
+                                        <a href="#">
+                                            <i class="fa fa-user" class="imgstyle" style="    font-size: 30px;
+    margin-right: 4px;"></i>
+                                        </a>
+                                        <span><label>@Request.RequestContext.HttpContext.Session["username"]</label></span>
+                                        <br />
+                                        <a href="@Url.Action("ChangePassword", "Home")" target="_blank">
+                                            <lable id="change">Change Password</lable>
+                                        </a><div style="margin-top: 0px;">
+                                            <a id="LogOut">
+                                                <i class="fa fa-sign-out" class="imgstyle" title="LogOut" id="LogOut">Logout</i>
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                            </li>
+                            <a style="visibility: hidden;" href="/Login.aspx" id="logout1">aa</a>
+                          
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+        </nav>
+    </div>
+</div>
+<!--Header-->
+<div class="container logs">
+    <div style="margin-top:70px">
+        <div class="row" >
+
+            <div class="col-sm-3">
+                <div class="dropdown" style="width:100%">
+                    <h4>Select Object</h4>
+                    <select id="op1" class="dropdownitems radius" style="width:100%">
+                        <option value="All">All</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="dropdown" style="width:100%" id="FilterDropdown">
+                    <h4>Filter</h4>
+                    <select id="op2" class="dropdownitems radius" style="width:100%">
+                        <option value="-1">Select</option>
+                        <option value="1">Today</option>
+                        <option value="2">Yesterday</option>
+                        <option value="8">Last Week</option>
+                        <option value="30">Last Month</option>
+                        <option value="cc">Custom</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="datetimepickerfrom" id="from1">
+                    <h4>Date From</h4>
+                    <input type="date" name="FromDate" id="from" min="2000-01-02" class="radius" style="width:100%">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="datetimepickerto" id="To1">
+                    <h4> Date To</h4>
+                    <input type="date" name="ToDate" id="To" min="2000-01-02" class="radius" style="width:100%">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-3">
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <input type="submit" class="w3-btn1 w3-border1 sbtn1 radius" onclick="Show()" value="Show Log" id="Show" />
+                    <div class="dropdown3">
+                        <button class="dropbtn3"><i class="fa fa-download" style="font-size:16px;"></i></button>
+                        <div class="dropdown-content3 text-center">
+                            <a href="#" id="LPdf"><i class="fa fa-file-pdf-o" aria-hidden="true" id="LPdf" style="color:red;text-align:center"></i></a>
+                            <a href="#" id="LExcel"><i class="fa fa-file-excel-o" aria-hidden="true" id="LExcel" style="color:green;text-align:center"></i></a>
+                            <a href="#" id="LWord"><i class="fa fa-file-word-o" aria-hidden="true" id="LWord" style="color:blue;text-align:center"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+    </div>
+
+
+</div>
+<div class=" container-fluid" style="margin-top:10px">
+    <div class=" col-md-12">
+
+        <div class="logbox1">
+            <table class="table table-striped scroll" style="overflow-y: auto;">
+
+                <thead style="font-size: 14px;">
+                    <tr class=" header">
+                        <th style=" color:black">Device Name</th>
+                        <th style=" color:black">IMEI</th>
+                        <th style=" color:black;text-align:center">Location</th>
+                        <th style=" color:black"></th>
+                        <th style=" color:black">Date</th>
+                        <th style=" color:black">Time</th>
+                        <th style=" color:black">Speed</th>
+                        <th style=" color:black">Odeometer</th>
+                        <th style=" color:black">HDOP</th>
+                        <th style=" color:black">Satellites</th>
+                        <th style=" color:black">Signal_Strength</th>
+                    </tr>
+                </thead>
+                <tbody id="Log" style="height:51vh"></tbody>
+              
+            </table>
+            <div class="container-fluid" style="text-align:center" id="L1">
+                <img src="/MainPage/images/preloader.gif" style="height: 50px;margin-top: 10%;">
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="logfooter"></div>
+
+@*Footrt*@
+<div class="footer-w3layouts" style="   position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: white;" >
+    <div class="agile-copy1" style="border:1px solid #e4e2e2">
+        <div style="float:left;line-height: 30px;"> Copyright © 2018. All rights reserved | Design by <a href="http://www.aviscoitsolutions.com">AVISCO IT SOLUTIONS PRIVATE LIMITED.</a></div>
+        <div style="float:right" class="frfr">
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+@*footer*@
+
+<script type="text/javascript">
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    document.getElementById("LogOut").addEventListener("click", expire);
+    function expire() {
+        document.getElementById("logout1").click();
+        $.ajax({
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            url: "/Home/expire",
+            success: function (data) {
+            }
+        });
+    }
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Home/BindDorpDown1",
+            type: "Get",
+            success: function (data) {
+                $("#op1 option").remove();
+                var opt2 = new Option("All", "cc");
+                $('#op1').append(opt2);
+                for (var i = 0; i < data.length; i++) {
+                    var opt = new Option(data[i].DeviceName, data[i].DeviceIMEI);
+                    $('#op1').append(opt);
+
+
+                }
+
+            }
+
+        });
+
+        /**/
+        $("#L1").hide();
+    });
+
+
+    $("#FilterDropdown").change(function () {
+        var filter = $("select#op2 option:selected").val()
+        if (filter == "cc") {
+            $("#To1").show();
+            $("#from1").show();
+            $("#FilterDropdown").show();
+
+        }
+        else if (filter == "1" || filter == "2" || filter == "8" || filter == "30") {
+            $("#To1").hide();
+            $("#from1").hide();
+        }
+    });
+
+</script>
+
+<script>
+    function my(){
+
+            var filter = $("select#op2 option:selected").val()
+             if (filter != "-1") {
+                 var data = "PDF"
+                 var data2 = $("#from").val()
+                 var data1 = $("select#op1 option:selected").val().toString();
+                 var data3 = $("#To").val().toString();
+                 var filter1 = $("select#op2 option:selected").val();
+                 var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                 var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                 window.open(params, '_blank');
+             }
+             else {
+                 var todate = $("#To").val()
+
+                 var fromdate = $("#from").val()
+
+                 if (fromdate == "") {
+                     alert("Please Selcet From Date");
+                 }
+                 else if (todate == "") {
+                     alert("Please Selcet To Date");
+                 }
+                 else {
+
+                      var data = "PDF"
+                 var data2 = $("#from").val()
+                 var data1 = $("select#op1 option:selected").val().toString();
+                 var data3 = $("#To").val().toString();
+                 var filter1 = $("select#op2 option:selected").val();
+                 var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                 var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                 window.open(params, '_blank');
+                 }
+             }
+
+
+            }
+
+     $(function () {
+
+         $("#LPdf").click(function () {
+
+             var filter = $("select#op2 option:selected").val()
+             if (filter != "-1") {
+                 var data = "PDF"
+                 var data2 = $("#from").val()
+                 var data1 = $("select#op1 option:selected").val().toString();
+                 var data3 = $("#To").val().toString();
+                 var filter1 = $("select#op2 option:selected").val();
+                 var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                 var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                 window.open(params, '_blank');
+             }
+             else {
+                 var todate = $("#To").val()
+
+                 var fromdate = $("#from").val()
+
+                 if (fromdate == "") {
+                     alert("Please Selcet From Date");
+                 }
+                 else if (todate == "") {
+                     alert("Please Selcet To Date");
+                 }
+                 else {
+
+                      var data = "PDF"
+                 var data2 = $("#from").val()
+                 var data1 = $("select#op1 option:selected").val().toString();
+                 var data3 = $("#To").val().toString();
+                 var filter1 = $("select#op2 option:selected").val();
+                 var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                 var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                 window.open(params, '_blank');
+                 }
+             }
+
+                })
+            });
+            $(function () {
+
+                $("#LExcel").click(function () {
+                    var filter = $("select#op2 option:selected").val()
+                    if (filter != "-1") {
+
+                          var data = "Excel"
+                            var data2 = $("#from").val()
+                            var data1 = $("select#op1 option:selected").val().toString();
+                            var data3 = $("#To").val().toString();
+                            var filter1 = $("select#op2 option:selected").val();
+                            var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                            var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                            window.location.href = params;
+                    }
+                    else {
+                        var todate = $("#To").val()
+
+                        var fromdate = $("#from").val()
+
+                        if (fromdate == "") {
+                            alert("Please Selcet From Date");
+                        }
+                        else if (todate == "") {
+                            alert("Please Selcet To Date");
+                        }
+                        else {
+                            var data = "Excel"
+                            var data2 = $("#from").val()
+                            var data1 = $("select#op1 option:selected").val().toString();
+                            var data3 = $("#To").val().toString();
+                            var filter1 = $("select#op2 option:selected").val();
+                            var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                            var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                            window.location.href = params;
+                        }
+                    }
+
+                })
+            });
+            $(function () {
+           $("#LWord").click(function () {
+                    var filter = $("select#op2 option:selected").val()
+                    if (filter != "-1") {
+                        var data = "Word"
+                 var data2 = $("#from").val()
+                 var data1 = $("select#op1 option:selected").val().toString();
+                 var data3 = $("#To").val().toString();
+                 var filter1 = $("select#op2 option:selected").val();
+                 var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__", filter= "__employeeId2__" }))';
+                 var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3).replace('__employeeId2__', filter1);
+                 window.location.href = params;
+
+                    }
+                    else {
+
+                        var todate = $("#To").val()
+
+                        var fromdate = $("#from").val()
+
+                        if (fromdate == "") {
+                            alert("Please Selcet From Date");
+                        }
+                        else if (todate == "") {
+                            alert("Please Selcet To Date");
+                        }
+                        else {
+                            var data = "Word"
+                            var data2 = $("#from").val()
+                            var data1 = $("select#op1 option:selected").val().toString();
+                            var data3 = $("#To").val().toString();
+                            var url = '@Html.Raw(Url.Action("LogReport", "Home", new { reporttype = "__reportttype__", id = "__orderId__", from1 = "__employeeId__", to = "__employeeId1__" }))';
+                            var params = url.replace('__reportttype__', data).replace('__orderId__', data1).replace('__employeeId__', data2).replace('__employeeId1__', data3);
+                            window.location.href = params;
+                        }
+                    }
+
+                })
+            });
+
+
+    function ClearGrid() {
+        $("#Log").empty();l̥
+    }
+
+    function Show(){
+        $("#Log").empty();
+        $("#L1").show();
+        var filter1 = $("select#op2 option:selected").val()
+        var Dropdown1 = $("select#op1 option:selected").val()
+
+        if (filter1 != "-1" && filter1 != "cc" ) {
+            if (filter1 == "8" || filter1 == "30") {
+                my();
+            }
+            else {
+                var product = { Dropdown: Dropdown1, filter: filter1 }
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    data: "{product:" + JSON.stringify(product) + "}",
+                    url: "/Home/GetLog",
+                    success: function (data1) {
+
+                        if (data1.length == 0) {
+                            alert("No Records Found!!")
+                        }
+                        else {
+
+                            $("#Log").empty();
+                            var length = data1.length
+                            var setdata = $("#Log");
+                            for (var i = 0; i < length; i++) {
+                                var milisegundos = parseInt(data1[i].Date.replace("/Date(", "").replace(")/", ""));
+                                var newDate = new Date(milisegundos).toLocaleDateString("en-UE");
+                                var Time = new Date(milisegundos).toLocaleTimeString("en-UE");
+
+                                var data2 = "<tr onclick='showmap(this)' class='row_" + data1[i].Id + "'>" +
+                                    "<td style='color: black'>" + data1[i].DeviceName + "</td>" +
+                                    "<td style='color: black'>" + data1[i].imei + "</td>" +
+                                    "<td style='color: blue' '>" + data1[i].Lat + "</td>" +
+                                    "<td style='color: blue'>" + data1[i].Long + "</td>" +
+                                    "<td style='color: black'>" + newDate + "</td>" +
+                                    "<td style='color: black'>" + Time + "</td>" +
+                                    "<td style='color: black'>" + data1[i].speed + "</td>" +
+                                    "<td style='color: black'>" + data1[i].Odeometer + "</td>" +
+                                    "<td style='color: black'>" + data1[i].hdop + "</td>" +
+                                    "<td style='color: black'>" + data1[i].scount + "</td>" +
+                                    "<td style='color: black'>" + data1[i].gsmStength + "</td>" +
+                                    "</tr>";
+
+                                setdata.append(data2)
+
+                                i = i + 30;
+                                $("#L1").hide();
+
+                            }
+                        }
+                    }
+                })
+
+            }
+        }
+        else {
+
+            my();
+        }
+    }
+
+    function showmap(r) {
+        t = document.getElementById('Log').rows;
+        var al,al1;
+
+        var celval = new Array()
+        var celval1 = new Array()
+        for (var i = 0; i < t.length; i++) {
+            for (var j = 0; j < t[i].cells.length; j++) {
+                if (r == t[i]) {
+                    celval[j] = t[i].cells[2].innerHTML;
+                    celval1[j] = t[i].cells[3].innerHTML;
+                    al = celval[j].toString();
+                    al1 = celval1[j].toString();
+                }
+            }
+
+        }
+
+        var lat = al;
+        var long = al1
+
+          var url = '@Html.Raw(Url.Action("ShowLogLocation", "Home", new { Lat = "__Lat1__", Long = "__Long1__" }))';
+          var params = url.replace('__Lat1__', al).replace('__Long1__', al1);
+          window.location.href = params;
+
+    }
+
+</script>
+
