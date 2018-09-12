@@ -1,0 +1,48 @@
+28-08-2018 17:14:55 UDP: Started listening at port 8414
+28-08-2018 17:14:55 TCP: Started listening at port 10025
+28-08-2018 17:14:55 TCP Output Control: Started listening at port 668
+28-08-2018 17:14:56 TCP Output Control: Error in confirmation checker.
+28-08-2018 17:14:56 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+28-08-2018 17:15:22 TCP: Got new connection: 42.106.21.41:50425
+28-08-2018 17:15:23 TCP: Recieved 18 bytes from socket.
+28-08-2018 17:15:23 TCP: Checking for keyword validity.
+28-08-2018 17:15:28 TCP: Keyword valid. Waiting for data.
+28-08-2018 17:15:32 TCP: Recieved 51 bytes from socket.
+28-08-2018 17:15:40 TCP: Parsing recieved data.
+28-08-2018 17:15:48 TCP: ---- Parser log start ----
+28-08-2018 17:16:24 Helper: IMEI: 800523707471591544
+28-08-2018 17:17:15 Helper: Checksum does not match.
+28-08-2018 17:17:15 TCP: ---- Saving to database ----
+28-08-2018 17:17:24 TCP: Got new connection: 42.106.21.41:5376
+28-08-2018 17:17:24 TCP: ---- Successfully saved to database ----
+28-08-2018 17:17:24 TCP: Recieved 627 bytes from socket.
+28-08-2018 17:17:24 TCP: Parsing recieved data.
+28-08-2018 17:17:24 TCP: ---- Parser log start ----
+28-08-2018 17:17:24 Helper: IMEI: 800523707471591544
+28-08-2018 17:17:24 Helper: Checksum does not match.
+28-08-2018 17:17:24 TCP: ---- Saving to database ----
+28-08-2018 17:17:24 TCP: Recieved 141 bytes from socket.
+28-08-2018 17:17:24 TCP: Checking for keyword validity.
+28-08-2018 17:17:24 TCP: Keyword valid. Waiting for data.
+28-08-2018 17:17:24 TCP: ---- Successfully saved to database ----
+28-08-2018 17:17:30 TCP: Recieved 36 bytes from socket.
+28-08-2018 17:17:30 TCP: Parsing recieved data.
+28-08-2018 17:17:30 TCP: ---- Parser log start ----
+28-08-2018 17:17:30 Helper: IMEI: 800523707471591544
+28-08-2018 17:17:30 Helper: Checksum does not match.
+28-08-2018 17:17:30 TCP: ---- Saving to database ----
+28-08-2018 17:17:30 TCP: ---- Successfully saved to database ----
+28-08-2018 17:17:40 TCP: Recieved 36 bytes from socket.
+28-08-2018 17:17:40 TCP: Parsing recieved data.
+28-08-2018 17:17:40 TCP: ---- Parser log start ----
+28-08-2018 17:17:40 Helper: IMEI: 800523707471591544
+28-08-2018 17:17:40 Helper: Checksum does not match.
+28-08-2018 17:17:40 TCP: ---- Saving to database ----
+28-08-2018 17:17:40 TCP: ---- Successfully saved to database ----
+28-08-2018 17:17:50 TCP: Recieved 36 bytes from socket.

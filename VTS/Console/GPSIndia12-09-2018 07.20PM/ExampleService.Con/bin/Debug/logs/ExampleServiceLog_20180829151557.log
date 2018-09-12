@@ -1,0 +1,20 @@
+29-08-2018 15:15:57 UDP: Started listening at port 8414
+29-08-2018 15:15:57 TCP: Started listening at port 10025
+29-08-2018 15:15:58 TCP Output Control: Started listening at port 668
+29-08-2018 15:15:59 TCP Output Control: Error in confirmation checker.
+29-08-2018 15:15:59 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+29-08-2018 15:17:02 TCP: Got new connection: 42.106.27.156:4421
+29-08-2018 15:17:03 TCP: Recieved 18 bytes from socket.
+29-08-2018 15:17:03 TCP: Checking for keyword validity.
+29-08-2018 15:17:03 TCP: Keyword valid. Waiting for data.
+29-08-2018 15:17:06 TCP: Recieved 15 bytes from socket.
+29-08-2018 15:17:06 TCP: Parsing recieved data.
+29-08-2018 15:17:06 TCP: ---- Parser log start ----
+29-08-2018 15:17:06 Helper: IMEI: 1130590330583160
+29-08-2018 15:17:06 Helper: Checksum does not match.

@@ -1,0 +1,189 @@
+22-05-2018 13:32:41 UDP: Started listening at port 8414
+22-05-2018 13:32:41 TCP: Started listening at port 10025
+22-05-2018 13:32:42 TCP Output Control: Started listening at port 668
+22-05-2018 13:33:07 TCP: Got new connection: 106.77.212.52:36386
+22-05-2018 13:33:09 TCP: Recieved 7 bytes from socket.
+22-05-2018 13:33:09 TCP: Checking for keyword validity.
+22-05-2018 13:33:09 TCP: Keyword valid. Waiting for data.
+22-05-2018 13:33:13 TCP: Recieved 87 bytes from socket.
+22-05-2018 13:33:13 TCP: Parsing recieved data.
+22-05-2018 13:33:13 TCP: ---- Parser log start ----
+22-05-2018 13:33:13 Helper: IMEI: 866710039995144
+22-05-2018 13:33:13 Packet parser: 1: Packet type: 7. 5/22/2018 8:01:48 AM
+22-05-2018 13:33:13 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+22-05-2018 13:33:13 Packet parser: 7DT0: Spd=0,Sat=5,HDOP=1,Course=0,Altitude = 605,Odo=0
+22-05-2018 13:33:13 Packet parser: 675F529C0B4059BC9342B71B94410015005D0200000000A880433094011654277401003C
+22-05-2018 13:33:13 Packet parser: 38: Packet type: 7. 5/22/2018 8:02:48 AM
+22-05-2018 13:33:13 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+22-05-2018 13:33:13 Packet parser: 7DT0: Spd=0,Sat=6,HDOP=1,Course=0,Altitude = 605,Odo=0
+22-05-2018 13:33:13 Packet parser: 4761529C0B4059BC9342B71B94410016005D0200000000A880283094011654277401003B
+22-05-2018 13:33:13 TCP: ---- Parser log end ----
+22-05-2018 13:33:13 TCP: Parse results:
+Parsed items from packet: 2
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12355,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.86787,
+    "Latitude": 18.5135326,
+    "Speed": 0,
+    "Satellites": 5,
+    "Hdop": 1,
+    "Direction": 0,
+    "Altitude": 605,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 60
+  },
+  "Time": "2018-05-22T08:01:48"
+}
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12328,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32936,
+  "Gps": {
+    "Longitude": 73.86787,
+    "Latitude": 18.5135326,
+    "Speed": 0,
+    "Satellites": 6,
+    "Hdop": 1,
+    "Direction": 0,
+    "Altitude": 605,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 59
+  },
+  "Time": "2018-05-22T08:02:48"
+}
+
+22-05-2018 13:33:13 TCP: ---- Saving to database ----
+22-05-2018 13:33:13 TCP: ---- Successfully saved to database ----
+22-05-2018 13:33:54 TCP: Recieved 50 bytes from socket.
+22-05-2018 13:33:54 TCP: Parsing recieved data.
+22-05-2018 13:33:54 TCP: ---- Parser log start ----
+22-05-2018 13:33:54 Helper: IMEI: 866710039995144
+22-05-2018 13:33:54 Packet parser: 1: Packet type: 7. 5/22/2018 8:03:48 AM
+22-05-2018 13:33:54 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+22-05-2018 13:33:54 Packet parser: 7DT0: Spd=0,Sat=5,HDOP=2,Course=0,Altitude = 605,Odo=0
+22-05-2018 13:33:54 Packet parser: 2763529C0B4059BC9342B71B94410025005D0200000000B9806F30940116542774010040
+22-05-2018 13:33:54 TCP: ---- Parser log end ----
+22-05-2018 13:33:54 TCP: Parse results:
+Parsed items from packet: 1
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12399,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32953,
+  "Gps": {
+    "Longitude": 73.86787,
+    "Latitude": 18.5135326,
+    "Speed": 0,
+    "Satellites": 5,
+    "Hdop": 2,
+    "Direction": 0,
+    "Altitude": 605,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 64
+  },
+  "Time": "2018-05-22T08:03:48"
+}
+
+22-05-2018 13:33:54 TCP: ---- Saving to database ----
+22-05-2018 13:33:54 TCP: ---- Successfully saved to database ----
+22-05-2018 13:34:00 TCP: Recieved 50 bytes from socket.
+22-05-2018 13:34:00 TCP: Parsing recieved data.
+22-05-2018 13:34:00 TCP: ---- Parser log start ----
+22-05-2018 13:34:00 Helper: IMEI: 866710039995144
+22-05-2018 13:34:00 Packet parser: 1: Packet type: 7. 5/22/2018 8:03:54 AM
+22-05-2018 13:34:00 Packet parser: Mask1=400B, Mask2=0000, Mask3=0000, Mask4=0000
+22-05-2018 13:34:00 Packet parser: 7DT0: Spd=0,Sat=6,HDOP=1,Course=0,Altitude = 605,Odo=0
+22-05-2018 13:34:00 Packet parser: 5763529C0B4059BC9342B71B94410016005D0200000000A980FC2F94011654277401003E
+22-05-2018 13:34:00 TCP: ---- Parser log end ----
+22-05-2018 13:34:00 TCP: Parse results:
+Parsed items from packet: 1
+
+Merged data packet:
+{
+  "AnalogInputs": [
+    0,
+    12284,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "DigitalInputs": 32937,
+  "Gps": {
+    "Longitude": 73.86787,
+    "Latitude": 18.5135326,
+    "Speed": 0,
+    "Satellites": 6,
+    "Hdop": 1,
+    "Direction": 0,
+    "Altitude": 605,
+    "Odometer": 0.0
+  },
+  "Gsm": {
+    "MobileCountryCode": 404,
+    "MobileNetworkCode": 22,
+    "LocalAreaCode": 10068,
+    "CellIdentifier": 372,
+    "TimingAdvance": 0,
+    "ReceivedSignalStrength": 62
+  },
+  "Time": "2018-05-22T08:03:54"
+}
+
+22-05-2018 13:34:00 TCP: ---- Saving to database ----
+22-05-2018 13:34:00 TCP: ---- Successfully saved to database ----

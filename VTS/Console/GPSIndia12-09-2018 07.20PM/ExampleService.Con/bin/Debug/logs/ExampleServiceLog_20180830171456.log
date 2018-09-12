@@ -1,0 +1,59 @@
+30-08-2018 17:14:56 UDP: Started listening at port 8414
+30-08-2018 17:14:56 TCP: Started listening at port 10025
+30-08-2018 17:14:56 TCP Output Control: Started listening at port 668
+30-08-2018 17:14:57 TCP Output Control: Error in confirmation checker.
+30-08-2018 17:14:57 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+30-08-2018 17:15:04 TCP: Got new connection: 42.106.27.51:4820
+30-08-2018 17:15:07 TCP: Recieved 18 bytes from socket.
+30-08-2018 17:15:07 TCP: Checking for keyword validity.
+30-08-2018 17:15:08 TCP: Keyword valid. Waiting for data.
+30-08-2018 17:15:10 TCP: Recieved 15 bytes from socket.
+30-08-2018 17:15:11 TCP: Packet too short.
+30-08-2018 17:15:14 TCP: Recieved 36 bytes from socket.
+30-08-2018 17:15:19 TCP: Longitude:.136.381158
+30-08-2018 17:15:19 TCP: Lattitude:.48.336963
+30-08-2018 17:15:19 TCP: Date;.12081E0B2D06
+30-08-2018 17:15:21 TCP: Recieved 72 bytes from socket.
+30-08-2018 17:15:21 TCP: Checking for keyword validity.
+30-08-2018 17:15:22 TCP: Keyword valid. Waiting for data.
+30-08-2018 17:15:24 TCP: Recieved 36 bytes from socket.
+30-08-2018 17:15:29 TCP: Longitude:.136.381149
+30-08-2018 17:15:29 TCP: Lattitude:.48.336933
+30-08-2018 17:15:29 TCP: Date;.12081E0B2D10
+30-08-2018 17:15:32 TCP: Recieved 72 bytes from socket.
+30-08-2018 17:15:32 TCP: Checking for keyword validity.
+30-08-2018 17:15:33 TCP: Keyword valid. Waiting for data.
+30-08-2018 17:15:34 TCP: Recieved 72 bytes from socket.
+30-08-2018 17:15:46 TCP: Longitude:.136.381155
+30-08-2018 17:15:48 TCP: Lattitude:.48.336998
+30-08-2018 17:17:19 TCP: Date;.12081E0B2C10
+30-08-2018 17:17:27 TCP: Longitude:.136.381152
+30-08-2018 17:17:41 TCP: Lattitude:.48.336987
+30-08-2018 17:17:42 TCP: Date;.12081E0B2C1A
+30-08-2018 17:18:50 TCP: Recieved 627 bytes from socket.
+30-08-2018 17:18:50 TCP: Checking for keyword validity.
+30-08-2018 17:18:52 TCP: Keyword valid. Waiting for data.
+30-08-2018 17:18:53 TCP: Recieved 267 bytes from socket.
+30-08-2018 17:18:56 TCP: Longitude:.136.3809
+30-08-2018 17:18:56 TCP: Lattitude:.48.33693
+30-08-2018 17:18:56 TCP: Date;.12081E0B2F2E
+30-08-2018 17:18:58 TCP: Longitude:.136.380909
+30-08-2018 17:18:58 TCP: Lattitude:.48.336894
+30-08-2018 17:18:59 TCP: Date;.12081E0B2F38
+30-08-2018 17:19:02 TCP: Longitude:.136.380927
+30-08-2018 17:19:02 TCP: Lattitude:.48.336831
+30-08-2018 17:19:03 TCP: Date;.12081E0B3006
+30-08-2018 17:19:05 TCP: Longitude:.136.38087
+30-08-2018 17:19:05 TCP: Lattitude:.48.336873
+30-08-2018 17:19:05 TCP: Date;.12081E0B3010
+30-08-2018 17:20:38 TCP: Got new connection: 42.106.27.51:58462
+30-08-2018 17:20:41 TCP: Longitude:.136.380822
+30-08-2018 17:20:43 TCP: Lattitude:.48.336894
+30-08-2018 17:20:43 TCP: Recieved 285 bytes from socket.
+30-08-2018 17:20:45 TCP: Checking for keyword validity.
