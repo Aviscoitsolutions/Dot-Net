@@ -1,0 +1,32 @@
+28-08-2018 18:24:06 UDP: Started listening at port 8414
+28-08-2018 18:24:06 TCP: Started listening at port 10025
+28-08-2018 18:24:07 TCP Output Control: Started listening at port 668
+28-08-2018 18:24:07 TCP Output Control: Error in confirmation checker.
+28-08-2018 18:24:07 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+28-08-2018 18:24:36 TCP: Got new connection: 42.106.28.120:28882
+28-08-2018 18:24:37 TCP: Recieved 18 bytes from socket.
+28-08-2018 18:24:37 TCP: Checking for keyword validity.
+28-08-2018 18:24:37 TCP: Keyword valid. Waiting for data.
+28-08-2018 18:24:40 TCP: Recieved 15 bytes from socket.
+28-08-2018 18:25:15 TCP: Parsing recieved data.
+28-08-2018 18:25:15 TCP: ---- Parser log start ----
+28-08-2018 18:25:16 Helper: Error parsing data.
+28-08-2018 18:25:16 TCP: ---- Saving to database ----
+28-08-2018 18:25:35 TCP: Error saving to database.
+28-08-2018 18:25:35 TCP: System.ArgumentException: Destination array is not long enough to copy all the items in the collection. Check array index and length.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.BitConverter.ToInt64(Byte[] value, Int32 startIndex)
+   at ExampleService.ParseResults.get_Imei() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\ParseResults.cs:line 42
+   at ExampleService.TCPServer.SaveToDatabase(ParseResults results) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPServer.cs:line 202
+28-08-2018 18:25:35 TCP: ---- Successfully saved to database ----
+28-08-2018 18:25:35 TCP: Recieved 324 bytes from socket.
+28-08-2018 18:25:47 TCP: Parsing recieved data.
+28-08-2018 18:25:47 TCP: ---- Parser log start ----
+28-08-2018 18:25:47 Helper: Error parsing data.
+28-08-2018 18:25:47 TCP: ---- Saving to database ----

@@ -1,0 +1,23 @@
+30-08-2018 18:28:54 UDP: Started listening at port 8414
+30-08-2018 18:28:54 TCP: Started listening at port 10025
+30-08-2018 18:28:54 TCP Output Control: Started listening at port 668
+30-08-2018 18:28:54 TCP Output Control: Error in confirmation checker.
+30-08-2018 18:28:54 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+30-08-2018 18:29:11 TCP: Got new connection: 42.106.4.70:18436
+30-08-2018 18:29:13 TCP: Recieved 18 bytes from socket.
+30-08-2018 18:29:13 TCP: Checking for keyword validity.
+30-08-2018 18:29:14 TCP: Keyword valid. Waiting for data.
+30-08-2018 18:29:16 TCP: Recieved 36 bytes from socket.
+30-08-2018 18:29:40 TCP: Recieved 15 bytes from socket.
+30-08-2018 18:29:40 TCP: Checking for keyword validity.
+30-08-2018 18:29:42 TCP: Keyword valid. Waiting for data.
+30-08-2018 18:29:44 TCP: Recieved 252 bytes from socket.
+30-08-2018 18:29:58 TCP: Longitude:.136.381179
+30-08-2018 18:30:00 TCP: Lattitude:.48.336714
+30-08-2018 18:30:03 TCP: Date:.18:8:30:12:55:43

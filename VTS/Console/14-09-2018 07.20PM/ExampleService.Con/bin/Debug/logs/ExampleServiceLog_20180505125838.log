@@ -1,0 +1,19 @@
+05-05-2018 12:58:38 UDP: Started listening at port 667
+05-05-2018 12:58:38 TCP: Started listening at port 8414
+05-05-2018 12:58:38 TCP Output Control: Started listening at port 668
+05-05-2018 12:58:38 TCP: Got new connection: 192.168.0.100:52893
+05-05-2018 12:58:38 TCP: Recieved 101 bytes from socket.
+05-05-2018 12:58:38 TCP: Checking for keyword validity.
+05-05-2018 12:58:38 TCP: Keyword invalid, closing connection.
+05-05-2018 12:58:38 TCP: Connection closed.
+05-05-2018 12:58:38 TCP Output Control: Error in confirmation checker.
+05-05-2018 12:58:38 TCP Output Control: System.IO.IOException: I/O error occurred.
+   at Npgsql.NpgsqlState.<ProcessBackendResponses>d__0.MoveNext()
+   at Npgsql.NpgsqlState.ProcessAndDiscardBackendResponses(NpgsqlConnector context)
+   at Npgsql.NpgsqlConnector.Open()
+   at Npgsql.NpgsqlConnectorPool.GetPooledConnector(NpgsqlConnection Connection)
+   at Npgsql.NpgsqlConnectorPool.RequestPooledConnectorInternal(NpgsqlConnection Connection)
+   at Npgsql.NpgsqlConnectorPool.RequestConnector(NpgsqlConnection Connection)
+   at Npgsql.NpgsqlConnection.Open()
+   at ExampleService.DataAccess.PostgreSqlDataAccess.Open() in E:\GPS Files\NEW\backup\05-05-2018 03.00PM\example\source\ExampleService\DataAccess\PostgreSqlDataAccess.cs:line 26
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in E:\GPS Files\NEW\backup\05-05-2018 03.00PM\example\source\ExampleService\TCPOutputControl.cs:line 309
