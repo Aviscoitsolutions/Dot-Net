@@ -1,0 +1,205 @@
+﻿
+@{
+    ViewBag.Title = "Reports";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+<title>Reports</title>
+<head>
+
+    <link href="~/MainPage/css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+@*<link href="~/MainPage/css/style.css" rel="stylesheet" />*@
+<script>
+    //Bind vehicle type dropdown
+    $(function () {
+        $.ajax({
+            url: "/Home/GetVehicleType",
+            type: "Get",
+            success: function (data) {
+                $("#op1 option").remove();
+                var opt2 = new Option("Select", "Select");
+                $('#op1').append(opt2);
+                for (var i = 0; i < data.length; i++) {
+                    var opt = new Option(data[i].Vehicle_Type);
+                    $('#op1').append(opt);
+
+                }
+
+            }
+
+        })
+    });
+</script>
+<div class="container-fluid pt-100  reports">
+    <h2 class="text-center pb-3"><u>Reports</u></h2>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <h4 class="" style="color:#000;">Select Vehicle</h4>
+            <div class="pt-3">
+                <div class="dropdown" style="width:100%" id="FilterDropdown">
+                    <select id="op1" class="dropdownitems   radius" onchange="change2()" style="height:30px;width:100%;font-size:14px">
+                        <option value="Select">Select</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <h4 class="" style="color:#000;">Select Report</h4>
+            <div class="pt-3">
+                <select id="op2" class="dropdownitems1  radius" style="height:30px;width:100%">
+                    <option value="Select">Select</option>
+                    <option value="Fleet">Fleet_Analysis_report </option>
+                    <option value="Distance">Distance_Travelled</option>
+                    <option value="Speed">Speed_Violation_Report</option>
+                    <option value="Alert">Alert_Report</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h4 class="" style="color:#000;">Select Date</h4>
+            <div class="pt-3">
+
+                From Date: <input type="date" name="FromDate" id="from" min="2000-01-02" class="radius" style="width:100%">
+                <br /><br />
+                To Date:  <input type="date" name="ToDate" id="To" min="2000-01-02" class="radius" style="width:100%">
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <h4 style="color:#000;">Select Carrier</h4>
+            <div class="pt-3">
+                <select id="op3" class="dropdownitems  radius" style="height:100px;width:100%;font-size:14px;" multiple></select>
+                <br />
+                Select All &nbsp;<input type="checkbox" name="all" id="all" style="" />
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg text-center pt-3">
+            <input type="submit" onclick="PassData()" value="Generate" class="radius pt-4 btn2" id="Show" />
+        </div>
+
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+
+        $.ajax({
+            url: "/Home/GetVehicleType",
+            type: "Get",
+            success: function (data) {
+                $("#op1 option").remove();
+                var opt2 = new Option("Select", "Select");
+                $('#op1').append(opt2);
+                for (var i = 0; i < data.length; i++) {
+                    var opt = new Option(data[i].Vehicle_Type);
+                    $('#op1').append(opt);
+
+                }
+
+            }
+
+        })
+        /**/
+    });
+
+</script>
+
+<script type="text/javascript">
+    //Get device name and imei on vehicle type doropdown value change and bind to vehicle number dropdown
+    $("#FilterDropdown").change(function () {
+        var Dropdown = $("select#op1 option:selected").text();
+        if (Dropdown == "Select") {
+            $("#op3 option").remove();
+        }
+        else {
+            $("#op3 option").remove();
+            var product = { Dropdown: Dropdown }
+            $.ajax({
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: "{product:" + JSON.stringify(product) + "}",
+                url: "/Home/GetVehicleNo",
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var opt = new Option(data[i].DeviceName, data[i].DeviceIMEI);
+                        $('#op3').append(opt);
+                    }
+                }
+            });
+        }
+    });
+
+</script>
+
+
+<script>
+
+          // this method call when user click grenterate  button and pass data to appropriate report page
+            function PassData() {
+                    var Vehicle_type = $("select#op1 option:selected").text();
+                var Report_type = $("select#op2 option:selected").text();
+                var Vehicle_Imei = $("select#op3 option:selected").val();
+                var Vehicle_no = $("select#op3 option:selected").text();
+                var From = $("#from").val().toString();
+                var To = $("#To").val();
+
+                if (Vehicle_type == "Select") {
+                    alert("Please Select Vehicle_Type");
+                }
+                else if (Report_type == "Select")
+                {
+                    alert("Please Select Report_Type");
+                }
+                else if (From == "") {
+                    alert("Please Select Date From");
+                }
+                else if (To == "") {
+                    alert("Please Select Date To");
+                }
+                else if (Vehicle_no == "") {
+                    alert("Please Select Vehicle_No");
+                }
+                else {
+
+                    if (Report_type=="Speed_Violation_Report")
+                    {
+
+
+                      var url = '@Html.Raw(Url.Action("ReportsSpeedVoilation", "Home", new { To = "__reportttype__", From = "__orderId__", type = "_type_", Vehicle_No = "_VNo_" }))';
+
+                    var params = url.replace('__reportttype__', To).replace('__orderId__', From).replace('_type_', Vehicle_type).replace('_VNo_', Vehicle_no);
+
+                    window.open(params, '_blank');
+                    }
+                    else if (Report_type.trim() == "Fleet_Analysis_report")
+                    {
+
+                      var url = '@Html.Raw(Url.Action("ReportsFleetAnyalysis", "Home", new { To = "__reportttype__", From = "__orderId__", type = "_type_", Vehicle_No = "_VNo_" }))';
+                    var params = url.replace('__reportttype__', To).replace('__orderId__', From).replace('_type_', Vehicle_type).replace('_VNo_', Vehicle_no);
+                    window.open(params, '_blank');
+                    }
+                   else if (Report_type =="Alert_Report")
+                    {
+                      var url = '@Html.Raw(Url.Action("ReportsAlert", "Home", new { To = "__reportttype__", From = "__orderId__", type = "_type_", Vehicle_No = "_VNo_" }))';
+                      var params = url.replace('__reportttype__', To).replace('__orderId__', From).replace('_type_', Vehicle_type).replace('_VNo_', Vehicle_no);
+
+                      window.open(params, '_blank');
+                    }
+                    else if (Report_type =="Distance_Travelled")
+                    {
+
+                      var url = '@Html.Raw(Url.Action("ReportsDistanceTravelled", "Home", new { To = "__reportttype__", From = "__orderId__", type = "_type_", Vehicle_No = "_VNo_" }))';
+                      var params = url.replace('__reportttype__', To).replace('__orderId__', From).replace('_type_', Vehicle_type).replace('_VNo_', Vehicle_no);
+
+                      window.open(params, '_blank');
+
+                    }
+
+                    }
+                    }
+</script>
