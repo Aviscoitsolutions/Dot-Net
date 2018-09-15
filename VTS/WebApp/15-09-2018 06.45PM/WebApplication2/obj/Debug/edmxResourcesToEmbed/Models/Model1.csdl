@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="aviscotrackerdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tbl_DeviceRegistration">
+    <Key>
+      <PropertyRef Name="DeviceIMEI" />
+    </Key>
+    <Property Name="DeviceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceIMEI" Type="Int64" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="Int32" />
+    <NavigationProperty Name="telemetries" Relationship="Self.FK_telemetry_Tbl_DeviceRegistration" FromRole="Tbl_DeviceRegistration" ToRole="telemetry" />
+  </EntityType>
+  <EntityType Name="telemetry">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imei" Type="Int64" />
+    <Property Name="acceleration_pedal_position" Type="Int16" />
+    <Property Name="fuel_level" Type="Int16" />
+    <Property Name="wheel_speed" Type="Int32" />
+    <Property Name="engine_speed" Type="Int32" />
+    <Property Name="total_engine_hours" Type="Int64" />
+    <Property Name="total_vehicle_distance" Type="Int64" />
+    <Property Name="analog_inputs0" Type="Int32" />
+    <Property Name="analog_inputs1" Type="Int32" />
+    <Property Name="analog_inputs2" Type="Int32" />
+    <Property Name="analog_inputs3" Type="Int32" />
+    <Property Name="analog_inputs4" Type="Int32" />
+    <Property Name="analog_inputs5" Type="Int32" />
+    <Property Name="analog_inputs6" Type="Int32" />
+    <Property Name="analog_inputs7" Type="Int32" />
+    <Property Name="counters0" Type="Int32" />
+    <Property Name="counters1" Type="Int32" />
+    <Property Name="counters2" Type="Int32" />
+    <Property Name="counters3" Type="Int32" />
+    <Property Name="digital_inputs" Type="Int32" />
+    <Property Name="fuel_levels0" Type="Int32" />
+    <Property Name="fuel_levels1" Type="Int32" />
+    <Property Name="longitude" Type="Double" />
+    <Property Name="latitude" Type="Double" />
+    <Property Name="speed" Type="Int16" />
+    <Property Name="satellites" Type="Int16" />
+    <Property Name="hdop" Type="Int16" />
+    <Property Name="direction" Type="Int16" />
+    <Property Name="altitude" Type="Int16" />
+    <Property Name="odometer" Type="Double" />
+    <Property Name="mobile_country_code" Type="Int32" />
+    <Property Name="mobile_network_code" Type="Int16" />
+    <Property Name="local_area_code" Type="Int32" />
+    <Property Name="cell_identifier" Type="Int32" />
+    <Property Name="timing_advance" Type="Int16" />
+    <Property Name="recieved_signal_strength" Type="Int16" />
+    <Property Name="engine_coolant_temperature" Type="Int16" />
+    <Property Name="j1939_air_temperature" Type="Int32" />
+    <Property Name="j1939_driver_id" Type="Int64" />
+    <Property Name="j1939_fuel_rate" Type="Int32" />
+    <Property Name="j1939_fuel_fms_economy" Type="Int32" />
+    <Property Name="j1939_fuel_consumption" Type="Int64" />
+    <Property Name="j1939_axle_number" Type="Int16" />
+    <Property Name="j1939_tire_number" Type="Int16" />
+    <Property Name="j1939_axle_weight" Type="Int32" />
+    <Property Name="j1939_mil_status" Type="Int16" />
+    <Property Name="j1939_driver1_work" Type="Int16" />
+    <Property Name="j1939_driver2_work" Type="Int16" />
+    <Property Name="j1939_motion" Type="Int16" />
+    <Property Name="j1939_driver1_time" Type="Int16" />
+    <Property Name="j1939_driver1_crd" Type="Int16" />
+    <Property Name="j1939_overspeed" Type="Int16" />
+    <Property Name="j1939_driver2_time" Type="Int16" />
+    <Property Name="j1939_driver2_crd" Type="Int16" />
+    <Property Name="j1939_tcoevent" Type="Int16" />
+    <Property Name="j1939_handl" Type="Int16" />
+    <Property Name="j1939_perf" Type="Int16" />
+    <Property Name="j1939_dir" Type="Int16" />
+    <Property Name="j1939_speed" Type="Int32" />
+    <Property Name="dtc0" Type="Int32" />
+    <Property Name="dtc1" Type="Int32" />
+    <Property Name="dtc2" Type="Int32" />
+    <Property Name="dtc3" Type="Int32" />
+    <Property Name="dtc4" Type="Int32" />
+    <Property Name="dtc5" Type="Int32" />
+    <Property Name="dtc6" Type="Int32" />
+    <Property Name="dtc7" Type="Int32" />
+    <Property Name="dtc8" Type="Int32" />
+    <Property Name="dtc9" Type="Int32" />
+    <Property Name="car_in_phone" Type="Int32" />
+    <Property Name="dallas_id" Type="Int64" />
+    <Property Name="dallas_temperature" Type="Int32" />
+    <Property Name="dallas_humidity" Type="Int32" />
+    <Property Name="lls_lvl_add0" Type="Int32" />
+    <Property Name="lls_lvl_add1" Type="Int32" />
+    <Property Name="lls_lvl_add2" Type="Int32" />
+    <Property Name="lls_lvl_add3" Type="Int32" />
+    <Property Name="lls_temp_add0" Type="Int16" />
+    <Property Name="lls_temp_add1" Type="Int16" />
+    <Property Name="lls_temp_add2" Type="Int16" />
+    <Property Name="lls_temp_add3" Type="Int16" />
+    <Property Name="j1979_mil_status" Type="Int16" />
+    <Property Name="j1979_engine_load" Type="Int16" />
+    <Property Name="j1979_engine_temperature" Type="Int16" />
+    <Property Name="j1979_short_fuel_trim1" Type="Int16" />
+    <Property Name="j1979_long_fuel_trim1" Type="Int16" />
+    <Property Name="j1979_short_fuel_trim2" Type="Int16" />
+    <Property Name="j1979_long_fuel_trim2" Type="Int16" />
+    <Property Name="j1979_fuel_pressure" Type="Int16" />
+    <Property Name="j1979_map" Type="Int16" />
+    <Property Name="j1979_rpm" Type="Int32" />
+    <Property Name="j1979_speed" Type="Int16" />
+    <Property Name="j1979_air_temp" Type="Int16" />
+    <Property Name="j1979_maf" Type="Int32" />
+    <Property Name="j1979_tps" Type="Int16" />
+    <Property Name="j1979_fuel_level" Type="Int16" />
+    <Property Name="j1979_rail_pressure" Type="Int16" />
+    <Property Name="j1979_hybrid_battery_life" Type="Int16" />
+    <Property Name="j1979_fuel_rate" Type="Int32" />
+    <Property Name="j1979_dtc0" Type="Int32" />
+    <Property Name="j1979_dtc1" Type="Int32" />
+    <Property Name="j1979_dtc2" Type="Int32" />
+    <Property Name="j1979_dtc3" Type="Int32" />
+    <Property Name="j1979_dtc4" Type="Int32" />
+    <Property Name="j1979_dtc5" Type="Int32" />
+    <Property Name="j1979_dtc6" Type="Int32" />
+    <Property Name="j1979_dtc7" Type="Int32" />
+    <Property Name="j1979_dtc8" Type="Int32" />
+    <Property Name="j1979_dtc9" Type="Int32" />
+    <Property Name="j1708_engine_hours" Type="Int64" />
+    <Property Name="j1708_fuel_used" Type="Int64" />
+    <Property Name="j1708_fuel_level" Type="Int16" />
+    <Property Name="driving_quality0" Type="Int16" />
+    <Property Name="driving_quality1" Type="Int16" />
+    <Property Name="driving_quality2" Type="Int16" />
+    <Property Name="driving_quality3" Type="Int16" />
+    <Property Name="driving_quality4" Type="Int16" />
+    <Property Name="driving_quality5" Type="Int16" />
+    <Property Name="driving_quality6" Type="Int16" />
+    <Property Name="driving_quality7" Type="Int16" />
+    <Property Name="driving_quality8" Type="Int16" />
+    <Property Name="driving_quality9" Type="Int16" />
+    <Property Name="driving_quality10" Type="Int16" />
+    <Property Name="driving_quality11" Type="Int16" />
+    <Property Name="driving_quality12" Type="Int16" />
+    <Property Name="driving_quality13" Type="Int16" />
+    <Property Name="driving_quality14" Type="Int16" />
+    <Property Name="driving_quality15" Type="Int16" />
+    <Property Name="driving_quality16" Type="Int16" />
+    <Property Name="driving_quality17" Type="Int16" />
+    <Property Name="driving_quality18" Type="Int16" />
+    <Property Name="driving_quality19" Type="Int16" />
+    <Property Name="driving_quality20" Type="Int16" />
+    <Property Name="wiegand26_id" Type="Int64" />
+    <Property Name="fuel_con_ins" Type="Double" />
+    <Property Name="axle_group0" Type="Int32" />
+    <Property Name="axle_group1" Type="Int32" />
+    <Property Name="axle_group2" Type="Int32" />
+    <Property Name="axle_group3" Type="Int32" />
+    <Property Name="axle_group4" Type="Int32" />
+    <Property Name="j1939_adblue" Type="Int64" />
+    <Property Name="prev_digital_inputs" Type="Int64" />
+    <Property Name="wln_accel_max" Type="Int64" />
+    <Property Name="wln_brk_max" Type="Int64" />
+    <Property Name="wln_crn_max" Type="Int64" />
+    <Property Name="can_message_0700" Type="Int64" />
+    <Property Name="can_message_0760" Type="Int64" />
+    <Property Name="one_wire_temp1" Type="Int64" />
+    <Property Name="one_wire_temp1_id" Type="Int64" />
+    <Property Name="one_wire_temp2" Type="Int64" />
+    <Property Name="one_wire_temp2_id" Type="Int64" />
+    <Property Name="one_wire_temp3" Type="Int64" />
+    <Property Name="one_wire_temp3_id" Type="Int64" />
+    <Property Name="one_wire_temp4" Type="Int64" />
+    <Property Name="one_wire_temp4_id" Type="Int64" />
+    <Property Name="time" Type="DateTime" Precision="3" />
+    <Property Name="total_fuel_used" Type="Int64" />
+    <NavigationProperty Name="Tbl_DeviceRegistration" Relationship="Self.FK_telemetry_Tbl_DeviceRegistration" FromRole="telemetry" ToRole="Tbl_DeviceRegistration" />
+  </EntityType>
+  <Association Name="FK_telemetry_Tbl_DeviceRegistration">
+    <End Role="Tbl_DeviceRegistration" Type="Self.Tbl_DeviceRegistration" Multiplicity="0..1" />
+    <End Role="telemetry" Type="Self.telemetry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_DeviceRegistration">
+        <PropertyRef Name="DeviceIMEI" />
+      </Principal>
+      <Dependent Role="telemetry">
+        <PropertyRef Name="imei" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="aviscotrackerdbEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tbl_DeviceRegistration" EntityType="Self.Tbl_DeviceRegistration" />
+    <EntitySet Name="telemetries" EntityType="Self.telemetry" />
+    <AssociationSet Name="FK_telemetry_Tbl_DeviceRegistration" Association="Self.FK_telemetry_Tbl_DeviceRegistration">
+      <End Role="Tbl_DeviceRegistration" EntitySet="Tbl_DeviceRegistration" />
+      <End Role="telemetry" EntitySet="telemetries" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

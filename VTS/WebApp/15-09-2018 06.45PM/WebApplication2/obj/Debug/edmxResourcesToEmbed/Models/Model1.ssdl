@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="aviscotrackerdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_DeviceRegistration">
+    <Key>
+      <PropertyRef Name="DeviceIMEI" />
+    </Key>
+    <Property Name="DeviceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceIMEI" Type="bigint" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'aviscotrackerdb.dbo.telemetry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="telemetry">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imei" Type="bigint" />
+    <Property Name="acceleration_pedal_position" Type="smallint" />
+    <Property Name="fuel_level" Type="smallint" />
+    <Property Name="wheel_speed" Type="int" />
+    <Property Name="engine_speed" Type="int" />
+    <Property Name="total_engine_hours" Type="bigint" />
+    <Property Name="total_vehicle_distance" Type="bigint" />
+    <Property Name="analog_inputs0" Type="int" />
+    <Property Name="analog_inputs1" Type="int" />
+    <Property Name="analog_inputs2" Type="int" />
+    <Property Name="analog_inputs3" Type="int" />
+    <Property Name="analog_inputs4" Type="int" />
+    <Property Name="analog_inputs5" Type="int" />
+    <Property Name="analog_inputs6" Type="int" />
+    <Property Name="analog_inputs7" Type="int" />
+    <Property Name="counters0" Type="int" />
+    <Property Name="counters1" Type="int" />
+    <Property Name="counters2" Type="int" />
+    <Property Name="counters3" Type="int" />
+    <Property Name="digital_inputs" Type="int" />
+    <Property Name="fuel_levels0" Type="int" />
+    <Property Name="fuel_levels1" Type="int" />
+    <Property Name="longitude" Type="float" />
+    <Property Name="latitude" Type="float" />
+    <Property Name="speed" Type="smallint" />
+    <Property Name="satellites" Type="smallint" />
+    <Property Name="hdop" Type="smallint" />
+    <Property Name="direction" Type="smallint" />
+    <Property Name="altitude" Type="smallint" />
+    <Property Name="odometer" Type="float" />
+    <Property Name="mobile_country_code" Type="int" />
+    <Property Name="mobile_network_code" Type="smallint" />
+    <Property Name="local_area_code" Type="int" />
+    <Property Name="cell_identifier" Type="int" />
+    <Property Name="timing_advance" Type="smallint" />
+    <Property Name="recieved_signal_strength" Type="smallint" />
+    <Property Name="engine_coolant_temperature" Type="smallint" />
+    <Property Name="j1939_air_temperature" Type="int" />
+    <Property Name="j1939_driver_id" Type="bigint" />
+    <Property Name="j1939_fuel_rate" Type="int" />
+    <Property Name="j1939_fuel_fms_economy" Type="int" />
+    <Property Name="j1939_fuel_consumption" Type="bigint" />
+    <Property Name="j1939_axle_number" Type="smallint" />
+    <Property Name="j1939_tire_number" Type="smallint" />
+    <Property Name="j1939_axle_weight" Type="int" />
+    <Property Name="j1939_mil_status" Type="smallint" />
+    <Property Name="j1939_driver1_work" Type="smallint" />
+    <Property Name="j1939_driver2_work" Type="smallint" />
+    <Property Name="j1939_motion" Type="smallint" />
+    <Property Name="j1939_driver1_time" Type="smallint" />
+    <Property Name="j1939_driver1_crd" Type="smallint" />
+    <Property Name="j1939_overspeed" Type="smallint" />
+    <Property Name="j1939_driver2_time" Type="smallint" />
+    <Property Name="j1939_driver2_crd" Type="smallint" />
+    <Property Name="j1939_tcoevent" Type="smallint" />
+    <Property Name="j1939_handl" Type="smallint" />
+    <Property Name="j1939_perf" Type="smallint" />
+    <Property Name="j1939_dir" Type="smallint" />
+    <Property Name="j1939_speed" Type="int" />
+    <Property Name="dtc0" Type="int" />
+    <Property Name="dtc1" Type="int" />
+    <Property Name="dtc2" Type="int" />
+    <Property Name="dtc3" Type="int" />
+    <Property Name="dtc4" Type="int" />
+    <Property Name="dtc5" Type="int" />
+    <Property Name="dtc6" Type="int" />
+    <Property Name="dtc7" Type="int" />
+    <Property Name="dtc8" Type="int" />
+    <Property Name="dtc9" Type="int" />
+    <Property Name="car_in_phone" Type="int" />
+    <Property Name="dallas_id" Type="bigint" />
+    <Property Name="dallas_temperature" Type="int" />
+    <Property Name="dallas_humidity" Type="int" />
+    <Property Name="lls_lvl_add0" Type="int" />
+    <Property Name="lls_lvl_add1" Type="int" />
+    <Property Name="lls_lvl_add2" Type="int" />
+    <Property Name="lls_lvl_add3" Type="int" />
+    <Property Name="lls_temp_add0" Type="smallint" />
+    <Property Name="lls_temp_add1" Type="smallint" />
+    <Property Name="lls_temp_add2" Type="smallint" />
+    <Property Name="lls_temp_add3" Type="smallint" />
+    <Property Name="j1979_mil_status" Type="smallint" />
+    <Property Name="j1979_engine_load" Type="smallint" />
+    <Property Name="j1979_engine_temperature" Type="smallint" />
+    <Property Name="j1979_short_fuel_trim1" Type="smallint" />
+    <Property Name="j1979_long_fuel_trim1" Type="smallint" />
+    <Property Name="j1979_short_fuel_trim2" Type="smallint" />
+    <Property Name="j1979_long_fuel_trim2" Type="smallint" />
+    <Property Name="j1979_fuel_pressure" Type="smallint" />
+    <Property Name="j1979_map" Type="smallint" />
+    <Property Name="j1979_rpm" Type="int" />
+    <Property Name="j1979_speed" Type="smallint" />
+    <Property Name="j1979_air_temp" Type="smallint" />
+    <Property Name="j1979_maf" Type="int" />
+    <Property Name="j1979_tps" Type="smallint" />
+    <Property Name="j1979_fuel_level" Type="smallint" />
+    <Property Name="j1979_rail_pressure" Type="smallint" />
+    <Property Name="j1979_hybrid_battery_life" Type="smallint" />
+    <Property Name="j1979_fuel_rate" Type="int" />
+    <Property Name="j1979_dtc0" Type="int" />
+    <Property Name="j1979_dtc1" Type="int" />
+    <Property Name="j1979_dtc2" Type="int" />
+    <Property Name="j1979_dtc3" Type="int" />
+    <Property Name="j1979_dtc4" Type="int" />
+    <Property Name="j1979_dtc5" Type="int" />
+    <Property Name="j1979_dtc6" Type="int" />
+    <Property Name="j1979_dtc7" Type="int" />
+    <Property Name="j1979_dtc8" Type="int" />
+    <Property Name="j1979_dtc9" Type="int" />
+    <Property Name="j1708_engine_hours" Type="bigint" />
+    <Property Name="j1708_fuel_used" Type="bigint" />
+    <Property Name="j1708_fuel_level" Type="smallint" />
+    <Property Name="driving_quality0" Type="smallint" />
+    <Property Name="driving_quality1" Type="smallint" />
+    <Property Name="driving_quality2" Type="smallint" />
+    <Property Name="driving_quality3" Type="smallint" />
+    <Property Name="driving_quality4" Type="smallint" />
+    <Property Name="driving_quality5" Type="smallint" />
+    <Property Name="driving_quality6" Type="smallint" />
+    <Property Name="driving_quality7" Type="smallint" />
+    <Property Name="driving_quality8" Type="smallint" />
+    <Property Name="driving_quality9" Type="smallint" />
+    <Property Name="driving_quality10" Type="smallint" />
+    <Property Name="driving_quality11" Type="smallint" />
+    <Property Name="driving_quality12" Type="smallint" />
+    <Property Name="driving_quality13" Type="smallint" />
+    <Property Name="driving_quality14" Type="smallint" />
+    <Property Name="driving_quality15" Type="smallint" />
+    <Property Name="driving_quality16" Type="smallint" />
+    <Property Name="driving_quality17" Type="smallint" />
+    <Property Name="driving_quality18" Type="smallint" />
+    <Property Name="driving_quality19" Type="smallint" />
+    <Property Name="driving_quality20" Type="smallint" />
+    <Property Name="wiegand26_id" Type="bigint" />
+    <Property Name="fuel_con_ins" Type="float" />
+    <Property Name="axle_group0" Type="int" />
+    <Property Name="axle_group1" Type="int" />
+    <Property Name="axle_group2" Type="int" />
+    <Property Name="axle_group3" Type="int" />
+    <Property Name="axle_group4" Type="int" />
+    <Property Name="j1939_adblue" Type="bigint" />
+    <Property Name="prev_digital_inputs" Type="bigint" />
+    <Property Name="wln_accel_max" Type="bigint" />
+    <Property Name="wln_brk_max" Type="bigint" />
+    <Property Name="wln_crn_max" Type="bigint" />
+    <Property Name="can_message_0700" Type="bigint" />
+    <Property Name="can_message_0760" Type="bigint" />
+    <Property Name="one_wire_temp1" Type="bigint" />
+    <Property Name="one_wire_temp1_id" Type="bigint" />
+    <Property Name="one_wire_temp2" Type="bigint" />
+    <Property Name="one_wire_temp2_id" Type="bigint" />
+    <Property Name="one_wire_temp3" Type="bigint" />
+    <Property Name="one_wire_temp3_id" Type="bigint" />
+    <Property Name="one_wire_temp4" Type="bigint" />
+    <Property Name="one_wire_temp4_id" Type="bigint" />
+    <Property Name="time" Type="datetime" />
+    <Property Name="total_fuel_used" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_telemetry_Tbl_DeviceRegistration">
+    <End Role="Tbl_DeviceRegistration" Type="Self.Tbl_DeviceRegistration" Multiplicity="0..1" />
+    <End Role="telemetry" Type="Self.telemetry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_DeviceRegistration">
+        <PropertyRef Name="DeviceIMEI" />
+      </Principal>
+      <Dependent Role="telemetry">
+        <PropertyRef Name="imei" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="aviscotrackerdbModelStoreContainer">
+    <EntitySet Name="Tbl_DeviceRegistration" EntityType="Self.Tbl_DeviceRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="telemetry" EntityType="Self.telemetry" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [telemetry].[id] AS [id], 
+    [telemetry].[imei] AS [imei], 
+    [telemetry].[acceleration_pedal_position] AS [acceleration_pedal_position], 
+    [telemetry].[fuel_level] AS [fuel_level], 
+    [telemetry].[wheel_speed] AS [wheel_speed], 
+    [telemetry].[engine_speed] AS [engine_speed], 
+    [telemetry].[total_engine_hours] AS [total_engine_hours], 
+    [telemetry].[total_vehicle_distance] AS [total_vehicle_distance], 
+    [telemetry].[analog_inputs0] AS [analog_inputs0], 
+    [telemetry].[analog_inputs1] AS [analog_inputs1], 
+    [telemetry].[analog_inputs2] AS [analog_inputs2], 
+    [telemetry].[analog_inputs3] AS [analog_inputs3], 
+    [telemetry].[analog_inputs4] AS [analog_inputs4], 
+    [telemetry].[analog_inputs5] AS [analog_inputs5], 
+    [telemetry].[analog_inputs6] AS [analog_inputs6], 
+    [telemetry].[analog_inputs7] AS [analog_inputs7], 
+    [telemetry].[counters0] AS [counters0], 
+    [telemetry].[counters1] AS [counters1], 
+    [telemetry].[counters2] AS [counters2], 
+    [telemetry].[counters3] AS [counters3], 
+    [telemetry].[digital_inputs] AS [digital_inputs], 
+    [telemetry].[fuel_levels0] AS [fuel_levels0], 
+    [telemetry].[fuel_levels1] AS [fuel_levels1], 
+    [telemetry].[longitude] AS [longitude], 
+    [telemetry].[latitude] AS [latitude], 
+    [telemetry].[speed] AS [speed], 
+    [telemetry].[satellites] AS [satellites], 
+    [telemetry].[hdop] AS [hdop], 
+    [telemetry].[direction] AS [direction], 
+    [telemetry].[altitude] AS [altitude], 
+    [telemetry].[odometer] AS [odometer], 
+    [telemetry].[mobile_country_code] AS [mobile_country_code], 
+    [telemetry].[mobile_network_code] AS [mobile_network_code], 
+    [telemetry].[local_area_code] AS [local_area_code], 
+    [telemetry].[cell_identifier] AS [cell_identifier], 
+    [telemetry].[timing_advance] AS [timing_advance], 
+    [telemetry].[recieved_signal_strength] AS [recieved_signal_strength], 
+    [telemetry].[engine_coolant_temperature] AS [engine_coolant_temperature], 
+    [telemetry].[j1939_air_temperature] AS [j1939_air_temperature], 
+    [telemetry].[j1939_driver_id] AS [j1939_driver_id], 
+    [telemetry].[j1939_fuel_rate] AS [j1939_fuel_rate], 
+    [telemetry].[j1939_fuel_fms_economy] AS [j1939_fuel_fms_economy], 
+    [telemetry].[j1939_fuel_consumption] AS [j1939_fuel_consumption], 
+    [telemetry].[j1939_axle_number] AS [j1939_axle_number], 
+    [telemetry].[j1939_tire_number] AS [j1939_tire_number], 
+    [telemetry].[j1939_axle_weight] AS [j1939_axle_weight], 
+    [telemetry].[j1939_mil_status] AS [j1939_mil_status], 
+    [telemetry].[j1939_driver1_work] AS [j1939_driver1_work], 
+    [telemetry].[j1939_driver2_work] AS [j1939_driver2_work], 
+    [telemetry].[j1939_motion] AS [j1939_motion], 
+    [telemetry].[j1939_driver1_time] AS [j1939_driver1_time], 
+    [telemetry].[j1939_driver1_crd] AS [j1939_driver1_crd], 
+    [telemetry].[j1939_overspeed] AS [j1939_overspeed], 
+    [telemetry].[j1939_driver2_time] AS [j1939_driver2_time], 
+    [telemetry].[j1939_driver2_crd] AS [j1939_driver2_crd], 
+    [telemetry].[j1939_tcoevent] AS [j1939_tcoevent], 
+    [telemetry].[j1939_handl] AS [j1939_handl], 
+    [telemetry].[j1939_perf] AS [j1939_perf], 
+    [telemetry].[j1939_dir] AS [j1939_dir], 
+    [telemetry].[j1939_speed] AS [j1939_speed], 
+    [telemetry].[dtc0] AS [dtc0], 
+    [telemetry].[dtc1] AS [dtc1], 
+    [telemetry].[dtc2] AS [dtc2], 
+    [telemetry].[dtc3] AS [dtc3], 
+    [telemetry].[dtc4] AS [dtc4], 
+    [telemetry].[dtc5] AS [dtc5], 
+    [telemetry].[dtc6] AS [dtc6], 
+    [telemetry].[dtc7] AS [dtc7], 
+    [telemetry].[dtc8] AS [dtc8], 
+    [telemetry].[dtc9] AS [dtc9], 
+    [telemetry].[car_in_phone] AS [car_in_phone], 
+    [telemetry].[dallas_id] AS [dallas_id], 
+    [telemetry].[dallas_temperature] AS [dallas_temperature], 
+    [telemetry].[dallas_humidity] AS [dallas_humidity], 
+    [telemetry].[lls_lvl_add0] AS [lls_lvl_add0], 
+    [telemetry].[lls_lvl_add1] AS [lls_lvl_add1], 
+    [telemetry].[lls_lvl_add2] AS [lls_lvl_add2], 
+    [telemetry].[lls_lvl_add3] AS [lls_lvl_add3], 
+    [telemetry].[lls_temp_add0] AS [lls_temp_add0], 
+    [telemetry].[lls_temp_add1] AS [lls_temp_add1], 
+    [telemetry].[lls_temp_add2] AS [lls_temp_add2], 
+    [telemetry].[lls_temp_add3] AS [lls_temp_add3], 
+    [telemetry].[j1979_mil_status] AS [j1979_mil_status], 
+    [telemetry].[j1979_engine_load] AS [j1979_engine_load], 
+    [telemetry].[j1979_engine_temperature] AS [j1979_engine_temperature], 
+    [telemetry].[j1979_short_fuel_trim1] AS [j1979_short_fuel_trim1], 
+    [telemetry].[j1979_long_fuel_trim1] AS [j1979_long_fuel_trim1], 
+    [telemetry].[j1979_short_fuel_trim2] AS [j1979_short_fuel_trim2], 
+    [telemetry].[j1979_long_fuel_trim2] AS [j1979_long_fuel_trim2], 
+    [telemetry].[j1979_fuel_pressure] AS [j1979_fuel_pressure], 
+    [telemetry].[j1979_map] AS [j1979_map], 
+    [telemetry].[j1979_rpm] AS [j1979_rpm], 
+    [telemetry].[j1979_speed] AS [j1979_speed], 
+    [telemetry].[j1979_air_temp] AS [j1979_air_temp], 
+    [telemetry].[j1979_maf] AS [j1979_maf], 
+    [telemetry].[j1979_tps] AS [j1979_tps], 
+    [telemetry].[j1979_fuel_level] AS [j1979_fuel_level], 
+    [telemetry].[j1979_rail_pressure] AS [j1979_rail_pressure], 
+    [telemetry].[j1979_hybrid_battery_life] AS [j1979_hybrid_battery_life], 
+    [telemetry].[j1979_fuel_rate] AS [j1979_fuel_rate], 
+    [telemetry].[j1979_dtc0] AS [j1979_dtc0], 
+    [telemetry].[j1979_dtc1] AS [j1979_dtc1], 
+    [telemetry].[j1979_dtc2] AS [j1979_dtc2], 
+    [telemetry].[j1979_dtc3] AS [j1979_dtc3], 
+    [telemetry].[j1979_dtc4] AS [j1979_dtc4], 
+    [telemetry].[j1979_dtc5] AS [j1979_dtc5], 
+    [telemetry].[j1979_dtc6] AS [j1979_dtc6], 
+    [telemetry].[j1979_dtc7] AS [j1979_dtc7], 
+    [telemetry].[j1979_dtc8] AS [j1979_dtc8], 
+    [telemetry].[j1979_dtc9] AS [j1979_dtc9], 
+    [telemetry].[j1708_engine_hours] AS [j1708_engine_hours], 
+    [telemetry].[j1708_fuel_used] AS [j1708_fuel_used], 
+    [telemetry].[j1708_fuel_level] AS [j1708_fuel_level], 
+    [telemetry].[driving_quality0] AS [driving_quality0], 
+    [telemetry].[driving_quality1] AS [driving_quality1], 
+    [telemetry].[driving_quality2] AS [driving_quality2], 
+    [telemetry].[driving_quality3] AS [driving_quality3], 
+    [telemetry].[driving_quality4] AS [driving_quality4], 
+    [telemetry].[driving_quality5] AS [driving_quality5], 
+    [telemetry].[driving_quality6] AS [driving_quality6], 
+    [telemetry].[driving_quality7] AS [driving_quality7], 
+    [telemetry].[driving_quality8] AS [driving_quality8], 
+    [telemetry].[driving_quality9] AS [driving_quality9], 
+    [telemetry].[driving_quality10] AS [driving_quality10], 
+    [telemetry].[driving_quality11] AS [driving_quality11], 
+    [telemetry].[driving_quality12] AS [driving_quality12], 
+    [telemetry].[driving_quality13] AS [driving_quality13], 
+    [telemetry].[driving_quality14] AS [driving_quality14], 
+    [telemetry].[driving_quality15] AS [driving_quality15], 
+    [telemetry].[driving_quality16] AS [driving_quality16], 
+    [telemetry].[driving_quality17] AS [driving_quality17], 
+    [telemetry].[driving_quality18] AS [driving_quality18], 
+    [telemetry].[driving_quality19] AS [driving_quality19], 
+    [telemetry].[driving_quality20] AS [driving_quality20], 
+    [telemetry].[wiegand26_id] AS [wiegand26_id], 
+    [telemetry].[fuel_con_ins] AS [fuel_con_ins], 
+    [telemetry].[axle_group0] AS [axle_group0], 
+    [telemetry].[axle_group1] AS [axle_group1], 
+    [telemetry].[axle_group2] AS [axle_group2], 
+    [telemetry].[axle_group3] AS [axle_group3], 
+    [telemetry].[axle_group4] AS [axle_group4], 
+    [telemetry].[j1939_adblue] AS [j1939_adblue], 
+    [telemetry].[prev_digital_inputs] AS [prev_digital_inputs], 
+    [telemetry].[wln_accel_max] AS [wln_accel_max], 
+    [telemetry].[wln_brk_max] AS [wln_brk_max], 
+    [telemetry].[wln_crn_max] AS [wln_crn_max], 
+    [telemetry].[can_message_0700] AS [can_message_0700], 
+    [telemetry].[can_message_0760] AS [can_message_0760], 
+    [telemetry].[one_wire_temp1] AS [one_wire_temp1], 
+    [telemetry].[one_wire_temp1_id] AS [one_wire_temp1_id], 
+    [telemetry].[one_wire_temp2] AS [one_wire_temp2], 
+    [telemetry].[one_wire_temp2_id] AS [one_wire_temp2_id], 
+    [telemetry].[one_wire_temp3] AS [one_wire_temp3], 
+    [telemetry].[one_wire_temp3_id] AS [one_wire_temp3_id], 
+    [telemetry].[one_wire_temp4] AS [one_wire_temp4], 
+    [telemetry].[one_wire_temp4_id] AS [one_wire_temp4_id], 
+    [telemetry].[time] AS [time], 
+    [telemetry].[total_fuel_used] AS [total_fuel_used]
+    FROM [dbo].[telemetry] AS [telemetry]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_telemetry_Tbl_DeviceRegistration" Association="Self.FK_telemetry_Tbl_DeviceRegistration">
+      <End Role="Tbl_DeviceRegistration" EntitySet="Tbl_DeviceRegistration" />
+      <End Role="telemetry" EntitySet="telemetry" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
