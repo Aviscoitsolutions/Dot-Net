@@ -1,0 +1,76 @@
+01-09-2018 11:30:23 UDP: Started listening at port 8414
+01-09-2018 11:30:23 TCP: Started listening at port 10025
+01-09-2018 11:30:23 TCP Output Control: Started listening at port 668
+01-09-2018 11:30:24 TCP Output Control: Error in confirmation checker.
+01-09-2018 11:30:24 TCP Output Control: System.InvalidOperationException: ExecuteNonQuery requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ExampleService.DataAccess.MSSqlDataAccess.OutputUpdate(Int32 id, Byte status) in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 540
+   at ExampleService.DataAccess.MSSqlDataAccess.CheckConfirmationExpirations() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\DataAccess\MSSqlDataAccess.cs:line 561
+   at ExampleService.TCPOutputControl.CheckConfirmationExpiration() in C:\Users\Abuzar\Desktop\27-08-2018\ExampleService\TCPOutputControl.cs:line 312
+01-09-2018 11:30:25 TCP: Got new connection: 42.106.20.106:45215
+01-09-2018 11:30:27 TCP: Recieved 18 bytes from socket.
+01-09-2018 11:30:27 TCP: Checking for keyword validity.
+01-09-2018 11:30:27 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:30:31 TCP: Recieved 15 bytes from socket.
+01-09-2018 11:30:31 TCP: Packet too short.
+01-09-2018 11:30:34 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:30:36 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:30:36 TCP: Checking for keyword validity.
+01-09-2018 11:30:36 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:30:39 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:30:42 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:30:42 TCP: Checking for keyword validity.
+01-09-2018 11:30:42 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:30:45 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:30:48 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:30:48 TCP: Checking for keyword validity.
+01-09-2018 11:30:48 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:30:51 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:30:54 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:30:54 TCP: Checking for keyword validity.
+01-09-2018 11:30:54 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:30:57 TCP: Recieved 15 bytes from socket.
+01-09-2018 11:30:57 TCP: Packet too short.
+01-09-2018 11:31:00 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:03 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:03 TCP: Checking for keyword validity.
+01-09-2018 11:31:03 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:06 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:09 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:09 TCP: Checking for keyword validity.
+01-09-2018 11:31:09 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:12 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:15 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:15 TCP: Checking for keyword validity.
+01-09-2018 11:31:15 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:18 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:21 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:21 TCP: Checking for keyword validity.
+01-09-2018 11:31:21 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:24 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:27 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:27 TCP: Checking for keyword validity.
+01-09-2018 11:31:27 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:30 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:33 TCP: Recieved 15 bytes from socket.
+01-09-2018 11:31:33 TCP: Checking for keyword validity.
+01-09-2018 11:31:33 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:36 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:39 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:39 TCP: Checking for keyword validity.
+01-09-2018 11:31:39 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:42 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:45 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:45 TCP: Checking for keyword validity.
+01-09-2018 11:31:45 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:48 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:51 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:51 TCP: Checking for keyword validity.
+01-09-2018 11:31:51 TCP: Keyword valid. Waiting for data.
+01-09-2018 11:31:54 TCP: Recieved 36 bytes from socket.
+01-09-2018 11:31:55 TCP: Got new connection: 42.106.20.106:20019
+01-09-2018 11:31:56 TCP: Recieved 18 bytes from socket.
+01-09-2018 11:31:56 TCP: Checking for keyword validity.
+01-09-2018 11:31:56 TCP: Keyword valid. Waiting for data.
