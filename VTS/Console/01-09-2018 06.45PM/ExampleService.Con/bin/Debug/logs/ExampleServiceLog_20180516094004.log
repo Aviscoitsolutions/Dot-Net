@@ -1,6 +1,0 @@
-16-05-2018 09:40:04 UDP: Started listening at port 8414
-16-05-2018 09:40:04 TCP: System.Net.Sockets.SocketException (0x80004005): An attempt was made to access a socket in a way forbidden by its access permissions
-   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-   at ExampleService.TCPServer.Start() in C:\inetpub\wwwroot\example\source\ExampleService\TCPServer.cs:line 60
-16-05-2018 09:40:04 TCP Output Control: Started listening at port 668

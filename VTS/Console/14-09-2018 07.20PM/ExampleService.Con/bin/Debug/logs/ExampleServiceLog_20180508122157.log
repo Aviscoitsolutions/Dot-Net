@@ -1,6 +1,0 @@
-08-05-2018 12:21:57 UDP: Started listening at port 667
-08-05-2018 12:21:57 TCP: Started listening at port 8414
-08-05-2018 12:21:57 TCP Output Control: Started listening at port 668
-08-05-2018 12:22:00 TCP: Got new connection: 192.168.0.100:53372
-08-05-2018 12:22:08 TCP: Recieved 101 bytes from socket.
-08-05-2018 12:22:12 TCP: Checking for keyword validity.

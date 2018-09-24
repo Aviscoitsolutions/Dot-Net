@@ -1,8 +1,0 @@
-18-05-2018 10:57:59 UDP: Started listening at port 8414
-18-05-2018 10:57:59 TCP: Started listening at port 10025
-18-05-2018 10:57:59 TCP Output Control: Started listening at port 668
-18-05-2018 10:59:40 TCP: Got new connection: 106.67.147.147:41954
-18-05-2018 10:59:40 TCP: Recieved 94 bytes from socket.
-18-05-2018 10:59:40 TCP: Checking for keyword validity.
-18-05-2018 10:59:40 TCP: Keyword invalid, closing connection.
-18-05-2018 10:59:42 TCP: Connection closed.

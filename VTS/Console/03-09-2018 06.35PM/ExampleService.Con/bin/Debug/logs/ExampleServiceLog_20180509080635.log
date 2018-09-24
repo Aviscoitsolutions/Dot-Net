@@ -1,6 +1,0 @@
-09-05-2018 08:06:35 UDP: Started listening at port 50864
-09-05-2018 08:06:35 TCP: Started listening at port 50864
-09-05-2018 08:06:35 TCP Output Control: System.Net.Sockets.SocketException (0x80004005): Only one usage of each socket address (protocol/network address/port) is normally permitted
-   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-   at ExampleService.TCPOutputControl.Start() in E:\GPS Files\NEW\08-05-2018\05-05-2018 03.00PM\example\source\ExampleService\TCPOutputControl.cs:line 68
